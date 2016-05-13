@@ -1,0 +1,134 @@
+---
+title: CSS 书籍推荐
+date: 2016/04/06
+categories: CSS
+tags: CSS
+---
+
+- CSS实战手册
+    - 作者: [美] David Sawyer McFarland
+    - 原作名: CSS: The Missing Manual
+    - 出版年: 2010-6
+    - 页数: 355
+    - 豆瓣评分: 9.0
+    - 点评：结合实例手把手教你 CSS
+- CSS设计指南
+    - 作者: 史密斯
+    - 原作名: Stylin’with CSS:a designer’s guide
+    - 出版年: 2013-5
+    - 豆瓣评分: 8.8
+    - 点评：CSS 入门书籍
+- HTML & CSS设计与构建网站
+    - 出版社: 清华大学出版社
+    - 原作名: HTML & CSS: Design and Build Websites
+    - 出版年: 2013-1
+    - 页数: 479
+    - 豆瓣评分: 8.8
+    - 点评：入门书籍，该书排版不错
+- 精通CSS（第2版）
+    - 作者: [英] Andy Budd / [英] Simon Collison / [英] Cameron Moll
+    - 副标题: 高级Web标准解决方案
+    p 原作名: CSS Mastery: Advanced Web Standards Solutions
+    - 出版年: 2010-5
+    - 豆瓣评分: 8.7
+- CSS设计彻底研究
+    - 作者: 前沿科技 温谦
+    - 出版年: 2008-2
+    - 页数: 456
+    - 豆瓣评分: 8.6
+- CSS权威指南（第三版）
+    - 作者: [美] Eric A.Meyer
+    - 出版年: 2007-10
+    - 页数: 508
+    - 豆瓣评分: 8.5
+- 超越CSS
+    - 作者: Andy Clarke
+    - 副标题: Web设计艺术精髓
+    - 出版年: 2007
+    - 页数: 357
+    - 豆瓣评分: 8.5
+- CSS禅意花园
+    - 作者: [美] Dave Shea / Molly E. Holzschlag
+    - 副标题: Web视觉艺术设计的王者之书
+    - 出版年: 2007-6
+    - 页数: 273
+    - 豆瓣评分: 8.4
+- CSS: The Definitive Guide
+    - 作者: Eric A. Meyer
+    - 出版年: 2006-11-14
+    - 页数: 536
+    - 豆瓣评分: 8.4
+- CSS网站布局实录（第2版）
+    - 作者: 李超
+    - 出版年: 2007-09
+    - 页数: 432
+    - 豆瓣评分: 8.3
+- 写给大家看的CSS书
+    - 作者: 威克-史密斯
+    - 出版年: 2009-2
+    - 页数: 283
+    - 豆瓣评分: 8.0
+
+---
+
+- 写给大家看的设计书
+    - 作者: Robin Williams / John Tollett
+    - 副标题: 实例与创意
+    - 原作名: Robin Williams Design Workshop
+    - 出版年: 2010-5
+    - 页数: 264
+    - 豆瓣评分: 8.2
+- CSS禅意花园（修订版）
+    - 作者: [美] Dave Shea / [美] Molly E. Holzschlag
+    - 原作名: The Zen of CSS design
+    - 出版年: 2012-7
+    - 页数: 273
+    - 豆瓣评分: 7.9
+- CSS商业网站布局之道
+    - 作者: 朱印宏
+    - 副标题: 一本Web标准的新书
+    - 出版年: 2007-1
+
+# 响应式
+- Responsive Web Design
+  - 作者: Ethan Marcotte
+  - 出版年: 2011-6
+  - 页数: 157
+  - 豆瓣评分：8.4
+  - 点评：响应式设计之父开山之作，非常好的快速入门书籍，适合有一定CSS基础的人
+- 响应式Web设计实践
+  - 作者: [美] Tim Kadlec
+  - 原作名: Implementing Responsive Design
+  - 出版年: 2013-3-1
+  - 页数: 256
+  - 豆瓣评分：8.2
+
+# 移动
+- 点石成金
+    - 作者: 克鲁格 (Steve Krug)
+    - 副标题: 访客至上的Web和移动可用性设计秘笈
+    - 出版年: 2014-12-1
+    - 页数: 173
+    - 豆瓣评分: 8.5
+    - 点评：简洁 有用 高效
+- Designing the Obvious: A Common Sense Approach to Web and Mobile Application Design, Second Edition
+    - 作者: Robert Hoekman, Jr.
+    - 副标题: Web和移动应用设计通识方法
+    - 原作名: Designing the Obvious: A Common Sense Approach to Web and Mobile Application Design, Second Edition
+    - 出版年: 2012-3-19
+    - 页数: 264
+    - 豆瓣评分: 7.7
+    - 点评：实用
+- 跨终端Web
+    - 作者: 徐凯
+    - 出版年: 2014-6-1
+    - 页数: 240
+    - 豆瓣评分: 7.6
+    - 点评：非前端，扫盲书
+- 移动Web手册
+    - 作者: Peter-Paul Koch（彼得-保罗 科赫）
+    - 出版年: 2015-4
+    - 页数: 208
+    - 豆瓣评分: 7.6
+-
+-
