@@ -6,7 +6,8 @@ tags: Webpack
 ---
 
 # 配置详解
-webpack命令提供了一系列的命令选项 用于控制模块打包 ——可通过`webpack --help`查看这些选项。当需要配置较多的选项时，会使webpack命令变得非常臃肿，如：`webpack --entry entry.js  --output-path ./build --ouput-file bundle.js `。所以webpack提供了一个配置对象来简化项目模块打包，在运行webpack命令的时候，只要指定这个配置对象即可——`webpack --config webpack.config.js`，`webpack.config.js`会输出配置对象，例如：
+webpack命令提供了一系列的命令选项 用于控制模块打包 ——可通过 `webpack --help` 查看这些选项。当需要配置较多的选项时，会使webpack命令变得非常臃肿，如：`webpack --entry entry.js  --output-path ./build --ouput-file bundle.js `。所以webpack提供了一个配置对象来简化项目模块打包，在运行webpack命令的时候，只要指定这个配置对象即可——`webpack --config webpack.config.js`，`webpack.config.js`会输出配置对象，例如：
+
 ```
 module.exports = {
     entry: "./entry.js,

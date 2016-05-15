@@ -14,8 +14,6 @@ tags: Webpack
 
 # 用法
 除了在命令行界面使使用webpack外，也可以直接在代码中使用webpack。
-
-
 - [命令行界面](http://webpack.github.io/docs/cli.html)
     - ` webpack --entry entry.js --output bundle.js`
     - `webpack --config webpack.config.js`
@@ -24,7 +22,6 @@ tags: Webpack
 - [node.js-api](http://webpack.github.io/docs/node.js-api.html)
     - 简单示例
          ```
-
         var webpack = require("webpack");
         // returns a Compiler instance
         webpack({

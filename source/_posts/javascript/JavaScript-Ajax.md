@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JavaScript Ajax 编程
-date: 2016-03-08s
+date: 2016-03-08
 categories: JavaScript
 tags: JavaScript
 ---
