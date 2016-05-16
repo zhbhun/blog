@@ -121,3 +121,4 @@ webpack是一个模块打包工具，通过依赖处理模块，并生成那些�
     - [Why You Shouldn’t Style React Components With JavaScript](http://jamesknelson.com/why-you-shouldnt-style-with-javascript/)
     - [Introducing react-pacomo: Automatic namespacing for className](http://jamesknelson.com/taming-css-globals-with-react-without-webpack-or-inline-style/)
 - using-react-with-webpack-tutorial/
+- [[译] Webpack——令人困惑的地方](https://segmentfault.com/a/1190000005089993)

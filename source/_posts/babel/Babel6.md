@@ -120,3 +120,7 @@ Options:
   -b, --presets [string]         
   -V, --version                  output the version number
 ```
+
+
+# 学习资源
+- [使用Babel和ES7创建JavaScript模块](http://blog.oneapm.com/apm-tech/693.html)

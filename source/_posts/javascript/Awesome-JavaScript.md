@@ -34,3 +34,4 @@ tags: JavaScript
 ---
 
 - [JsAaron/jQuery](https://github.com/JsAaron/jQuery)：前端JQuery系列：入门教程 | 源码剖析 | 框架设计 | 慕课网教程
+- [12个JavaScript技巧](http://www.w3cplus.com/javascript/12-extremely-useful-hacks-for-javascript.html)

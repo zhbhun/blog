@@ -8,3 +8,5 @@ tags: Java
 - [awesome-java](https://github.com/akullpp/awesome-java)
 - [awesome-java-cn](https://github.com/jobbole/awesome-java-cn)
 - [Awesome-RxJava](https://github.com/lzyzsd/Awesome-RxJava)
+
+- http://www.jb51.net/article/42157.htm

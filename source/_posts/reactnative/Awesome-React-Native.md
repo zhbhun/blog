@@ -260,3 +260,6 @@ A pull down to refresh control for react native. https://github.com/Shuangzuan/R
 - [keyboardWillShow not triggered in Android](https://github.com/facebook/react-native/issues/3468)
 - [HOMEBLOG React Native 0.11+ Keyboard Display Events](http://ollie.relph.me/blog/react-native-0-11-keyboard-display-events/)
 - [Android Keyboard events not working?](https://github.com/FaridSafi/react-native-gifted-messenger/issues/43)
+
+# 学习资源
+- [React Native 中 ScrollView 性能探究](http://www.race604.com/react-native-scrollview-performance)

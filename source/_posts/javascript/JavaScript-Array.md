@@ -146,3 +146,4 @@ if (Array.every(str, isLetter)) {
 - [MDN-Array-英文](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 - [MDN-Array-中文](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array)
 - [JavaScript-标准参考教程-Array](http://javascript.ruanyifeng.com/stdlib/array.html)
+- [数组的完全随机排列](http://www.75team.com/post/array-shuffle.html)
