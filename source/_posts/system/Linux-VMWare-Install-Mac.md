@@ -1,5 +1,5 @@
 ---
-title: Linux's VirtualBox 安装 Mac 虚拟机
+title: Linux's VMWare 安装 Mac 虚拟机
 date: 2015-09-19
 category: System
 tags:

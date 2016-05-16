@@ -1,8 +1,8 @@
 ---
 title: ESLint
 date: 2016-04-29
-category: lint
-tags: lint
+category: JavaScript
+tags: JavaScript
 ---
 
 - 官方网站：http://eslint.org/

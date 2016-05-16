@@ -1,8 +1,8 @@
 ---
 title: Git 常用命令
 date: 2016-04-23
-category: Git
-tags: Git
+category: VCS
+tags: VCS
 ---
 
 # 是什么

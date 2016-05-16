@@ -1,7 +1,7 @@
 ---
 title: Linux's VirtualBox 安装 Mac 虚拟机
 date: 2015-09-19
-category: system
+category: System
 tags:
 - system
 - mac
