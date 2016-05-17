@@ -13,4 +13,5 @@ tags: React
 - [react-redux-universal-hot-example](https://github.com/erikras/react-redux-universal-hot-example)：使用 express, react, redux, webpack, and react-transform 的 Web 应用模板
 
 # 学习资源
+- http://www.reactjsprogram.com
 - [React 设计思想](https://github.com/react-guide/react-basic)

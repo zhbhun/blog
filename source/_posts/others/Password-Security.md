@@ -26,5 +26,9 @@ tags: Others
 - 服务端：md5(salt + 数据库密码)
 - 数据库：md5(password)
 
+# 其他问题
+## 密码复制
+- [网站登录密码在什么情况下适用于允许复制粘贴，什么情况下适用于要求必须手打输入？](https://www.zhihu.com/question/26486788)
+
 # 参考文献
 - [如何保证用户登录时提交密码已经加密？](https://www.zhihu.com/question/20060155)

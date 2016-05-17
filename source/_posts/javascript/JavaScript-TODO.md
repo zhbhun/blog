@@ -59,3 +59,4 @@ tags: JavaScript
 - [JavaScript中的各种模块化规范](https://reeoo.me/archives/amd-cmd-umd-commonjs.html)
 - [H5单页面手势滑屏切换原理](http://www.cnblogs.com/onepixel/p/5300445.html)
 - [【译】JavaScript 中的“纯函数”](https://www.h5jun.com/post/pure-function.html)
+- [JavaScript Madness: Dynamic Script Loading](http://unixpapa.com/js/dyna.html)
