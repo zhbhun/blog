@@ -263,3 +263,4 @@ A pull down to refresh control for react native. https://github.com/Shuangzuan/R
 
 # 学习资源
 - [React Native 中 ScrollView 性能探究](http://www.race604.com/react-native-scrollview-performance)
+- [React Native痛点解析之性能调优](http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112293&idx=1&sn=866971daf7dba22186d2c09d1bac2418&scene=0#wechat_redirect)

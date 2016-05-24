@@ -14,3 +14,6 @@ tags: React
         - `ReactRouter.js:374 Warning: [react-router] You cannot change <Router history>; it will be ignored`
         - `ReactRouter.js:374 Warning: [react-router] You cannot change <Router routes>; it will be ignored`
     - 该用法存在问题
+
+# 学习资源
+- [React Router & Webpack in Production](https://reactjsnews.com/webpack-in-production)

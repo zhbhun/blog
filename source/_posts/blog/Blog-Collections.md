@@ -11,6 +11,9 @@ tags: Blog
 - [前端外刊评论](http://qianduan.guru/)
 - [淘宝前端团队（FED）](http://taobaofed.org/)
 
+# 数据结构&算法
+- [Scale-out Thinking](http://www.cnblogs.com/gaochundong/)
+
 # 个人博客
 - [发动机的小角落](http://pizida.com/)：简约，博客标题以一张大大的海报做背景，让人非常有读下去的欲望。
 - [P_Chou Tech Space](http://www.pchou.info/)：博客按分类组织，有条有序，每篇博文都有个悬浮自动滚动目录，在读长文的时候非常方便

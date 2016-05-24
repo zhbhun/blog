@@ -25,3 +25,7 @@ tags: Design
 - http://www.tuicool.com/topics/10500003?st=1&lang=1
 - [网页设计中汉堡菜单的利与弊](http://www.tuicool.com/articles/7Fbe6fi)
 - [WEB—DE：网页设计简史](http://www.jianshu.com/p/e7ef4da07c4e)
+
+---
+
+-  Common screen sizes range between 320 pixels for simpler phones, 1024 pixels for a netbook, 1440 for a wide-screen PC display and 1920 pixels for an HD screen
