@@ -1,6 +1,6 @@
 ---
-title: React
-date: 2016-04-020
+title: React 基于“全局变量”的组件通信
+date: 2016-05-25
 category: React
 tags: JavaScript React
 ---
@@ -56,7 +56,7 @@ var App = React.createClass({
 });
 ```
 
-但是，有时候我们不想一层层的传递属性，Context 就是帮助我们这个的 React 特性。
+但是，有时候我们不想一层层的传递属性，Context 就是帮助我们实现这个的 React 特性。
 
 # 基本使用
 要将外层组件的状态直接传递给里层组件，要求：
@@ -131,7 +131,7 @@ function Button(props, context) {
 Button.contextTypes = {color: React.PropTypes.string};
 ```
 
-# Context 与组件生命周期
+# Context 更新与生命周期
 - 外层组件实例会在 render 后调用 getChildContext，获取到的值会传递给声明了 contextTypes 的里层组件
 - 声明了 contextTypes 的里层组件会在生命周期函数获取额外的的参数 context
 
@@ -286,6 +286,11 @@ App componentDidUpdate
 */
 ```
 
+一般 Context 值取自外层组件状态，以便 getChildContext 获取最新的状态传递给自组件。
+
+Context 并不是万能的，如果中间组件的 shouldComponentUpdate 返回 false，那么里层组件将无法更新。
+
+
 # 实际运用
 - 主题切换
 - 响应式设计
@@ -295,3 +300,4 @@ App componentDidUpdate
 # 参考文献
 - http://facebook.github.io/react/docs/context.html
 - https://segmentfault.com/a/1190000004636213
+- https://github.com/facebook/react/issues/2517

@@ -6,6 +6,7 @@ tags: JavaScript
 ---
 
 - 官方网站：http://eslint.org/
+- 中文官网：http://cn.eslint.org/
 - awesome-eslint：https://github.com/dustinspecker/awesome-eslint
 
 

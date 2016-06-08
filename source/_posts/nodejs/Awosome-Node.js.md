@@ -25,3 +25,7 @@ tags: Node.js
     - 页数: 356
     - 豆瓣评分：8.2
     - 简介：Node.js 入门书籍
+
+
+# 二维码
+- [node-qrcode](https://github.com/soldair/node-qrcode)
