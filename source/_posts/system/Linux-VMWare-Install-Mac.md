@@ -49,3 +49,7 @@ tags:
 - [Install Intel HD Graphics 4400, 4600 to 6000 on El Capitan (Full QE/CI)](https://www.youtube.com/watch?v=LBCkvM1MHUo)
 - [求助：如何解决ubuntu14.04 64位装vmware for linux 10.0.2 64位 错误](http://forum.ubuntu.org.cn/viewtopic.php?f=65&t=458702)
 - [How do I uninstall VMWare Workstation?](http://askubuntu.com/questions/131045/how-do-i-uninstall-vmware-workstation)
+
+---
+
+- [vmware workstation虚拟机中处理器的设置](http://jingyan.baidu.com/article/ed2a5d1f1f96f309f6be17e1.html)

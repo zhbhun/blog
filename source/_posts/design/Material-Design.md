@@ -19,6 +19,7 @@ tags: Design
 - [afollestad/material-dialogs](https://github.com/afollestad/material-dialogs)：A beautiful, easy-to-use, and customizable dialogs API, enabling you to use Material designed dialogs down to API 8.
 - [CosmicMind/Material](https://github.com/CosmicMind/Material)：An animation and graphics framework for Material Design in Swift.
 - https://github.com/search?o=desc&p=2&q=material&ref=searchresults&s=stars&type=Repositories&utf8=%E2%9C%93
+- [rippler](https://github.com/blivesta/rippler)
 
 # 资源
 - [PolymerElements/paper-styles](https://github.com/PolymerElements/paper-styles)：Shared styles for Material Design elements

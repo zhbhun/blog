@@ -29,3 +29,8 @@ tags: Design
 ---
 
 -  Common screen sizes range between 320 pixels for simpler phones, 1024 pixels for a netbook, 1440 for a wide-screen PC display and 1920 pixels for an HD screen
+
+
+---
+
+- http://www.webdesignpractices.com/index.html

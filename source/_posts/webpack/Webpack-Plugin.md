@@ -78,3 +78,6 @@ webpack本身提供了一些插件供我们使用，如` webpack.optimize.Dedupe
 
 ## 自定义插件
 [Plugins-api](http://webpack.github.io/docs/plugins.html)
+
+# TODO
+- [深入了解 Webpack Plugins](https://rhadow.github.io/2015/05/30/webpack-loaders-and-plugins/)

@@ -17,19 +17,11 @@ webpack是一个模块打包工具，通过依赖处理模块，并生成那些�
 - [StackOverflow Webpack Tag]( http://stackoverflow.com/tags/webpack/info)
 - [segmentfault Webpack Tag]( http://segmentfault.com/t/webpack)
 - https://github.com/search?o=desc&q=webpack&s=stars&type=Repositories&utf8=%E2%9C%93
-
-# 工具集成
-- grunt
-- gulp
-- bower
-- karma
-- Todo
+- http://survivejs.com/webpack/
 
 # 工具对比
 - [Browserify vs. Webpack]( http://www.oschina.net/translate/browserify-vs-webpack)
-
 - [webpack到底好在哪里]( http://react-china.org/t/webpack/1277 )
-
 
 # 项目模板
 - [react-starter-kit](https://github.com/kriasoft/react-starter-kit)：React 同构 Web 应用模板(Node.js, Express, GraphQL, React.js, Babel 6, PostCSS, Webpack, Browsersync)
@@ -61,20 +53,22 @@ webpack是一个模块打包工具，通过依赖处理模块，并生成那些�
 
 
 # 参考文献
+- [Webpack Document](https://wohugb.gitbooks.io/webpack/content/index.html)
 - [webpack-howto](https://github.com/petehunt/webpack-howto)：如何使用 Webpack
 - [WebpackTutorial](https://github.com/AriaFallah/WebpackTutorial)：一篇简单的 webpack 教程
 - [webpack](https://github.com/survivejs/webpack)：一本讲解 Webpack 的在线书籍
 - [webpack_react](https://github.com/survivejs/webpack_react)：一本讲解 Webpack + React 的在线书籍
 - [react-webpack-rails-tutorial](https://github.com/shakacode/react-webpack-rails-tutorial)
 
-## 中文文档
+中文文档
 - [Webpack 入门指迷]( http://segmentfault.com/a/1190000002551952)
 - [深入浅出React（二）：React开发神器Webpack]( http://www.infoq.com/cn/articles/react-and-webpack)
 - [webpack这个js模块管理器(module bundler)怎么样?]( http://www.zhihu.com/question/27500759)
 - [webpack前端模块加载工具]( http://www.cnblogs.com/YikaJ/p/4586703.html)
 - [Webpack 和 Gulp 构建伪命令行项目]( http://www.tuicool.com/articles/VJbMbmE)
+- [基于gulp+webpack的"约定大于配置"的构建方案探讨](http://www.html-js.com/article/3214)
 
-## 最佳实践
+最佳实践
 - [Getting started with webpack]( http://www.uxebu.com/blog/2014/09/getting-started-webpack/)
 - [newtriks/generator-react-webpack]( https://github.com/newtriks/generator-react-webpack)
 - [book-of-modern-frontend-tooling-webpack]( http://tooling.github.io/book-of-modern-frontend-tooling/dependency-management/webpack/introduction.html)
@@ -82,7 +76,7 @@ webpack是一个模块打包工具，通过依赖处理模块，并生成那些�
 - [Configure reactjs with webpack and grunt]( http://javascript.tutorialhorizon.com/2014/08/31/configure-reactjs-with-webpack-and-grunt/)
 - [Single Page Modules with Webpack]( http://dontkry.com/posts/code/single-page-modules-with-webpack.html)
 
-## Webpack + React
+Webpack + React
 - [react-webpack-cookbook](https://fakefish.github.io/react-webpack-cookbook/)
 - [Creating a workflow with WebPack]( http://christianalfoni.github.io/javascript/2014/12/13/did-you-know-webpack-and-react-is-awesome.html)
 - [React Hot Loader]( http://gaearon.github.io/react-hot-loader/)

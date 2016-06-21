@@ -42,6 +42,6 @@ tags: Frontend
 - [Line Clampin’ (Truncating Multiple Line Text)](https://css-tricks.com/line-clampin/)
 - [https://css-tricks.com/line-clampin/](http://www.mobify.com/blog/multiline-ellipsis-in-pure-css/)
 
-
+# 实现
 - http://www.css88.com/webkit/-webkit-line-clamp/
 - https://github.com/josephschmitt/Clamp.js/

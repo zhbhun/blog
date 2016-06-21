@@ -9,6 +9,8 @@ tags: CSS
 - [以20像素为基准的CSS网页布局实践分享](http://www.zhangxinxu.com/wordpress/2016/03/css-layout-base-20px/)
 - [CSS深入理解vertical-align和line-height的基友关系](http://www.zhangxinxu.com/wordpress/2015/08/css-deep-understand-vertical-align-and-line-height/)
 - [前端文本截断](http://efe.baidu.com/blog/text-truncating/)
+- [网页字体优化](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization?hl=zh-cn)
+- [图片优化](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization?hl=zh-cn)
 
 # 问题
 1. 测试 CSS 文本两端对齐效果
