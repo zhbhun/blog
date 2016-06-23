@@ -5,9 +5,11 @@ category: Webpack
 tags: Webpack
 ---
 
-- https://github.com/ampedandwired/html-webpack-plugin
+在 HTTP 资源过期之前，浏览器将一直使用本地缓存的响应。但我们可以将文件内容指纹码嵌入网址，强制客户端更新到新版的响应。目前，Webpack 的配置属性 output.filename 本身就是支持 hash 命名。剩下的主要问题在于如何确保在 webpack 打包生成的文件 hash 值变化后，能同时修改 HTML 文件中的资源引用地址。html-webpack-plugin 正是帮主我们解决这个问题的插件，它可以生成一个包含 webpack 打包文件的 HTML。如果打包文件的命名里包含 hash 值（每次打包都可能变化），不用担心，有了 html-webpack-plugin，我们不需要再手动的修改 HTML 中的资源引用路径，它可以自动填写正确的资源路径。
 
-在 HTTP 资源过期之前，浏览器将一直使用本地缓存的响应。但我们可以将文件内容指纹码嵌入网址，强制客户端更新到新版的响应。目前，Webpack 的配置属性 output.filename 本身就是支持 hash 命名。剩下的主要问题在于如何确保在 webpack 打包生成的文件 hash 值变化后，能同时修改 HTML 文件中的资源引用地址。html-webpack-plugin 正是帮主我们解决这个问题的插件。除此之外，html-webpack-plugin 配置起来非常的灵活，支持 lodash 模板或自定义的模板加载器。
+html-webpack-plugin 简化了需要引用 webpack 打包文件的 HTML 创建，它配置起来非常的灵活，支持 lodash 模板或自定义的模板加载器。
+
+项目地址：https://github.com/ampedandwired/html-webpack-plugin。
 
 安装命令：`npm install html-webpack-plugin --save-dev`
 
@@ -66,90 +68,84 @@ var webpackConfig = {
 - xhtml: true | false，默认是 false，表示在引用打包文件时，标签是否是自闭合，还是要求服务
 XHTML；
 
-## 定制模板
-默认模板：https://github.com/jaketrent/html-webpack-template/blob/86f285d5c790a6c15263f5cc50fd666d51f974fd/index.html
+# 定制模板
+## 简单模板
+如果默认生成的 HTML 不能满足你的需求，可以设置自己的模板。最简单的方式就是使用 inject 属性和设置一个 HTML 模板，html-webpack-plugin 会自动插入所有需要的 CSS，JS，Manifest 和 Favicon。例如：
+
+webpack.config.js
+```
+plugins: [
+  new HtmlWebpackPlugin({
+    title: 'Custom template',
+    template: 'my-index.ejs', // Load a custom template (ejs by default but can be changed)
+    inject: 'body' // Inject all scripts into the body (this is the default so you can skip it)
+  })
+]
+```
+
+my-index.ejs
 ```
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="en" class="ie6" <% if(htmlWebpackPlugin.files.manifest) { %> manifest="<%= htmlWebpackPlugin.files.manifest %>"<% } %>> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="ie7" <% if(htmlWebpackPlugin.files.manifest) { %> manifest="<%= htmlWebpackPlugin.files.manifest %>"<% } %>> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="ie8" <% if(htmlWebpackPlugin.files.manifest) { %> manifest="<%= htmlWebpackPlugin.files.manifest %>"<% } %>> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="ie9" <% if(htmlWebpackPlugin.files.manifest) { %> manifest="<%= htmlWebpackPlugin.files.manifest %>"<% } %>> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="" <% if(htmlWebpackPlugin.files.manifest) { %> manifest="<%= htmlWebpackPlugin.files.manifest %>"<% } %>> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title><%= htmlWebpackPlugin.options.title || 'Webpack App'%></title>
-
-  <% if (htmlWebpackPlugin.files.favicon) { %>
-  <link rel="shortcut icon" href="<%= htmlWebpackPlugin.files.favicon%>">
-  <% } %>
-  <% if (htmlWebpackPlugin.options.mobile) { %>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <% } %>
-
-  <% for (var css in htmlWebpackPlugin.files.css) { %>
-  <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
-  <% } %>
-</head>
-<body>
-<% if (htmlWebpackPlugin.options.unsupportedBrowser) { %>
-<style>.unsupported-browser { display: none; }</style>
-<div class="unsupported-browser">
-  Sorry, your browser is not supported.  Please upgrade to
-  the latest version or switch your browser to use this site.
-  See <a href="http://outdatedbrowser.com/">outdatedbrowser.com</a>
-  for options.
-</div>
-<% } %>
-
-<% if (htmlWebpackPlugin.options.appMountId) { %>
-<div id="<%= htmlWebpackPlugin.options.appMountId%>"></div>
-<% } %>
-
-<% if (htmlWebpackPlugin.options.appMountIds && htmlWebpackPlugin.options.appMountIds.length > 0) { %>
-<% for (var index in htmlWebpackPlugin.options.appMountIds) { %>
-<div id="<%= htmlWebpackPlugin.options.appMountIds[index]%>"></div>
-<% } %>
-<% } %>
-
-<% if (htmlWebpackPlugin.options.window) { %>
-<script>
-  <% for (var varName in htmlWebpackPlugin.options.window) { %>
-    window['<%=varName%>'] = <%= JSON.stringify(htmlWebpackPlugin.options.window[varName]) %>;
-  <% } %>
-</script>
-<% } %>
-
-<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
-<script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
-<% } %>
-
-<% if (htmlWebpackPlugin.options.devServer) { %>
-<script src="<%= htmlWebpackPlugin.options.devServer%>/webpack-dev-server.js"></script>
-<% } %>
-
-<% if (htmlWebpackPlugin.options.googleAnalytics) { %>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  <% if (htmlWebpackPlugin.options.googleAnalytics.trackingId) { %>
-    ga('create', '<%= htmlWebpackPlugin.options.googleAnalytics.trackingId%>', 'auto');
-    <% } else { throw new Error("html-webpack-template requires googleAnalytics.trackingId config"); }%>
-  <% if (htmlWebpackPlugin.options.googleAnalytics.pageViewOnLoad) { %>
-    ga('send', 'pageview');
-  <% } %>
-</script>
-<% } %>
-</body>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+  </body>
 </html>
 ```
 
-## 模块过滤
-TODO
+## lodash 模板
+如果 inject 不能满足你的需求，想要完全控制 HTML 的生成，那么可以直接使用 lodash 语法自定义模板，不要额外的依赖和配置。
 
-## 事件处理
-TODO
+模板中可以使用的变量如下：
+- htmlWebpackPlugin：html-webpack-plugin 的相关数据
+    - htmlWebpackPlugin.files：包含一个 JSON 对象，映射入口名称到打包文件名，例如：
+        ```
+        "htmlWebpackPlugin": {
+          "files": {
+            "css": [ "main.css" ],
+            "js": [ "assets/head_bundle.js", "assets/main_bundle.js"],
+            "chunks": {
+              "head": {
+                "entry": "assets/head_bundle.js",
+                "css": [ "main.css" ]
+              },
+              "main": {
+                "entry": "assets/main_bundle.js",
+                "css": []
+              },
+            }
+          }
+        }
+        ```
+    - htmlWebpackPlugin.options：html-webpack-plugin 的配置属性，就是上面实例化插件时传的参数，可以根据需要传递一些额外的数据给模板
+- webpack
+- webpackConfig
+
+[html-webpack-template](https://github.com/jaketrent/html-webpack-template) 提供了一个最佳的默认模板 [index.ejs](https://github.com/jaketrent/html-webpack-template/blob/master/index.ejs)，可以参考它的具体配置。
+
+## 模板加载器
+如果已经有一个模板加载器，那么可以直接使用它来解析模板。
+
+webpack.config.js
+```
+module: {
+  loaders: [
+    { test: /\.hbs$/, loader: "handlebars" }
+  ]
+},
+plugins: [
+  new HtmlWebpackPlugin({
+    title: 'Custom template using Handlebars',
+    template: 'my-index.hbs'
+  })
+]
+```
+
+## 模块过滤
+在多页应用中，每个 HTML 页面不需要引用所有的打包文件，可以利用 html-webpack-plugin 的配置属性 chunks 和 excludeChunks 来控制需要包好的模块；
 
 # 实际运用
 ## 多页应用配置
@@ -179,6 +175,20 @@ TODO
 ```
 
 ## 单页应用配置
+```
+{
+  entry: 'index.js',
+  output: {
+    path: 'dist',
+    filename: 'index_bundle.js'
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+        filename: 'index.html',
+    })
+  ]
+}
+```
 
 # 参考文献
 - [Webpack HTML plug-in in a Nutshell](http://www.jonathan-petitcolas.com/2016/01/23/webpack-html-plugin-in-a-nutshell.html)
