@@ -49,8 +49,22 @@ https://github.com/search?o=desc&p=4&q=react+native&s=stars&type=Repositories&ut
 - [react-native-htmltext](https://github.com/siuying/react-native-htmltext)：Use HTML like markup to create stylized text in ReactNative.
 - [react-native-html-render](https://github.com/soliury/react-native-html-render)：A html render for react-native
 
-# Markdown
+## WebView
+- [react-native-webview-bridge](https://github.com/alinz/react-native-webview-bridge)：React Native Webview with Javascript Bridge
+- [react-native-webview-android](https://github.com/lucasferreira/react-native-webview-android)：Simple React Native Android module to use Android's WebView inside your app
+- [react-native-html-webview](https://github.com/almost/react-native-html-webview)：Display HTML in a UIWebView, optionally sanitizing it first
+- [react-native-webview-js-context](https://github.com/shayne/react-native-webview-js-context)：Utilize the JavaScript VM running inside an iOS UIWebView to exploit libraries targeting the DOM (e.g. Google Charts)
+
+## Markdown
 - [react-native-markdown](https://github.com/lwansbrough/react-native-markdown)：Markdown component for React Native
+
+## 进度条
+- [react-native-progress](https://github.com/oblador/react-native-progress)：Progress indicators and spinners for React Native using ReactART
+- [react-native-image-progress](https://github.com/oblador/react-native-image-progress)：Progress indicator for networked images in React Native
+- [react-native-circular-progress](https://github.com/bgryszko/react-native-circular-progress)：A clean and lightweight progress HUD for your React Native app.
+- [react-native-loading-spinner-overlay](https://github.com/niftylettuce/react-native-loading-spinner-overlay)：The only pure React Native, Native iOS and Android loading spinner
+- [react-native-progress-bar](https://github.com/lwansbrough/react-native-progress-bar)：An animated progress bar for React Native
+- []
 
 ## 图标
 - [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)：3000 Customizable Icons for React Native with support for NavBar/TabBar/ToolbarAndroid, image source and full stying.
@@ -89,6 +103,13 @@ Updated 15 days ago
 - [react-native-guide](https://github.com/ele828/react-native-guide)：React Native指南汇集了各类react-native学习资源、开源App和组件
 - [awesome-react-native](https://github.com/jondot/awesome-react-native)：An "awesome" type curated list of React Native components, news, tools, and learning material
 - [react-native-lesson](https://github.com/vczero/react-native-lesson)：React-Native入门指南
+
+# 开发工具
+- http://blog.csdn.net/Hello_Hwc/article/details/51612139
+    - http://www.infoq.com/cn/news/2015/03/react-native-ide-nuclide
+
+# 常见问题
+- [react-native-reference](https://github.com/ElemeFE/react-native-reference)
 
 ---
 
@@ -138,7 +159,6 @@ Updated 15 days ago
 
 ## WebView
 - [WebView](http://reactnative.cn/docs/webview.html#content)
-- WebView 字体单位与移动端一致
 
 ## react-native-refreshable-listview
 

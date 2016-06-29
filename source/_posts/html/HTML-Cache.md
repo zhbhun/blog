@@ -13,3 +13,4 @@ tags: HTML
 - [让不同的服务端支持 HTML5 Cache Manifest 文件 (Apache / Ngnix / Tomcat / GAE)
 ](http://lingyi.red/2016/02/29/make-server-support-htmlt5-cache-manifest/)
 - [Application Cache works in Tomcat 6.0 but not in weblogic 10.3](http://stackoverflow.com/questions/13321323/application-cache-works-in-tomcat-6-0-but-not-in-weblogic-10-3)
+- [Application Cache is a Douchebag](http://alistapart.com/article/application-cache-is-a-douchebag)

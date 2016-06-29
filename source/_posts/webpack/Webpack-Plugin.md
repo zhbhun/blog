@@ -75,6 +75,8 @@ webpack本身提供了一些插件供我们使用，如` webpack.optimize.Dedupe
 `npm install --save-dev  extract-text-webpack-plugin `—— ` extract-text-webpack-plugin `是用于将某些类型的模块，如css，单独提取到文件的插件，具体如何使用该插件可以参考该项目的主页[ extract-text-webpack-plugin ]( https://github.com/webpack/extract-text-webpack-plugin )。
 如果想要查找更多的webpack插件，可以在npm上利用` webpack-plugin `关键字来搜索，即[webpack-plugin]( https://www.npmjs.com/search?q=webpack-plugin )。
 
+- [copy-webpack-plugin](https://github.com/kevlened/copy-webpack-plugin)
+
 
 ## 自定义插件
 [Plugins-api](http://webpack.github.io/docs/plugins.html)
