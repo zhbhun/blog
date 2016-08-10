@@ -28,3 +28,6 @@ tags: React
 - [react-koa-demo](https://github.com/sxlfzhy/react-koa-demo)
 - [基于react和sails的聊天室](http://react-china.org/t/react-sails/4762)
 - https://github.com/webkixi/FKP-REST
+
+# 设计模式
+- [react-in-patterns](https://github.com/krasimir/react-in-patterns)

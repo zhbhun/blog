@@ -85,3 +85,6 @@ babel-polyfill 基于 [regenerator runtime](https://github.com/facebook/regenera
 # TODO
 - document.documentElement.scrollTop VS document.body.scrollTop
 - window.matchMedias
+- [Placeholder in IE9](http://stackoverflow.com/questions/6366021/placeholder-in-ie9)
+- https://github.com/mathiasbynens/jquery-placeholder
+- https://github.com/ginader/HTML5-placeholder-polyfill

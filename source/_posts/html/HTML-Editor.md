@@ -32,3 +32,6 @@ tags: HTML
 - jQuery BBCode Editor
 - HtmlBox
 - jEditor
+
+# TODO
+- [slate](https://github.com/ianstormtaylor/slate)

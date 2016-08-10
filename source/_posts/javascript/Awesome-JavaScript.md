@@ -59,3 +59,6 @@ tags: JavaScript
 
 # Format
 - [normalizr](https://github.com/paularmstrong/normalizr)：Normalizes nested JSON according to a schema
+
+# Todo
+- [You-Dont-Know-JS](https://github.com/getify/You-Dont-Know-JS)

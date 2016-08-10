@@ -5,6 +5,11 @@ category: Babel
 tags: Babel
 ---
 
+- [Configuring Babel 6](http://www.2ality.com/2015/11/configuring-babel6.html)
+- [Babel 6: configuring ES6 standard library and helpers](http://www.2ality.com/2015/12/babel6-helpersstandard-library.html)
+- [Babel and CommonJS modules](http://www.2ality.com/2015/12/babel-commonjs.html)
+- [babel-preset-es2015-loose](https://github.com/bkonkle/babel-preset-es2015-loose)
+
 # 简介
 - 官方网站：https://babeljs.io/
 
@@ -133,6 +138,7 @@ Options:
 - [The Complete Guide to ES6 with Babel 6](http://jamesknelson.com/the-complete-guide-to-es6-with-babel-6/)
 - [Webpack babel 6 ES6 decorators](http://stackoverflow.com/questions/33801311/webpack-babel-6-es6-decorators)
 
+- [super() not calling parent's constructor on IE9](https://github.com/babel/babelify/issues/133)
 
 ---
 

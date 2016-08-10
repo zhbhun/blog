@@ -53,6 +53,7 @@ webpack是一个模块打包工具，通过依赖处理模块，并生成那些�
 
 
 # 参考文献
+- [Tree-shaking with webpack 2 and Babel 6](http://www.2ality.com/2015/12/webpack-tree-shaking.html)
 - [Webpack Document](https://wohugb.gitbooks.io/webpack/content/index.html)
 - [webpack-howto](https://github.com/petehunt/webpack-howto)：如何使用 Webpack
 - [WebpackTutorial](https://github.com/AriaFallah/WebpackTutorial)：一篇简单的 webpack 教程
