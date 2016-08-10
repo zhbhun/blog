@@ -11,8 +11,12 @@ https://github.com/search?o=desc&p=4&q=react+native&s=stars&type=Repositories&ut
 - [react-native-fs](https://github.com/johanneslumpe/react-native-fs)
     - 简介：Native filesystem access for react-native
     - 兼容性：Anroid，iOS
+
 ## 存储
 - [react-native-sqlite](https://github.com/almost/react-native-sqlite)：SQLite3 bindings for React Native
+
+## 按键
+- [安卓Back键的处理·基本+高级篇](http://reactnative.cn/post/480)
 
 # 组件
 ## Material Design
@@ -75,6 +79,7 @@ https://github.com/search?o=desc&p=4&q=react+native&s=stars&type=Repositories&ut
 
 ## Todo
 - [react-native-side-menu](https://github.com/react-native-fellowship/react-native-side-menu)：Side menu component for React Native
+ - [react-native-touch-id](https://github.com/naoufal/react-native-touch-id)：React Native authentication with the native Touch ID popup
 
 # 工具
 - [reactotron](https://github.com/skellock/reactotron)：Control, monitor, and instrument your React and React Native apps from the comfort of your TTY.
@@ -93,6 +98,7 @@ Updated 15 days ago
 - [react-native-gitfeed](https://github.com/xiekw2010/react-native-gitfeed)：Yet another Github client written with react-native.
 - [react-native-dribbble-app](https://github.com/catalinmiron/react-native-dribbble-app)：Dribbble app built with React Native
 - [noder-react-native](https://github.com/soliury/noder-react-native)：https://github.com/soliury/noder-react-native
+- [react-native-sudoku](https://github.com/nihgwu/react-native-sudoku)
 
 # 其他
 - [react-native-desktop](https://github.com/ptmt/react-native-desktop)：React Native for OS X
@@ -281,6 +287,10 @@ A pull down to refresh control for react native. https://github.com/Shuangzuan/R
 - [RCTRefreshControl](https://github.com/Shuangzuan/RCTRefreshControl)
 
 # 问题
+- [React Native 的常见问题](http://bbs.reactnative.cn/topic/130/%E6%96%B0%E6%89%8B%E6%8F%90%E9%97%AE%E5%89%8D%E5%85%88%E6%9D%A5%E8%BF%99%E9%87%8C%E7%9C%8B%E7%9C%8B-react-native%E7%9A%84%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
+- [async / await debug in chrome](https://github.com/facebook/react-native/issues/6056)
+- [How to Debug Exceptions with React Native](http://thefullstack.xyz/debug-exceptions-react-native/)
+
 ## 键盘高度
 - [How to auto-slide the window out from behind keyboard when TextInput has focus?](http://stackoverflow.com/questions/29313244/how-to-auto-slide-the-window-out-from-behind-keyboard-when-textinput-has-focus)
 - [react-native-keyboard-spacer](https://github.com/Andr3wHur5t/react-native-keyboard-spacer)
@@ -293,3 +303,5 @@ A pull down to refresh control for react native. https://github.com/Shuangzuan/R
 # 学习资源
 - [React Native 中 ScrollView 性能探究](http://www.race604.com/react-native-scrollview-performance)
 - [React Native痛点解析之性能调优](http://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651112293&idx=1&sn=866971daf7dba22186d2c09d1bac2418&scene=0#wechat_redirect)
+- [ReactNative组件状态设计思考](https://segmentfault.com/a/1190000004180955)
+- [ReactNative的组件架构设计](http://react-china.org/t/reactnative/3486)

@@ -36,3 +36,4 @@ tags: javascript
 - [使用Redux管理你的React应用](http://www.cnblogs.com/matthewsun/p/4773646.html)
 - [Redux学习之一：何为middleware？](http://segmentfault.com/a/1190000003746223)
 - [FriendlistRedux](https://github.com/szhclaye/FriendlistRedux)
+- [这段时间研究了下Redux，写写自己对它的感觉。](https://github.com/lawrencebla/redux-review)

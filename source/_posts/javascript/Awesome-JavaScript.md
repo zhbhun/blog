@@ -35,7 +35,27 @@ tags: JavaScript
 # Markdown
 - [to-markdown](https://github.com/domchristie/to-markdown)
 
+# 二维码
+- [jquery-qrcode](https://github.com/jeromeetienne/jquery-qrcode)：qrcode generation standalone (doesn't depend on external services)
+- [qrcodejs](https://github.com/davidshimjs/qrcodejs)：Cross-browser QRCode generator for javascript
+- [jsqrcode](Javascript QRCode scanner)：node js server side qr code generator utilizing node-canvas
+
+
 ---
 
 - [JsAaron/jQuery](https://github.com/JsAaron/jQuery)：前端JQuery系列：入门教程 | 源码剖析 | 框架设计 | 慕课网教程
 - [12个JavaScript技巧](http://www.w3cplus.com/javascript/12-extremely-useful-hacks-for-javascript.html)
+
+---
+
+# Property Accessor
+- [selectn.js](https://github.com/wilmoore/selectn.js)：Curried property accessor function that resolves deeply-nested object properties via dot/bracket-notation string path while mitigating TypeErrors via friendly and composable API.
+- [dref](https://github.com/crcn/dref.js)
+- [path-lookup](https://github.com/yields/path-lookup)：lookup path within `object`.
+- [hoek](https://github.com/hapijs/hoek)：Node utilities shared amongst the extended hapi universe
+- [to-function](https://github.com/component/to-function)：Convert property access strings to a function ("user.name.first" etc)
+- [pathval](https://github.com/chaijs/pathval)：Object value retrieval given a string path
+- [dref.js](https://github.com/crcn-archive/dref.js)：deep object referencing
+
+# Format
+- [normalizr](https://github.com/paularmstrong/normalizr)：Normalizes nested JSON according to a schema

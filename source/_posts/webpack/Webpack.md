@@ -116,3 +116,4 @@ Webpack + React
     - [Introducing react-pacomo: Automatic namespacing for className](http://jamesknelson.com/taming-css-globals-with-react-without-webpack-or-inline-style/)
 - using-react-with-webpack-tutorial/
 - [[译] Webpack——令人困惑的地方](https://segmentfault.com/a/1190000005089993)
+- http://webpack.toobug.net/zh-cn/

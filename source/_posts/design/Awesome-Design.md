@@ -5,6 +5,11 @@ category: Design
 tags: Design
 ---
 
+
+- [优设](http://www.uisdc.com/)
+
+---
+
 - https://github.com/jobbole/awesome-design-cn
 
 - [11个设计工具和资源网站，网页设计师必备【设计师资源44】](http://www.tuicool.com/articles/aE7Rzm7)
@@ -34,3 +39,13 @@ tags: Design
 ---
 
 - http://www.webdesignpractices.com/index.html
+- [纯干货！一款APP从设计稿到切图过程全方位揭秘](http://www.uisdc.com/from-design-to-slice)
+
+---
+
+# 图片
+- [泼辣有图](http://www.polayoutu.com/collections)
+- [zerospace](http://zerospace.asika.tw/)：Zerospace 收录不少来自各大免费图库的相片资源，接口设计简单、干净，具备搜寻功能可以快速搜寻你需要的素材，同时也列出了最热门、最多人下载以及随机推荐的免费相片。
+
+# 导航
+- [Navnav.co](http://navnav.co/)：有响应式导航，APP以及很多交互动效不错的导航菜单实例

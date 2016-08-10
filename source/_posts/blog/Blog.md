@@ -8,3 +8,8 @@ tags: Blog
 ![blog](../../images/blog/blog.png)
 
 - http://theme-next.iissnan.com/
+
+# 博客工具
+- [Ghost](http://docs.ghostchina.com/zh/)
+- Hexo
+- Jekyll

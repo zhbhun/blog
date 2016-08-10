@@ -27,3 +27,4 @@ HTML&HTML5](http://imweb.io/topic/56592b8a823633e31839fc01)
 
 - [The offline cookbook](https://jakearchibald.com/2014/offline-cookbook/)
 - [Using ServiceWorker in Chrome today](https://jakearchibald.com/2014/using-serviceworker-today/)
+- https://developers.google.com/web/tools/service-worker-libraries/?hl=en

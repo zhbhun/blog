@@ -81,5 +81,8 @@ webpack本身提供了一些插件供我们使用，如` webpack.optimize.Dedupe
 ## 自定义插件
 [Plugins-api](http://webpack.github.io/docs/plugins.html)
 
+# extract-text-webpack-plugin
+- [relative urls to images in css point to the wrong place](https://github.com/webpack/extract-text-webpack-plugin/issues/27)
+
 # TODO
 - [深入了解 Webpack Plugins](https://rhadow.github.io/2015/05/30/webpack-loaders-and-plugins/)

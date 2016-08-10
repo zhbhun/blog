@@ -184,6 +184,10 @@ module.exports = webpackConfig;
 
 要访问开发环境生成的 HTML 必须访问开发服务器 webpack-dev-server，而实际后台服务器（提供数据接口）大部分都另外实现。这时候前端想要访问实际后台服务器的接口，就会遇到跨域问题。如果是单页应用程序的话，手动配置还能应付，而对于复杂项目的多页应用，却无能为力了。别急！html-webpack-harddisk-plugin 能够帮助我们将 webpack-dev-server 生成的 HTML 写到硬盘里，具体配置查看它的 [README](https://github.com/jantimon/html-webpack-harddisk-plugin)。
 
+## 整合 DllPlugin/DllReferencePlugin
+- [Usage with DLLs](https://github.com/ampedandwired/html-webpack-plugin/issues/194)
+- [add-asset-html-webpack-plugin](https://github.com/simenb/add-asset-html-webpack-plugin)
+
 # 高级配置
 为了允许其他插件修改 HTML，html-webpack-plugin 在构建过程中会执行下列事件。
 

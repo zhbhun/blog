@@ -15,6 +15,7 @@ tags: React
         - `ReactRouter.js:374 Warning: [react-router] You cannot change <Router routes>; it will be ignored`
     - 该用法存在问题
 - [React+react-router如何做loading效果](http://react-china.org/t/react-react-router-loading/5815)
+- [使用react-router控制路由webpack怎么进行代码分割、按需加载](http://react-china.org/t/react-router-webpack/2524)
 
 # 学习资源
 - [React Router & Webpack in Production](https://reactjsnews.com/webpack-in-production)

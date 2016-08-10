@@ -52,3 +52,8 @@ https://github.com/zhbhun/program-demo/tree/master/react/react-ie
 - [React Browser Support](https://facebook.github.io/react/docs/working-with-the-browser.html#browser-support)- https://github.com/ant-tool/atool-build/issues/28
 - https://github.com/xcatliu/react-ie8
 - https://github.com/ant-design/ant-design/issues/858
+
+
+---
+
+- `SCRIPT1028: 缺少标识符、字符串或数字`：代码中或者第三方模块中使用了保留字，比如 default

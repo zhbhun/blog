@@ -124,3 +124,16 @@ Options:
 
 # 学习资源
 - [使用Babel和ES7创建JavaScript模块](http://blog.oneapm.com/apm-tech/693.html)
+
+
+# 问题
+- [babel6 升级总结](https://segmentfault.com/a/1190000004301150)
+- [Default export value in Babel 6.x](http://schempy.com/2016/04/08/default_export_value_babel_6x/)
+- [Misunderstanding ES6 Modules, Upgrading Babel, Tears, and a Solution](https://medium.com/@kentcdodds/misunderstanding-es6-modules-upgrading-babel-tears-and-a-solution-ad2d5ab93ce0#.m0cz4izeb)
+- [The Complete Guide to ES6 with Babel 6](http://jamesknelson.com/the-complete-guide-to-es6-with-babel-6/)
+- [Webpack babel 6 ES6 decorators](http://stackoverflow.com/questions/33801311/webpack-babel-6-es6-decorators)
+
+
+---
+
+- .babelrc 位置会影响 babel 的编译范围

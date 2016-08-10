@@ -5,7 +5,64 @@ categories: Editor
 tags: Editor
 ---
 
-# 配置
+
+# 安装 Package Control
+1. 打开 Sublime Text 控制台：`View > Show Console`；
+2. 复制下面的代码到控制台，然后回车；
+    - Sublime Text 3
+        ```
+        import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
+        ```
+    - Sublime Text 2
+        ```
+        import urllib2,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation')
+        ```
+3. 重启 Sublime Text，然后打开 Package Control：`ctrl + shift + p` > `package control`；
+
+# 主题设置
+我自己使用的主题是 `Theme - Spacegray`，可以访问网址 https://packagecontrol.io/browse/labels/theme 寻找自己想要的主题。
+
+1. 打开命令面板：`ctrl + shift + p`
+2. 查找命令：`Package Control: install Package`
+3. 查找主题：`Theme - Spacegray`
+4. 打开用户设置：`Preferences > Setting - User`，并添加下列配置项：
+  - `"theme": "Spacegray.sublime-theme"`
+  - `"color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme"`
+
+# 字体设置
+TODO 寻找字体
+
+1. 打开用户设置：`Preferences > Setting - User`
+2. 添加配置项：`"font_face": "YaHei Consolas Hybrid"`
+
+# 插件安装
+## 必备
+- [ConvertToUTF8](https://packagecontrol.io/packages/ConvertToUTF8): 编辑和保存文件编码为 GBK, BIG5, EUC-KR, EUC-JP, Shift_JIS 等格式。
+- [EncodingHelper](https://packagecontrol.io/packages/EncodingHelper): 在状态栏显示文件编码。
+
+## 语法高亮
+- [Babel](http://https//github.com/babel/babel-sublime)
+- [CSS3](https://packagecontrol.io/packages/CSS3): 对 CSS 支持最完善的插件
+- [Sass](https://packagecontrol.io/packages/Sass)
+- [LESS](https://packagecontrol.io/packages/LESS)
+- [SCSS](https://packagecontrol.io/packages/SCSS)
+
+## 代码片段
+- [jQuery](https://packagecontrol.io/packages/jQuery)
+http://www.hongkiat.com/blog/sublime-code-snippets/
+- [angularJS-sublime-package](https://github.com/angular-ui/AngularJS-sublime-package)
+- [Nodejs](https://packagecontrol.io/packages/Nodejs)
+- [React-native-snippets](https://packagecontrol.io/packages/react-native-snippets)
+
+## 代码格式
+- EditorConfig
+
+## Markdown
+- MarkdownEditing
+- Markdown Preview
+
+
+# 其他配置
 - trim_trailing_white_space_on_save，自动移除行尾多余空格，处女座更安心了
 - ensure_newline_at_eof_on_save，文件末尾自动保留一个空行，懂的人自然知道它的用处
 - font_face 设置字体。Microsoft YaHei Mono 是一款混合字体，专为代码优化，看起来很舒服。当然你也可以使用你自己喜欢的字体，或者删掉本行，使用默认字体
@@ -44,25 +101,6 @@ tags: Editor
 - 统计地址: https://packagecontrol.io/stats
 - 概览地址: https://packagecontrol.io/browse
 - 文档地址: https://packagecontrol.io/docs
-
-## 安装必备
-- [PackageControl](https://packagecontrol.io/installation): 包管理器
-- [ConvertToUTF8](https://packagecontrol.io/packages/ConvertToUTF8): 编辑和保存文件编码为 GBK, BIG5, EUC-KR, EUC-JP, Shift_JIS 等格式.
-- [EncodingHelper](https://packagecontrol.io/packages/EncodingHelper): 在状态栏显示文件编码
-
-## 语言语法
-- [Babel](http://https//github.com/babel/babel-sublime)
-- [CSS3](https://packagecontrol.io/packages/CSS3): 对 CSS 支持最完善的插件
-- [Sass](https://packagecontrol.io/packages/Sass)
-- [LESS](https://packagecontrol.io/packages/LESS)
-- [SCSS](https://packagecontrol.io/packages/SCSS)
-
-## 代码片段
-- [jQuery](https://packagecontrol.io/packages/jQuery)
-http://www.hongkiat.com/blog/sublime-code-snippets/
-- [angularJS-sublime-package](https://github.com/angular-ui/AngularJS-sublime-package)
-- [Nodejs](https://packagecontrol.io/packages/Nodejs)
-- [React-native-snippets](https://packagecontrol.io/packages/react-native-snippets)
 
 ### Emmet
 #### HTML
@@ -369,7 +407,7 @@ https://sublime.wbond.net/browse/labels/theme
 - [/markdown-to-pdf](http://www.tcreator.info/social/experience/markdown-to-pdf.html)
 - [KeymapManager增加检测快捷键冲突的功能http://www.welefen.com/keymapmanager-add-check-plugins-keymap-conflict-feature.html]
 - [如何优雅地使用Sublime Text](http://www.jeffjade.com/2015/12/15/2015-04-17-toss-sublime-text/)
-
+- [Sublime Text 2 - Files not opening a new tab?](http://stackoverflow.com/questions/9536280/sublime-text-2-files-not-opening-a-new-tab)
 
 # Mac
 ```

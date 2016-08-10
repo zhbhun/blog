@@ -1,5 +1,5 @@
 ---
-title: React
+title: Awesome React
 date: 2016-05-03
 category: React
 tags: React
@@ -26,3 +26,5 @@ tags: React
 # 开源项目
 - [cnode-react](https://github.com/stop2stare/cnode-react)
 - [react-koa-demo](https://github.com/sxlfzhy/react-koa-demo)
+- [基于react和sails的聊天室](http://react-china.org/t/react-sails/4762)
+- https://github.com/webkixi/FKP-REST

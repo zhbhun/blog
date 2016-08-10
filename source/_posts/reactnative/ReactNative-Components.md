@@ -22,3 +22,12 @@ tags: ReactNative
 
 # Modal
 - onShow：在 Modal 显示动画结束的回调函数，如果 Modal 中有输入框需要或许焦点，不要放在 componentDidMount里，要放在在 onShow 里面处理，避免影响动画
+
+# ActivityIndicatorIOS
+- 简介：加载指示器
+- 用法
+    - 自定义指示器颜色
+    - 自定义指示器大小：small，large
+    - 控制加载器动画开启和关闭
+    - 自定义指示器容器样式（同 View）
+- ...
