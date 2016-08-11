@@ -25,6 +25,51 @@ tags: Design
 - 元素的位置如何确定：通常标注的都是元素距离屏幕最左侧的距离；
 
 # 切图
-## 命名规则
+- [前端工程师必备的PS技能——切图篇](http://www.imooc.com/view/506)
+- [页面制作部分之PS切图](http://www.cnblogs.com/jingwhale/p/4396235.html)
+- [PSD网页切图制作HTML全过程教程](http://www.uimaker.com/plus/view.php?aid=3379)
+- [切图工具/插件介绍](http://imweb.io/topic/56d6795cca5e865230c1d4f8)
+- [前端技能之切图](https://github.com/xiangpaopao/blog/issues/2)
+- [PhotoShop教程：切图那点事儿](http://jingyan.baidu.com/article/93f9803fc50dd3e0e56f555e.html)
+- [做前端开发必需要掌握切图技能吗？](https://www.zhihu.com/question/19769761)
+- [从菜鸟到高手！PHOTOSHOP抠图全方位攻略](http://www.uisdc.com/photoshop-matting-techniques)
+- [前端工程师每天只做切图与实现页面的工作吗?](https://segmentfault.com/q/1010000000387852)
+
+工具
+- [cutterman](http://www.cutterman.cn/)
+
+命名规则
+
 - 切片种类+功能+图片描述（可有可无）+状态.png
 - 名称应使用英文命名（中文不识别，推荐小写字母），不要以数字或者符号当作开头，使用下划线进行连接。
+
+Phottoshop 技巧
+
+- 界面设置
+    - 画布大小
+    - 分辨率
+    - 颜色模式
+    - 背景内容
+- 视图设置
+    - 智能参考线
+    - 标尺
+- 窗口设置
+    - 关闭库
+    - 关闭颜色
+    - 关闭通道
+    - 关闭路径
+    - 合并图层和历史记录
+    - 关闭属性
+    - 打开信息和字符
+    - 设置信息面板：颜色模式为 RGB，单位为像素，勾选文档尺寸
+- 编辑设置
+    - 首选项 -> 单位与标尺 -> 单位设置为像素
+- 基本工具
+    - 移动 + 选择
+    - ...
+- 图层
+- 切图
+    - 手工切图与参考线切图
+    - 精选切图
+    - 自动切图
+- 复制 CSS

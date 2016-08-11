@@ -50,3 +50,50 @@ tags: Design
 
 # 导航
 - [Navnav.co](http://navnav.co/)：有响应式导航，APP以及很多交互动效不错的导航菜单实例
+
+---
+
+- [Photoshop Etiquette](http://hao.uisdc.com/ps/)
+
+---
+
+- [《写给大家看的设计书》](https://book.douban.com/subject/3323633/)
+
+---
+
+- [设计中会用到 UI 设计规范吗？](https://www.zhihu.com/question/19791196)
+
+---
+
+- [EduSoho UI 设计规范（Web版）](http://www.ui.cn/detail/101056.html)
+- https://www.lightningdesignsystem.com/
+
+--- 
+
+- [Zeplin 的使用体验如何？](https://www.zhihu.com/question/27713420)
+
+---
+
+- http://huaban.com/search/?q=%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83
+- http://huaban.com/pins/136121483/
+- http://huaban.com/pins/161384037/
+- http://huaban.com/pins/133702561/
+- http://huaban.com/pins/701808256/
+- http://huaban.com/pins/759991334/
+- http://huaban.com/pins/513042198/
+- http://huaban.com/pins/629186366/
+- http://huaban.com/pins/26423935/
+- http://huaban.com/pins/136058623/
+- http://huaban.com/pins/576086861/
+- http://huaban.com/pins/38541070/
+- http://huaban.com/pins/475906746/
+- http://huaban.com/pins/476022098/
+
+---
+
+- [设计师的设计稿是px，我该怎么用dp布局啊？](http://www.oschina.net/question/258547_160260)
+- http://blog.cutterman.cn/?p=33
+- [（转）一款APP，从设计稿到切图(Android篇)](http://www.jianshu.com/p/673f55e160cd)
+- [设计师的设计稿是px与dp](http://www.voidcn.com/blog/w1054993544/article/p-1964868.html)
+- http://tgideas.qq.com/webplat/info/news_version3/804/808/811/m579/201411/290082.shtml
+- http://www.cnblogs.com/KevinSong/p/5540355.html

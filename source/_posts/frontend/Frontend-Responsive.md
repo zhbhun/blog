@@ -98,3 +98,5 @@ tags: Frontend
 - [5个常见响应式设计陷阱及解决方案](http://info.9iphp.com/5-responsive-design-pitfalls-and-how-to-avoid-them)
 - [Responsive Design常用的媒体查询](http://segmentfault.com/a/1190000002713857)
 - [超级干货！深聊Material Design复杂响应式设计](http://www.uisdc.com/material-design-responsive-design)
+- [Time to Give Up on Controlling Our Designs](http://zurb.com/article/710/time-to-give-up-on-controlling-our-design)
+- [Responsive Web Design](http://alistapart.com/article/responsive-web-design)
