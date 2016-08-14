@@ -12,7 +12,7 @@ tags: ReactNative
 - WebView 上显示的输入框会在键盘弹出时自动调整位置
 - 加载本地文件
   - [react native webview load from device local file system](http://stackoverflow.com/questions/33506908/react-native-webview-load-from-device-local-file-system)
-  - 
+  -
 
 # Image
 - 缓存策略：目前 Image 组件根据 url 来缓存图片（是个 bug 暂时没有被处理掉），参考文献如下：
@@ -31,3 +31,18 @@ tags: ReactNative
     - 控制加载器动画开启和关闭
     - 自定义指示器容器样式（同 View）
 - ...
+
+# TextInput
+- 简介：输入框
+- 常见问题
+    - [[TextInput] Added support for textAlign to TextInput](https://github.com/facebook/react-native/pull/772)
+    - [text Align :'right' doesn't work for placeholder when multiline is true](https://github.com/facebook/react-native/issues/7378)
+
+# TODO
+怎么实现键盘弹出时将输入款放在键盘上方？
+
+1. 方案一：[react-native-keyboard-spacer](https://github.com/Andr3wHur5t/react-native-keyboard-spacer)
+
+    存在缺点，会压缩上方的内容，并且输入框不是精准的定位再键盘上方，适用于被压缩内容为可伸缩的图片
+
+2. 方案二？
