@@ -28,6 +28,7 @@ tags: React
 - [react-koa-demo](https://github.com/sxlfzhy/react-koa-demo)
 - [基于react和sails的聊天室](http://react-china.org/t/react-sails/4762)
 - https://github.com/webkixi/FKP-REST
+- [react-cnode](https://github.com/1340641314/react-cnode)：基于webpack + react + react-router + redux + less + flex.css + ES6 的React版cnode社区
 
 # 设计模式
 - [react-in-patterns](https://github.com/krasimir/react-in-patterns)

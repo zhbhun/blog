@@ -68,7 +68,7 @@ tags: Design
 - [EduSoho UI 设计规范（Web版）](http://www.ui.cn/detail/101056.html)
 - https://www.lightningdesignsystem.com/
 
---- 
+---
 
 - [Zeplin 的使用体验如何？](https://www.zhihu.com/question/27713420)
 
@@ -97,3 +97,9 @@ tags: Design
 - [设计师的设计稿是px与dp](http://www.voidcn.com/blog/w1054993544/article/p-1964868.html)
 - http://tgideas.qq.com/webplat/info/news_version3/804/808/811/m579/201411/290082.shtml
 - http://www.cnblogs.com/KevinSong/p/5540355.html
+
+---
+
+- [UI团队协作心得——设计文件及版本管理规范建议](http://www.ui.cn/detail/17327.html)
+- [总结思考：网页字体选用/Summarizing&Thinking:the choose of web page font](http://www.ui.cn/detail/7680.html)
+- [滚动视差设计指南](http://www.ui.cn/detail/8802.html)

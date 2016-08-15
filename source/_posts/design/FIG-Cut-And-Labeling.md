@@ -6,6 +6,7 @@ tags: Design
 ---
 
 - [一款APP，从设计稿到切图](http://www.ui.cn/detail/67329.html)
+- [IOS机Android切图标注与命名规范](http://www.ui.cn/detail/28848.html)
 
 # 标注
 - [一些好用的图片标注工具](http://www.jianshu.com/p/83af310f5939)
