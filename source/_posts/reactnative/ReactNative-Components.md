@@ -38,7 +38,7 @@ tags: ReactNative
     - [[TextInput] Added support for textAlign to TextInput](https://github.com/facebook/react-native/pull/772)
     - [text Align :'right' doesn't work for placeholder when multiline is true](https://github.com/facebook/react-native/issues/7378)
 
-# TODO
+TODO
 怎么实现键盘弹出时将输入款放在键盘上方？
 
 1. 方案一：[react-native-keyboard-spacer](https://github.com/Andr3wHur5t/react-native-keyboard-spacer)

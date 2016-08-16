@@ -5,5 +5,6 @@ category: Design
 tags: Design
 ---
 
-- [设计师色彩理论终极指南](http://www.ui.cn/detail/41683.html)
 - [色彩浅析](http://www.ui.cn/detail/8024.html)
+
+- [【设计师配色宝典！教你从零开始学配色】](http://www.ui.cn/detail/23826.html)
