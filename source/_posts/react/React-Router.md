@@ -19,3 +19,5 @@ tags: React
 
 # 学习资源
 - [React Router & Webpack in Production](https://reactjsnews.com/webpack-in-production)
+- [react-router-cn](https://github.com/react-guide/react-router-cn)
+- [深入理解 react-router 路由系统](https://zhuanlan.zhihu.com/p/20381597?refer=purerender)

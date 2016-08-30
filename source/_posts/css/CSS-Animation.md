@@ -21,3 +21,6 @@ tags: CSS
 - http://css.doyoe.com/properties/transition/transition-delay.htm
 
 - [用 CSS 实现 Netflix Logo 动画](http://qianduan.guru/2016/05/07/Netflix-Logo-in-CSS)
+
+- [说说动画卡顿的解决方案](https://segmentfault.com/a/1190000006708777)
+- [深入浏览器理解CSS animations 和 transitions的性能问题](https://segmentfault.com/a/1190000006708777)

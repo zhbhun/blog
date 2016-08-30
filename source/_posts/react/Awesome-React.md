@@ -22,6 +22,8 @@ tags: React
 - [fullstackreact](https://www.fullstackreact.com/)
 - [reactjsnews](https://reactjsnews.com)
 - http://survivejs.com/
+- [pure render](https://zhuanlan.zhihu.com/purerender)
+- [React Training](https://reactjs-training.com/)
 
 # 开源项目
 - [cnode-react](https://github.com/stop2stare/cnode-react)
@@ -30,5 +32,30 @@ tags: React
 - https://github.com/webkixi/FKP-REST
 - [react-cnode](https://github.com/1340641314/react-cnode)：基于webpack + react + react-router + redux + less + flex.css + ES6 的React版cnode社区
 
+# 开发工具
+项目配置
+
+* [create-react-app](https://github.com/facebookincubator/create-react-app):零配置创建 React APP
+* [enclave](https://github.com/eanplatter/enclave)
+* [nwb](https://github.com/insin/nwb)
+* [motion](https://github.com/motion/motion)
+* [rackt-cli](https://github.com/mzabriskie/rackt-cli)
+* [budō](https://github.com/mattdesl/budo)
+* [rwb](https://github.com/petehunt/rwb)
+* [quik](https://github.com/satya164/quik)
+* [sagui](https://github.com/saguijs/sagui)
+* [roc](https://github.com/rocjs/roc)
+* [aik](https://github.com/d4rkr00t/aik)
+* [react-app](https://github.com/kriasoft/react-app)
+* [dev-toolkit](https://github.com/stoikerty/dev-toolkit)
+* [mozilla-neo](https://github.com/mozilla/neo)
+
 # 设计模式
 - [react-in-patterns](https://github.com/krasimir/react-in-patterns)
+
+# 源码分析
+- [React 源码剖析系列 － 不可思议的 react diff](https://zhuanlan.zhihu.com/p/20346379?refer=purerender)
+- [React 源码剖析系列 － 玩转 React Transition](https://zhuanlan.zhihu.com/p/20419592?refer=purerender)
+
+# CSS Module
+- [CSS Modules 详解及 React 中实践](https://zhuanlan.zhihu.com/p/20495964?refer=purerender)

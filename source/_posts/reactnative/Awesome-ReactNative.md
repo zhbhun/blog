@@ -18,6 +18,12 @@ https://github.com/search?o=desc&p=4&q=react+native&s=stars&type=Repositories&ut
 ## 按键
 - [安卓Back键的处理·基本+高级篇](http://reactnative.cn/post/480)
 
+## 其他
+- [ReactNative 隐藏API揭密（一）：EventEmitter](http://5doe.com/?p=192)
+- [ReactNative 隐藏API揭密（二）：KeyboardAvoidingView](http://5doe.com/?p=196)
+- [ReactNative 隐藏API揭密（三）：Keyboard](http://5doe.com/?p=199)
+- [ReactNative 隐藏API揭密（四）：LazyRenderer](http://5doe.com/?p=207)
+
 # 组件
 ## Material Design
 - [mrn](https://github.com/binggg/mrn)

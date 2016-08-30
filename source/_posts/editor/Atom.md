@@ -105,6 +105,9 @@ Atom是由GitHub开发的自由及开放源代码的文字与代码编辑器，�
 Linter-esint 使用 eslint 实现 Javascript 语法检查，它会检查项目本地是否安装了 eslint（NPM 安装），如果没有安装的话，会使用它自身携带的 eslint（要求 eslint 版本高于 v1.0.0）。此外使用 Linter-eslint 需要安装插件 linter，如果没有安装的话，会自动安装。如果已经安装了一个可选的 linter 插件，可以禁用自动安装的 linter。
 ESLint 默认没有使用任何规则来检查代码语法，这需要自己手动配置项目的语法检查规则。可以在项目根路径下运行 `eslint --init` 来快速生成配置文件，然后再根据自己需要手动调整。关于 eslint 的用法可参考博客 [Get Started With ESLint](http://devnull.guru/get-started-with-eslint/) 和 [ESLint document](http://eslint.org/docs/user-guide/configuring)。
 
+# 常见问题
+- [TypeError: Unable to watch path](https://github.com/atom/atom/blob/master/docs/build-instructions/linux.md#typeerror-unable-to-watch-path) —— https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers
+
 ---
 
 # React 开发环境

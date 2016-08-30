@@ -8,6 +8,9 @@ tags: JavaScript
 - https://www.awesomes.cn/
 - http://kangax.github.io/
 - https://github.com/jobbole/awesome-javascript-cn
+- [State Of JavaScript：前端框架现状调查](https://segmentfault.com/a/1190000006728971)
+- http://stateofjs.com/
+- [WEB前端知识体系脑图](http://www.jianshu.com/p/00baf1e65322)
 
 # jQuery on Github
 - [jquery/jquery](https://github.com/jquery/jquery)：jQuery JavaScript Library

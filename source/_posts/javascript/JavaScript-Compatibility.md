@@ -5,6 +5,9 @@ categories: JavaScript
 tags: JavaScript
 ---
 
+- [You-Dont-Need-jQuery](https://github.com/oneuijs/You-Dont-Need-jQuery/)
+- [如何做到 jQuery-free？](http://www.ruanyifeng.com/blog/2013/05/jquery-free.html)
+
 # 兼容性查询
 - [es5](http://kangax.github.io/compat-table/es5/)
 - [ECMAScript 5 compatibility table](http://kangax.github.io/compat-table/strict-mode/)
