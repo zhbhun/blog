@@ -63,6 +63,11 @@ TODO
 - [simplest-redux-example](https://github.com/jackielii/simplest-redux-example)
 - [redux-tutorial-cn](https://github.com/react-guide/redux-tutorial-cn)
 
+# 常见问题
+- 创建 action 方法的命名规则
+- action type 命名规则
+- 区分 component 和 container
+
 # 博文精选
 - [redux-tutorial-cn](https://github.com/react-guide/redux-tutorial-cn)：这是一个很简短的教程，可以让你领略 Flux 和 Redux 思想的精髓
 - [redux-simple-tutorial](https://github.com/kenberkeley/redux-simple-tutorial)
