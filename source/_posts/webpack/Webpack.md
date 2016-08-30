@@ -22,6 +22,8 @@ webpack是一个模块打包工具，通过依赖处理模块，并生成那些�
 # 工具对比
 - [Browserify vs. Webpack]( http://www.oschina.net/translate/browserify-vs-webpack)
 - [webpack到底好在哪里]( http://react-china.org/t/webpack/1277 )
+- [Webpack Compared](http://survivejs.com/webpack/webpack-compared/)
+- [WEBPACK FOR BROWSERIFY USERS](http://webpack.github.io/docs/webpack-for-browserify-users.html)
 
 # 项目模板
 - [react-starter-kit](https://github.com/kriasoft/react-starter-kit)：React 同构 Web 应用模板(Node.js, Express, GraphQL, React.js, Babel 6, PostCSS, Webpack, Browsersync)
@@ -102,6 +104,9 @@ Webpack + React
 - [react-native-webpack-server](https://github.com/mjohnston/react-native-webpack-server)
 - [webpack-stream](https://github.com/shama/webpack-stream)： Run webpack through a stream interface
 - [webpack-isomorphic-tools](https://github.com/halt-hammerzeit/webpack-isomorphic-tools)：Server-side rendering for your Webpack-built applications (e.g. React)
+
+# 源码分析
+- [webpack 源码解析](https://lihuanghe.github.io/2016/05/30/webpack-source-analyse.html)
 
 # Todo
 - [postcss-loader](https://github.com/postcss/postcss-loader)

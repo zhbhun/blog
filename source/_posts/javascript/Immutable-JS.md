@@ -45,9 +45,9 @@ tags: JavaScript
 - [Immutable-as-React-state](https://github.com/facebook/immutable-js/wiki/Immutable-as-React-state)
 - [facebook immutable.js 意义何在，使用场景？](http://www.zhihu.com/question/28016223)
 
----
+# 优缺点
 
-# 怎么样
+# 使用
 ## Getting Started
 http://facebook.github.io/immutable-js/#getting-started
 
@@ -69,22 +69,15 @@ http://facebook.github.io/immutable-js/#batching-mutations
 ## 其他
 - Immutable.is: 根据数据判断集合是否相等 , 可参考 [equality-treats-collections-as-data](http://facebook.github.io/immutable-js/#equality-treats-collections-as-data)
 
----
-
-# 实际应用
+# 实践
 ## React
 - [Immutable-as-React-state](https://github.com/facebook/immutable-js/wiki/Immutable-as-React-state)
 
----
+## Redux
+[redux-immutable](https://github.com/gajus/redux-immutable)
 
 # 参考文献
-## 专业术语
-- [Immutable object](https://en.wikipedia.org/wiki/Immutable_object)
-- [Persistent](http://en.wikipedia.org/wiki/Persistent_data_structure)
-
-
-
-- [immutable-js](https://github.com/facebook/immutable-js) - [redux与immutable实例](http://react-china.org/t/redux-immutable/2431)
+- [Immutable 详解及 React 中实践](https://zhuanlan.zhihu.com/p/20295971?refer=purerender)
 - [大家对 immutable-js 的接受程度如何?](http://react.nodejs-china.org/t/immutable-js/257)
 - [笔记 immutable-js 基本操作(基本操作)](http://segmentfault.com/a/1190000002909224)
 - [PureRenderMixin](http://facebook.github.io/react/docs/pure-render-mixin.html)
