@@ -243,6 +243,11 @@ https://sublime.wbond.net/browse/labels/theme
 - [Spacegray Light](https://sublime.wbond.net/packages/Theme%20-%20Spacegray)
 - [Spacegray Dark](https://sublime.wbond.net/packages/Theme%20-%20Spacegray)
 
+# 问题
+- [Getting full JS autocompletion under Sublime Text](http://stackoverflow.com/questions/13661462/getting-full-js-autocompletion-under-sublime-text)
+- http://emmet.io/blog/sublime-tern/
+- http://sublimecodeintel.github.io/SublimeCodeIntel/
+
 ---
 
 # 配色
