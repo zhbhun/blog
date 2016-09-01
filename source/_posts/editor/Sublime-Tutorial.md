@@ -47,12 +47,23 @@ TODO 寻找字体
 - [LESS](https://packagecontrol.io/packages/LESS)
 - [SCSS](https://packagecontrol.io/packages/SCSS)
 
-## 代码片段
-- [jQuery](https://packagecontrol.io/packages/jQuery)
+## Snippets
+- [AngularJS](https://packagecontrol.io/packages/AngularJS)
+- [Babel Snippets](https://packagecontrol.io/packages/Babel%20Snippets)：React Snippet
+- [Better CoffeeScript](https://packagecontrol.io/packages/Better%20CoffeeScript)
+- [Bootstrap 3 Snippets](https://packagecontrol.io/packages/Bootstrap%203%20Snippets)
+- [Comment-Snippets](https://packagecontrol.io/packages/Comment-Snippets)
+- [Console API Snippets (Java​Script)](https://packagecontrol.io/packages/Console%20API%20Snippets%20%28JavaScript%29)
+- [Java​Script Console](https://packagecontrol.io/packages/JavaScript%20Console)
+- [JavaScript Snippet](https://packagecontrol.io/packages/JavaScript%20Snippets)
+- [CSS Media Query Snippets](https://packagecontrol.io/packages/CSS%20Media%20Query%20Snippets)
+- [CSS Snippets](https://packagecontrol.io/packages/CSS%20Snippets)
+- [HTML Snippets](https://packagecontrol.io/browse/labels/snippets)
+- [jQuery Snippets pack](https://packagecontrol.io/packages/jQuery%20Snippets%20pack)
 http://www.hongkiat.com/blog/sublime-code-snippets/
-- [angularJS-sublime-package](https://github.com/angular-ui/AngularJS-sublime-package)
 - [Nodejs](https://packagecontrol.io/packages/Nodejs)
 - [React-native-snippets](https://packagecontrol.io/packages/react-native-snippets)
+- [TypeScript](https://packagecontrol.io/packages/TypeScript)
 
 ## 代码格式
 - EditorConfig

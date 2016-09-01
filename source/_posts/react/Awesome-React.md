@@ -23,6 +23,7 @@ tags: React
 - [reactjsnews](https://reactjsnews.com)
 - http://survivejs.com/
 - [pure render](https://zhuanlan.zhihu.com/purerender)
+- [Learn React](https://zhuanlan.zhihu.com/leanreact)
 - [React Training](https://reactjs-training.com/)
 
 # 开源项目
