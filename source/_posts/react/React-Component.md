@@ -38,3 +38,6 @@ tags: React
 
 # 触控
 - [react-hammerjs](https://github.com/JedWatson/react-hammerjs)：ReactJS / HammerJS integration. Support touch events in your React app.
+
+# 图表
+- [recharts](https://github.com/recharts/recharts)

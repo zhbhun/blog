@@ -5,8 +5,7 @@ categories: Editor
 tags: Editor
 ---
 
-
-# 安装 Package Control
+# Package Control
 1. 打开 Sublime Text 控制台：`View > Show Console`；
 2. 复制下面的代码到控制台，然后回车；
     - Sublime Text 3
@@ -19,93 +18,9 @@ tags: Editor
         ```
 3. 重启 Sublime Text，然后打开 Package Control：`ctrl + shift + p` > `package control`；
 
-# 主题设置
-我自己使用的主题是 `Theme - Spacegray`，可以访问网址 https://packagecontrol.io/browse/labels/theme 寻找自己想要的主题。
-
-1. 打开命令面板：`ctrl + shift + p`
-2. 查找命令：`Package Control: install Package`
-3. 查找主题：`Theme - Spacegray`
-4. 打开用户设置：`Preferences > Setting - User`，并添加下列配置项：
-  - `"theme": "Spacegray.sublime-theme"`
-  - `"color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme"`
-
-# 字体设置
-TODO 寻找字体
-
+# 字体
 1. 打开用户设置：`Preferences > Setting - User`
 2. 添加配置项：`"font_face": "YaHei Consolas Hybrid"`
-
-# 插件安装
-## 必备
-- [ConvertToUTF8](https://packagecontrol.io/packages/ConvertToUTF8): 编辑和保存文件编码为 GBK, BIG5, EUC-KR, EUC-JP, Shift_JIS 等格式。
-- [EncodingHelper](https://packagecontrol.io/packages/EncodingHelper): 在状态栏显示文件编码。
-
-## 语法高亮
-- [Babel](http://https//github.com/babel/babel-sublime)
-- [CSS3](https://packagecontrol.io/packages/CSS3): 对 CSS 支持最完善的插件
-- [Sass](https://packagecontrol.io/packages/Sass)
-- [LESS](https://packagecontrol.io/packages/LESS)
-- [SCSS](https://packagecontrol.io/packages/SCSS)
-
-## Snippets
-- [AngularJS](https://packagecontrol.io/packages/AngularJS)
-- [Babel Snippets](https://packagecontrol.io/packages/Babel%20Snippets)：React Snippet
-- [Better CoffeeScript](https://packagecontrol.io/packages/Better%20CoffeeScript)
-- [Bootstrap 3 Snippets](https://packagecontrol.io/packages/Bootstrap%203%20Snippets)
-- [Comment-Snippets](https://packagecontrol.io/packages/Comment-Snippets)
-- [Console API Snippets (Java​Script)](https://packagecontrol.io/packages/Console%20API%20Snippets%20%28JavaScript%29)
-- [Java​Script Console](https://packagecontrol.io/packages/JavaScript%20Console)
-- [JavaScript Snippet](https://packagecontrol.io/packages/JavaScript%20Snippets)
-- [CSS Media Query Snippets](https://packagecontrol.io/packages/CSS%20Media%20Query%20Snippets)
-- [CSS Snippets](https://packagecontrol.io/packages/CSS%20Snippets)
-- [HTML Snippets](https://packagecontrol.io/browse/labels/snippets)
-- [jQuery Snippets pack](https://packagecontrol.io/packages/jQuery%20Snippets%20pack)
-http://www.hongkiat.com/blog/sublime-code-snippets/
-- [Nodejs](https://packagecontrol.io/packages/Nodejs)
-- [React-native-snippets](https://packagecontrol.io/packages/react-native-snippets)
-- [TypeScript](https://packagecontrol.io/packages/TypeScript)
-
-## 代码格式
-- EditorConfig
-
-## Markdown
-- MarkdownEditing
-- Markdown Preview
-
-
-# 其他配置
-- trim_trailing_white_space_on_save，自动移除行尾多余空格，处女座更安心了
-- ensure_newline_at_eof_on_save，文件末尾自动保留一个空行，懂的人自然知道它的用处
-- font_face 设置字体。Microsoft YaHei Mono 是一款混合字体，专为代码优化，看起来很舒服。当然你也可以使用你自己喜欢的字体，或者删掉本行，使用默认字体
-- disable_tab_abbreviations 设置为 true ，禁用 Emmet 的 tab 键功能（请使用 ctrl+e），系统自带的 tab 功能还是可圈可点的。当然你也可以不设置它，以完全使用 Emmet 的 tab 补全功能
-- translate_tabs_to_spaces 很明白就是把代码 tab 对齐转换为空格对齐，tab_size 配合设置空格数。这个需求因人而异了，不喜欢可以去掉
-- draw_minimap_border，用于右侧代码预览时给所在区域加上边框，方便识别
-- save_on_focus_lost，窗口失焦立即保存文件，嘛嘛再也不用担心你忘记保存了
-- highlight_line，当前行高亮
-- word_wrap，设置自动换行
-- fade_fold_buttons，默认显示行号右侧的代码段闭合展开三角号
-- bold_folder_labels，侧边栏文件夹显示加粗，区别于文件
-- highlight_modified_tabs，高亮未保存文件
-- default_line_ending: “unix”, 使用 unix 风格的换行符
-- auto_find_in_selection: true ，开启选中范围内搜索（而不是整个文档
-- ignored_packages: 禁用的插件
-- auto_find_in_selection: 在选中范围内搜索和替换
-- caret_style: phase, 使光标闪动更加柔和
-- rulers: [80, 100], 行宽标尺
-- draw_white_space: all, 显示空白字符
-- folder_exclude_patterns: 文件夹排除模式
-    ``` javascript
-    "folder_exclude_patterns": [
-      ".svn",
-      ".git",
-      ".hg",
-      "CVS",
-      "node_modules",
-      "bower_components"
-    ]
-    ```
-
----
 
 # 插件
 - 仓库地址: https://packagecontrol.io/
@@ -113,39 +28,21 @@ http://www.hongkiat.com/blog/sublime-code-snippets/
 - 概览地址: https://packagecontrol.io/browse
 - 文档地址: https://packagecontrol.io/docs
 
-### Emmet
-#### HTML
-- html:5: 生成 HTML5 模板
-#### CSS
-- fz3.6/2 -> ctrl + shift + y -> ctrl + e -> font-size: 1.8em
+## 必备
+- [ConvertToUTF8](https://packagecontrol.io/packages/ConvertToUTF8): 编辑和保存文件编码为 GBK, BIG5, EUC-KR, EUC-JP, Shift_JIS 等格式。
+- [EncodingHelper](https://packagecontrol.io/packages/EncodingHelper): 在状态栏显示文件编码。
 
-### ReactJS
-https://packagecontrol.io/packages/ReactJS
-- cdm: componentDidMount: fn() { ... }
-- cdup: componentDidUpdate: fn(pp, ps) { ... }
-- cs: var cx = React.addons.classSet;
-- cwm: componentWillMount: fn() { ... }
-- cwr: componentWillReceiveProps: fn(np) { ... }
-- cwu: componentWillUpdate: fn(np, ns) { ... }
-- cwun: componentWillUnmount: fn() { ... }
-- cx: cx({ ... })
-- fdn: React.findDOMNode(...)
-- fup: forceUpdate(...)
-- gdp: getDefaultProps: fn() { return {...} }
-- gis: getInitialState: fn() { return {...} }
-- ism: isMounted()
-- props: this.props.
-- pt: propTypes { ... }
-- rcc: component skeleton
-- refs: this.refs.
-- ren: render: fn() { return ... }
-- scu: shouldComponentUpdate: fn(np, ns) { ... }
-- sst: this.setState({ ... })
-- state: this.state.
+## 代码导航
+- [CTags](https://packagecontrol.io/packages/CTags)
 
-### Bootstrap 3 Snippets
-https://packagecontrol.io/packages/Bootstrap%203%20Snippets
+## 语法高亮
+- [Babel](http://https//github.com/babel/babel-sublime)
+- [CSS3](https://packagecontrol.io/packages/CSS3)
+- [Sass](https://packagecontrol.io/packages/Sass)
+- [LESS](https://packagecontrol.io/packages/LESS)
+- [SCSS](https://packagecontrol.io/packages/SCSS)
 
+## 语法检查
 ## 语法分析
 - [SublimeLinter](https://packagecontrol.io/packages/SublimeLinter)
 - [SublimeLinter-html-tidy](https://packagecontrol.io/packages/SublimeLinter-html-tidy)
@@ -161,48 +58,43 @@ https://packagecontrol.io/packages/Bootstrap%203%20Snippets
 - [SublimeLinter-javac](https://packagecontrol.io/packages/SublimeLinter-javac)
 - [SublimeLinter-xmllint](https://packagecontrol.io/packages/SublimeLinter-xmllint)
 
-## 格式化
-- [HTML/CSS/JS Prettify](https://packagecontrol.io/packages/HTML-CSS-JS%20Prettify): 代码格式化(文件路径不能由中文)
+## 代码片段
+- Emmet
+- [AngularJS](https://packagecontrol.io/packages/AngularJS)
+- [Babel Snippets](https://packagecontrol.io/packages/Babel%20Snippets)：React Snippet
+- [Better CoffeeScript](https://packagecontrol.io/packages/Better%20CoffeeScript)
+- [Bootstrap 3 Snippets](https://packagecontrol.io/packages/Bootstrap%203%20Snippets)
+- [Comment-Snippets](https://packagecontrol.io/packages/Comment-Snippets)
+- [Console API Snippets (Java​Script)](https://packagecontrol.io/packages/Console%20API%20Snippets%20%28JavaScript%29)
+- [DocBlockr](https://github.com/spadgos/sublime-jsdocs)
+- [Java​Script Console](https://packagecontrol.io/packages/JavaScript%20Console)
+- [JavaScript Snippet](https://packagecontrol.io/packages/JavaScript%20Snippets)
+- [CSS Media Query Snippets](https://packagecontrol.io/packages/CSS%20Media%20Query%20Snippets)
+- [CSS Snippets](https://packagecontrol.io/packages/CSS%20Snippets)
+- [HTML Snippets](https://packagecontrol.io/browse/labels/snippets)
+- [jQuery Snippets pack](https://packagecontrol.io/packages/jQuery%20Snippets%20pack)
+http://www.hongkiat.com/blog/sublime-code-snippets/
+- [Nodejs](https://packagecontrol.io/packages/Nodejs)
+- [React-native-snippets](https://packagecontrol.io/packages/react-native-snippets)
+- [ReactJS](https://packagecontrol.io/packages/ReactJS)
+- [TypeScript](https://packagecontrol.io/packages/TypeScript)
+
+## 代码格式
+- EditorConfig
+- [HTML/CSS/JS Prettify](https://packagecontrol.io/packages/HTML-CSS-JS%20Prettify)
 - [HTMLBeautify](https://github.com/rareyman/HTMLBeautify)
 - [JsFormat](https://github.com/jdc0589/jsFormat)
 - [Sublime-CSS-Format](http://mutian.github.io/Sublime-CSS-Format/)
-- [Pretty JSON](https://packagecontrol.io/packages/Pretty%20JSON): JSON 格式化/压缩/查询工具
+- [CSS Format](https://packagecontrol.io/packages/CSS%20Format)
+- [Pretty JSON](https://packagecontrol.io/packages/Pretty%20JSON)
 - [SublimeAStyleFormatter](https://packagecontrol.io/packages/SublimeAStyleFormatter)
 - [CodeFormatter](https://packagecontrol.io/packages/CodeFormatter)
-- [Alignment](https://sublime.wbond.net/packages/Alignment): 智能对齐
+- [Alignment](https://sublime.wbond.net/packages/Alignment)
+- [SqlBeautifier](https://packagecontrol.io/packages/SqlBeautifier)
 
-### CSS Format
-- 功能: CSS Formatting for Sublime Text, you can convert CSS/SASS/SCSS/LESS code to Expanded, Compact or Compressed format. CSS Format is just only a formatter, do not supports grammar check and auto correct feature.
-- 地址: https://packagecontrol.io/packages/CSS%20Format
-- 用法:
-    - 鼠标右键 -> CSS Format
-    - Edit -> CSS Format
-    - ctrl + shift + p -> Format CSS: XXX
-- 快捷键
-- 配置: *Preferences > Package Settings > CSS Format > Settings - User*
-    - indentation: Format indentation, you can set it to " ". By default, this is set to "\t"
-    - format_on_save: Set to true to trigger format on save. By default, this is set to false.
-    - format_on_save_action: Format action. You can refer to Settings - Default. By default, this is set to "expand".
-    - format_on_save_filter: CSS Format matches the name of the file being saved against this regular expression to determine if a build should be triggered. By default, the setting has a value of `"\\.(css|sass|scss|less)$"`.
-
-### SqlBeautifier
-- 功能: A sublime plugin to format SQL
-- 地址: https://packagecontrol.io/packages/SqlBeautifier
-- 兼容性: sublime 2 and 3
-- 配置
-    - keyword_case: Changes how keywords are formatted. Allowed values are “upper”, “lower” and “capitalize” and null (leaves case intact).
-    - identifier_case: Changes how identifiers are formatted. Allowed values are “upper”, “lower”, and “capitalize” and null (leaves case intact).
-    - strip_comments: If True comments are removed from the statements.
-    - reindent: If True the indentations of the statements are changed.
-    - indent_tabs: If True tabs instead of spaces are used for indentation.
-    - indent_width: The width of the indentation, defaults to 2.
-- 快捷键
-    - mac: `{ "keys": ["super+k", "super+f"], "command": "sql_beautifier" }`
-    - Windows / Linux: `{ "keys": ["ctrl+k", "ctrl+f"], "command": "sql_beautifier" }`
-
-
-## 注释
-- [DocBlockr](https://github.com/spadgos/sublime-jsdocs)
+## Markdown
+- MarkdownEditing
+- Markdown Preview
 
 ## 其他
 - [SideBarEnhancements](https://packagecontrol.io/packages/SideBarEnhancements): 增强侧边栏
@@ -230,10 +122,19 @@ https://packagecontrol.io/packages/Bootstrap%203%20Snippets
 - [SublimeREPL](https://github.com/wuub/SublimeREPL)
 - [ColorPicker](http://weslly.github.io/ColorPicker/)
 
----
-
 # 主题
-https://sublime.wbond.net/browse/labels/theme
+我自己使用的主题是 `Theme - Spacegray`，可以访问网址 https://packagecontrol.io/browse/labels/theme 寻找自己想要的主题。
+
+1. 打开命令面板：`ctrl + shift + p`
+2. 查找命令：`Package Control: install Package`
+3. 查找主题：`Theme - Spacegray`
+4. 打开用户设置：`Preferences > Setting - User`，并添加下列配置项：
+  - `"theme": "Spacegray.sublime-theme"`
+  - `"color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme"`
+
+更多主题
+
+- https://sublime.wbond.net/browse/labels/theme
 - [soda-theme](http://buymeasoda.github.io/soda-theme/)
     - [Soda Light](https://sublime.wbond.net/packages/Theme%20-%20Soda)
     - [Soda Dark](https://sublime.wbond.net/packages/Theme%20-%20Soda)
@@ -243,47 +144,26 @@ https://sublime.wbond.net/browse/labels/theme
 - [Spacegray Light](https://sublime.wbond.net/packages/Theme%20-%20Spacegray)
 - [Spacegray Dark](https://sublime.wbond.net/packages/Theme%20-%20Spacegray)
 
-# 问题
-- [Getting full JS autocompletion under Sublime Text](http://stackoverflow.com/questions/13661462/getting-full-js-autocompletion-under-sublime-text)
-- http://emmet.io/blog/sublime-tern/
-- http://sublimecodeintel.github.io/SublimeCodeIntel/
+配色
 
----
-
-# 配色
 - http://colorsublime.com/
 - http://colorsublime.com/how-to-install-a-theme
 - [Flatland Dark](https://sublime.wbond.net/packages/Theme%20-%20Flatland)
 
----
-
 # 快捷键
-## 跳转
+## 代码导航
 - ctrl + p: 文件定位
     - 查找文件, 斜杠代表路径, 支持模糊匹配
     - `@`: 符号跳转
     - `#`: 关键字跳转
     - `:`: 行号跳转
-    -
 - ctrl + ;: 词语定位
 - ctrl + r: 函数定位
 - ctrl + g: 行数定位
+- F12：查看定义
+- alt+minus：返回
 
-## 光标
-- ctrl + m: 光标在开闭括号之间跳转
-- ctrl + shift + m: 将匹配括号中的内容选中
-- ctrl + left/right: 向左或向右移动一个单词的光标
-- ctrl + d: 选中相同的词(可用于修改本地变量名)
-- ctrl + k:
-- ctrl + alt + up/down: 将选中的区域分割成多行选中状态
-- shift + 鼠标右键拖动: 多重光标选中
-- ctrl + l: 选中一行
-- ctrl + shif + j: 已缩进层级为依据，一层层向外选中
-- alt + f3: 选择所有相同的词
-- ctrl + shift + ': 选中 HTML 一对标签(Emmet)
-- ctrl + shift + space: 扩展选取(ExpandRegion)
-
-## 查找
+## 代码查找
 - 选中关键字
     - f3: 下一个
     - shift f3: : 上一个
@@ -300,7 +180,21 @@ https://sublime.wbond.net/browse/labels/theme
 - ctrl + shift + f: 在文件夹中查找
 - ctrl + i: 代码字符串定位
 
-## 编辑
+## 代码选择
+- ctrl + m: 光标在开闭括号之间跳转
+- ctrl + shift + m: 将匹配括号中的内容选中
+- ctrl + left/right: 向左或向右移动一个单词的光标
+- ctrl + d: 选中相同的词(可用于修改本地变量名)
+- ctrl + k:
+- ctrl + alt + up/down: 将选中的区域分割成多行选中状态
+- shift + 鼠标右键拖动: 多重光标选中
+- ctrl + l: 选中一行
+- ctrl + shif + j: 已缩进层级为依据，一层层向外选中
+- alt + f3: 选择所有相同的词
+- ctrl + shift + ': 选中 HTML 一对标签(Emmet)
+- ctrl + shift + space: 扩展选取(ExpandRegion)
+
+## 代码编辑
 - ctrl + shift + enter: 向光标前插入一行
 - ctrl + enter: 向光标后插入一行
 - shift + ctrl + up/down: 上下移动行
@@ -329,7 +223,7 @@ https://sublime.wbond.net/browse/labels/theme
 - ctrl + shift ]: 展开代码
 
 ## 工程
-- ctrl + alt + p: 切换项目
+- shift + alt + p: 切换项目
 
 ## 窗口/标签
 - ctrl + shift + n: 创建一个新窗口
@@ -361,9 +255,57 @@ https://sublime.wbond.net/browse/labels/theme
     - set syntax/ss: 语法设置命令
 - ctrl + k, ctrl + b: 隐藏/打开侧边栏
 
----
-
 # 项目
+- https://www.sublimetext.com/docs/3/projects.html
+- [[SublimeText] 如何创建工程](http://www.cnblogs.com/ifantastic/p/3485943.html)
+
+# 配置
+- trim_trailing_white_space_on_save，自动移除行尾多余空格，处女座更安心了
+- ensure_newline_at_eof_on_save，文件末尾自动保留一个空行，懂的人自然知道它的用处
+- font_face 设置字体。Microsoft YaHei Mono 是一款混合字体，专为代码优化，看起来很舒服。当然你也可以使用你自己喜欢的字体，或者删掉本行，使用默认字体
+- disable_tab_abbreviations 设置为 true ，禁用 Emmet 的 tab 键功能（请使用 ctrl+e），系统自带的 tab 功能还是可圈可点的。当然你也可以不设置它，以完全使用 Emmet 的 tab 补全功能
+- translate_tabs_to_spaces 很明白就是把代码 tab 对齐转换为空格对齐，tab_size 配合设置空格数。这个需求因人而异了，不喜欢可以去掉
+- draw_minimap_border，用于右侧代码预览时给所在区域加上边框，方便识别
+- save_on_focus_lost，窗口失焦立即保存文件，嘛嘛再也不用担心你忘记保存了
+- highlight_line，当前行高亮
+- word_wrap，设置自动换行
+- fade_fold_buttons，默认显示行号右侧的代码段闭合展开三角号
+- bold_folder_labels，侧边栏文件夹显示加粗，区别于文件
+- highlight_modified_tabs，高亮未保存文件
+- default_line_ending: “unix”, 使用 unix 风格的换行符
+- auto_find_in_selection: true ，开启选中范围内搜索（而不是整个文档
+- ignored_packages: 禁用的插件
+- auto_find_in_selection: 在选中范围内搜索和替换
+- caret_style: phase, 使光标闪动更加柔和
+- rulers: [80, 100], 行宽标尺
+- draw_white_space: all, 显示空白字符
+- folder_exclude_patterns: 文件夹排除模式
+    ``` javascript
+    "folder_exclude_patterns": [
+      ".svn",
+      ".git",
+      ".hg",
+      "CVS",
+      "node_modules",
+      "bower_components"
+    ]
+    ```
+
+## 自动换行
+- word_wrap
+    - true：开启自动换行（不会出现水平滚动条）
+    - false: 关闭自动换行（出现水平滚动条）
+    - auto：如果代码的话，开启自动换行，否则不自动换行
+- wrap_width
+    - 0：超出窗口宽度时自动换行
+    - 大于零：代码长度超出该值时自动换行
+- rules：标尺
+
+# 问题
+- [Getting full JS autocompletion under Sublime Text](http://stackoverflow.com/questions/13661462/getting-full-js-autocompletion-under-sublime-text)
+- http://emmet.io/blog/sublime-tern/
+- http://sublimecodeintel.github.io/SublimeCodeIntel/
+- [Sublime 3 - Set Key map for function Goto Definition](http://stackoverflow.com/questions/16235706/sublime-3-set-key-map-for-function-goto-definition)
 
 ---
 
@@ -378,7 +320,6 @@ https://sublime.wbond.net/browse/labels/theme
 - [Stack Overflow Sublime Text 2](http://stackoverflow.com/questions/tagged/sublimetext2)
 - [Stack Overflow Sublime Text 3](http://stackoverflow.com/questions/tagged/sublimetext3) --- 比官方文档还要全面
 - Package Control: https://sublime.wbond.net/ --- 大量的Sublime Text插件和主题
-
 
 ## 推荐书籍
 - [Mastering Sublime Text](http://www.amazon.com/Mastering-Sublime-Community-Experience-Distilled/dp/1849698422/) --- 书中介绍的插件很实用，但对编辑技巧介绍不全

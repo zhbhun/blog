@@ -1,8 +1,8 @@
 ---
 title: Redux 学习资源
 date: 2016-04-19
-category: javascript
-tags: javascript
+category: Redux
+tags: Redux
 ---
 
 ![Redux](../../images/Redux/Redux.png)
@@ -13,6 +13,48 @@ tags: javascript
 - [awesome-redux](https://github.com/xgrommx/awesome-redux)
 - [react-redux-links](https://github.com/markerikson/react-redux-links)
 - [redux-ecosystem-links](http://cn.redux.js.org/docs/introduction/Ecosystem.html)
+
+# 快速上手
+...
+
+# 核心概念
+- Action：Action 是把数据从应用传到 store 的有效载荷
+    - 用法：Action 是个普通对象，必须使用一个字符串类型的 type 字段来表示将要执行的动作。除了 type 字段外，action 对象的结构完全由你自己决定；
+    - 实践：
+        - 多数情况下，type 会被定义成字符串常量；
+        - 当应用规模越来越大时，建议使用单独的模块或文件来存放 action；
+        - 尽量减少在 action 中传递的数据；
+- Action 创建函数：生成 action 的方法；
+    - 用法：
+        1. 把 action 创建函数的结果传给 dispatch() 方法即可发起一次 dispatch 过程；
+        2. 创建一个被绑定的 action 创建函数来自动 dispatch；
+        3. 使用 react-redux 提供的 connect() 帮助器来调用，bindActionCreators() 可以自动把多个 action 创建函数 绑定到 dispatch() 方法上；
+    - 误区：Action 创建函数只会返回一个 action，这和传统的 Flux 实现有所区别；
+    - 高级：Action 创建函数也可以是异步非纯函数；
+- Reducer：指明应用如何更新 state
+    - 用法：reducer 就是一个纯函数，接收旧的 state 和 action，返回新的 state
+    - 要点
+        - 不要修改 reducer 的传入参数；
+        - 不要执行有副作用的操作，如 API 请求和路由跳转；
+        - 调用非纯函数，如 Date.now() 或 Math.random()；
+    - 实践
+        - 拆分 Reducer；
+        - ...
+- Store：用来维持应用所有的 state 树的一个对象
+    - getState()
+    - dispatch(action)
+    - subscribe(listener)
+    - replaceReducer(nextReducer)
+
+# 实践
+- Redux + React
+    - 容器组件 VS 展示组件
+        - 容器组件放在顶层，展示组件放在中间和子组件
+        - 容器组件需要监听 Store，展示组件不需要
+        - 容器组件从 Store 中读取数据，展示组件从 props 读取
+        - 容器组件向 Store 派发 Action 来修改数据，展示组件调用 props 的回调函数
+    - 设计组件层次结构
+    - 连接 Store：尽量只做一个顶层组件，避免多个组件连接到 Store（遵循单向数据流，否则难以跟踪数据流）；
 
 # 生态系统
 - [react-redux](https://github.com/reactjs/react-redux)
@@ -30,43 +72,31 @@ tags: javascript
 - react-redux
     - Provider[store] ?
 
-# 教程示例
-- [counter-vanilla](https://github.com/reactjs/redux/blob/master/examples/counter-vanilla)：该示例不需搭建系统或视图框架，展示了基于 ES5 的原生 Redux API。
+# 常见问题?
+- active 结构
 
-    stores.subscribe(render) -> view -> 用户交互 -> stores.dispatch(action) -> reduce(state, action) -> 重新渲染
+    ```
+    {
+        type: String,
+        ...
+    }
+    ```
 
-- [Counter](https://github.com/reactjs/redux/tree/master/examples/counter)：Redux 结合 React 使用的最基本示例。出于简化，当 store 发生变化，React 组件会手动重新渲染。在实际的项目中，可以使用 React 和 Redux 已绑定、且更高效的 React Redux。
+- action type 命名规则？
 
-    同上
+- 创建 action 方法的命名规则？
 
-- [todos](https://github.com/reactjs/redux/tree/master/examples/todos)：深入理解在 Redux 中 state 的更新与组件是如何共同运作的例子。展示了 reducer 如何委派 action 给其它 reducer，也展示了如何使用 React Redux 从展示组件中生成容器组件。
-    - actions：动作创建
-    - components：通用组件
-    - containers：绑定状态或动作的容器组件
-    - reduces：拆分 reduce
-    - index.js
-- [Todos with Undo](https://github.com/reactjs/redux/tree/master/examples/todos-with-undo)：前一个示例的衍生。基本相同但额外展示了如何使用 Redux Undo 打包 reducer，仅增加几行代码实现撤销/重做功能。
-- [TodoMVC](https://github.com/reactjs/redux/tree/master/examples/todomvc)：经典的 TodoMVC 示例。与 Todos 示例的目的相同，为了两者间比较罗列在此。
-    - constants：声明动作名称
-    - actions：创建动作
-    - reduces
-    - store：配置 store
-    - components
-    - containers
+- 创建 store 时，reduce 自动调用，默认值？
 
-TODO
-- [Shopping Cart](https://github.com/reactjs/redux/tree/master/examples/shopping-cart)：该示例展示了随着应用升级变得愈发重要的常用的 Redux 模式。尤其展示了，如何使用 ID 来标准化存储数据实体，如何在不同层级将多个 reducer 组合使用，如何利用 reducer 定义选择器以封装 state 的相关内容。该示例也展示了使用 Redux Logger 生成日志，以及使用 Redux Thunk 中间件进行 action 的条件性分发。
-- Tree View
-- Async
-- Universal
-- Real World
-- [simplest-redux-example](https://github.com/jackielii/simplest-redux-example)
-- [redux-tutorial-cn](https://github.com/react-guide/redux-tutorial-cn)
+- 入口的职责？
 
-# 常见问题
-- 创建 action 方法的命名规则
-- action type 命名规则
+    - 创建 store
+    - 挂载组件
+
 - 区分 component 和 container
+
+    - component：无状态组件
+    - container：监听 store 变化 -> 转化状态转为属性，封装 action 转发器为属性 -> 无状态组件渲染 -> 用户交互 -> ...
 
 # 博文精选
 - [redux-tutorial-cn](https://github.com/react-guide/redux-tutorial-cn)：这是一个很简短的教程，可以让你领略 Flux 和 Redux 思想的精髓

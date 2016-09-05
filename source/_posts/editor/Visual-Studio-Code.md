@@ -16,6 +16,7 @@ tags: Editor
 ## Theme
 - [vscode-icons](https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons)
 - [Material-theme]（https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme
+- [One Dark Theme](https://marketplace.visualstudio.com/items?itemName=akamud.vscode-theme-onedark)
 
 ## Other
 - [beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
