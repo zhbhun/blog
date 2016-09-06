@@ -97,6 +97,7 @@ http://eslint.org/docs/user-guide/command-line-interface
 - [eslint-config-standard](https://github.com/feross/eslint-config-standard)
 - [eslint-config-defaults](https://github.com/walmartlabs/eslint-config-defaults)
 - [eslint-config-standard-react](https://github.com/feross/eslint-config-standard-react)
+- [eslint-config-cleanjs](https://github.com/bodil/eslint-config-cleanjs)
 
 # 问题
 ## ES7 async/await

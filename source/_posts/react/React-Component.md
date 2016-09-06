@@ -41,3 +41,9 @@ tags: React
 
 # 图表
 - [recharts](https://github.com/recharts/recharts)
+
+# 日期
+- [react-dates](https://github.com/airbnb/react-dates)
+
+# 音乐
+- [react-music](https://github.com/FormidableLabs/react-music)

@@ -65,3 +65,5 @@ tags: JavaScript
 
 # Todo
 - [You-Dont-Know-JS](https://github.com/getify/You-Dont-Know-JS)
+- [lightgallery.js](https://github.com/sachinchoolur/lightgallery.js)
+- [in-view](https://github.com/camwiegert/in-view)

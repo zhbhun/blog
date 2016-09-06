@@ -520,10 +520,10 @@
 	"buffers":
 	[
 		{
-			"file": "source/_posts/redux/Awesome-Redux.md",
+			"file": "source/_posts/redux/Redux-In-Action.md",
 			"settings":
 			{
-				"buffer_size": 4215,
+				"buffer_size": 1149,
 				"line_ending": "Unix"
 			}
 		}
@@ -767,14 +767,31 @@
 		"/home/zhanghuabin/archive/blog",
 		"/home/zhanghuabin/archive/blog/source",
 		"/home/zhanghuabin/archive/blog/source/_posts",
-		"/home/zhanghuabin/archive/blog/source/_posts/programmer",
+		"/home/zhanghuabin/archive/blog/source/_posts/babel",
+		"/home/zhanghuabin/archive/blog/source/_posts/javascript",
 		"/home/zhanghuabin/archive/blog/source/_posts/react",
+		"/home/zhanghuabin/archive/blog/source/_posts/reactnative",
 		"/home/zhanghuabin/archive/blog/source/_posts/redux",
-		"/home/zhanghuabin/archive/blog/source/_posts/webpack"
+		"/home/zhanghuabin/archive/blog/source/_posts/software"
 	],
 	"file_history":
 	[
 		"/home/zhanghuabin/archive/blog/source/_posts/redux/Awesome-Redux.md",
+		"/home/zhanghuabin/archive/blog/source/_posts/redux/Redux-In-Action.md",
+		"/home/zhanghuabin/archive/blog/source/_posts/javascript/Awesome-JavaScript.md",
+		"/home/zhanghuabin/archive/blog/source/_posts/javascript/ESLint.md",
+		"/home/zhanghuabin/archive/blog/source/_posts/reactnative/Awesome-ReactNative.md",
+		"/home/zhanghuabin/archive/blog/source/_posts/react/React-Component.md",
+		"/home/zhanghuabin/archive/blog/source/_posts/react/Awesome-React.md",
+		"/home/zhanghuabin/archive/blog/source/_posts/software/Terminal.md",
+		"/home/zhanghuabin/archive/blog/source/_posts/babel/Babel6.md",
+		"/home/zhanghuabin/archive/blog/source/_posts/babel/Awesome-Babel.md",
+		"/home/zhanghuabin/archive/blog/source/_posts/react/React-Server.md",
+		"/home/zhanghuabin/work/project/study/redux/reddit/actions/index.js",
+		"/home/zhanghuabin/work/project/study/redux/reddit/reducers/index.js",
+		"/home/zhanghuabin/archive/blog/source/_posts/business/Bank-Card.md",
+		"/home/zhanghuabin/archive/blog/source/_posts/frontend/Frontend-Public-API.md",
+		"/home/zhanghuabin/archive/blog/source/_posts/design/IOS-Design.md",
 		"/home/zhanghuabin/archive/blog/source/_posts/redux/index.md",
 		"/home/zhanghuabin/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
 		"/home/zhanghuabin/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
@@ -788,7 +805,6 @@
 		"/home/zhanghuabin/.config/sublime-text-3/Packages/User/Bold and Italic Markers.tmPreferences",
 		"/home/zhanghuabin/archive/blog/blog.sublime-project",
 		"/home/zhanghuabin/archive/blog/source/_posts/datastructure/Data-Structure.md",
-		"/home/zhanghuabin/archive/blog/source/_posts/react/React-Component.md",
 		"/home/zhanghuabin/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/zhanghuabin/work/project/stock/doc/证券开户/分析/证书安装.gliffy",
 		"/home/zhanghuabin/archive/blog/source/_posts/webpack/Webpack.md",
@@ -887,21 +903,7 @@
 		"/home/zhanghuabin/work/project/stock/stockbroker/node_modules/antd/lib/style/core/index.less",
 		"/home/zhanghuabin/work/project/stock/stockbroker/node_modules/antd/lib/style/core/motion.less",
 		"/home/zhanghuabin/work/project/stock/stockbroker/node_modules/antd/lib/style/core/normalize.less",
-		"/home/zhanghuabin/work/project/stock/stockbroker/node_modules/antd/lib/style/themes/default.less",
-		"/home/zhanghuabin/work/project/stock/stockbroker/node_modules/antd/lib/style/index.less",
-		"/home/zhanghuabin/work/project/stock/stockbroker/node_modules/antd/lib/style/index.js",
-		"/home/zhanghuabin/work/project/stock/stockbroker/node_modules/antd/lib/style/index.css",
-		"/home/zhanghuabin/work/project/stock/stockbroker/node_modules/antd/lib/style/css.js",
-		"/home/zhanghuabin/work/project/stock/stockbroker/node_modules/antd/lib/style/components.less",
-		"/home/zhanghuabin/work/project/stock/stockbroker/node_modules/antd/lib/style/core/iconfont.less",
-		"/home/zhanghuabin/work/project/stock/stockbroker/node_modules/antd/dist/antd.less",
-		"/home/zhanghuabin/work/project/source/ant-design/1.6.5/components/style/index.js",
-		"/home/zhanghuabin/work/project/source/ant-design/1.6.5/components/affix/index.jsx",
-		"/home/zhanghuabin/work/project/source/ant-design/1.6.5/components/affix/style/index.less",
-		"/home/zhanghuabin/work/project/source/ant-design/1.6.5/components/affix/style/index.js",
-		"/home/zhanghuabin/work/project/stock/stockbroker/node_modules/extract-text-webpack-plugin/package.json",
-		"/home/zhanghuabin/work/project/stock/stockbroker/target/assets/cssAssets.jsp",
-		"/home/zhanghuabin/work/project/stock/stockbroker/target/assets/jsAssets.jsp"
+		"/home/zhanghuabin/work/project/stock/stockbroker/node_modules/antd/lib/style/themes/default.less"
 	],
 	"find":
 	{
@@ -922,6 +924,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"reddit",
+			"shouldFetchPosts",
+			"fetchPosts",
+			"false",
+			"selectedTopic",
+			"simple",
+			"Redux",
 			"auto",
 			"word_wrap",
 			"100",
@@ -1042,14 +1051,7 @@
 			"font",
 			"alert",
 			"font",
-			"theme",
-			"ShallowEtagHeaderFilter",
-			"etag",
-			"OSChina",
-			"osOSChina",
-			"os",
-			"WebUtils",
-			"MultipartHttpServletRequest"
+			"theme"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -1200,19 +1202,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "source/_posts/redux/Awesome-Redux.md",
-					"semi_transient": false,
+					"file": "source/_posts/redux/Redux-In-Action.md",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 4215,
+						"buffer_size": 1149,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								71,
+								71
 							]
 						],
 						"settings":
@@ -1235,74 +1237,71 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
 							],
-							"color_scheme": "Packages/User/Color Highlighter/themes/base16-ocean.dark (SL).tmTheme",
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
-							"is_init_dirty_state": false,
-							"origin_encoding": "UTF-8",
 							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true,
 							"trim_trailing_white_space_on_save": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 294.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1368,6 +1367,42 @@
 		"selected_items":
 		[
 			[
+				"awesome-react",
+				"source/_posts/reactnative/Awesome-ReactNative.md"
+			],
+			[
+				"esli",
+				"source/_posts/javascript/ESLint.md"
+			],
+			[
+				"react-com",
+				"source/_posts/react/React-Component.md"
+			],
+			[
+				"awesome-reac",
+				"source/_posts/react/Awesome-React.md"
+			],
+			[
+				"babel",
+				"source/_posts/babel/Babel6.md"
+			],
+			[
+				"redux",
+				"source/_posts/redux/Awesome-Redux.md"
+			],
+			[
+				"api",
+				"source/_posts/frontend/Frontend-Public-API.md"
+			],
+			[
+				"redux.md",
+				"source/_posts/redux/Awesome-Redux.md"
+			],
+			[
+				"ios",
+				"source/_posts/design/IOS-Design.md"
+			],
+			[
 				"red",
 				"source/_posts/redux/Awesome-Redux.md"
 			],
@@ -1378,10 +1413,6 @@
 			[
 				"redu",
 				"source/_posts/redux/Awesome-Redux.md"
-			],
-			[
-				"react-com",
-				"source/_posts/react/React-Component.md"
 			],
 			[
 				"data",
@@ -1846,38 +1877,6 @@
 			[
 				"lin",
 				"WebContent\\src\\common\\layout\\LinearLayout.jsx"
-			],
-			[
-				"server/ser",
-				"WebContent\\src\\server\\Servers.jsx"
-			],
-			[
-				"serverde",
-				"WebContent\\src\\server\\component\\ServerDetail.jsx"
-			],
-			[
-				"httpser",
-				"WebContent\\src\\server\\component\\HttpServer.jsx"
-			],
-			[
-				"sysmo",
-				"src\\main\\java\\com\\apex\\livebos\\monitor\\web\\controls\\SysMonitorController.java"
-			],
-			[
-				"st",
-				"WebContent\\src\\style.css"
-			],
-			[
-				"serverinfo",
-				"src\\main\\java\\com\\apex\\livebos\\monitor\\server\\processor\\ServerInfo.java"
-			],
-			[
-				"syspa",
-				"WebContent\\src\\param\\SysStatusParamUpdatePage.js"
-			],
-			[
-				"qu",
-				"WebContent\\src\\common\\view\\QueryView.jsx"
 			]
 		],
 		"width": 0.0
@@ -1912,7 +1911,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 309.0,
+	"side_bar_width": 316.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
