@@ -101,6 +101,13 @@ tags: Redux
 # 博文精选
 - [redux-tutorial-cn](https://github.com/react-guide/redux-tutorial-cn)：这是一个很简短的教程，可以让你领略 Flux 和 Redux 思想的精髓
 - [redux-simple-tutorial](https://github.com/kenberkeley/redux-simple-tutorial)
+- [Step by Step Guide To Building React Redux Apps](https://medium.com/@rajaraodv/step-by-step-guide-to-building-react-redux-apps-using-mocks-48ca0f47f9a#.s7zsgq3u1)
+- [A Guide For Building A React Redux CRUD App (3-page app)](https://medium.com/@rajaraodv/a-guide-for-building-a-react-redux-crud-app-7fe0b8943d0f#.g99gruhdz)
+- [Using Middlewares In React Redux Apps](https://medium.com/@rajaraodv/using-middlewares-in-react-redux-apps-f7c9652610c6#.oentrjqpj)
+- [Adding A Robust Form Validation To React Redux Apps](https://medium.com/@rajaraodv/adding-a-robust-form-validation-to-react-redux-apps-616ca240c124#.jq013tkr1)
+- [Securing React Redux Apps With JWT Tokens](https://medium.com/@rajaraodv/securing-react-redux-apps-with-jwt-tokens-fcfe81356ea0#.xci6o9s6w)
+- [Handling Transactional Emails In React Redux Apps](https://medium.com/@rajaraodv/handling-transactional-emails-in-react-redux-apps-8b1134748f76#.a24nenmnt)
+- [The Anatomy Of A React Redux App](https://medium.com/@rajaraodv/the-anatomy-of-a-react-redux-app-759282368c5a#.7wwjs8eqo)
 
 # 实例应用
 - [React Redux Example](http://react-redux.herokuapp.com/)

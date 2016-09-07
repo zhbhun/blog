@@ -53,3 +53,4 @@ tags:
 ---
 
 - [vmware workstation虚拟机中处理器的设置](http://jingyan.baidu.com/article/ed2a5d1f1f96f309f6be17e1.html)
+- [How To Connect USB iPhone, iPad to Mac OS X on VMware](https://www.youtube.com/watch?v=lI1uSwkkx88)

@@ -5,7 +5,9 @@ category: Redux
 tags: Redux
 ---
 
-prototype + use case -> store -> reducer + action -> component + container
+- [A Guide For Building A React Redux CRUD App](https://medium.com/@rajaraodv/a-guide-for-building-a-react-redux-crud-app-7fe0b8943d0f#.s2k92oimx)
+- ...
+
 
 # 移动端新闻
 功能
@@ -28,6 +30,7 @@ Store
 ```
 {
     selectedTopic: String,
+    postAdding: false,
     postsByTopic: {
        [topic]: {
             isFetching: Boolean,
@@ -48,14 +51,14 @@ Store
 Reducer
 
 - selectedTop(state: String, action: { type: 'SELECT_TOPIC', topic: String })
-- postsByTopic(state: Object, action: { type: 'REQUEST_POSTS'|'RECEIVE_POSTS_SUCCESS'|'RECEIVE_POSTS_FAIL', ...})
+- postsByTopic(state: Object, action: { type: 'REQUEST_POSTS'|'RECEIVE_POSTS', ...})
 
 Action
 
-- selectTopic(topic: String)
-- requestPosts(topic: Sting)
-- receivePostsSuccess(topic: String, response)
-- receivePostsFail(topic: String, response)
+- selectTopic(topic: String): SELECT_TOPIC
+- requestPosts(topic: Sting): 
+- receivePosts(topic: String, response)
+- ....
 
 Aync Action
 

@@ -60,3 +60,6 @@ tags: React
 
 # CSS Module
 - [CSS Modules 详解及 React 中实践](https://zhuanlan.zhihu.com/p/20495964?refer=purerender)
+
+# Virtual DOM
+- [React中一个没人能解释清楚的问题——为什么要使用Virtual DOM](http://www.zcfy.cc/article/the-one-thing-that-no-one-properly-explains-about-react-why-virtual-dom-hashnode-1211.html)
