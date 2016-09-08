@@ -14,9 +14,6 @@ tags: Redux
 - [react-redux-links](https://github.com/markerikson/react-redux-links)
 - [redux-ecosystem-links](http://cn.redux.js.org/docs/introduction/Ecosystem.html)
 
-# 快速上手
-...
-
 # 核心概念
 - Action：Action 是把数据从应用传到 store 的有效载荷
     - 用法：Action 是个普通对象，必须使用一个字符串类型的 type 字段来表示将要执行的动作。除了 type 字段外，action 对象的结构完全由你自己决定；
@@ -46,19 +43,14 @@ tags: Redux
     - subscribe(listener)
     - replaceReducer(nextReducer)
 
-# 实践
-- Redux + React
-    - 容器组件 VS 展示组件
-        - 容器组件放在顶层，展示组件放在中间和子组件
-        - 容器组件需要监听 Store，展示组件不需要
-        - 容器组件从 Store 中读取数据，展示组件从 props 读取
-        - 容器组件向 Store 派发 Action 来修改数据，展示组件调用 props 的回调函数
-    - 设计组件层次结构
-    - 连接 Store：尽量只做一个顶层组件，避免多个组件连接到 Store（遵循单向数据流，否则难以跟踪数据流）；
-
 # 生态系统
 - [react-redux](https://github.com/reactjs/react-redux)
 - [redux-devtools](http://github.com/gaearon/redux-devtools)
+
+## Middleware
+- [redux-thunk](https://github.com/gaearon/redux-thunk)
+- [redux-promise](https://github.com/acdlite/redux-promise)
+- [redux-promise-middleware](https://github.com/pburtchaell/redux-promise-middleware)
 
 # API
 - redux
@@ -131,10 +123,3 @@ tags: Redux
 - [Redux学习之一：何为middleware？](http://segmentfault.com/a/1190000003746223)
 - [FriendlistRedux](https://github.com/szhclaye/FriendlistRedux)
 - [这段时间研究了下Redux，写写自己对它的感觉。](https://github.com/lawrencebla/redux-review)
-
-# API
-- redux
-    - createStore
-- react-redux
-    - Provider
-    - connect
