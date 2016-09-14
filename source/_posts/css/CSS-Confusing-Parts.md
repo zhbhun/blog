@@ -6,10 +6,22 @@ tags: CSS
 ---
 
 # HTML link VS CSS @import
-1. link 属于 HTML 标签，而 @import 是 CSS 提供的;
-2. 页面被加载的时，link 会同时被加载，而 @import 引用的CSS会等到页面被加载完再加载; 
-3. @import 只在 IE5 以上才能识别，而 link 是 HTML 标签，无兼容问题; 
-4. link 方式的样式的权重 高于 @import 的权重；
+两者都能引入样式表，但 link 属于 HTML 标签，而 @import 是 CSS 提供的。
+
+link 可以并行立即加载，而 @import 可能被 link 阻塞，且不能立即下载（link 和 script 先下载）。
+
+- @import @import（使用 @import 引入两个样式表 ）：各个样式表并发下载，不会互相阻塞；
+- link @import（混合使用 link 和 @import）：在 IE 下，@import 会等到 link 下载完才开始下载；
+- link with @import（@import 放在 link 指定的样式表中）：所有浏览器都是要等待该样式表下载完，才开始下载 @import 样式表；
+- link blocks @import（同上，但是在之前还有其他的 link）：在 IE 下，@import 会等待所有 link 下载完才开始下载，其他浏览器只要该 link 下载完就开始下载 @import 样式表；
+- many @imports（多个 @import）：在 IE 中，@import 样式表在 js 和 img 之后开始加载（导致图片重复渲染），并且下载顺序可能不同于声明顺序；
+- link link（使用 link 引入两个样式表）：所有浏览器都会并发下载样式表；
+- link with @imports（使用一个 link 引入多个 @import 样式表）：@import 样式表必须等待 link 样式表下载完才开始下载；
+- many links（使用 link 引入多个样式表）：样式表会按顺序并发下载，；
+- http://stevesouders.com/tests/atimport/import-import.php?t=1473749144
+
+- [Difference between @import and link in CSS](http://stackoverflow.com/questions/1022695/difference-between-import-and-link-in-css)
+- [don’t use @import](http://www.stevesouders.com/blog/2009/04/09/dont-use-import/)
 
 # display:none VS visibility:hidden
 - display:none：隐藏对应的元素，在文档布局中不再给它分配空间，它各边的元素会合拢，

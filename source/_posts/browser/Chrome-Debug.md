@@ -1,8 +1,8 @@
 ---
 title: Chrome 调试
 date: 2016-05-11
-category: Chrome
-tags: Chrome
+category: Browser
+tags: Browser
 ---
 
 

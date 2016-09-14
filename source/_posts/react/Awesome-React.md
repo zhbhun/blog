@@ -63,3 +63,6 @@ tags: React
 
 # Virtual DOM
 - [React中一个没人能解释清楚的问题——为什么要使用Virtual DOM](http://www.zcfy.cc/article/the-one-thing-that-no-one-properly-explains-about-react-why-virtual-dom-hashnode-1211.html)
+
+# TODO
+- [How To Scale React Applications](https://www.smashingmagazine.com/2016/09/how-to-scale-react-applications/)

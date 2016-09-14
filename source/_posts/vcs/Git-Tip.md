@@ -20,3 +20,5 @@ tags: VCS
 - true：拒绝提交包含混合换行符的文件
 - false：允许提交包含混合换行符的文件
 - warn：提交包含混合换行符的文件时给出警告
+
+- [Oh shit, git!](http://ohshitgit.com/)
