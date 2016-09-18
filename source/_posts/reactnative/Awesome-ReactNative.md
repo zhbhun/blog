@@ -94,10 +94,18 @@ https://github.com/react-native-community/React-Native-Elements
 - [reactotron](https://github.com/skellock/reactotron)：Control, monitor, and instrument your React and React Native apps from the comfort of your TTY.
 - [rnpm](https://github.com/rnpm/rnpm)：React Native Package Manager
 Updated 15 days ago
+- [Exponent](https://getexponent.com/)
+- rninit
 
 # 示例
 - [bartonhammond/snowflake](https://github.com/bartonhammond/snowflake)：A React-Native Android iOS Starter App/ BoilerPlate / Example with Redux, RN Router, & Jest with either Parse.com or Hapi server locally or on OpenShift for the backend
 - [example-react-native-redux](https://github.com/alinz/example-react-native-redux)：react native redux counter example
+
+# 教程
+- [React Native Express](http://www.reactnativeexpress.com/)
+
+# 视频
+- [React Native Fundamentals](https://egghead.io/courses/react-native-fundamentals)
 
 # 项目
 - [f8app](https://github.com/fbsamples/f8app)：Source code of the official F8 app of 2016, powered by React Native and other Facebook open source projects. http://f8-app.liaohuqiu.net/

@@ -100,6 +100,7 @@ tags: Redux
 - [Securing React Redux Apps With JWT Tokens](https://medium.com/@rajaraodv/securing-react-redux-apps-with-jwt-tokens-fcfe81356ea0#.xci6o9s6w)
 - [Handling Transactional Emails In React Redux Apps](https://medium.com/@rajaraodv/handling-transactional-emails-in-react-redux-apps-8b1134748f76#.a24nenmnt)
 - [The Anatomy Of A React Redux App](https://medium.com/@rajaraodv/the-anatomy-of-a-react-redux-app-759282368c5a#.7wwjs8eqo)
+- [Encapsulating the Redux State Tree](http://randycoulman.com//blog/2016/09/13/encapsulating-the-redux-state-tree/)
 
 # 实例应用
 - [React Redux Example](http://react-redux.herokuapp.com/)

@@ -25,6 +25,7 @@ tags: React
 - [pure render](https://zhuanlan.zhihu.com/purerender)
 - [Learn React](https://zhuanlan.zhihu.com/leanreact)
 - [React Training](https://reactjs-training.com/)
+- [React Video on Egghead](https://egghead.io/technologies/react)
 
 # 开源项目
 - [cnode-react](https://github.com/stop2stare/cnode-react)

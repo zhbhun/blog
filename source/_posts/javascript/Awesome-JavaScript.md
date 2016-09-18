@@ -12,6 +12,9 @@ tags: JavaScript
 - http://stateofjs.com/
 - [WEB前端知识体系脑图](http://www.jianshu.com/p/00baf1e65322)
 
+# 视频
+- https://egghead.io/technologies/js
+
 # jQuery on Github
 - [jquery/jquery](https://github.com/jquery/jquery)：jQuery JavaScript Library
 - [blueimp/jQuery-File-Upload](https://github.com/blueimp/jQuery-File-Upload)：File Upload widget with multiple file selection, drag&drop support, progress bar, validation and preview images, audio and video for jQuery.

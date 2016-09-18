@@ -26,6 +26,8 @@ tags: Node.js
     - 豆瓣评分：8.2
     - 简介：Node.js 入门书籍
 
+# 视频
+- https://egghead.io/technologies/node
 
 # 二维码
 - [node-qrcode](https://github.com/soldair/node-qrcode)

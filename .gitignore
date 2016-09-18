@@ -1,9 +1,9 @@
 .DS_Store
-Thumbs.db
-db.json
+.deploy*/
 *.log
+blog.sublime-workspace
+db.json
 node_modules/
 public/
-.deploy*/
-public/
+Thumbs.db
 themes/
