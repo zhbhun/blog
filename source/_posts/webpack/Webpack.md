@@ -25,6 +25,9 @@ webpack是一个模块打包工具，通过依赖处理模块，并生成那些�
 - [Webpack Compared](http://survivejs.com/webpack/webpack-compared/)
 - [WEBPACK FOR BROWSERIFY USERS](http://webpack.github.io/docs/webpack-for-browserify-users.html)
 
+# 推荐博文
+- [想要设计gulp & webpack构建系统？看这儿！](http://www.jianshu.com/p/2cc6a22c9ecc)
+
 # 项目模板
 - [react-starter-kit](https://github.com/kriasoft/react-starter-kit)：React 同构 Web 应用模板(Node.js, Express, GraphQL, React.js, Babel 6, PostCSS, Webpack, Browsersync)
 - [react-transform-boilerplate](https://github.com/gaearon/react-transform-boilerplate)：支持热加载 React 组件，并支持模块/组件级别错误处理的模板

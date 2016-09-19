@@ -12,6 +12,10 @@ tags: Java
 - http://www.jb51.net/article/42157.htm
 
 
+# 编码规范
+- [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)
+- [Google XML Document Format Style Guide](https://google.github.io/styleguide/xmlstyle.html)
+
 # Markdown
 - http://www.oschina.net/project/tag/303/markdown?sort=view&lang=19&os=0
 - [pegdown](https://github.com/sirthias/pegdown)

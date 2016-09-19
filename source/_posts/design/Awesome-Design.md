@@ -113,3 +113,6 @@ tags: Design
 - [《U1》04 - UI入门技能选择](http://www.ui.cn/detail/16212.html)
 - [《U1》05 - 三年入职大公司](http://www.ui.cn/detail/16467.html)
 - [《U1》06 - 抄袭别人，超越自己](http://www.ui.cn/detail/17318.html)
+
+# 动画
+- [功能性动画设计:优秀的转场效果](http://theme.bcoder.cn/207.html)

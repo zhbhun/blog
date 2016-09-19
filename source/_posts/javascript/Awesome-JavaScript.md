@@ -66,6 +66,15 @@ tags: JavaScript
 # Format
 - [normalizr](https://github.com/paularmstrong/normalizr)：Normalizes nested JSON according to a schema
 
+# Cookie
+- [源码分析之：cookies.js](源码分析之：cookies.js)
+
+# Storage
+- [store.js](https://github.com/jaywcjlove/store.js)
+
+# ES7
+- [[心得] 自己动手打造 ES7 开发环境](http://mp.weixin.qq.com/s?__biz=MzA5NTM2MTEzNw==&mid=2736710596&idx=1&sn=c65df9d6e27142430313a783e149129d&scene=0)
+
 # Todo
 - [You-Dont-Know-JS](https://github.com/getify/You-Dont-Know-JS)
 - [lightgallery.js](https://github.com/sachinchoolur/lightgallery.js)

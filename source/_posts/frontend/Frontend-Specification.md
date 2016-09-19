@@ -13,6 +13,9 @@ tags: Frontend
 - [前端编码规范](http://www.css88.com/archives/5361)
 - [bendc/frontend-guidelines](https://github.com/bendc/frontend-guidelines)
 
+# HTML
+- [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.xml)
+
 # CSS
 - [Airbnb CSS / Sass](https://github.com/airbnb/css)
 
@@ -23,8 +26,14 @@ tags: Frontend
 - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
 - [gf-rd/es6-coding-style](https://github.com/gf-rd/es6-coding-style)
 
+# JSON
+- [Google JSON Style Guide](https://google.github.io/styleguide/jsoncstyleguide.xml)
+
 # React
 - [Airbnb React/JSX Style](https://github.com/airbnb/javascript/tree/master/react)
+
+# Angular
+- [An AngularJS Style Guide for Closure Users at Google](https://google.github.io/styleguide/angularjs-google-style.html)
 
 # 其他
 - [Naming this in nested functions](https://gist.github.com/cjohansen/4135065)

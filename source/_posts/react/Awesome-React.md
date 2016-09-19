@@ -15,6 +15,9 @@ tags: React
 - [react-transform-boilerplate](https://github.com/gaearon/react-transform-boilerplate)：支持热加载 React 组件，并支持模块/组件级别错误处理的模板
 - [react-redux-universal-hot-example](https://github.com/erikras/react-redux-universal-hot-example)：使用 express, react, redux, webpack, and react-transform 的 Web 应用模板
 
+# 开源组件
+- [10 Best ReactJS UI Frameworks for rapid prototyping](https://hashnode.com/post/10-best-reactjs-ui-frameworks-for-rapid-prototyping-cit49tqx414z89c53equ4zc5k)
+
 # 学习资源
 - http://www.reactjsprogram.com
 - [React 设计思想](https://github.com/react-guide/react-basic)
@@ -26,6 +29,12 @@ tags: React
 - [Learn React](https://zhuanlan.zhihu.com/leanreact)
 - [React Training](https://reactjs-training.com/)
 - [React Video on Egghead](https://egghead.io/technologies/react)
+
+# 推荐博文
+- [reactjs101](https://github.com/kdchang/reactjs101)
+- [React 数据阵营之 State 与 Props](https://github.com/rccoder/blog/issues/16)
+- [React中一个没人能解释清楚的问题——为什么要使用Virtual DOM](http://www.zcfy.cc/article/the-one-thing-that-no-one-properly-explains-about-react-why-virtual-dom-hashnode-1211.html)
+- [Vue或React多页应用脚手架](https://segmentfault.com/a/1190000006789546)
 
 # 开源项目
 - [cnode-react](https://github.com/stop2stare/cnode-react)

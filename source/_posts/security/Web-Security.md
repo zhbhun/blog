@@ -39,3 +39,6 @@ tags: Security
 - [TamperIE](https://bayden.com/tamperie/)：HTTP 数据包修改、转发工具
 - [Tyrant-Sql](https://github.com/aron-bordin/Tyrant-Sql): SQL 注入检测
 - Fiddler
+
+# TODO
+- [前后端分离架构下CSRF防御机制](https://segmentfault.com/a/1190000006944760)

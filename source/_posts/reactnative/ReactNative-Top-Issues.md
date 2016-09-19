@@ -11,3 +11,6 @@ tags: ReactNative
 # 导航
 1. NavigatorIOS 没有 jumpBack —— 赢点金开户步骤
 2. NavigatorIOS 无法实现返回上一步时，无法动态输入路由 —— 赢点金开户步骤
+
+# 触摸/事件
+- [React-Native 触摸与动画](http://xgfe.github.io/2016/08/21/lulutia/react-native-touch-animation/)
