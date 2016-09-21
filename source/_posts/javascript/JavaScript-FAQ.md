@@ -6,6 +6,58 @@ tags: JavaScript
 ---
 
 # ES
+## 作用域
+### 函数作用域
+TODO
+
+### 块作用域
+**实现方式**
+
+- const 
+- let
+- try/catch
+- with
+
+### 声明提升
+**原理**
+
+编译源代码时，会将代码拆分为声明和赋值两个阶段。声明会被提升到函数作用域的上方，而赋值操作保持原来的顺序。
+
+**原则**
+
+1. 变量声明会被提升
+2. 函数声明会被提升
+3. 赋值操作/函数表达式不会被提升
+4. 函数声明优先被提升，重复的变量声明会被忽略
+5. 后面的函数声明会覆盖前面的函数声明
+6 一个普通块内部的函数声明通常会被提升到所在作用域的顶部，而且遵循原则 5，与普通快是否会执行无关；
+
+测试代码：https://github.com/zhbhun/program-demo/tree/master/javascript/es/scope/hoisting
+
+### 闭包
+什么是闭包？
+
+1. 函数嵌套函数；
+2. 函数内部可以引用外部的参数和变量；
+3. 参数和变量不会被垃圾回收机制回收；
+
+闭包的作用？
+
+1. 设计私有的方法和变量；
+2. 避免全局变量的污染；
+
+闭包的副作用？
+
+1. 闭包会常驻内存，会增大内存使用量，使用不当很容易造成内存泄露
+
+闭包的实际运用
+
+TODO
+
+- [Use JavaScript Closures Efficiently](Use JavaScript Closures Efficiently)
+- [JavaScript 闭包](https://segmentfault.com/a/1190000006875662)
+
+
 ## 数据类型
 **null VS undefined**
 
@@ -46,28 +98,6 @@ tags: JavaScript
 
 - 参考文献：[undefined 与 null 的区别](http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html)
 
-## 闭包
-什么是闭包？
-
-1. 函数嵌套函数；
-2. 函数内部可以引用外部的参数和变量；
-3. 参数和变量不会被垃圾回收机制回收；
-
-闭包的作用？
-
-1. 设计私有的方法和变量；
-2. 避免全局变量的污染；
-
-闭包的副作用？
-
-1. 闭包会常驻内存，会增大内存使用量，使用不当很容易造成内存泄露
-
-闭包的实际运用
-
-TODO
-
-- [Use JavaScript Closures Efficiently](Use JavaScript Closures Efficiently)
-- [JavaScript 闭包](https://segmentfault.com/a/1190000006875662)
 
 ## 原型链
 - [Javascript的原型链图](https://zhuanlan.zhihu.com/p/22189387)
@@ -97,6 +127,63 @@ TODO
 
 ## 事件
 - [JS事件模型](https://segmentfault.com/a/1190000006934031)
+
+### 触摸事件
+
+- 触发逻辑
+    - 轻按：touchstart -> touchend -> mouseover -> mouseenter -> mousemove -> mousedown -> mouseup -> click
+    - 长按空白: touchstart -> mouseover -> mouseenter -> mousemove -> mousedown -> touchend
+    - 长按文字: touchstart -> touchcancel
+    - 拖动: touchstart -> touchmove -> touchend
+- 事件用法
+    - 在 ontouchstart 里 preventDefault 可以阻止鼠标事件的触发
+    - 在 ontouchmove 里 preventDefault 可以阻止页面滚动
+    - 鼠标事件再触摸设备上会延迟执行，除非设置页面为禁止缩放
+    - ontouchmove 事件触发非常频繁，需要借助 requestAnimationFrame 来渲染动画
+- 触摸交互设计
+    - 轻按：相当于鼠标的点击功能
+    - 短暂按：同上
+    - 长按：取消轻按效果（不一定触发），触发响应的行为，如：复制，菜单等 —— 这点与鼠标不同
+    - 拖动：列表滚动，鼠标不支持
+- 常见问题
+    - [解决页面使用overflow: scroll在iOS上滑动卡顿的问题](http://www.cnblogs.com/lyingSmall/p/5235178.html)
+    - [iOS safari 如何阻止“橡皮筋效果”？](https://www.zhihu.com/question/22256539)
+- 参考文献
+    - [MDN TouchEvent](https://developer.mozilla.org/zh-CN/docs/Web/API/TouchEvent)
+    - [Understanding touch events](http://stackoverflow.com/questions/14486804/understanding-touch-events)
+    - [多点触摸网络开发](http://www.html5rocks.com/zh/mobile/touch/)
+    - [Touch And Mouse](http://www.html5rocks.com/en/mobile/touchandmouse/)
+    - [Chrome DevTools for Mobile: Screencast and Emulation](http://www.html5rocks.com/en/tutorials/developertools/mobile/)
+    - [A non-responsive approach to building cross-device webapps](http://www.html5rocks.com/en/mobile/cross-device/)
+    - [Touch Event Handling in JavaScript](http://tutorials.jenkov.com/responsive-mobile-friendly-web-design/touch-events-in-javascript.html)
+    - [HTML5 for the Mobile Web: Touch Events](https://mobiforge.com/design-development/html5-mobile-web-touch-events)
+    - [移动开发之touch event篇](http://www.aliued.cn/2013/04/27/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%B9%8Btouch-event%E7%AF%87.html)
+    - [移动开发之touch event篇](http://www.aliued.cn/2013/04/27/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%B9%8Btouch-event%E7%AF%87.html)
+    - [ HTML5实战与剖析之触摸事件(touchstart、touchmove和touchend)](http://blog.csdn.net/lee_magnum/article/details/17753807)
+    - [Touch开发必须知道的事儿](http://div.io/topic/398)
+    - [HTML5的javascript touch事件](http://hedgehogking.com/?p=556)
+    - [简单聊聊touch事件](http://lucyhao.com/2016/02/03/%E7%AE%80%E5%8D%95%E8%81%8A%E8%81%8Atouch%E4%BA%8B%E4%BB%B6/)
+- 开源项目
+    - [hammer.js](https://github.com/hammerjs/hammer.js)：A javascript library for multi-touch gestures
+    - [interact.js](interact.js)：JavaScript drag and drop, resizing and multi-touch gestures with inertia and snapping for modern browsers (and also IE8+)
+    - [Touchy.js](https://github.com/jairajs89/Touchy.js)：A simple light-weight JavaScript library for dealing with touch events
+    - [jQuery-Touch-Events](https://github.com/benmajor/jQuery-Touch-Events)：A collection of mobile event plugins for jQuery.
+    - [pointer.js](https://github.com/mozilla/pointer.js)：Normalizes mouse/touch events into 'pointer' events.
+    - [jquery.finger](https://github.com/ngryman/jquery.finger)： jQuery touch & gestures, fingers in the nose.
+    - [touchy](https://github.com/HotStudio/touchy)：jQuery plugin for touch events
+    - [Touchable-jQuery-Plugin](https://github.com/dotmaster/Touchable-jQuery-Plugin)：Touchable jQuery Plugin
+    - [tappable](https://github.com/cheeaun/tappable)
+    - [touchpoint-js](https://github.com/jonahvsweb/touchpoint-js)：A vanilla JavaScript library that visually shows taps/clicks for HTML prototypes using CSS3 transitions on desktop and mobile.
+    - [jQuery Mobile Touch Events](http://www.w3schools.com/jquerymobile/jquerymobile_events_touch.asp)
+    - [Event.js](https://github.com/mudcube/Event.js)： Multi-touch, gestures, and other events—click, dblclick, dbltap, tap, longpress, drag, swipe, pinch, rotate, shake. For pointer events, each listener can handle anywhere from 1 to 12 fingers at a time, or more, depending on the device. Includes MetaKey tracking (CMD, CTRL) to support native key-commands in various platforms.
+    - [hover-on-touch](https://github.com/vin-ni/hover-on-touch)：Javascript plugin for an alternative hover function on mobile devices. It shows secondary information on Taphold & goes to a link on Tap.
+
+## 位置/大小
+- [document.body.scrollTop is always 0 in IE even when scrolling](http://stackoverflow.com/questions/2717252/document-body-scrolltop-is-always-0-in-ie-even-when-scrolling)
+- [Finding the size of the browser window](http://www.howtocreate.co.uk/tutorials/javascript/browserwindow)
+- [document.body.scrollTop in IE](https://forums.digitalpoint.com/threads/document-body-scrolltop-in-ie.11965/)
+- [ScrollTop not working in IE](http://stackoverflow.com/questions/6736849/scrolltop-not-working-in-ie)
+- [火狐、谷歌、IE关于document.body.scrollTop和document.documentElement.scrollTop 以及值为0的问题](http://www.cnblogs.com/aaronjs/p/4153519.html)
 
 # 存储
 有哪些存储方式
@@ -131,6 +218,26 @@ Cookie 使用经验
 1. 控制 cookie 的生命期，避免使用不会失效的 cookie；
 2. 只在 cookie 中存放不敏感数据；
 3. 通过加密和安全传输技术（SSL），减少 cookie 被破解的可能性；
+
+
+# 网络
+## Ajax
+- [request](https://github.com/request/request)
+- [github/fetch](https://github.com/github/fetch)
+- [reqwest](https://github.com/ded/reqwest)
+- [node-fetch](https://github.com/github/fetch)
+- [NODE.JS TUTORIAL - HOW TO USE REQUEST MODULE](http://blog.modulus.io/node.js-tutorial-how-to-use-request-module)
+
+## 数据推送
+- Javascript 数据推送
+- Commet：基于HTTP长连接的服务器推送技术
+- 基于 WebSocket 的推送方案
+- SSE（Server-Send Event）：服务器推送数据新方式
+
+
+# 安全
+## 加密
+- https://github.com/blueimp/JavaScript-MD5
 
 # 高级
 ## 内存泄露
