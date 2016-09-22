@@ -6,9 +6,15 @@ tags: JavaScript
 ---
 
 # ES
+## 原型链
+- [Javascript的原型链图](https://zhuanlan.zhihu.com/p/22189387)
+
+**原型对象**
+
+测试代码：https://github.com/zhbhun/program-demo/tree/master/javascript/es/proptype
+
 ## 作用域
 ### 函数作用域
-TODO
 
 ### 块作用域
 **实现方式**
@@ -98,9 +104,31 @@ TODO
 
 - 参考文献：[undefined 与 null 的区别](http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html)
 
+## 面向对象
+### 创建对象
+- 字面量/new Object：可以用来构造单个对象，但需要大量创建同类对象时，会产生大量的重复代码；
+- 工厂模式：解决了创建多个相似对象的问题, 但没有解决对象识别的问题；
+- 构造函数模式：解决了对象识别的问题，但每次实例化对象时，对象方法都要在重新创建一遍；
+- 原型模式：解决了对象方法不能复用的问题，但同时也共享了属性 —— 修改引用类型的属性值存在隐患；
+- 混合构造函数和原型模式：构造函数模式用于定义实例属性，而原型模式用于定义方法和共享的属性；
+- 动态原型模式：把所有信息都封装在构造函数中, 解决构造函数和原型独立的问题；
+- 寄生构造函数模式：类似于工厂模式，但通过 new 函数来实例化对象，这个模式可以在特殊情况下用来为对象创建构造函数。例如：想要创建一个具有额外方法的特殊数组，由于不能直接修改 Array 构造函数，因此可以使用这个模式。
+- 稳妥构造函数模式：没有公共属性，且构造函数不引用 this。该模式适合在一些安全的环境中，或者在防止数据被其他应用程序改动时使用。
 
-## 原型链
-- [Javascript的原型链图](https://zhuanlan.zhihu.com/p/22189387)
+测试代码：https://github.com/zhbhun/program-demo/tree/master/javascript/es/oop/create
+
+### 对象继承
+- 原型链继承
+- 借用构造函数继承
+- 组合继承(原型+借用构造)
+- 原型式继承
+- 寄生式继承
+- 寄生组合式继承
+- 参考文献
+    - [JavaScript继承方式详解](https://segmentfault.com/a/1190000002440502)
+
+- [Javascript三招两式之对象继承(下)](https://www.zhuyingda.com/blog/article.html?id=12&origin=gold)
+
 
 ## TODO
 - [如何在 JavaScript 中声明变量](https://github.com/rccoder/blog/issues/15)
@@ -262,9 +290,6 @@ Cookie 使用经验
 - IE下，可以使用获取常规属性的方法来获取自定义属性, 也可以使用 getAttribute() 获取自定义属性; Firefox下,只能使用getAttribute()获取自定义属性 —— 解决方法:统一通过getAttribute()获取自定义属性；
 - IE下，event对象有 x，y 属性，但是没有 pageX，pageY 属性; Firefox下，event 对象有 pageX， pageY 属性，但是没有 x，y 属性；
 - ...
-
-# 面向对象编程
-- [Javascript三招两式之对象继承(下)](https://www.zhuyingda.com/blog/article.html?id=12&origin=gold)
 
 # 函数式编程
 - [谈谈函数式编程](https://github.com/joeyguo/blog/issues/10)

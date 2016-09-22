@@ -68,3 +68,6 @@ TODO
 - [为什么要少用 iframe ?](http://www.feelcss.com/browser-concurrent-requests.html)
 - [Max parallel http connections in a browser?](http://stackoverflow.com/questions/985431/max-parallel-http-connections-in-a-browser)
 - [Why do big sites host their images/css on external domains?](http://webmasters.stackexchange.com/questions/26753/why-do-big-sites-host-their-images-css-on-external-domains)
+
+# 从输入 URL 到浏览器接收的过程中发生了什么事情？
+http://fex.baidu.com/blog/2014/05/what-happen/

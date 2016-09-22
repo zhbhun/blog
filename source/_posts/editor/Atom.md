@@ -85,6 +85,9 @@ Atom是由GitHub开发的自由及开放源代码的文字与代码编辑器，�
 - [todo-show](https://atom.io/packages/todo-show) 查找项目中所有包含 TODO, FIXME, CHANGED, XXX, IDEA, HACK, NOTE, REVIEW 的注释
 - [project-manager](https://atom.io/packages/project-manager)  项目管理插件
 
+## 其他
+- [dash](https://atom.io/packages/dash)
+
 ## 参考
 - [Atom 插件推荐：代码编辑（语言无关类）](https://atom-china.org/t/atom/804)
 - [Atom 插件推荐：版本控制专题](https://atom-china.org/t/atom/324)

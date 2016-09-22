@@ -121,6 +121,7 @@ http://www.hongkiat.com/blog/sublime-code-snippets/
 - [AllAutocomplete](https://github.com/alienhard/SublimeAllAutocomplete)
 - [SublimeREPL](https://github.com/wuub/SublimeREPL)
 - [ColorPicker](http://weslly.github.io/ColorPicker/)
+- [zeal](https://github.com/vaanwd/Zeal)
 
 # 主题
 我自己使用的主题是 `Theme - Spacegray`，可以访问网址 https://packagecontrol.io/browse/labels/theme 寻找自己想要的主题。
