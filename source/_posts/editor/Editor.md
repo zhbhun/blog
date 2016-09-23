@@ -24,3 +24,6 @@ tags: Editor
 
 | 特性/编辑器 | Sublime | Atom | VSC |
 | --- | --- | --- |
+
+# Sublime VS Atom
+- Sublime 支持 Markdown 标题树形结构，而 Atom 不支持
