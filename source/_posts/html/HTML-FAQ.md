@@ -328,6 +328,28 @@ link 标签指定当前文档和外部文档的关系，最常见的用法是指
 - 动态创建 DOM：创建 script，插入到 DOM 中，加载完毕后 callBack
 - 按需异步载入 js
 
+- In older browsers that don't support the async attribute, parser-inserted scripts block the parser; 
+- script-inserted scripts execute asynchronously in IE and WebKit, but synchronously in Opera and pre-4.0 Firefox. In Firefox 4.0, the async DOM property defaults to true for script-created scripts, so the default behavior matches the behavior of IE and WebKit.
+- To request script-inserted external scripts be executed in the insertion order in browsers where the document.createElement("script").async evaluates to true (such as Firefox 4.0), set .async=false on the scripts you want to maintain order. 
+-  Never call document.write() from an async script. In Gecko 1.9.2, calling document.write() has an unpredictable effect. In Gecko 2.0, calling document.write() from an async script has no effect (other than printing a warning to the error console).
+
+
+- 不能在 async script 里使用 document.write Failed to execute 'write' on 'Document': It isn't possible to write into a document from an asynchronously-loaded external script unless it is explicitly opened.
+
+
+
+- [JS一定要放在Body的最底部么？聊聊浏览器的渲染机制](http://delai.me/code/js-and-performance/)
+- [Asynchronous and deferred JavaScript execution explained](http://peter.sh/experiments/asynchronous-and-deferred-javascript-execution-explained/)
+- [script的defer和async](http://ued.ctrip.com/blog/script-defer-and-async.html)
+- [HTML5’s async Script Attribute](https://davidwalsh.name/html5-async)
+- [Les attributs async et defer pour <script>](http://www.alsacreations.com/astuce/lire/1562-script-attribut-async-defer.html)
+- [Difference between async and defer attributes in script tags](http://javascript.tutorialhorizon.com/2015/08/11/script-async-defer-attribute/)
+- [async vs defer attributes](http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html)
+- [onLoad and onDOMContentLoaded](http://javascript.info/tutorial/onload-ondomcontentloaded)
+- [从onload和DOMContentLoaded谈起](http://www.cnblogs.com/hh54188/archive/2013/03/01/2939426.html)
+-
+
+
 # SEO
 - [Google Search Console](https://support.google.com/webmasters#topic=3309469)
 

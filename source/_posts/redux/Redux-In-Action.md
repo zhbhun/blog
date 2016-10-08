@@ -83,3 +83,64 @@ Container
         - 容器组件向 Store 派发 Action 来修改数据，展示组件调用 props 的回调函数
     - 设计组件层次结构
     - 连接 Store：尽量只做一个顶层组件，避免多个组件连接到 Store（遵循单向数据流，否则难以跟踪数据流）；
+
+---
+
+1. 需求分析
+    - 查看列表
+    - 查看数据
+    - 新增数据
+    - 修改数据
+    - 删除数据
+2. 线框图
+    - 查看列表
+        - 加载前
+        - 加载中
+        - 加载失败
+        - 加载成功
+    - 查看数据
+        - 加载前
+        - 加载中
+        - 加载失败
+        - 加载成功
+    - 新增数据
+        - 提交前
+        - 提交中
+        - 提交成功
+        - 提交失败
+    - 修改数据：同新增
+    - 删除数据：同新增
+3. compoennt
+    - Header
+    - List
+    - Detail
+    - AddForm
+    - UpdateForm
+    - DeleteFrom
+4. action/state
+    - Header
+    - List
+        - state：data，loading，error
+        - action：FETCH_LISTS，FETCH_LISTS_SUCCESS，FETCH_LIST_FAILURE
+        - init state: `{ list: { data: [], error: null, loading: false } }`
+    - Detail
+        - props：postId
+        - state：id，data，error，loading
+        - action：FETCH_DETAIL，FETCH_DETAIL_SUCCESS，FETCH_DETAIL_FAILURE
+        - init state：`{ detail: { data: null, error: null, loading: false } }`
+    - AddFrom
+        - state：error，submitting
+        - action：ADD，ADD_SUCCESS，ADD_FAILURE
+        - init state：`{ add: { error: null, submitting: false } }`
+    - UpdateForm
+    - DeleteForm
+    - Head
+        - props：type，id
+5. Container
+    - HeaderContainer
+    - ListContainer
+    - DetailContainer
+    - AddFormContainer
+    - UpdateFormContainer
+    - DeleteFormContainer
+    

@@ -12,6 +12,11 @@ tags: JavaScript
 - http://stateofjs.com/
 - [WEB前端知识体系脑图](http://www.jianshu.com/p/00baf1e65322)
 
+# 书籍
+- http://jsbooks.revolunet.com/
+- [23 Free JavaScript Books](https://hackerlists.com/free-javascript-books/c)
+- [You-Dont-Know-JS](https://github.com/getify/You-Dont-Know-JS)
+
 # 视频
 - https://egghead.io/technologies/js
 

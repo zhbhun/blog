@@ -308,7 +308,7 @@ http://www.hongkiat.com/blog/sublime-code-snippets/
 - http://sublimecodeintel.github.io/SublimeCodeIntel/
 - [Sublime 3 - Set Key map for function Goto Definition](http://stackoverflow.com/questions/16235706/sublime-3-set-key-map-for-function-goto-definition)
 
----
+- 不支持 `.eslintignore`：[default to .eslintignore, allow overrides](https://github.com/roadhump/SublimeLinter-eslint/pull/145)
 
 # 参考文献
 ## 文档
