@@ -20,3 +20,10 @@ tags: Wechat
 - [微信小程序「官方示例代码」浅析【上】](https://zhuanlan.zhihu.com/p/22574282)
 - [微信小程序和谷歌有什么关系？](http://mp.weixin.qq.com/s?__biz=MzAwODY4OTk2Mg==&mid=2652039482&idx=2&sn=778e1313ebbd832b590b81a8088b63db#rd)
 - [微信小程序剖析【下】：运行机制](http://mp.weixin.qq.com/s?__biz=MjM5Mjg4NDMwMA==&mid=2652974093&idx=1&sn=0570a243304ea8bb7d1b636624886fb1#rd)
+
+
+- [首个微信小程序开发教程，通宵吐血写的！](http://blog.jobbole.com/106049/)
+- [微信小程序开发教程（第2弹）](http://blog.jobbole.com/106098/)
+- [微信小程序开发教程（第3弹）](http://blog.jobbole.com/106107/)
+- [微信小程序开发教程（第4弹）](http://blog.jobbole.com/106105/)
+- [微信小程序开发教程（第5弹）](http://blog.jobbole.com/106162/)

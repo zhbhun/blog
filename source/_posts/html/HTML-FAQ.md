@@ -321,33 +321,70 @@ link 标签指定当前文档和外部文档的关系，最常见的用法是指
 - 没有语意
 
 ## script
-**动态加载脚本的方式**
+**用法**
 
-- defer
-- async
-- 动态创建 DOM：创建 script，插入到 DOM 中，加载完毕后 callBack
+- head script
+- body script
+- document write
+- script insert：动态创建 script，插入到 DOM 中
+- defer：HTML 4.0 规范，其作用是告诉浏览器等到 DOM+CSSOM 渲染完成，再执行指定脚本 —— 可以保证执行顺序就是它们在页面上出现的顺序；
+
+    1. 浏览器开始解析 HTML 网页
+    2. 解析过程中，发现带有 defer 属性的 script 标签
+    3. 浏览器继续往下解析 HTML 网页，解析完就渲染到页面上，同时并行下载 script 标签中的外部脚本
+    4. 浏览器完成解析 HTML 网页，此时再执行下载的脚本，完成后触发 DOMContentLoaded
+
+- async：HTML 5 规范，其作用是，使用另一个进程下载脚本，下载时不会阻塞渲染，并且下载完成后立刻执行 —— 但是 async 无法保证脚本的执行顺序。哪个脚本先下载结束，就先执行那个脚本。；
+
+    1. 浏览器开始解析 HTML 网页
+    2. 解析过程中，发现带有 async 属性的 script 标签
+    3. 浏览器继续往下解析 HTML 网页，解析完先显示页面并触发 DOMContentLoaded，同时并行下载 script 标签中的外部脚本
+    4. 脚本下载完成，浏览器暂停解析 HTML 网页，开始执行下载的脚本
+    5. 脚本执行完毕，浏览器恢复解析 HTML 网页
+
 - 按需异步载入 js
 
-- In older browsers that don't support the async attribute, parser-inserted scripts block the parser; 
-- script-inserted scripts execute asynchronously in IE and WebKit, but synchronously in Opera and pre-4.0 Firefox. In Firefox 4.0, the async DOM property defaults to true for script-created scripts, so the default behavior matches the behavior of IE and WebKit.
-- To request script-inserted external scripts be executed in the insertion order in browsers where the document.createElement("script").async evaluates to true (such as Firefox 4.0), set .async=false on the scripts you want to maintain order. 
--  Never call document.write() from an async script. In Gecko 1.9.2, calling document.write() has an unpredictable effect. In Gecko 2.0, calling document.write() from an async script has no effect (other than printing a warning to the error console).
+**defer VS async**
+
+- defer 可以保证执行顺序，async 不行；
+- async 可以提前触发 domReady，defer 不行；
+- defer 在 iOS 和部分 Android 下依然阻塞渲染，白屏时间长；
+- 当 script 同时加 async 和 defer 属性时，后者不起作用，浏览器行为由 async 属性决定；
+- async 和 defer 的兼容性不一致，好在 async 和 defer 无线端基本都支持，async 不支持 IE 9-；
+
+    - defer 支持 IE6+（包含 IE6），async 不支持 IE9-（不包含IE9）
+    - <=IE 9 defer 执行顺序有 bug，但可以 [hack](https://github.com/h5bp/lazyweb-requests/issues/42)
+    - Firefox 的 defer 也可以提前触发 domready
+
+**async vs script insert**
+
+浏览器有‘preload scanner’ 的功能，在 HTML 解析时就可以提前并发去下载 JS 文件。而 script insert 将 JS 的文件隐藏在 JS 逻辑中，浏览器就没这么智能发现了。对于 CSS/JS 已经预加载到客户端了，可以使用 script inject。如果要在浏览器中运行，还是推荐使用 async 和 defer。
 
 
-- 不能在 async script 里使用 document.write Failed to execute 'write' on 'Document': It isn't possible to write into a document from an asynchronously-loaded external script unless it is explicitly opened.
+**最佳实践**
 
+- 业务 JS 尽量异步，放 body 底部的 JS 在 iOS 上和部分 Android 是无效的，依然会阻塞首屏渲染 —— 不同的浏览器执行原理不一致；
+- 异步的方式尽可能原生用 async，容器（浏览器、webview 等）级别自带优化，不要通过 JS 去模拟实现，如 getScript/ajax/KISSY.use/$.use 等；
+- 有顺序依赖关系的 JS 可以加 defer，不改变执行顺序，相当于放到页面底部，如 TMS head 中一时无法挪动位置的类库等；
 
-
+**参考文献**
+- [无线性能优化：页面可见时间与异步加载](http://taobaofed.org/blog/2016/01/20/mobile-wpo-pageshow-async/)
 - [JS一定要放在Body的最底部么？聊聊浏览器的渲染机制](http://delai.me/code/js-and-performance/)
-- [Asynchronous and deferred JavaScript execution explained](http://peter.sh/experiments/asynchronous-and-deferred-javascript-execution-explained/)
-- [script的defer和async](http://ued.ctrip.com/blog/script-defer-and-async.html)
-- [HTML5’s async Script Attribute](https://davidwalsh.name/html5-async)
-- [Les attributs async et defer pour <script>](http://www.alsacreations.com/astuce/lire/1562-script-attribut-async-defer.html)
-- [Difference between async and defer attributes in script tags](http://javascript.tutorialhorizon.com/2015/08/11/script-async-defer-attribute/)
-- [async vs defer attributes](http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html)
+- [JavaScript 的性能优化：加载和执行](https://www.ibm.com/developerworks/cn/web/1308_caiys_jsload/)
+- [网站为什么 JS 调用尽量放到网页底部？](https://www.zhihu.com/question/34147508)
+- async  and defer
+
+    - [script的defer和async](http://ued.ctrip.com/blog/script-defer-and-async.html)
+    - [Asynchronous and deferred JavaScript execution explained](http://peter.sh/experiments/asynchronous-and-deferred-javascript-execution-explained/)
+    - [HTML5’s async Script Attribute](https://davidwalsh.name/html5-async)
+    - [Les attributs async et defer pour <script>](http://www.alsacreations.com/astuce/lire/1562-script-attribut-async-defer.html)
+    - [Difference between async and defer attributes in script tags](http://javascript.tutorialhorizon.com/2015/08/11/script-async-defer-attribute/)
+    - [async vs defer attributes](http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html)
+
 - [onLoad and onDOMContentLoaded](http://javascript.info/tutorial/onload-ondomcontentloaded)
 - [从onload和DOMContentLoaded谈起](http://www.cnblogs.com/hh54188/archive/2013/03/01/2939426.html)
--
+- [使用 JavaScript 添加交互](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript?hl=zh-cn)
+- [高性能JavaScript学习笔记-执行与加载](https://segmentfault.com/a/1190000004379833)
 
 
 # SEO

@@ -11,3 +11,7 @@ tags: IDE
 - [Eclipse: Apache Tomcat doesn't update my project until I restarted Eclipse](http://stackoverflow.com/questions/10250861/eclipse-apache-tomcat-doesnt-update-my-project-until-i-restarted-eclipse)
 
 问题：在 Eclipse 外编辑文件时，无法热加载
+
+
+- [能够提高开发效率的Eclipse实用操作](http://blog.jobbole.com/103503/)
+- [提高开发效率的 Eclipse 实用操作（2）](http://blog.jobbole.com/106343/)

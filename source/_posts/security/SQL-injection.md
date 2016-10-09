@@ -14,3 +14,9 @@ tags: Security
 - [用java PreparedStatement就不用担心sql注入了吗？](http://www.cnblogs.com/iyangyuan/p/4809494.html)
 - [如何从根本上防止 SQL 注入？](https://www.zhihu.com/question/22953267)
 - [防止 jsp被sql注入的五种方法](http://bluewebs.lofter.com/post/11faa5_3864cd)
+
+
+
+- [如果有人问你 SQL 注入的资料，请叫他看这份速查表](http://blog.jobbole.com/105860/)
+- [记一次SQL注入实战](http://blog.jobbole.com/105586/)
+- [SQL注入攻击高级](http://blog.jobbole.com/105259/)

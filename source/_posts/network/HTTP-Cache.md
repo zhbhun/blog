@@ -1,8 +1,8 @@
 ---
 title: HTTP 缓存
 date: 2016-06-13
-category: HTTP
-tags: HTTP
+category: Network
+tags: Network
 ---
 
 - [HTTP协议：缓存](http://kb.cnblogs.com/page/166267/)
@@ -18,3 +18,6 @@ tags: HTTP
 ---
 
 - [HTTP Cache-control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
+- [刨根问底 HTTP 和 WebSocket 协议（上）](http://blog.jobbole.com/105953/)
+- [刨根问底 HTTP 和 WebSocket 协议（下）](http://blog.jobbole.com/105958/)
+- [HTTPS 工作原理和 TCP 握手机制](http://blog.jobbole.com/105633/)
