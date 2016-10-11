@@ -119,9 +119,14 @@ http://www.hongkiat.com/blog/sublime-code-snippets/
 - [Tag](https://packagecontrol.io/packages/Tag)
 - [AutoFileName](https://github.com/BoundInCode/AutoFileName)
 - [AllAutocomplete](https://github.com/alienhard/SublimeAllAutocomplete)
-- [SublimeREPL](https://github.com/wuub/SublimeREPL)
+- [SublimeREPL](https://github.com/wuub/SublimeREPL)：在编辑器中运行多种编程语言
 - [ColorPicker](http://weslly.github.io/ColorPicker/)
 - [zeal](https://github.com/vaanwd/Zeal)
+- [View In Browser](https://packagecontrol.io/packages/View%20In%20Browser)：在浏览器中打开文件，并支持本地服务器
+
+    - [node.js simply not working, at all](https://github.com/wuub/SublimeREPL/issues/364)：解决无法运行 Node 的问题
+
+- [Vintageous](https://packagecontrol.io/packages/Vintageous)：vi/vim 模拟器
 
 # 主题
 我自己使用的主题是 `Theme - Spacegray`，可以访问网址 https://packagecontrol.io/browse/labels/theme 寻找自己想要的主题。
@@ -144,6 +149,7 @@ http://www.hongkiat.com/blog/sublime-code-snippets/
 - [Material Theme](https://packagecontrol.io/packages/Material%20Theme)
 - [Spacegray Light](https://sublime.wbond.net/packages/Theme%20-%20Spacegray)
 - [Spacegray Dark](https://sublime.wbond.net/packages/Theme%20-%20Spacegray)
+- [Tomorrow Color Schemes](https://packagecontrol.io/packages/Tomorrow%20Color%20Schemes)
 
 配色
 

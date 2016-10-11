@@ -6,6 +6,30 @@ tags: JavaScript
 ---
 
 # ES
+## 操作符
+### 相等操作符
+**== 与 !=**
+
+- 如果两个操作数是相同类型，则返回与 === 或 !== 操作相同的结果；
+- null/undefined == null/undefined 返回 true；
+- NaN 不与任何值相等；
+- 布尔值 == 任意非布尔值，先将布尔值转换为数值（false 转为 0，true 转为 1）；
+- 数值 == 字符串，先将字符串转为数值（Number(str)，Number('') 为 0）；
+- 数值 == 对象，对象转换为原始数据类型后再比较 —— 先调用 valueOf 转换，如果能转换为原始数据类型，则使用该值。否则再调用用 toString 将对象转换为原始数据类型；
+- 字符串 == 字符串，比较两个字符串是否相等 —— 同上；
+- 字符串 == 对象，对象转换为原始数据类型后再比较
+
+备注：`[]` 转为为 `''`，`['0']` 转换为 `'0'`，`['1']` 转换为 `'1'`。
+
+**=== 与 !==**
+
+除了，NaN 不与任何值（包括 NaN）相等外，其他操作数只要类型和值（对象是引用）相同，就相等。
+
+**参考文献**
+
+- [Abstract Equality Comparison](http://www.ecma-international.org/ecma-262/7.0/index.html#sec-abstract-equality-comparison)
+- [Strict Equality Comparison](http://www.ecma-international.org/ecma-262/7.0/index.html#sec-strict-equality-comparison)
+
 ## 原型链
 - [Javascript的原型链图](https://zhuanlan.zhihu.com/p/22189387)
 
@@ -30,7 +54,7 @@ tags: JavaScript
 ### 块作用域
 **实现方式**
 
-- const 
+- const
 - let
 - try/catch
 - with
@@ -52,28 +76,31 @@ tags: JavaScript
 测试代码：https://github.com/zhbhun/program-demo/tree/master/javascript/es/scope/hoisting
 
 ### 闭包
-什么是闭包？
+**什么是闭包**
+
+闭包是指有权访问另一个函数作用域中的变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量。
+
+**闭包特性**
 
 1. 函数嵌套函数；
 2. 函数内部可以引用外部的参数和变量；
 3. 参数和变量不会被垃圾回收机制回收；
 
-闭包的作用？
+**闭包的作用**
 
 1. 设计私有的方法和变量；
 2. 避免全局变量的污染；
+3. 实现变量长期驻扎在内存中；
 
-闭包的副作用？
+**闭包的副作用**
 
-1. 闭包会常驻内存，会增大内存使用量，使用不当很容易造成内存泄露
+闭包会导致变量常驻内存，会增大内存使用量，使用不当很容易造成内存泄露
 
-闭包的实际运用
-
-TODO
+**参考文献**
 
 - [Use JavaScript Closures Efficiently](Use JavaScript Closures Efficiently)
+- [详解js闭包](https://segmentfault.com/a/1190000000652891)
 - [JavaScript 闭包](https://segmentfault.com/a/1190000006875662)
-
 
 ## 数据类型
 **null VS undefined**
@@ -81,7 +108,7 @@ TODO
 - 为什么会有 undefined
 
     > 首先，null 像在 Java 里一样，被当成一个对象。但是，JavaScript 的数据类型分成原始类型 (primitive) 和合成类型 (complex) 两大类，JavaScript 的设计者 Brendan Eich 觉得表示"无"的值最好不是对象。
-    > 
+    >
     > 其次，JavaScript 的最初版本没有包括错误处理机制，发生数据类型不匹配时，往往是自动转换类型或者默默地失败。Brendan Eich 觉得，如果 null 自动转为 0，很不容易发现错误。
     >
     > 因此，Brendan Eich又设计了一个 undefined。
@@ -147,6 +174,28 @@ TODO
 - [Javascript三招两式之对象继承(下)](https://www.zhuyingda.com/blog/article.html?id=12&origin=gold)
 
 
+## use strict
+
+**是什么**
+
+ECMAscript 5 添加了第二种运行模式："严格模式"（strict mode）。顾名思义，这种模式使得 Javascript 在更严格的条件下运行。
+
+**为什么**
+
+- 消除 Javascript 语法的一些不合理、不严谨之处，减少一些怪异行为；
+- 消除代码运行的一些不安全之处，保证代码运行的安全；
+- 提高编译器效率，增加运行速度；
+- 为未来新版本的 Javascript 做好铺垫；
+
+**区别**
+
+- ...
+- TODO
+
+**兼容性**
+
+IE6，7，8，9 均不支持严格模式
+
 ## TODO
 - [如何在 JavaScript 中声明变量](https://github.com/rccoder/blog/issues/15)
 
@@ -171,7 +220,135 @@ TODO
 - getElementById()：通过元素 Id，唯一性
 
 ## 事件
-- [JS事件模型](https://segmentfault.com/a/1190000006934031)
+**事件流**
+
+要点：事件传播机制，兼容性
+
+- 事件冒泡：IE 团队提出事件开始时应由最具体的元素接收，然后逐级向上传播。
+
+    - IE5.5 及更早版本：div -> body -> document；
+    - IE6-8：div -> body -> html -> document；
+    - IE9，Chrome，Firefox，Safari： div -> body -> html -> document -> window；
+
+- 事件捕获：Netscape Communicator 团队提出事件由上层节点最先接收事件，然后逐级向下传播。
+
+     尽管 DOM2 级事件规范要求从 document 开始传播，但大部分浏览器都是从 window 对象开始捕获时间对象（window -> document -> html -> body -> div）。IE9 及以上版本，Chrome，Firefox，Safari 均支持事件捕获，但 IE8 及以下版本不支持。
+
+- DOM 事件流：DOM2 级事件规定事件流包括三个阶段：事件捕获阶段，处理目标阶段和事件冒泡阶段 —— IE9 及以上版本，Chrome，Firefox，Safari 均支持 DOM 事件流，但 IE8 及以下版本不支持。
+
+**事件处理程序**
+
+要点：兼容性，事件流，作用域，多事件处理程序和执行顺序，解绑事件处理程序
+
+- HTML 事件处理程序：某个元素支持的每种事件，都可以使用一个与相应事件处理程序同名的 HTML 属性来指定
+
+    - 所有浏览器都支持
+    - 用法
+
+        - 属性值是能够执行的 JavaScript 代码（不能在其中使用未经转义的 HTML 语法字符）
+        - 存在局部变量 event
+        - this 等于事件的目标元素
+        - 可以像访问局部变量一样访问 document 及该元素本身的成员 —— 事件目标元素？
+        - 如果当前元素是一个表单输入元素，则作用域中还可以访问表单元素的成员
+
+    - 缺点
+
+        - 时间处理程序的作用域链在不同的浏览器中会导致不同的结果
+        - HTML 与 JavaScript 代码紧密耦合
+
+- DOM0 级事件处理程序：每个元素都有自己的事件处理程序属性，将这种属性设置为一个函数，就可以指定事件处理程序
+
+    - 所有浏览器都支持
+    - 事假处理程序在元素的作用域中运行；
+    - 这种方式定义的事件处理程序会在事件流的冒泡阶段处理；
+    - 可以通过重新指定属性来修改或删除时间处理程序；
+    - HTML 事件处理程序可以使用改方式来访问修改删除；
+
+- DOM2 级事件处理程序：定义了两个方法：addEventListener 和 removeEventListener
+
+    - IE9 及以上版本，Chrome，Firefox，Safari 均支持；
+    - 三个参数：事件名（没有 on），事件处理函数，布尔值（true 表示捕获事件流，false 表示冒泡事件流，默认为 false）；
+    - 事件处理程序的执行作用域为当前元素；
+    - 可以添加多个事件处理程序，执行顺序同事件添加顺序；
+    - 移除事件处理程序的参数必须与添加时的一致；
+
+- IE 事件处理程序：IE 实现了与 DOM2 级事件处理程序类似的两个方法：attachEvent 和 detachEvent
+
+    - 只有 IE 和 Opera 支持；
+    - 两个参数：事件名（有 on）和事件处理程序；
+    - 事件处理程序的执行作用域为全局；
+    - 可以添加多个事件处理程序，执行顺序与事件添加顺序相反；
+    - 移除事件处理程序的参数必须与添加时的一致；
+
+- 跨浏览器的事件处理程序
+
+    ```
+    var eventUtil = {
+        addHandler: function(element, type, handler) {
+            if (element.addEventListener) {
+                element.addEventListener(type, handler, false);
+            } else if (element.attachEvent) {
+                element.attachEvent('on' + type, handler);
+            } else {
+                element['on' + type] = handler;
+            }
+        },
+        removeHandler: function(element, type, handler) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            } else if (element.detachEvent) {
+                element.detachEvent('on' + type, handler);
+            } else {
+                element['on' + type] = null;
+            }
+        },
+    }
+    // TODO 解决时间处理程序作用域问题
+    ```
+
+**事件对象**
+
+获取方式
+
+- HTML 事件处理程序：直接访问局部变量 event
+- DOM0 级事件处理程序：在 IE 下是从全局变量中获取 —— window.event，其他浏览器从参数中获取 event
+- IE 事件处理程序 和 DOM2 级事件处理程序：从参数中获取 event
+
+属性和方法
+    
+- 标准属性
+
+    - bubbles：Boolean，只读，事件是否冒泡
+    - cancelable：Boolean，只读，是否可以取消事件的默认行为
+    - currentTarget：Element，只读，事件处理程序当前正在处理事件的那个元素
+    - defaultPrevented：Boolean，只读，true 表示已经调用了 preventDefault（DOM3 级事件中新增）
+    - detail：Integer，只读，与事件相关的细节信息
+    - eventPhase：Integer，只读，调用事件处理程序的阶段（1|捕获，2|目标，3|冒泡）
+    - preventDefault：Function，只读，取消事件的默认行为（要求 cancelable 为 true）
+    - stopImmediatePropagation：Function，只读，取消事件的进一步捕获或冒泡，同事阻止任何事件处理程序被调用（DOM3 级事件中新增）
+    - stopPropagation：Function，只读，取消事件的进一步捕获或冒泡（要求 bubbles 为true）
+    - target：Element，只读，事件目标
+    - trusted：Boolean，只读，true 表示事件是浏览器生成的，false 表示通过 JavaScript 创建的（DOM3 级新增）
+    - type：String，只读，事件类型
+    - view：AbstractView，只读，与事件相关的抽象视图
+
+- IE8 及以下版本的特殊属性：
+
+    - cancelBubble，Boolean，读写，默认为 false，设置为 true 时表示可以取消事件冒泡
+    - returnValue：Boolean，读写，默认值为 true，设置为 false 时表示取消事件的默认行为
+    - srcElement：Element，只读，事件的目标
+
+**事件类型**
+
+- HTML5 事件
+- UI 事件
+- 焦点事件
+- 鼠标事件
+- 键盘事件
+- 符合事件
+- 变动事件
+- 触摸和手势事件
+- 设备事件
 
 ### 触摸事件
 
@@ -245,7 +422,7 @@ Cookie VS Web Storage
 2. Web Storage 为了更大容量存储设计的，而 Cookie 大小是受限制的；
 3. Cookie 需要指定作用域，且不能跨域共享；
 4. Cookie 随着 HTTP 请求一起发送给服务端，而 Web Storage 不会；
-5. 兼容性问题：除了 IE7 及以下版本外，都支持 Web Storage，IE7、IE6 的本地存储解决方案是 userData，可以自行封装统一的 Web Storage； 
+5. 兼容性问题：除了 IE7 及以下版本外，都支持 Web Storage，IE7、IE6 的本地存储解决方案是 userData，可以自行封装统一的 Web Storage；
 
 ## Cookie
 Cookie 的弊端
@@ -279,12 +456,71 @@ Cookie 使用经验
 - 基于 WebSocket 的推送方案
 - SSE（Server-Send Event）：服务器推送数据新方式
 
-
 # 安全
 ## 加密
 - https://github.com/blueimp/JavaScript-MD5
 
 # 高级
+## 跨域
+
+**浏览器的同源策略**
+
+- 简介：同源策略限制了一个源中加载文本或脚本与来自其它源中资源的交互方式。
+
+    - 跨域网络访问
+
+        - 允许跨域写操作（Cross-origin writes），例如链接（links）、重定向以及表单提交，特定少数的 HTTP 请求需要添加 preflight；
+        - 允许跨域资源嵌入（Cross-origin embedding），例如：script、link、img、video、object、embed、applet、@font-face、iframe；
+        - 不允许跨域读操作（Cross-origin reads）：不能通过脚本直接访问不同源的服务器资源；
+
+    - 跨域脚本访问：当两个文档的源不同时，将对 Window 和 Location 对象的访问添加限制 —— 可以使用 window.postMessage 作为替代方案，提供跨域文档间的通讯；
+    - 跨域数据存储访问：存储在浏览器中的数据，如 localStorage 和 IndexedDB，以源进行分割。每个源都拥有自己单独的存储空间，一个源中的 Javascript 脚本不能对属于其它源的数据进行读写操作；
+    - cookie：Cookies 使用不同的源定义方式。一个页面可以为本域和任何父域设置 cookie，只要是父域不是公共后缀即可；
+
+- 同源：如果两个页面拥有相同的协议，端口（如果指定），和主机，那么这两个页面就属于同一个源。
+- 源继承：来自about:blank，javascript:和data:URLs中的内容，继承了将其载入的文档所指定的源，因为它们的URL本身未指定任何关于自身源的信息。
+- IE特例
+
+    - 端口：IE 未将端口号加入到同源策略的组成部分之中；
+    - 授信范围：两个相互之间高度互信的域名，如公司域名（corporate domains），不遵守同源策略的限制；
+
+- 变更源：在同源策略中有一个例外，脚本可以设置 document.domain 的值为当前域的一个后缀，如果这样做的话，短的域将作为后续同源检测的依据。
+
+    - 浏览器单独保存端口号，任何的赋值操作，包括 document.domain = document.domain 都会以 null 值覆盖掉原来的端口号；
+    - 使用 document.domain 来让子域安全地访问其父域，需要同时将子域和父域的 document.domain 设置为相同的值；
+
+**跨域网络访问**
+
+> 出于安全考虑，浏览器会限制脚本中发起的跨站请求。例如，使用 XMLHttpRequest 对象发起 HTTP 请求就必须遵守同源策略 —— 并非浏览器限制了发起跨站请求，而是跨站请求可以正常发起，但是返回结果被浏览器拦截了。最好的例子是CSRF跨站攻击原理，请求是发送到了后端服务器无论是否跨域！注意：有些浏览器不允许从 HTTPS 的域跨域访问HTTP，比如 Chrome 和 Firefox，这些浏览器在请求还未发出的时候就会拦截请求。
+
+- CORS（Cross-Origin Resource Sharing ），跨源资源共享；
+- JSONP：json + padding，JSONP 不存在兼容性问题，但只能发送 GET 请求；
+- CSST：一种用 CSS 跨域传输文本的方案，其原理是通过读取 CSS3 content 属性获取传送内容。相比 JSONP 更为安全，不需要执行跨站脚本。但没有 JSONP 适配广，且依赖支持 CSS3 的浏览器 —— [csst](https://github.com/zswang/csst)；
+- flash：已没落；
+
+**跨域脚本访问**
+
+- document.domain：可以解决两个主域名一致的页面之间的脚本访问；
+- location.hash：改变 hash 不会导致页面刷新，可以在两个不同源的页面之间相互修改 hash 来传递信息 —— 有些浏览器不允许修改不同源页面的 hash，这可以借助隐藏的 iframe 来实现（将 iframe 设置为与需要传递信息的目标页面同源，间接地通过该 iframe 来传递信息）；
+- window.name：window.name 在一个窗口(window)的生命周期内，窗口载入的所有的页面都是共享一个 window.name，每个页面对 window.name 都有读写的权限，window.name 是持久存在一个窗口载入过的所有页面中的，并不会因新页面的载入而进行重置；
+- window.postMessage：HTML5 新引进的特性，可以使用它来向其它的 window 对象发送消息，无论这个 window 对象是属于同源或不同源；
+
+**参考文献**
+
+- [浏览器的同源策略](https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy)
+- [前端跨域的整理](http://qiutc.me/post/cross-domain-collections.html)
+- [js中几种实用的跨域方法原理详解](http://www.cnblogs.com/2050/p/3191744.html)
+- [js跨域及解决方法](http://www.cnblogs.com/malaikuangren/archive/2012/01/16/2323705.html)
+- [详解js跨域问题](https://segmentfault.com/a/1190000000718840#articleHeader6)
+- [浅谈浏览器端 JavaScript 跨域解决方法](http://gold.xitu.io/entry/577636e42e958a005579c3b0)
+- CORS
+
+    - [HTTP访问控制(CORS)](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)
+    - [跨域资源共享 CORS 详解](http://www.ruanyifeng.com/blog/2016/04/cors.html)
+
+- [window.name实现的跨域数据传输](http://www.cnblogs.com/rainman/archive/2011/02/21/1960044.html)
+- [Window.postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)
+
 ## 内存泄露
 **可能存在的内存泄露**
 

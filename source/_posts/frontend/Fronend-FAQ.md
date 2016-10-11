@@ -34,6 +34,7 @@ tags: Frontend
         浏览器存在同域名 HTTP 并发请求限制，通常限制在 2 到 8 个请求之间。所以，将文件分割的越多越小，不一定能提高响应速度。每次 HTTP 请求都有一定的开销，反而可能会影响性能。
 
     - 解决方案
+
         - 合并文件：CSS，JS
         - 图像拼合：CSS Sprite
         - 图象区块 —— 确定图片的坐标和可能会比较繁琐且容易出错，所以不推荐
@@ -125,7 +126,7 @@ tags: Frontend
 - 避免使用 CSS 表达式：存在兼容性和性能问题
 - 精简 JavaScript 和 CSS：去除代码不必要的字符（注释、空白字符等）可以减少文件大小从而节省下载时间。
 
-    - JavaScript：JSMin，YUI Compressor；
+    - JavaScript：JSMin，YUI Compressor，grunt，google clojure；
     - CSS：YUI Compressor；
 
 - 删除重复脚本：重复脚本会引起不必要的 HTTP 请求和无用的 JavaScript 运算，这降低了网站性能
@@ -175,8 +176,70 @@ tags: Frontend
 - [Best Practices for Speeding Up Your Web Site](https://developer.yahoo.com/performance/rules.html)]
 - [网站性能最佳体验的34条黄金守则](http://www.kancloud.cn/imjzq/frontend/98105)
 
+# 安全问题
+## SQL 注入
+1.永远不要信任用户的输入，要对用户的输入进行校验，可以通过正则表达式，或限制长度，对单引号和双"-"进行转换等。 2.永远不要使用动态拼装SQL，可以使用参数化的SQL或者直接使用存储过程进行数据查询存取。 3.永远不要使用管理员权限的数据库连接，为每个应用使用单独的权限有限的数据库连接。 4.不要把机密信息明文存放，请加密或者hash掉密码和敏感的信息。
+
+## XSS
+1. 代码里对用户输入的地方和变量都需要仔细检查长度和对 `<`，`>`，`;`，`’` 等字符做过滤；
+2. 任何内容写到页面之前都必须加以 encode，避免不小心把 html tag 弄出来；
+3. 避免直接在 cookie 中泄露用户隐私，例如 email 、密码等等；
+4. 通过使cookie 和系统ip 绑定来降低 cookie 泄露后的危险。这样攻击者得到的cookie 没有实际价值，不可能拿来重放。
+
+## CSRF
+1. 服务端的CSRF方式方法很多样，但总的思想都是一致的，就是在客户端页面增加伪随机数；
+2. 使用验证码；
+
+4.尽量采用POST 而非GET 提交表单
+
 # 移动端
 - [如何让 H5 体验接近 APP：（一）触摸反馈](https://segmentfault.com/a/1190000006864910)
+
+# 项目管理
+- 命名规则
+
+    - 避免使用中文拼音
+    - 保持模块名和文件名一致：曾经有遇到文件名和模块名编写不一致的代码，在维护的代码的时候，需要找到模块引入位置，才能确定模块所在的文件；
+
+- 编码习惯
+- 代码风格：airbnb，google
+- 代码注释
+
+# 前端社区
+
+- RSS
+- Github
+- Twitter
+
+    - 项目
+
+        - Github Daily
+        - JavaScript Daily
+        - CSS Tricks
+        - CSS Weekly
+        - Bootstrap
+        - Node.js
+        - Babel
+        - React
+        - React Native
+        - Sublime
+        - Atom
+        - VSC
+
+    - 人
+
+        - Axel Rauschmayer
+        - Dan Abramov
+        - Sean T. Larkin
+
+- StackOverflow
+- Awesome
+- SegmentFault
+- React China
+- W3CPlus
+- InfoQ
+- 博客园
+- 掘金
 
 # 自我认识
 > 前端是最贴近用户的程序员，比后端、数据库、产品经理、运营、安全都近。 
