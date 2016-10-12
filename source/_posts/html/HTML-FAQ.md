@@ -8,8 +8,8 @@ tags: HTML
 - http://w3help.org
 - https://leohxj.gitbooks.io/front-end-database/content/html-and-css-basic/index.html
 - https://html5up.net/
-- https://html5test.com/results/desktop.html
 - http://html5demos.com/
+
 
 # HTML5
 
@@ -114,19 +114,126 @@ x-ua-compatible 对 DOCTYPE 的影响
 - [HTML5标准学习 – DOCTYPE](http://www.cnblogs.com/GrayZhang/archive/2011/03/31/learning-html5-doctype.html)
 
 # 语义化
-什么是语义化
+**什么是语义化**
 
 语义化是指根据内容的结构化（内容语义化），选择合适的标签（代码语义化），便于开发者阅读和写出更优雅的代码的同时，让浏览器的爬虫和机器很好的解析。
 
-为什么要语义化
+**为什么要语义化**
 
 - 有利于SEO，有助于爬虫抓取更多的有效信息，爬虫是依赖于标签来确定上下文和各个关键字的权重；
 - 语义化的 HTML 在没有 CSS 的情况下也能呈现较好的内容结构与代码结构；
 - 方便其他设备的解析
 - 便于团队开发和维护
 
-语义化标签
+**语义化标签**
 
+- Head
+    - doctype
+    - html
+    - head
+    - title
+    - base
+    - link
+    - meta
+    - style
+    - script
+    - noscript
+- Sections
+    - body
+    - header
+    - h1-h6
+    - nav
+    - main
+    - aside
+    - article
+    - section
+    - address
+    - footer
+- Grouping
+    - p
+    - hr
+    - pre
+    - blockquote
+    - ol
+    - ul
+    - li
+    - dl, dt, dd
+    - figure
+    - figcaption
+    - div
+- Tables
+    - table
+    - caption
+    - thead
+    - tbody
+    - tfoot
+    - tr
+    - th
+    - td
+    - col
+    - colgroup
+- Forms
+    - form
+    - fieldset
+    - legend
+    - label
+    - input
+    - button
+    - select
+    - datalist
+    - optgroup
+    - option
+    - texarea
+    - keygen
+    - output
+    - progress
+    - meter
+- Interactive
+    - details
+    - summary
+    - command
+    - menu
+- Edits
+    - del
+    - ins
+- Embedded
+    - img
+    - iframe
+    - embed
+    - object
+    - param
+    - video
+    - audio
+    - source
+    - canvas
+    - track
+    - map
+    - area
+- Text
+    - a
+    - em
+    - strong
+    - i, b
+    - u
+    - s
+    - small
+    - abbr
+    - q
+    - cite
+    - dfn
+    - sub, sup
+    - time
+    - code
+    - kbd
+    - samp
+    - var
+    - mark
+    - bdi
+    - bdo
+    - ruby, rt, rp
+    - span
+    - br
+    - wbr
 - 全局属性
     - id：标示符 (用于引用)，不应依赖其语义处理相应元素
     - class
@@ -188,14 +295,18 @@ x-ua-compatible 对 DOCTYPE 的影响
         - 用来记录文档的编辑历史
 - http://justineo.github.io/slideshows/semantic-html/#/
 
-不同标签的区别
+**不同标签的区别**
+
+- main vs article vs section
+
+    [How To Correctly Use Semantic HTML5 <article>, <main> and <section> Tags](http://ilikekillnerds.com/2014/07/how-to-correctly-use-semantic-html5-article-main-and-section-tags/)
 
 - em vs i，为什么 font-awesome 这类字体是用 i 标签？
 
     em 以斜体的形式展现，表示强调的文本。i 标签通常表示因为某种原因和正常文本不同的文本，例如专业术语、外语短语或排版用的文字。通常表现为斜体。
 
 - strong vs b
-    
+
     strong 以加粗的形式展现，表示文本的重要性。b 表示的文本风格不同于正常的文本，没有表达任何特殊的重要性和相关性。通常用于关键字回顾，如：回顾中的产品名称或者是其他需要表现为粗体的文本，另一个例子是标志每个段落的 lead sentence。
 
 - em vs strong
@@ -204,6 +315,7 @@ x-ua-compatible 对 DOCTYPE 的影响
 
 参考文献
 
+- http://html5doctor.com/
 - [HTML语义化](https://segmentfault.com/a/1190000005626375)
 - [如何理解 Web 语义化？](https://www.zhihu.com/question/20455165)
 - [语义化的HTML结构到底有什么好处？](http://www.css88.com/archives/1668)
@@ -254,7 +366,7 @@ meta 译为元数据，meta 标签的内容一般都是表示关于 HTML 页面�
 2. response header VS meta tag
 
     > http-equiv 这个属性对应 HTTP response headers 里面的项目，它也是因此而得名。其初衷是让不能（比如没有权限）设定服务器 header 的站点可以通过它来告知浏览器一些页面内容的相关信息。
-    
+
     [response header VS meta tag](http://stackoverflow.com/questions/9417024/response-header-vs-meta-tag)
 
 3. SEO
@@ -391,4 +503,5 @@ link 标签指定当前文档和外部文档的关系，最常见的用法是指
 - [Google Search Console](https://support.google.com/webmasters#topic=3309469)
 
 # 兼容性问题
-...
+- https://html5test.com/
+- https://html5test.com/results/desktop.html

@@ -444,25 +444,30 @@ Cookie 使用经验
 
 # 网络
 ## Ajax
+
+**优缺点**
+
+- 优点
+
+    - 支持局部刷新
+    - 减少了宽带占用
+    - 减轻服务器端压力
+
+- 缺点
+
+    - 不支持浏览器返回按钮
+    - 暴露了与服务器交互的细节
+    - 不支持 SEO
+
+**封装库**
+
 - [request](https://github.com/request/request)
 - [github/fetch](https://github.com/github/fetch)
 - [reqwest](https://github.com/ded/reqwest)
 - [node-fetch](https://github.com/github/fetch)
 - [NODE.JS TUTORIAL - HOW TO USE REQUEST MODULE](http://blog.modulus.io/node.js-tutorial-how-to-use-request-module)
 
-## 数据推送
-- Javascript 数据推送
-- Commet：基于HTTP长连接的服务器推送技术
-- 基于 WebSocket 的推送方案
-- SSE（Server-Send Event）：服务器推送数据新方式
-
-# 安全
-## 加密
-- https://github.com/blueimp/JavaScript-MD5
-
-# 高级
 ## 跨域
-
 **浏览器的同源策略**
 
 - 简介：同源策略限制了一个源中加载文本或脚本与来自其它源中资源的交互方式。
@@ -521,16 +526,67 @@ Cookie 使用经验
 - [window.name实现的跨域数据传输](http://www.cnblogs.com/rainman/archive/2011/02/21/1960044.html)
 - [Window.postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)
 
-## 内存泄露
-**可能存在的内存泄露**
+## 推送
+- Javascript 数据推送
+- Commet：基于HTTP长连接的服务器推送技术
+- 基于 WebSocket 的推送方案
+- SSE（Server-Send Event）：服务器推送数据新方式
+
+# 安全
+## 加密
+- https://github.com/blueimp/JavaScript-MD5
+
+# 高级
+## 内存管理
+**垃圾回收**
+
+- 标记清除
+- 引用计数
+
+**内存泄露**
 
 - setTimeout 的第一个参数使用字符串而非函数的话，会引发内存泄漏；
 - 闭包
 - 控制台日志
 - 循环：在两个对象彼此引用且彼此保留时，就会产生一个循环
 
+## 模块化
+
+- 浏览器
+
+    - AMD：RequireJS
+    - CMD：SeaJS
+
+- 服务器
+
+    - CommonJS：NodeJS
+
+- 统一：UMD
+
+**参考文献**
+
+- [amdjs-api](https://github.com/amdjs/amdjs-api) —— [AMD (中文版)](https://github.com/amdjs/amdjs-api/wiki/AMD-(%E4%B8%AD%E6%96%87%E7%89%88))
+
+    - [REQUIREJS API](http://www.requirejs.cn/docs/api.html)
+    - [Javascript模块化编程（一）：模块的写法](http://www.ruanyifeng.com/blog/2012/10/javascript_module.html)
+    - [Javascript模块化编程（二）：AMD规范](http://www.ruanyifeng.com/blog/2012/10/asynchronous_module_definition.html)
+    - [Javascript模块化编程（三）：require.js的用法](http://www.ruanyifeng.com/blog/2012/11/require_js.html)
+
+- [详解JavaScript模块化开发](https://segmentfault.com/a/1190000000733959)
+- [http://www.ruanyifeng.com/blog/2012/11/require_js.html](https://www.douban.com/note/283566440/)
+
 ## 通知
 - [iNotify](https://github.com/jaywcjlove/iNotify)
+
+## 重构
+- 布局改进：表格布局改为 div + css，实现响应式布局
+- 优化兼容性
+- 优化移动平台
+- 优化 SEO
+- 减少代码耦合
+- 优化代码格式
+- 压缩 JS、CSS 和图片
+- ...
 
 # 数据结构&算法
 - [十大经典排序算法总结（JavaScript描述）](http://gold.xitu.io/post/57dcd394a22b9d00610c5ec8?utm_source=gold_browser_extension)
