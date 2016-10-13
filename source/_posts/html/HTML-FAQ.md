@@ -10,7 +10,6 @@ tags: HTML
 - https://html5up.net/
 - http://html5demos.com/
 
-
 # HTML5
 
 HTML5 VS HTML4

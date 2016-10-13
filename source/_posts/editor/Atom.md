@@ -108,6 +108,28 @@ Atom是由GitHub开发的自由及开放源代码的文字与代码编辑器，�
 Linter-esint 使用 eslint 实现 Javascript 语法检查，它会检查项目本地是否安装了 eslint（NPM 安装），如果没有安装的话，会使用它自身携带的 eslint（要求 eslint 版本高于 v1.0.0）。此外使用 Linter-eslint 需要安装插件 linter，如果没有安装的话，会自动安装。如果已经安装了一个可选的 linter 插件，可以禁用自动安装的 linter。
 ESLint 默认没有使用任何规则来检查代码语法，这需要自己手动配置项目的语法检查规则。可以在项目根路径下运行 `eslint --init` 来快速生成配置文件，然后再根据自己需要手动调整。关于 eslint 的用法可参考博客 [Get Started With ESLint](http://devnull.guru/get-started-with-eslint/) 和 [ESLint document](http://eslint.org/docs/user-guide/configuring)。
 
+# 设置
+## 自动完成优化
+**自动完成提示匹配不准确**
+
+autocomplete-plus 的提示排序存在问题，没有完全按照字符排序，参考如下 ISSUES：
+
+- [Suggestion order](https://github.com/atom/autocomplete-plus/issues/508)
+- [Autocompletion result ranking](https://github.com/atom/autocomplete-plus/issues/767)
+- [Snippet completion before object completion](https://github.com/atom/autocomplete-plus/issues/465)
+- [`do` snippet should have higher priority than `dop`](https://github.com/atom/language-ruby/issues/130)
+- [Provider initial ordering](https://github.com/atom/autocomplete-plus/issues/653)
+- [Match for full word provides different result](https://github.com/jeancroy/fuzzaldrin-plus/issues/9)
+
+解决方案：禁用 autocomplete-plus 的 Alternate Scoring。
+
+**其他问题**
+
+- [Remove enter as default confirmation key](https://github.com/atom/autocomplete-plus/issues/24)
+
+## 符号视图缩进
+- [Indent for markdown Table of Content preview when press "cmd + r"](https://github.com/atom/symbols-view/issues/156)
+
 # 常见问题
 - [TypeError: Unable to watch path](https://github.com/atom/atom/blob/master/docs/build-instructions/linux.md#typeerror-unable-to-watch-path) —— https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers
 
