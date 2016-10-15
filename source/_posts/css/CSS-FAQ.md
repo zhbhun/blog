@@ -5,7 +5,7 @@ categories: CSS
 tags: CSS
 ---
 
-# 引入
+# 用法
 **HTML link VS CSS @import**
 两者都能引入样式表，但 link 属于 HTML 标签，而 @import 是 CSS 提供的。
 
@@ -39,11 +39,6 @@ FOUC（Flash Of Unstyled Content，无样式内容闪烁）是浏览器在外部
 - [Flash of unstyled content](https://en.wikipedia.org/wiki/Flash_of_unstyled_content)
 - [Prevent FOUC](https://gist.github.com/johnpolacek/3827270)
 - [The FOUC Problem](https://webkit.org/blog/66/the-fouc-problem/)
-
-# display:none VS visibility:hidden
-- display:none：隐藏对应的元素，在文档布局中不再给它分配空间，它各边的元素会合拢，
-就当他从来不存在；
-- visibility:hidden：隐藏对应的元素，但是在文档布局中仍保留原来的空间；
 
 # 选择器
 **有哪些选择器**
@@ -100,6 +95,11 @@ TODO
 - [KB013: 分层的显示( Layered presentation )](http://w3help.org/zh-cn/kb/013/)
 
 # 盒模型
+**display:none VS visibility:hidden**
+- display:none：隐藏对应的元素，在文档布局中不再给它分配空间，它各边的元素会合拢，
+就当他从来不存在；
+- visibility:hidden：隐藏对应的元素，但是在文档布局中仍保留原来的空间；
+
 **box-sizing**
 box-sizing 属性主要用来控制元素的盒模型的解析模式；
 
@@ -142,6 +142,81 @@ content-box VS border-box
 4. gradient：线性渐变
 5. transform：旋转；
 6. ...
+
+# 应用
+## 单行文本居中与多行文本居左
+
+我们让内层元素居左 text-align:left，外层元素居中 `text-align:center`，并且将内存元素设置为 `display:inline-block` ，利用 `inline-block` 元素可以被父级 `text-align:center` 居中的特性，这样就可以实现单行居中，多行居左。
+
+https://github.com/zhbhun/program-demo/tree/master/css/faq/single-center-and-multi-left
+
+## 文本截断
+**需求**
+
+- 单行截断
+- 多行截断
+- 按高度截断
+
+**误区**
+
+- 字符一定等宽
+- 超过 n 个字符截断显示，英文数字算一个字符，汉字算两个字符
+
+备注：为了显示效果，前端往往会采用优先西文字体族的 font-family 设置，即西文字符用西文字体，汉字用中文字体，这就很容易使得文本的宽度不好根据字符数来控制。非代码的内容本身就不一定适合用等宽西文字体显示，即使用了等宽西文字体，汉字也基本不可能正好是其两倍宽
+
+**单行单行截断**
+
+- 基于 `text-overflow:ellipsis` 实现
+
+    行内文本截断需要设置块级容器设置样式：`white-space: nowrap; text-overflow: ellipsis; overflow: hidden;`
+    
+    输入框文本截断需要设置样式：`wdith: 指定宽度; text-overflow: ellipsis;`
+
+    存在的问题：
+
+    - 在 IE8 和 IE9 的元素 `<input type="text">` 上不起作用；
+    - 一些三星移动设备的浏览器，必须设置 text-rendering 为 auto 才能截断；
+    - 在 IE 和 Chrome 的 Select 元素上不起作用 —— Firefox 可以；
+
+- 通过计算内容宽度来实现
+
+    计算每个字符的宽度，找到加上 ... 正好小于指定宽度的边界，然后截去后续字符。
+
+**多行文本截断**
+
+- 基于 line-clamp 实现：设置元素的样式为 `display: -webkit-box; overflow: hidden; -webkit-line-clamp: 2; -webkit-box-orient: vertical;`
+- 计算内容行数
+
+    - `getComputedStyle`
+    - `Element.getClientRects()`
+    - `Selection.modify()`
+    - https://github.com/josephschmitt/Clamp.js/
+    - ...
+
+**按高度截断**
+
+通过比较 scrollHeight 和 clientHeight 可以方便地测试元素内容的高度是否溢出容器范围，如果超出了指定高度，反复截去尾部内容直到不再溢出。
+
+**实现案例**
+
+- https://github.com/zhbhun/program-demo/tree/master/css/faq/text-truncation
+
+**开发工具**
+- http://www.css88.com/webkit/-webkit-line-clamp/
+- https://github.com/josephschmitt/Clamp.js/
+
+**参考文献**
+
+- [text-overflow](http://caniuse.com/#feat=text-overflow)
+- [line-clamp](http://caniuse.com/#feat=css-line-clamp)
+- [前端文本截断](http://efe.baidu.com/blog/text-truncating/)
+- [CSS LINE CLAMPING](http://guerillalabs.co/blog/css-line-clamping.html)
+- [Line Clampin’ (Truncating Multiple Line Text)](https://css-tricks.com/line-clampin/)
+- [Ellipse My Text…](https://software.intel.com/en-us/html5/hub/blogs/ellipse-my-text/)
+- [CSS Ellipsis: How to Manage Multi-Line Ellipsis in Pure CSS](http://www.mobify.com/blog/multiline-ellipsis-in-pure-css/)
+- [ELLIPSE MY TEXT…](http://html5hub.com/ellipse-my-text/)
+- [Line Clampin’ (Truncating Multiple Line Text)](https://css-tricks.com/line-clampin/)
+- [谈谈一些有趣的CSS题目（5）： 单行居中，两行居左，超过两行省略](http://web.jobbole.com/88219/)
 
 # 高级
 ## BFC

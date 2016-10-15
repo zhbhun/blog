@@ -1,19 +1,17 @@
 {
-	"folders": [
+	"folders":
+	[
 		{
-			"path": ".",
-            "folder_exclude_patterns": [
-                ".deploy_git",
-                "public",
-                "scaffolds",
-                "themes"
-            ]
+			"path": "./source/"
 		}
 	],
-    "settings": {
-        "rulers": [],
-        "word_wrap": "auto",
-        "wrap_width": 0,
-        "font_face": "YaHei Consolas Hybrid"
-    }
+	"settings":
+	{
+		"font_face": "YaHei Consolas Hybrid",
+		"rulers":
+		[
+		],
+		"word_wrap": "auto",
+		"wrap_width": 0
+	}
 }
