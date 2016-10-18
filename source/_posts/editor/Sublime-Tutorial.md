@@ -91,6 +91,7 @@ http://www.hongkiat.com/blog/sublime-code-snippets/
 - [CodeFormatter](https://packagecontrol.io/packages/CodeFormatter)
 - [Alignment](https://sublime.wbond.net/packages/Alignment)
 - [SqlBeautifier](https://packagecontrol.io/packages/SqlBeautifier)
+- [Indent XML](https://packagecontrol.io/packages/Indent%20XML)
 
 ## Markdown
 - MarkdownEditing
@@ -150,6 +151,7 @@ http://www.hongkiat.com/blog/sublime-code-snippets/
 - [Spacegray Light](https://sublime.wbond.net/packages/Theme%20-%20Spacegray)
 - [Spacegray Dark](https://sublime.wbond.net/packages/Theme%20-%20Spacegray)
 - [Tomorrow Color Schemes](https://packagecontrol.io/packages/Tomorrow%20Color%20Schemes)
+- [2015 – 2016 最新 Sublime Text 主题](http://webres.wang/best-sublime-text-3-themes-of-2015-and-2016/)
 
 配色
 

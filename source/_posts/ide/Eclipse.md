@@ -69,19 +69,7 @@ https://marketplace.eclipse.org/
 - [eclipse如何卸载插件](http://jingyan.baidu.com/article/54b6b9c02dcd5a2d583b4704.html)
 
 # 快捷键
-## 常用快捷键
-- Ctrl+shift+F 自动格式化代码
-- ctrl+shift+O 自动调整import部分
-- Ctrl+shift+T 查找并打开类文件（在编辑器里起作用）
-- Ctrl+shift+R 查找并打开资源
-- Alt+shift+r 重命名
-- Ctrl +f6 编辑器之间切换？
-- F3 跳转至类型/变量定义位置
-- Alt+Left/Right 前进或后退浏览过的位置
-- Ctrl+Shift+G 查找光标所在类型出现的所有位置
-- ctrl + alt + h: 查找调用层次体系
- 
-## 文件和项目管理
+## 项目/文件
 - Ctrl+N 通过向导创建新项目 -  Ctrl+shift+R 查找并打开资源
 - Alt+Enter 查看文件属性
 - Ctrl+S 保存当前文件
@@ -90,35 +78,97 @@ https://marketplace.eclipse.org/
 - Ctrl+Shift+W 关闭所有文件窗口
 - F5 对选中的元素与本地文件系统进行同步刷新
  
-## 窗口管理
-- F12 焦点切换到编辑窗口
-- Ctrl+Page Down/Ctrl+Page Up 切换至前一个/后一个编辑窗口
-- Ctrl+M 最大化/非最大化编辑窗口
-- Ctrl+E 展示编辑窗口列表，通过方向建选择要显示的编辑窗口
-- Ctrl+F6/Ctrl+Shift+F6 展示编辑窗口列表，在释放Ctrl键后，自动切换至当前选择的编辑窗口
-- Alt+Arrow Left/Alt+Arrow Right 跳转至前一个/后一个编辑窗口
-- Alt+- 打开编辑窗口的可选菜单
-- Ctrl+F10 打开编辑窗口左侧栏的可选菜单
-- Ctrl+F10, then n 显示或者隐藏行号
-- Ctrl+Shift+Q 显示或隐藏被修改的行标记（左侧栏）
-- Ctrl+Shift+F10 打开编辑窗口的可选菜单
+## 窗口
+- f12 焦点切换到编辑窗口
+- ctrl+f10：显示视图菜单 ？？？
+- ctrl+f8/(shift+f8)：全局 下/上一个透视图
+- ctrl+f7/(shift+f7)：切换至前一个/后一个视图，可改为 ctrl+shift+PageDown/ctrl+PageUp
+- ctrl+PageDown/ctrl+PageUp：切换至前一个/后一个编辑窗口
+- ctrl+e 展示编辑窗口列表，通过方向建选择要显示的编辑窗口
+- ctrl+m：最大化/非最大化编辑窗口
+- ctrl+shift+e：显示管理当前打开的所有的 View 的管理器(可以选择关闭,激活等操作)
+- ctrl+shift+w：关闭所有打开的 Editer
+- ctrl+f10：打开编辑窗口左侧栏的可选菜单
+- alt+-：打开编辑窗口的可选菜单
+- shift+f10：打开鼠右键菜单
  
-## 代码导航
-- Home/End 跳转至一行代码的起始（带缩进）/结尾，双击Home跳转至行首
-- Ctrl+Home/End 跳转至文件的头/尾
-- Ctrl+Arrow Right/Arrow Left 向左或向右跳转一个单词
-- Ctrl+Shift+Arrow Down/Arrow Up 跳转至前一个或后一个方法
-- Ctrl+L 跳转至某一行
-- Ctrl+Q 跳转至最后一次的编辑位置
-- Ctrl+./Ctrl+, ？
-- Ctrl+Shift+P 如果选中了一个括号，跳转至匹配的关闭或打开括号
-- Ctrl+[+]/Ctrl+- on numeric keyboard 展开或收缩当前方法或类
-- Ctrl+Shift+[/]/Ctrl+* on numeric keyboard 展开或收缩所有的方法和类
-- Ctrl+Shift+/   on numeric keyboard 禁止或允许收缩代码
-- Ctrl+Arrow Down/Ctrl+Arrow Up：滚动编辑器，且光标位置不变化 
- 
+## 导航
+- f3：跳转至类型/变量定义位置
+- f4：打开类型层次结构
+- Ctrl+shift+T 查找并打开类文件（在编辑器里起作用）
+- Ctrl+shift+R 查找并打开资源
+- home/end：跳转至一行代码的起始（带缩进）/结尾，双击home跳转至行首
+- ctrl+home/end：跳转至文件的头/尾
+- ctrl+right/left：向左或向右跳转一个单词
+- ctrl+shift+down/up：跳转至前一个或后一个方法
+- alt+right：下一个编辑的页面
+- alt+left：上一个编辑的页面
+- ctrl+q：定位到最后编辑的地方
+- ctrl+l: 跳转至某一行
+- ctrl+o：快速显示 OutLine
+- ctrl+t：快速显示当前类的继承结构
+- ctrl+shift+p：定位到对于的匹配符(譬如{}) (从前面定位后面时,光标要在匹配符里面,后面到前面,则反之)
+- ctrl+g：工作区中的声明
+- ctrl+shift+g：工作区中的引用
+- ctrl+alt+h: 查找调用层次体系
+
+## 查找
+- ctrl+h：打开搜索对话框
+- ctrl+f：查找并替换
+- ctrl+j：正向增量查找(按下 ctrl+j 后，你所输入的每个字母编辑器都提供快速匹配定位到某个单词，如果没有，则在 stutes line 中显示没有找到了，查一个单词时，特别实用，这个功能 Idea 两年前就有了)
+- ctrl+shift+j： 反向增量查找(和上条相同,只不过是从后往前查)
+- ctrl+k：参照选中的 Word 快速定位到下一个
+- ctrl+shift+k：参照选中的 Word 快速定位到上一个
+- alt+shif+up：扩大选中范围，元素 > 行 > 块 > 方法 > 类
+- alt+shif+down：缩小选中范围，类 > 方法 > 块 > 行 > 元素
+
+## 编辑
+- ctrl+1：快速修复
+- alt+/：内容辅助
+- ctrl+d：删除当前行，可同 sublime 等改为 ctrl + x
+- shift+enter：在当前行的下一行插入空行，可同 sublime 等改为 ctrl + enter
+- ctrl+shift+enter：在当前行的上一行插入空行
+- ctrl+alt+down：复制当前行到下一行，与 Linux 系统工作区间冲突，可同 sublime 等改为 ctrl + shift down
+- ctrl+alt+up：复制当前行到上一行，与 Linux 系统工作区间冲突，只用复制到下一行即可
+- alt+down：当前行和下面一行交互位置，可同 sublime 等改为 ctrl + down（取消原先的动作绑定）
+- alt+up：当前行和上面一行交互位置，可同 sublime 等改为 ctrl + down（取消原先的动作绑定）
+- ctrl+/： 注释当前行，再按则取消注释
+- ctrl+shif+f：格式化
+- ctrl+shift+x：把当前选中的文本全部变味小写
+- ctrl+shift+y：把当前选中的文本全部变为小写
+- ctrl+shift+O：自动调整import部分
+
+## 调试
+- f7：单步返回
+- f6：单步跳过
+- f5：单步跳入 f5
+- ctrl+f5：单步跳入选择
+- f11：调试上次启动
+- f8：继续
+- shift+f5：使用过滤器单步执行
+- ctrl+shift+b：添加/去除断点
+- ctrl+d：显示
+- ctrl+f11：运行上次启动
+- ctrl+r：运行至行
+- ctrl+u：执行
+
+## 重构
+- alt+shift+r：重命名，可同 sublime 等改为 ctrl + d（原删除动作可改为 ctrl + x）
+- alt+shift+m：抽取方法 (这是重构里面最常用的方法之一了，尤其是对一大堆泥团代码有用)
+- alt+shift+c：修改函数结构(比较实用，有 n 个函数调用了这个方法，修改一次搞定)
+- alt+shift+l：抽取本地变量( 可以直接把一些魔法数字和字符串抽取成一个变量，尤其是多处调用的时候)
+- alt+shift+f：把 class 中的 local 变量变为 field 变量 (比较实用的功能)
+- alt+shift+i：合并变量(可能这样说有点不妥 inline)
+- alt+shift+v：移动函数和变量(不怎么常用)
+- alt+shift+z：重构的后悔药(undo)
+
 ## 其他
-- Ctrl+shift+B 设置或取消断点
+- ctrl+shift+b：设置或取消断点
+- Ctrl+=：放大
+- ctrl+-：缩小
+
+## TODO
+创建统一的快捷键
 
 # 主题
 - https://github.com/guari/eclipse-ui-theme 
@@ -246,6 +296,7 @@ C:\eclipse\eclipse.exe -vm "C:\Program Files\Java\jdk1.5.0_08\ bin\javaw.exe" -v
 - [eclipse插件安装的四种方法](http://www.blogjava.net/javajoyo/archive/2008/10/20/235495.html)
 - [Eclipse Shortcuts](http://www.shortcutworld.com/en/win/Eclipse.html)
 - [有哪些使用 Eclipse 的好习惯或者小技巧？](http //www.zhihu.com/question/29013594)
+- [Setting up Eclipse](https://docs.moodle.org/dev/Setting_up_Eclipse)
 
 
 ---
