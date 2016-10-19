@@ -153,9 +153,7 @@ x-ua-compatible 对 DOCTYPE 的影响
     - hr
     - pre
     - blockquote
-    - ol
-    - ul
-    - li
+    - ol, ul，li
     - dl, dt, dd
     - figure
     - figcaption
@@ -210,8 +208,7 @@ x-ua-compatible 对 DOCTYPE 的影响
     - area
 - Text
     - a
-    - em
-    - strong
+    - em，strong
     - i, b
     - u
     - s

@@ -5,8 +5,6 @@ category: Redux
 tags: Redux
 ---
 
-![Redux](../../images/Redux/Redux.png)
-
 - [官方地址](https://github.com/reactjs/redux)
 - [redux 英文文档](http://redux.js.org/docs/introduction/)
 - [Redux 中文文档](http://cn.redux.js.org/)

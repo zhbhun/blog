@@ -114,7 +114,7 @@ http://www.hongkiat.com/blog/sublime-code-snippets/
 - [Terminal](https://packagecontrol.io/packages/Terminal): 从当前文件或项目根路径启动控制台
 - [BracketHighlighter](https://sublime.wbond.net/packages/BracketHighlighter: 括号高亮
 - [Autoprefixer](https://packagecontrol.io/packages/Autoprefixer): CSS 自动加前缀
-- [Vintageous](https://packagecontrol.io/packages/Vintageous): vi / vim 模拟器
+- [Vintageous](https://packagecontrol.io/packages/Vintageous)：vi / vim 模拟器
 - [Alignment](https://packagecontrol.io/packages/Alignment)
 - [Can I Use](https://packagecontrol.io/packages/Can%20I%20Use)
 - [Tag](https://packagecontrol.io/packages/Tag)
