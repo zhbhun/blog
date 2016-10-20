@@ -103,7 +103,7 @@ tags: JavaScript
 - [JavaScript 闭包](https://segmentfault.com/a/1190000006875662)
 
 ## 数据类型
-**null VS undefined**
+### null VS undefined
 
 - 为什么会有 undefined
 
@@ -141,6 +141,14 @@ tags: JavaScript
     - 函数没有返回值，默认返回 null
 
 - 参考文献：[undefined 与 null 的区别](http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html)
+
+### Array
+**Arrap.prototype.reduce 用法***
+
+- 计数
+- 求最大/小值
+- 转为对象
+- ...
 
 ## 面向对象
 ### 创建对象

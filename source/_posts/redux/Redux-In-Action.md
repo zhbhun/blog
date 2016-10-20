@@ -5,11 +5,22 @@ category: Redux
 tags: Redux
 ---
 
-- [A Guide For Building A React Redux CRUD App](https://medium.com/@rajaraodv/a-guide-for-building-a-react-redux-crud-app-7fe0b8943d0f#.s2k92oimx)
-- ...
+- [A Guide For Building A React Redux CRUD App (3-page app)](https://medium.com/@rajaraodv/a-guide-for-building-a-react-redux-crud-app-7fe0b8943d0f#.g99gruhdz)
+
+# 开发思路
+1. 需求：功能，原型
+2. 设计：拆分，动作，状态
+3. 实现：动作，状态，展示组件，容器组件
 
 
-# 移动端新闻
+# 案例
+## Todo
+https://github.com/zhbhun/program-demo/blob/master/redux/todo/README.md
+
+## 购物车
+https://github.com/zhbhun/program-demo/blob/master/redux/shopping-cart/README.md
+
+## 移动端新闻
 功能
 
 - 帖子列表
