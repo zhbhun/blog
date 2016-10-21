@@ -54,16 +54,22 @@ Flux 是一个混合产物，了解 Redux 与其他技术的相似与不同之�
 
 # [示例](http://cn.redux.js.org/docs/introduction/Examples.html)
 1. 最基本的用法：View，Create Action，Action，Reducer，Store
+
+    - https://github.com/reactjs/redux/tree/master/examples/counter-vanilla
+
 2. 如何与界面框架搭配使用，如 redux-react
+
+    - https://github.com/reactjs/redux/tree/master/examples/counter
+    - https://github.com/reactjs/redux/tree/master/examples/todos-with-undo
+    - https://github.com/reactjs/redux/tree/master/examples/todomvc
+
 3. 常用的 Redux 模式
 
-    - 使用 ID 来标准化存储数据实体
-    - 在不同层级将多个 reducer 组合使用
-    - 利用 reducer 定义选择器以封装 state 的相关内容
-    - 使用 Redux Logger 生成日志
-    - 使用 Redux Thunk 中间件进行 action 的条件性分发
-    - 深层嵌套树状视图的渲染
-    - 实现异步 Action
+    - 实现异步 Action：https://github.com/reactjs/redux/tree/master/examples/async
+    - 使用 ID 来标准化存储数据实体：https://github.com/reactjs/redux/tree/master/examples/shopping-cart
+    - 在不同层级将多个 reducer 组合使用：https://github.com/reactjs/redux/tree/master/examples/shopping-cart
+    - 深层嵌套树状视图的渲染：https://github.com/reactjs/redux/tree/master/examples/tree-view
+    - 使用 Redux Logger 生成日志：https://github.com/reactjs/redux/tree/master/examples/shopping-cart
 
-4. 服务端渲染
-5. 完整的应用示例
+4. 服务端渲染：https://github.com/reactjs/redux/tree/master/examples/universal
+5. 完整的应用示例：https://github.com/reactjs/redux/tree/master/examples/real-world
