@@ -31,6 +31,9 @@ tags: Redux
 
     - ...
 
+
+- [Presentational and Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.a6w9fmxpf)
+
 # 案例
 ## Todo
 https://github.com/zhbhun/program-demo/blob/master/redux/todo/README.md
