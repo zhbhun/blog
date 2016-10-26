@@ -52,11 +52,11 @@ const todoApp = combineReducers(reducers)
 
 问题：服务端返回数据的 key 命名规则可能各不一样，有些以下划线来分割命名，有些又是采用驼峰式的命名规则。为了统一命名规则，需要转换返回的数据。
 
-解决方案：[humps](https://github.com/domchristie/humps) 是一个连接符命名和驼峰命名之间的转换工具，具体使用可参考示例 http://codepen.io/zhbhun/pen/wzNbmR。
+解决方案：[humps](https://github.com/domchristie/humps) 是一个连接符命名和驼峰命名之间的转换工具。
 
 **扁平化数据**
 
-https://github.com/paularmstrong/normalizr
+[normalizr](https://github.com/paularmstrong/normalizr)
 
 # 其他
 - https://github.com/reactjs/reselect
