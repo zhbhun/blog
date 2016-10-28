@@ -126,3 +126,5 @@ Webpack + React
 - using-react-with-webpack-tutorial/
 - [[译] Webpack——令人困惑的地方](https://segmentfault.com/a/1190000005089993)
 - http://webpack.toobug.net/zh-cn/
+- [Webpack 中文指南](http://zhaoda.net/webpack-handbook/index.html)
+- [webpack文档](http://stephenzhao.github.io/webpack-cn/docs/Home.html)

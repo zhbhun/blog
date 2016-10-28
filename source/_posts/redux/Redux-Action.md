@@ -113,3 +113,13 @@ Action Creator 命名技巧
 - [redux-thunk](https://github.com/gaearon/redux-thunk)
 - [redux-promise](https://github.com/acdlite/redux-promise)
 - [redux-promise-middleware](https://github.com/pburtchaell/redux-promise-middleware)
+
+问题
+
+- 模板代码
+- 乐观更新
+- 错误处理
+
+# 参考文献
+- [Redux异步方案选型](http://react-china.org/t/redux/8761)
+- [Optimistic updates](https://github.com/acdlite/flux-standard-action/issues/7)

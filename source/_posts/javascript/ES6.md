@@ -7,3 +7,4 @@ tags: JavaScript
 
 - [Setting up ES6](https://leanpub.com/setting-up-es6/read)
 - http://es6katas.org/
+- https://github.com/wycats/javascript-decorators
