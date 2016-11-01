@@ -5,6 +5,7 @@ category: Editor
 tags: Editor
 ---
 
+- https://code.visualstudio.com/docs
 - [Visual Studio Code 配置指南](https://github.com/kaiye/kaiye.github.com/issues/14)
 - [Visual Studio Code，完美的编辑器](http://www.jianshu.com/p/75614a581391)
 

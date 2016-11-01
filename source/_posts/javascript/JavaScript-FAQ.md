@@ -580,6 +580,7 @@ Cookie 使用经验
     - [Javascript模块化编程（二）：AMD规范](http://www.ruanyifeng.com/blog/2012/10/asynchronous_module_definition.html)
     - [Javascript模块化编程（三）：require.js的用法](http://www.ruanyifeng.com/blog/2012/11/require_js.html)
 
+- [CommonJS规范](http://javascript.ruanyifeng.com/nodejs/module.html)
 - [详解JavaScript模块化开发](https://segmentfault.com/a/1190000000733959)
 - [http://www.ruanyifeng.com/blog/2012/11/require_js.html](https://www.douban.com/note/283566440/)
 

@@ -9,6 +9,8 @@ tags: Webpack
 
 这么精彩的变更历史，导致配置方式一大堆，再加上网络上的博文宣传，让初学者看了一脸懵逼。本文根据 GitHub 上的提交记录和变更说明来梳理 React Hot Loader 变更历史，方便大家更好地认识 React Hot Loader，识别网络上的博文是否已经 out 了。
 
+[Hot Reloading in React](https://medium.com/@dan_abramov/hot-reloading-in-react-1140438583bf#.f1hgbckb1)
+
 # 变更历史
 
 1. 20140713
@@ -82,7 +84,6 @@ tags: Webpack
     - ...
 
     后面，react-hot-loader 1.x.x 一直维护到 1.3.0 版本，最后提交时间是 20150829。
-
 
     - 1.3.0
 
@@ -222,6 +223,7 @@ tags: Webpack
 
     Dan Abramov 宣布废弃 React Transform，推荐使用 React Hot Loader 3 —— 在 20160417 发布 React Hot Loader 3.0.0-alpha.0。
 
+    - [React Hot Loader 3.0 beta demo](https://github.com/gaearon/react-hot-boilerplate/pull/61)
     - [RFC: remove React Transform from examples](https://github.com/reactjs/redux/pull/1455)
     - [react-hot-loader Project status](https://github.com/gaearon/react-hot-loader/issues/385)
     - [babel-preset-react-hmre Project status](https://github.com/danmartinez101/babel-preset-react-hmre/issues/46#issue-180449718)
@@ -311,7 +313,7 @@ React Transform 和 React Hot Loader 1 基本能够满足组件状态不变的�
 
 在开发中，我们希望热加载能够做到以下几点：
 
-- 容错性：在修改代码时，很可能导致程序编译失败或运行时错误。我们希望热加载出现的语法错误和运行时异常，能够显示在浏览器控制台里或页面上。并且能够显示异常堆栈信息，方便跟踪到具体出错的代码行。此外，也不会因为热加载出现的程序自身 bug 导致热加载不能继续正常工作。
+- 处理错误：在修改代码时，很可能导致程序编译失败或运行时错误。我们希望热加载出现的语法错误和运行时异常，能够显示在浏览器控制台里或页面上。并且能够显示异常堆栈信息，方便跟踪到具体出错的代码行。此外，也不会因为热加载出现的程序自身 bug 导致热加载不能继续正常工作。
 - 支持 React 组件状态不变的前提下，热加载：生命周期函数，事件处理函数，渲染方法，无状态组件，高阶组件等；
 - 支持 Redux 热加载：初始状态，reducer，action；
 
@@ -319,7 +321,7 @@ React Transform 和 React Hot Loader 1 基本能够满足组件状态不变的�
 
 虽然，React Hot Loader 3 目前还处于 beta 版，但已经能够投入到开发中使用，而且解决了以前长期存在的问题。下面，参考示例 [React Hot Loader 3 VS React Transform](https://github.com/zhbhun/WebpackStudyDemo/tree/master/hot-module-replacement/react-hot-vs-react-transform)（配置了两种不同的热加载开发环境，一个是基于 React Transform，另外一个基于 React Hot Loader 3）来感受 React Hot Loader 3 带来的热加载开发体验。
 
-- 容错性
+- 处理错误
 
     - React Transform：会打印错误日志，但 webpack.devtool 要设置为 cheap-eval-source-map 才能跟踪到具体哪一行代码出错。此外，源代码必须手动刷新页面才会更新，导致每次调试必须切回到编辑器中才能查看真正的错误代码；
     - React Hot Loader：同上，但 webpack.devtool 要设置为 source-map 才能方便调试跟踪 bug；
