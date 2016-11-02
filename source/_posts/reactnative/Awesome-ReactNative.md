@@ -86,6 +86,9 @@ https://github.com/react-native-community/React-Native-Elements
 ## 拍照
 - [react-native-camera](https://github.com/lwansbrough/react-native-camera)：A Camera component for React Native. Also supports barcode scanning!
 
+## 图片
+- [react-native-gallery](https://github.com/ldn0x7dc/react-native-gallery)
+
 ## Todo
 - [react-native-side-menu](https://github.com/react-native-fellowship/react-native-side-menu)：Side menu component for React Native
  - [react-native-touch-id](https://github.com/naoufal/react-native-touch-id)：React Native authentication with the native Touch ID popup

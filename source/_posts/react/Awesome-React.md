@@ -29,6 +29,7 @@ tags: React
 - [Learn React](https://zhuanlan.zhihu.com/leanreact)
 - [React Training](https://reactjs-training.com/)
 - [React Video on Egghead](https://egghead.io/technologies/react)
+- [react-faq](https://github.com/timarney/react-faq)
 
 # 推荐博文
 - [reactjs101](https://github.com/kdchang/reactjs101)

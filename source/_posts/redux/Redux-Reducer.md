@@ -48,15 +48,26 @@ const todoApp = combineReducers(reducers)
 # 范式化 Store
 前面在设计状态结构时，提到尽可能地把 state 范式化，我们可以借助一些工具帮我们简化范式化的实现。
 
-**统一 key 名称格式**
+## 统一 key 名称格式
 
 问题：服务端返回数据的 key 命名规则可能各不一样，有些以下划线来分割命名，有些又是采用驼峰式的命名规则。为了统一命名规则，需要转换返回的数据。
 
 解决方案：[humps](https://github.com/domchristie/humps) 是一个连接符命名和驼峰命名之间的转换工具。
 
-**扁平化数据**
+## 扁平化数据
 
-[normalizr](https://github.com/paularmstrong/normalizr)
+[normalizr](https://github.com/paularmstrong/normalizr)：统一转为类似下面的数据结构
+
+```
+{
+    "result": String/Object,
+    "entities": {
+        [业务数据名称]: {
+            [业务数据唯一标识符]: {},
+        },
+    },
+}
+```
 
 # 其他
 - https://github.com/reactjs/reselect
