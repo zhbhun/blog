@@ -49,6 +49,9 @@ https://github.com/react-native-community/React-Native-Elements
 ## 容器
 - [react-native-swiper](https://github.com/leecade/react-native-swiper)
 
+## carousel
+- [react-native-looped-carousel](https://github.com/appintheair/react-native-looped-carousel)
+
 ## 列表
 - [react-native-scrollable-tab-view](https://github.com/brentvatne/react-native-scrollable-tab-view)：Tabbed navigation that you can swipe between, each tab can have its own ScrollView and maintain its own scroll position between swipes. Pleasantly animated. Customizable tab bar
 
@@ -87,7 +90,29 @@ https://github.com/react-native-community/React-Native-Elements
 - [react-native-camera](https://github.com/lwansbrough/react-native-camera)：A Camera component for React Native. Also supports barcode scanning!
 
 ## 图片
-- [react-native-gallery](https://github.com/ldn0x7dc/react-native-gallery)
+- [How would you implement pinch-zoom in react-native?](http://stackoverflow.com/questions/31628663/how-would-you-implement-pinch-zoom-in-react-native)
+- [Scrollable image with pinch-to-zoom](http://stackoverflow.com/questions/36368919/scrollable-image-with-pinch-to-zoom)
+
+全屏幻灯片
+
+- [react-native-lightbox](https://github.com/oblador/react-native-lightbox)
+    
+    需要支持轮播，放大，缩小，请查看 [Pinch to zoom](https://github.com/oblador/react-native-lightbox/issues/5)
+
+    navigator-refactor: https://github.com/oblador/react-native-lightbox/tree/navigator-refactor
+
+- [react-native-gallery](https://github.com/ldn0x7dc/react-native-gallery)：要求 react-native 0.28 以上
+- [react-native-image-viewer](https://github.com/ascoders/react-native-image-viewer)
+- [react-native-image-carousel](https://github.com/anvilabs/react-native-image-carousel)：只支持 IOS
+
+缩放
+
+- [react-native-photo-view](https://github.com/alwx/react-native-photo-view)：Pinch-to-zoom view for React Native (both iOS and Android)
+- [react-native-image-zoom](https://github.com/Anthonyzou/react-native-image-zoom)：Image pan and zoom for Android
+
+裁剪
+
+- [react-native-image-cropper](https://github.com/stoffern/react-native-image-cropper)
 
 ## Todo
 - [react-native-side-menu](https://github.com/react-native-fellowship/react-native-side-menu)：Side menu component for React Native
