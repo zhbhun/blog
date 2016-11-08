@@ -7,6 +7,9 @@ tags: CSS
 
 - http://blog.vjeux.com/2014/javascript/react-css-in-js-nationjs.html
 - https://speakerdeck.com/vjeux/react-css-in-js
+- http://glenmaddern.com/articles/css-modules
+- https://github.com/css-modules/css-modules
+- https://github.com/css-modules/webpack-demo
 
 # 为什么要模块化？
 CSS 模块化重要的是要解决好两个问题：CSS 样式的导入和导出。灵活按需导入以便复用代码；导出时要能够隐藏内部作用域，以免造成全局污染。CSS 预处理器解决了 CSS 编程能力弱的问题，但并没有解决模块化最重要的问题。
