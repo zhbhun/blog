@@ -25,7 +25,7 @@ tags: Frontend
     - 优点：避免前端对 userAgent 影响响应速度
     - 缺点：同 userAgent，并且需要前端和后端工程师的配合，增加开发成本
 
-# userAgent
+## userAgent
 [mobile-detect.js](https://github.com/hgoebl/mobile-detect.js)
 
 - iPhone：Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1
@@ -34,28 +34,28 @@ tags: Frontend
 - Nexus 7：Mozilla/5.0 (Linux; Android 4.3; Nexus 10 Build/JSS15Q) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.23 Safari/537.36
 - PC：Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36
 
-# Media Queries
+## Media Queries
 - https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries
 
-## 响应式布局
+### 响应式布局
 响应式布局是用来兼容浏览器分辨率，横屏和竖屏的页面元素布局方式。实现思路如下：
 
 1. 使用 viewport 控制移动端浏览器不缩放；
 2. 基于 media query 的栅格布局；
 
-## 响应式 HTML
+### 响应式 HTML
 移动端的 HTML 页面相对 PC 比较简单，PC 通常会显示些额外的内容。响应式 HTML 的实现方案如下：
 
 1. 使用相同的 HTML 结构，通过 media query 来隐藏移动端要不需要的 DOM 元素
 2. 使用 JavaScript 动态渲染不同的内容。
 
-## 响应式 CSS
+### 响应式 CSS
 优先设定移动端的样式，PC 端需要引入额外 CSS 来覆盖移动端的原有样式。
 
-## 响应式 JavaScript/CSS
+### 响应式 JavaScript/CSS
 根据浏览器环境来异步加载不同的 JavaScript 文件。
 
-## 响应式媒体
+### 响应式媒体
 目标
 - 媒体尺寸自适应：解决屏幕大小不同的问题
 - 屏幕分辨率自适应：解决高清屏的问题
@@ -70,14 +70,23 @@ tags: Frontend
 屏幕分辨率自适应方案
 - min-device-pixel-ratio
 
-# Server userAgent
+## Server userAgent
 - [WURFL](http://www.scientiamobile.com/)
 - [Device Atlas](https://deviceatlas.com/)
 - [响应式设计+服务器端组件 (RESS)](http://www.lukew.com/ff/entry.asp?1392)：自适应设计
 
 # 调试工具
-- [Responsive Web Design Tester](http://responsivewebdesigntester.com/)
+- [How to test responsive designs for free](http://www.webdesignerdepot.com/2013/07/how-to-test-responsive-designs-for-free/)
 - [如何免费进行响应式设计测试](http://www.csdn.net/article/2013-08-02/2816444)
+
+- [Responsive Web Design Tester](http://responsivewebdesigntester.com/)
+- [Responsive Test](https://github.com/nghuuphuoc/responsivetest)
+- [Responsive Design Checker](http://responsivedesignchecker.com/)
+- [Responsive Design Testing Tool - Matt Kersley](https://github.com/mattkersley/Responsive-Design-Testing)
+- [Responsinator](https://www.responsinator.com/)
+- [Am I Responsive?](http://ami.responsivedesign.is/)
+- [Responsive Design Testing across Devices](https://www.browserstack.com/responsive)
+- [Mobile Responsive Design Testing](http://www.studiopress.com/responsive/)
 
 # 参考文献
 - [web前端响应式设计总结](http://jixianqianduan.com/frontend-css/2016/01/15/responsive-css.html)
