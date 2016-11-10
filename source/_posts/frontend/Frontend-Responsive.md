@@ -80,9 +80,9 @@ tags: Frontend
 - [如何免费进行响应式设计测试](http://www.csdn.net/article/2013-08-02/2816444)
 
 - [Responsive Web Design Tester](http://responsivewebdesigntester.com/)
+- [Responsive Design Testing Tool - Matt Kersley](https://github.com/mattkersley/Responsive-Design-Testing)
 - [Responsive Test](https://github.com/nghuuphuoc/responsivetest)
 - [Responsive Design Checker](http://responsivedesignchecker.com/)
-- [Responsive Design Testing Tool - Matt Kersley](https://github.com/mattkersley/Responsive-Design-Testing)
 - [Responsinator](https://www.responsinator.com/)
 - [Am I Responsive?](http://ami.responsivedesign.is/)
 - [Responsive Design Testing across Devices](https://www.browserstack.com/responsive)
