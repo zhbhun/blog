@@ -1,8 +1,8 @@
 ---
 title: Bootstrap
 date: 2016-04-27
-category: CSS
-tags: CSS
+category: Design
+tags: Design
 ---
 
 - [有关Bootstrap你想要知道的都在这里](https://zhuanlan.zhihu.com/p/21472801)

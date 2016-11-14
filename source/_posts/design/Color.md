@@ -1,5 +1,5 @@
 ---
-title: 颜色设计
+title: Color
 date: 2016-08-14
 category: Design
 tags: Design
