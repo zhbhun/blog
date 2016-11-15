@@ -5,11 +5,27 @@ category: Programmer
 tags: Programmer
 ---
 
-1. 2013-2015：顶点软件-企业应用部|软件助理工程师|福州
-  负责银行产品业务开发，编写开发文档；
-  负责银行产品需求分析和审核；
-  按代码规范重构银行产品旧系统，提高代码重用性，并优化服务端和前端性能；
-2. 2015-2016：顶点软件-Livebos产品部|开发工程师|福州
-  负责开发监控系统的前端模块，调研前端的新技术，提高前端开发效率；
-  负责乐多网网站前端开发，实现前端自动化;
-  负责开发赢点金App的账号，社区和开户模块；
+# 要素
+- 联系方式：手机，邮箱，微信，QQ
+- 个人信息：姓名，性别，出生年月，学历，工作年限，Github，Twitter
+- 工作经历：公司，时间，项目，职责，成绩，困难，措施，技术细节
+- 开源项目/作品：项目，文章，演讲/讲义
+- 技能清单
+
+# 工具
+
+- [resume.github.com](https://github.com/resume/resume.github.com)：Resumes generated using the GitHub informations. by [resume](https://github.com/resume)
+- [HackMyResume](https://github.com/hacksalot/HackMyResume)：Generate polished résumés and CVs in HTML, Markdown, LaTeX, MS Word, PDF, plain text, JSON, XML, YAML, smoke signal, and carrier pigeon. by [hacksalot](https://github.com/hacksalot)
+- [resume-cli](https://github.com/jsonresume/resume-cli)：Install our command line tool, to easily setup a new <em>resume</em>.json. Once setup, you can export or publish stra... by [jsonresume](https://github.com/jsonresume)
+- [DeerResume](https://github.com/geekcompany/DeerResume)：MarkDown在线简历工具，可在线预览、编辑和生成PDF. by [geekcompany](https://github.com/geekcompany/DeerResume)
+- [resume-master](https://github.com/hawx1993/resume-master)
+- [eternityspring.github.io](https://eternityspring.github.io/)
+
+# 示例
+- [ResumeSample](https://github.com/geekcompany/ResumeSample)： 程序员简历模板系列。包括PHP程序员简历模板、iOS程序员简历模板、Android程序员简历模板、Web前端程序员简历模板、Java... by [geekcompany](https://github.com/geekcompany)
+- [wesley wang](https://eternityspring.github.io)
+- [黄文雄](http://hawx1993.github.io/resume-master/)
+
+# 参考文献
+- [如何写好技术简历 —— 实例、模板及工具](http://get.ftqq.com/744.get)
+- [作为前端开发，如何写好一个简历](http://www.techug.com/web-dev-resume-github-project)
