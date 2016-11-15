@@ -1,0 +1,842 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Security," />
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="ZHBHUN" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="什么是跨站脚本？
+
+跨站脚本（Cross-site scripting，通常简称为XSS）是一种网站应用程序的安全漏洞攻击，是代码注入的一种。它允许恶意用户将代码注入到网页上，其他用户在观看网页时就会受到影响。 —— 摘自《维基百科》
+
+危害
+盗取信息
+盗用 cookie，获取敏感信息；
+键盘监听
+伪造表单
+
+
+恶意操作
+利用可被攻击的域受到其他域信任的特点，以受信任来源的身份请求一些平时不允许的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨站脚本攻击">
+<meta property="og:url" content="http://zhbhun.github.io/blog/security/Cross-Site-Scripting/index.html">
+<meta property="og:site_name" content="ZHBHUN">
+<meta property="og:description" content="什么是跨站脚本？
+
+跨站脚本（Cross-site scripting，通常简称为XSS）是一种网站应用程序的安全漏洞攻击，是代码注入的一种。它允许恶意用户将代码注入到网页上，其他用户在观看网页时就会受到影响。 —— 摘自《维基百科》
+
+危害
+盗取信息
+盗用 cookie，获取敏感信息；
+键盘监听
+伪造表单
+
+
+恶意操作
+利用可被攻击的域受到其他域信任的特点，以受信任来源的身份请求一些平时不允许的">
+<meta property="og:updated_time" content="2016-11-15T13:12:02.658Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="跨站脚本攻击">
+<meta name="twitter:description" content="什么是跨站脚本？
+
+跨站脚本（Cross-site scripting，通常简称为XSS）是一种网站应用程序的安全漏洞攻击，是代码注入的一种。它允许恶意用户将代码注入到网页上，其他用户在观看网页时就会受到影响。 —— 摘自《维基百科》
+
+危害
+盗取信息
+盗用 cookie，获取敏感信息；
+键盘监听
+伪造表单
+
+
+恶意操作
+利用可被攻击的域受到其他域信任的特点，以受信任来源的身份请求一些平时不允许的">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 跨站脚本攻击 | ZHBHUN </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/blog/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">ZHBHUN</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                跨站脚本攻击
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-03T00:00:00+08:00" content="2016-08-03">
+              2016-08-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/blog/categories/Security/" itemprop="url" rel="index">
+                    <span itemprop="name">Security</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/security/Cross-Site-Scripting/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="security/Cross-Site-Scripting/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>什么是跨站脚本？</p>
+<blockquote>
+<p>跨站脚本（Cross-site scripting，通常简称为XSS）是一种网站应用程序的安全漏洞攻击，是代码注入的一种。它允许恶意用户将代码注入到网页上，其他用户在观看网页时就会受到影响。 —— 摘自《维基百科》</p>
+</blockquote>
+<h1 id="危害"><a href="#危害" class="headerlink" title="危害"></a>危害</h1><ul>
+<li>盗取信息<ul>
+<li>盗用 cookie，获取敏感信息；</li>
+<li>键盘监听</li>
+<li>伪造表单</li>
+</ul>
+</li>
+<li>恶意操作<ul>
+<li>利用可被攻击的域受到其他域信任的特点，以受信任来源的身份请求一些平时不允许的操作，如进行不当的投票活动；</li>
+<li>利用 iframe、frame、XMLHttpRequest 或上述 Flash 等方式，以（被攻击）用户的身份执行一些管理动作，或执行一些一般的如发微博、加好友、发私信等操作；</li>
+<li>在访问量极大的一些页面上的XSS可以攻击一些小型网站，实现 DDoS 攻击的效果；</li>
+</ul>
+</li>
+<li>越权<ul>
+<li>利用植入Flash，通过 crossdomain 权限设置进一步获取更高权限；</li>
+</ul>
+</li>
+</ul>
+<h1 id="方式"><a href="#方式" class="headerlink" title="方式"></a>方式</h1><p>按照 XSS 来源，可以将 XSS 攻击方式分为三类：</p>
+<ul>
+<li>Persistent XSS：恶意代码来自数据库</li>
+<li>Reflected XSS：恶意代码来自受害者请求</li>
+<li>DOM-based XSS：客户端代码漏洞</li>
+</ul>
+<p>可能存在 XSS 的标签或属性</p>
+<ul>
+<li>script</li>
+<li>事件属性</li>
+<li>链接 href</li>
+<li>iframe src</li>
+<li>image src</li>
+<li>…</li>
+</ul>
+<h1 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h1><p>防御 XSS 攻击的方法如下：</p>
+<ul>
+<li>禁用浏览器脚本；</li>
+<li>将重要的 cookie 标记为 http only；</li>
+<li>使用 HTTP 头指定类型；</li>
+<li>转义<ul>
+<li>PHP：htmlentities()，htmlspecialchars()；</li>
+<li>Python：cgi.escape()；</li>
+<li>ASP：Server.HTMLEncode；</li>
+<li>ASP.NET：Server.HtmlEncode()，Microsoft Anti-Cross Site Scripting Library；</li>
+<li>Java：xssprotect (Open Source Library)；</li>
+<li>Node.js：node-validator；</li>
+</ul>
+</li>
+<li>验证<ul>
+<li>检查用户输入数据类型和规则；</li>
+<li>过滤或移除特殊的 HTML 标签；</li>
+<li>过滤 JavaScript 事件的标签；</li>
+</ul>
+</li>
+</ul>
+<p>根据XSS 攻击方法的不同，要采用不同的方法防御，具体防御策略如下：</p>
+<ul>
+<li>普通文本参数：有业务需要的话，做些正则表达式验证，例如：昵称使用正则表达式验证，只能包含特定字符，并且显示的时候需要转义</li>
+<li>多行文本参数：显示时转义</li>
+<li>富文本参数：过滤危险标签(使用白名单)，显示时转义</li>
+<li>coolie：http only</li>
+</ul>
+<p>备注：显示可能在服务端渲染，也可能在客户端渲染，根据具体程序语言做相应处理。</p>
+<p>疑问：存储数据前转义 VS 显示前转义？</p>
+<p>存储数据前转义，显示就不需要再转义，但这样数据库的数据不是用户真实输入的数据，不便于移植（例如，将数据导出到 CSV）。并且如果需要重新编辑转义数据的化，还需要反转义。</p>
+<p>此外，存储数据前转义只能防御 Persistent XSS 漏洞，要避免 Reflected XSS 和 DOM-based XSS，还是要做显示前转义。</p>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><p>转义</p>
+<ul>
+<li><a href="http://commons.apache.org/lang/api-2.6/org/apache/commons/lang/StringEscapeUtils.html#escapeHtml%28java.lang.String%29" target="_blank" rel="external">StringEscapeUtils.escapeHtml()</a></li>
+<li><a href="http://static.springsource.org/spring/docs/3.0.x/javadoc-api/org/springframework/web/util/HtmlUtils.html#htmlEscape%28java.lang.String%29" target="_blank" rel="external">HtmlUtils.htmlEscape()</a></li>
+<li><a href="http://stackoverflow.com/questions/2658922/xss-prevention-in-jsp-servlet-web-application" target="_blank" rel="external">JSTL <c:out> </c:out></a></li>
+<li><a href="http://docs.oracle.com/javaee/5/jstl/1.1/docs/tlddocs/fn/escapeXml.fn.html" target="_blank" rel="external">EL fn:escapeXml()</a></li>
+</ul>
+<p>过滤</p>
+<ul>
+<li><a href="https://jsoup.org/cookbook/cleaning-html/whitelist-sanitizer" target="_blank" rel="external">Sanitize untrusted HTML (to prevent XSS)</a></li>
+<li><a href="http://remark.overzealous.com/manual/usage.html" target="_blank" rel="external">remark</a></li>
+<li><a href="https://code.google.com/archive/p/xssprotect/" target="_blank" rel="external">xssprotect</a></li>
+<li><a href="https://github.com/OWASP/java-html-sanitizer" target="_blank" rel="external">java-html-sanitizer</a></li>
+<li><a href="https://github.com/finn-no/xss-html-filter" target="_blank" rel="external">xss-html-filter</a></li>
+</ul>
+<p>参考文献</p>
+<ul>
+<li><a href="http://stackoverflow.com/questions/2658922/xss-prevention-in-jsp-servlet-web-application" target="_blank" rel="external">XSS prevention in JSP/Servlet web application</a>：如何在 JSP 中应对 XSS 攻击。</li>
+<li><a href="http://stackoverflow.com/questions/5769847/how-to-avoid-apps-from-xss-attacks" target="_blank" rel="external">How to avoid apps from XSS attacks?</a></li>
+<li><a href="http://stackoverflow.com/questions/7505387/im-looking-for-a-java-html-encoder" target="_blank" rel="external">I’m looking for a Java HTML encoder [closed]</a></li>
+<li><a href="http://stackoverflow.com/questions/832620/stripping-html-tags-in-java" target="_blank" rel="external">Stripping HTML tags in Java</a></li>
+</ul>
+<h1 id="JavaScript-Node-js"><a href="#JavaScript-Node-js" class="headerlink" title="JavaScript/Node.js"></a>JavaScript/Node.js</h1><ul>
+<li>React：自带</li>
+<li>JQuery<ul>
+<li><a href="http://stackoverflow.com/questions/1219860/html-encoding-in-javascript-jquery" target="_blank" rel="external">HTML-encoding in JavaScript/jQuery</a></li>
+</ul>
+</li>
+</ul>
+<p>TODO</p>
+<ul>
+<li><a href="https://github.com/cure53/H5SC" target="_blank" rel="external">H5SC</a></li>
+<li><a href="https://github.com/leizongmin/js-xss" target="_blank" rel="external">js-xss</a></li>
+<li><a href="https://github.com/cure53/DOMPurify" target="_blank" rel="external">DOMPurify</a></li>
+<li><a href="https://github.com/Netflix/sleepy-puppy" target="_blank" rel="external">sleepy-puppy</a></li>
+<li><a href="https://github.com/cure53/XSSChallengeWiki/wiki" target="_blank" rel="external">XSSChallengeWiki</a></li>
+<li><a href="https://github.com/DanMcInerney/xsscrapy" target="_blank" rel="external">xsscrapy</a></li>
+<li><a href="https://github.com/yahoo/xss-filters" target="_blank" rel="external">xss-filters</a></li>
+<li><a href="https://github.com/koto/xsschef" target="_blank" rel="external">xsschef</a></li>
+<li><a href="https://github.com/firesunCN/BlueLotus_XSSReceiver" target="_blank" rel="external">BlueLotus_XSSReceiver</a></li>
+</ul>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
+<li><p><a href="http://excess-xss.com/" target="_blank" rel="external">Excess XSS</a>：XSS 研究</p>
+</li>
+<li><p><a href="https://xss-game.appspot.com/" target="_blank" rel="external">Google XSS challenge</a>：XSS 攻击游戏</p>
+</li>
+<li><p><a href="https://gist.github.com/pbssubhash/2f99644a4f24e8fe6b3e" target="_blank" rel="external">Google XSS challenge solutions..</a></p>
+</li>
+<li><p><a href="http://www.cnblogs.com/TankXiao/archive/2012/03/21/2337194.html" target="_blank" rel="external">Web安全测试之XSS</a>：XSS 介绍和防御</p>
+</li>
+<li><p><a href="https://www.owasp.org/index.php/Cross-site_Scripting_(XSS" target="_blank" rel="external">Cross-site Scripting (XSS)</a>)</p>
+</li>
+<li><p><a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet" target="_blank" rel="external">OWASP XSS (Cross Site Scripting) Prevention Cheat Sheet</a>：XSS 攻击防御备忘单</p>
+</li>
+<li><p><a href="http://www.acunetix.com/websitesecurity/cross-site-scripting/" target="_blank" rel="external">Cross-site Scripting (XSS) Attack</a></p>
+</li>
+<li><a href="http://www.cgisecurity.com/xss-faq.html" target="_blank" rel="external">The Cross-Site Scripting (XSS) FAQ</a></li>
+<li><a href="https://cnodejs.org/topic/50463565329c5139760c34a1" target="_blank" rel="external">关于XSS（跨站脚本攻击）和CSRF（跨站请求伪造）</a>：实战介绍 XSS 攻击</li>
+<li><a href="https://whitton.io/articles/xss-on-facebook-via-png-content-types/" target="_blank" rel="external">An XSS on Facebook via PNGs &amp; Wonky Content Types</a></li>
+<li><a href="http://www.freebuf.com/articles/web/40520.html" target="_blank" rel="external">XSS的原理分析与解剖</a></li>
+<li><a href="https://www.google.com/about/appsecurity/learning/xss/index.html" target="_blank" rel="external">Cross-site scripting</a></li>
+</ul>
+<h1 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h1><ul>
+<li><a href="https://github.com/nVisium/xssValidator" target="_blank" rel="external">xssValidator</a></li>
+<li><a href="https://github.com/coverity/coverity-security-library" target="_blank" rel="external">coverity-security-library</a></li>
+<li><a href="https://jaq.alibaba.com/community/art/show?articleid=518" target="_blank" rel="external">Content Security Policy 入门教程</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Security/" rel="tag">#Security</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/java/Java-Exception/" rel="next" title="Java 异常">
+                <i class="fa fa-chevron-left"></i> Java 异常
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/editor/Visual-Studio-Code/" rel="prev" title="Visual Studio Code">
+                Visual Studio Code <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="security/Cross-Site-Scripting/"
+           data-title="跨站脚本攻击" data-url="http://zhbhun.github.io/blog/blog/security/Cross-Site-Scripting/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/1996891"
+               alt="zhbhun" />
+          <p class="site-author-name" itemprop="name">zhbhun</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/blog/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/blog/categories">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags">
+                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/blog/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhbhun" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/zhbhun" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/zhbhun" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/zhbhun" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#危害"><span class="nav-number">1.</span> <span class="nav-text">危害</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方式"><span class="nav-number">2.</span> <span class="nav-text">方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#防御"><span class="nav-number">3.</span> <span class="nav-text">防御</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试"><span class="nav-number">4.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java"><span class="nav-number">5.</span> <span class="nav-text">Java</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-Node-js"><span class="nav-number">6.</span> <span class="nav-text">JavaScript/Node.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">7.</span> <span class="nav-text">参考文献</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TODO"><span class="nav-number">8.</span> <span class="nav-text">TODO</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhbhun</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/blog/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhbhun-notes"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

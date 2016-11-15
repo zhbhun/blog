@@ -1,0 +1,824 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Editor," />
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="ZHBHUN" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Atom 是由GitHub开发的自由及开放源代码的文字与代码编辑器，支持 OS X、Windows 和 Linux 操作系统，支持 Node.js 所写的插件，并内置 Git 版本控制系统。
+
+官方网站：https://atom.io/
+官方文档：https://atom.io/docs
+官方博客：http://blog.atom.io/
+官方主题：https://atom.io/themes
+官">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Atom">
+<meta property="og:url" content="http://zhbhun.github.io/blog/editor/Atom/index.html">
+<meta property="og:site_name" content="ZHBHUN">
+<meta property="og:description" content="Atom 是由GitHub开发的自由及开放源代码的文字与代码编辑器，支持 OS X、Windows 和 Linux 操作系统，支持 Node.js 所写的插件，并内置 Git 版本控制系统。
+
+官方网站：https://atom.io/
+官方文档：https://atom.io/docs
+官方博客：http://blog.atom.io/
+官方主题：https://atom.io/themes
+官">
+<meta property="og:updated_time" content="2016-11-15T13:12:02.658Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Atom">
+<meta name="twitter:description" content="Atom 是由GitHub开发的自由及开放源代码的文字与代码编辑器，支持 OS X、Windows 和 Linux 操作系统，支持 Node.js 所写的插件，并内置 Git 版本控制系统。
+
+官方网站：https://atom.io/
+官方文档：https://atom.io/docs
+官方博客：http://blog.atom.io/
+官方主题：https://atom.io/themes
+官">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Atom | ZHBHUN </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/blog/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">ZHBHUN</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Atom
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-30T00:00:00+08:00" content="2016-06-30">
+              2016-06-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/blog/categories/Editor/" itemprop="url" rel="index">
+                    <span itemprop="name">Editor</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/editor/Atom/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="editor/Atom/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Atom 是由GitHub开发的自由及开放源代码的文字与代码编辑器，支持 OS X、Windows 和 Linux 操作系统，支持 Node.js 所写的插件，并内置 Git 版本控制系统。</p>
+<ul>
+<li>官方网站：<a href="https://atom.io/" target="_blank" rel="external">https://atom.io/</a></li>
+<li>官方文档：<a href="https://atom.io/docs" target="_blank" rel="external">https://atom.io/docs</a></li>
+<li>官方博客：<a href="http://blog.atom.io/" target="_blank" rel="external">http://blog.atom.io/</a></li>
+<li>官方主题：<a href="https://atom.io/themes" target="_blank" rel="external">https://atom.io/themes</a></li>
+<li>官方插件：<a href="https://atom.io/packages" target="_blank" rel="external">https://atom.io/packages</a></li>
+<li>官方论坛：<a href="http://discuss.atom.io/" target="_blank" rel="external">http://discuss.atom.io/</a></li>
+<li>中文社区：<a href="https://atom-china.org/" target="_blank" rel="external">https://atom-china.org/</a></li>
+</ul>
+<h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><ul>
+<li><a href="https://atom.io/packages/list" target="_blank" rel="external">Most Download Pacakge</a></li>
+<li><p><a href="https://atom.io/packages/list?direction=desc&amp;sort=stars" target="_blank" rel="external">Most Starts Package</a></p>
+</li>
+<li><p><a href="https://atom.io/packages/highlight-selected" target="_blank" rel="external">highlight-selected</a> 双击选中的单词，可高亮当前打开文件中的这个单词</p>
+</li>
+</ul>
+<h2 id="语言语法"><a href="#语言语法" class="headerlink" title="语言语法"></a>语言语法</h2><ul>
+<li><a href="https://atom.io/packages/language-babel" target="_blank" rel="external">language-babel</a> 支持 JavaScript ES201x, React JSX &amp; Flow 语法高亮</li>
+<li><a href="https://atom.io/packages/react" target="_blank" rel="external">react</a> 支持 React 语法，缩进，代码片段，自动完成，格式化</li>
+<li><a href="https://atom.io/packages/linter" target="_blank" rel="external">linter</a> 代码语法检查的基本插件，安装后可以去安装具体语言的语法检查插件，为你的代码提供实时的语法检查和风格检查，支持的语言列表见 <a href="http://atomlinter.github.io/" target="_blank" rel="external">AtomLinter</a><ul>
+<li><a href="https://atom.io/packages/linter-eslint" target="_blank" rel="external">linter-eslint</a> 基于 ESlint 实现的 javascript 语法检查</li>
+<li><a href="https://atom.io/packages/linter-jshint" target="_blank" rel="external">linter-jshint</a>  基于 jshint 实现的 javascript 语法检查</li>
+<li><a href="https://atom.io/packages/linter-htmlhint" target="_blank" rel="external">linter-htmlhint</a> 基于 HintHTML 实现的 HTML 语法检查</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码编写"><a href="#代码编写" class="headerlink" title="代码编写"></a>代码编写</h2><ul>
+<li><a href="https://atom.io/packages/autocomplete-paths" target="_blank" rel="external">autocomplete-paths</a> 自动补全路径输入</li>
+<li><a href="https://atom.io/packages/atom-ternjs" target="_blank" rel="external">atom-ternjs</a> 非常专业的 JavaScript 静态分析器，基于对代码的静态分析，可以在编码的时候给出对象的属性、函数的参数的提示。还可以基于静态分析查找标识符的定义、搜索标识符的引用、重命名标识符。</li>
+<li><a href="https://atom.io/packages/autocomplete-modules" target="_blank" rel="external">autocomplete-modules</a> 自动完成 Javascript require/import 语句</li>
+<li><a href="https://atom.io/packages/emmet" target="_blank" rel="external">emmet</a> Web 开发必不可少的插件</li>
+<li><a href="https://atom.io/packages/docblockr" target="_blank" rel="external">docblockr</a> 编写注释</li>
+<li><a href="https://atom.io/packages/atom-bootstrap3" target="_blank" rel="external">atom-bootstrap3</a> Bootstrap 3 代码片段和自动完成</li>
+<li><a href="javascript-snippets">javascript-snippets</a> Javascript 和 NodeJS 的代码片段</li>
+</ul>
+<h2 id="代码美化"><a href="#代码美化" class="headerlink" title="代码美化"></a>代码美化</h2><ul>
+<li><a href="https://atom.io/packages/atom-beautify" target="_blank" rel="external">atom-beautify</a> 代码格式化插件，支持： HTML, CSS, JavaScript, PHP, Python, Ruby, Java, C, C++, C#, Objective-C, CoffeeScript, TypeScript, SQL</li>
+<li><a href="https://atom.io/packages/pretty-json" target="_blank" rel="external">pretty-json</a> JSON 格式化工具</li>
+</ul>
+<h2 id="写作辅助"><a href="#写作辅助" class="headerlink" title="写作辅助"></a>写作辅助</h2><ul>
+<li><a href="https://atom.io/packages/markdown-writer" target="_blank" rel="external">markdown-writer</a> Markdown 编写</li>
+<li><a href="https://atom.io/packages/markdown-preview-plus" target="_blank" rel="external">markdown-preview-plus</a> 更好的 Markdown 预览</li>
+<li><a href="https://github.com/melke/markdown-folder" target="_blank" rel="external">markdown-folder</a></li>
+<li><a href="https://atom.io/packages/markdown-pdf" target="_blank" rel="external">markdown-pdf</a></li>
+<li><a href="https://atom.io/packages/markdown-toc" target="_blank" rel="external">markdown-toc</a></li>
+<li><a href="https://atom.io/packages/markdown-preview-plus" target="_blank" rel="external">markdown-preview-plus</a></li>
+</ul>
+<h2 id="辅助工具"><a href="#辅助工具" class="headerlink" title="辅助工具"></a>辅助工具</h2><ul>
+<li><a href="https://atom.io/packages/color-picker" target="_blank" rel="external">color-picker</a> 颜色拾取器</li>
+<li><a href="https://atom.io/packages/minimap" target="_blank" rel="external">minimap</a> 当前文件的全部代码预览器，可代替滚动条</li>
+<li><a href="https://atom.io/packages/pigments" target="_blank" rel="external">pigments</a> 在项目和文件中显示颜色</li>
+<li><a href="https://atom.io/packages/vim-mode" target="_blank" rel="external">vim-mode</a> vim 模式控制</li>
+<li><a href="https://atom.io/packages/script" target="_blank" rel="external">script</a> 运行脚本</li>
+<li><a href="https://atom.io/packages/editorconfig" target="_blank" rel="external">editorconfig</a></li>
+<li><a href="https://atom.io/packages/atom-html-preview" target="_blank" rel="external">atom-html-preview</a> HTML 预览</li>
+<li><a href="https://atom.io/packages/highlight-line" target="_blank" rel="external">highlight-line</a> 高亮当前行</li>
+<li><a href="https://atom.io/packages/activate-power-mode" target="_blank" rel="external">activate-power-mode</a> 非常炫的编辑效果插件</li>
+<li><a href="https://atom.io/packages/build" target="_blank" rel="external">build</a> 项目构建</li>
+<li><a href="https://atom.io/packages/atom-terminal" target="_blank" rel="external">atom-terminal</a> 在当前文件所在路径打开控制台</li>
+<li><a href="https://atom.io/packages/minimap-find-and-replace" target="_blank" rel="external">minimap-find-and-replace</a> 查找替换匹配字符的小地图</li>
+<li><a href="https://atom.io/packages/minimap-highlight-selected" target="_blank" rel="external">minimap-highlight-selected</a> 选中字符的小地图</li>
+<li><a href="https://atom.io/packages/atom-runner" target="_blank" rel="external">atom-runner</a></li>
+<li><a href="https://atom.io/packages/open-recent" target="_blank" rel="external">open-recent</a></li>
+<li><a href="https://atom.io/packages/node-debugger" target="_blank" rel="external">node-debugger</a></li>
+<li><a href="https://atom.io/packages/symbols-tree-view" target="_blank" rel="external">symbols-tree-view</a></li>
+<li><a href="https://atom.io/packages/editor-stats" target="_blank" rel="external">editor-stats</a></li>
+<li><a href="https://atom.io/packages/file-icons" target="_blank" rel="external">file-icons</a></li>
+</ul>
+<h2 id="版本管理"><a href="#版本管理" class="headerlink" title="版本管理"></a>版本管理</h2><ul>
+<li><a href="https://atom.io/packages/git-control" target="_blank" rel="external">git-control</a> 提供 git 管理界面</li>
+<li><a href="https://atom.io/packages/merge-conflicts" target="_blank" rel="external">merge-conflicts</a> 解决 git 冲突</li>
+<li><a href="https://atom.io/packages/minimap-git-diff" target="_blank" rel="external">minimap-git-diff package</a></li>
+<li><a href="https://atom.io/packages/git-history" target="_blank" rel="external">git-history</a> 查看文件的版本历史</li>
+<li><a href="https://atom.io/packages/advanced-open-file" target="_blank" rel="external">advanced-open-file</a> 简单快速的打开或创建文件和文件夹</li>
+</ul>
+<h2 id="项目管理"><a href="#项目管理" class="headerlink" title="项目管理"></a>项目管理</h2><ul>
+<li><a href="https://atom.io/packages/todo-show" target="_blank" rel="external">todo-show</a> 查找项目中所有包含 TODO, FIXME, CHANGED, XXX, IDEA, HACK, NOTE, REVIEW 的注释</li>
+<li><a href="https://atom.io/packages/project-manager" target="_blank" rel="external">project-manager</a>  项目管理插件</li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><a href="https://atom.io/packages/dash" target="_blank" rel="external">dash</a></li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://atom-china.org/t/atom/804" target="_blank" rel="external">Atom 插件推荐：代码编辑（语言无关类）</a></li>
+<li><a href="https://atom-china.org/t/atom/324" target="_blank" rel="external">Atom 插件推荐：版本控制专题</a></li>
+</ul>
+<h1 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h1><ul>
+<li><a href="https://www.zhihu.com/topic/19952200" target="_blank" rel="external">知乎-Atom（文本编辑器）</a></li>
+<li><a href="https://atom-china.org/t/faq/326" target="_blank" rel="external">官方博客/手册索引、插件推荐专题</a></li>
+</ul>
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><ul>
+<li><a href="http://www.jeffjade.com/2016/03/03/2016-03-02-how-to-use-atom" target="_blank" rel="external">新编码神器Atom使用纪要</a></li>
+</ul>
+<h2 id="插件-1"><a href="#插件-1" class="headerlink" title="插件"></a>插件</h2><h3 id="Linter"><a href="#Linter" class="headerlink" title="Linter"></a>Linter</h3><ul>
+<li><a href="http://atomlinter.github.io/" target="_blank" rel="external">http://atomlinter.github.io/</a></li>
+</ul>
+<h4 id="Linter-eslint"><a href="#Linter-eslint" class="headerlink" title="Linter-eslint"></a>Linter-eslint</h4><p>Linter-esint 使用 eslint 实现 Javascript 语法检查，它会检查项目本地是否安装了 eslint（NPM 安装），如果没有安装的话，会使用它自身携带的 eslint（要求 eslint 版本高于 v1.0.0）。此外使用 Linter-eslint 需要安装插件 linter，如果没有安装的话，会自动安装。如果已经安装了一个可选的 linter 插件，可以禁用自动安装的 linter。<br>ESLint 默认没有使用任何规则来检查代码语法，这需要自己手动配置项目的语法检查规则。可以在项目根路径下运行 <code>eslint --init</code> 来快速生成配置文件，然后再根据自己需要手动调整。关于 eslint 的用法可参考博客 <a href="http://devnull.guru/get-started-with-eslint/" target="_blank" rel="external">Get Started With ESLint</a> 和 <a href="http://eslint.org/docs/user-guide/configuring" target="_blank" rel="external">ESLint document</a>。</p>
+<h1 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h1><h2 id="自动完成优化"><a href="#自动完成优化" class="headerlink" title="自动完成优化"></a>自动完成优化</h2><p><strong>自动完成提示匹配不准确</strong></p>
+<p>autocomplete-plus 的提示排序存在问题，没有完全按照字符排序，参考如下 ISSUES：</p>
+<ul>
+<li><a href="https://github.com/atom/autocomplete-plus/issues/508" target="_blank" rel="external">Suggestion order</a></li>
+<li><a href="https://github.com/atom/autocomplete-plus/issues/767" target="_blank" rel="external">Autocompletion result ranking</a></li>
+<li><a href="https://github.com/atom/autocomplete-plus/issues/465" target="_blank" rel="external">Snippet completion before object completion</a></li>
+<li><a href="https://github.com/atom/language-ruby/issues/130" target="_blank" rel="external"><code>do</code> snippet should have higher priority than <code>dop</code></a></li>
+<li><a href="https://github.com/atom/autocomplete-plus/issues/653" target="_blank" rel="external">Provider initial ordering</a></li>
+<li><a href="https://github.com/jeancroy/fuzzaldrin-plus/issues/9" target="_blank" rel="external">Match for full word provides different result</a></li>
+</ul>
+<p>解决方案：禁用 autocomplete-plus 的 Alternate Scoring。</p>
+<p><strong>其他问题</strong></p>
+<ul>
+<li><a href="https://github.com/atom/autocomplete-plus/issues/24" target="_blank" rel="external">Remove enter as default confirmation key</a></li>
+</ul>
+<h2 id="符号视图缩进"><a href="#符号视图缩进" class="headerlink" title="符号视图缩进"></a>符号视图缩进</h2><ul>
+<li><a href="https://github.com/atom/symbols-view/issues/156" target="_blank" rel="external">Indent for markdown Table of Content preview when press “cmd + r”</a></li>
+</ul>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><ul>
+<li><a href="https://github.com/atom/atom/blob/master/docs/build-instructions/linux.md#typeerror-unable-to-watch-path" target="_blank" rel="external">TypeError: Unable to watch path</a> —— <a href="https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers" target="_blank" rel="external">https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers</a></li>
+</ul>
+<hr>
+<h1 id="React-开发环境"><a href="#React-开发环境" class="headerlink" title="React 开发环境"></a>React 开发环境</h1><p>language-babel vs atom-react<br>| 特性 | language-babel | atom-react |<br>| — | — | — |<br>| Syntax Highlighting | + | + |<br>| Auto Indentation | + | + |<br>| Code Folding | - | + |<br>| Snippets | - | + |<br>| Format | - | + |<br>| HTML to JSX | - | + |<br>| Autocomplete | + | + |<br>| Automatic closing tag | + | + |<br>| commenting | + | - |</p>
+<ul>
+<li><a href="https://atom.io/packages/language-babel" target="_blank" rel="external">language-babel</a></li>
+<li><a href="https://orktes.github.io/atom-react/" target="_blank" rel="external">atom-react</a></li>
+</ul>
+<hr>
+<ul>
+<li><a href="https://www.sitepoint.com/10-essential-atom-add-ons/" target="_blank" rel="external">10 Essential Atom Add-ons</a></li>
+<li><a href="http://benmccormick.org/2016/01/11/the-most-interesting-atom-packages-ive-found-so-far/" target="_blank" rel="external">The Most Interesting Atom Packages I’ve found (so far)</a></li>
+<li><a href="http://elijahmanor.com/github-atom-packages/" target="_blank" rel="external">Recommended GitHub Atom Packages for Web Developers
+</a></li>
+<li><a href="https://scotch.io/bar-talk/best-of-atom-features-plugins-acting-like-sublime-text" target="_blank" rel="external">Best of Atom: Features, Plugins, Acting Like Sublime Text</a></li>
+<li><a href="https://codegeekz.com/15-useful-atom-packages-for-developers/" target="_blank" rel="external">15 Useful Atom Packages for Developers</a></li>
+<li><a href="https://www.quora.com/What-are-the-best-packages-for-Atom" target="_blank" rel="external">What are the best packages for Atom?</a></li>
+<li><a href="https://atom.io/packages/list?direction=desc&amp;sort=downloads" target="_blank" rel="external">https://atom.io/packages/list?direction=desc&amp;sort=downloads</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Editor/" rel="tag">#Editor</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/react/React-Context/" rel="next" title="React 基于“全局变量”的组件通信">
+                <i class="fa fa-chevron-left"></i> React 基于“全局变量”的组件通信
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/java/Java-Exception/" rel="prev" title="Java 异常">
+                Java 异常 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="editor/Atom/"
+           data-title="Atom" data-url="http://zhbhun.github.io/blog/blog/editor/Atom/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/1996891"
+               alt="zhbhun" />
+          <p class="site-author-name" itemprop="name">zhbhun</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/blog/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/blog/categories">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags">
+                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/blog/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhbhun" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/zhbhun" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/zhbhun" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/zhbhun" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#插件"><span class="nav-number">1.</span> <span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#语言语法"><span class="nav-number">1.1.</span> <span class="nav-text">语言语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码编写"><span class="nav-number">1.2.</span> <span class="nav-text">代码编写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码美化"><span class="nav-number">1.3.</span> <span class="nav-text">代码美化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写作辅助"><span class="nav-number">1.4.</span> <span class="nav-text">写作辅助</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#辅助工具"><span class="nav-number">1.5.</span> <span class="nav-text">辅助工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本管理"><span class="nav-number">1.6.</span> <span class="nav-text">版本管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目管理"><span class="nav-number">1.7.</span> <span class="nav-text">项目管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">1.8.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">1.9.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他-1"><span class="nav-number">2.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录"><span class="nav-number">3.</span> <span class="nav-text">附录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#教程"><span class="nav-number">3.1.</span> <span class="nav-text">教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件-1"><span class="nav-number">3.2.</span> <span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linter"><span class="nav-number">3.2.1.</span> <span class="nav-text">Linter</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Linter-eslint"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">Linter-eslint</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置"><span class="nav-number">4.</span> <span class="nav-text">设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自动完成优化"><span class="nav-number">4.1.</span> <span class="nav-text">自动完成优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#符号视图缩进"><span class="nav-number">4.2.</span> <span class="nav-text">符号视图缩进</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见问题"><span class="nav-number">5.</span> <span class="nav-text">常见问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React-开发环境"><span class="nav-number">6.</span> <span class="nav-text">React 开发环境</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhbhun</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/blog/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhbhun-notes"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

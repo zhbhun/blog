@@ -1,0 +1,795 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Redux," />
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="ZHBHUN" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="简介
+是什么：可预测化的状态管理容器
+特性
+
+运行于不同的环境：客户端，服务器，原生应用
+超爽的开发体验，如：时间旅行调试器可以编辑后实时预览
+除了 React，还可以支持其他界面库
+体积小，只有 2KB，且没有任何依赖
+
+
+安装：npm i --save redux
+
+用法：View(DOM，React等) -&amp;gt; Action(描述发生了什么的对象) -&amp;gt; Reducer(纯函数，描">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redux 入门">
+<meta property="og:url" content="http://zhbhun.github.io/blog/redux/Redux-Introduction/index.html">
+<meta property="og:site_name" content="ZHBHUN">
+<meta property="og:description" content="简介
+是什么：可预测化的状态管理容器
+特性
+
+运行于不同的环境：客户端，服务器，原生应用
+超爽的开发体验，如：时间旅行调试器可以编辑后实时预览
+除了 React，还可以支持其他界面库
+体积小，只有 2KB，且没有任何依赖
+
+
+安装：npm i --save redux
+
+用法：View(DOM，React等) -&amp;gt; Action(描述发生了什么的对象) -&amp;gt; Reducer(纯函数，描">
+<meta property="og:image" content="http://zhbhun.github.io/blog/../../images/redux/Redux.png">
+<meta property="og:updated_time" content="2016-11-15T13:12:02.658Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Redux 入门">
+<meta name="twitter:description" content="简介
+是什么：可预测化的状态管理容器
+特性
+
+运行于不同的环境：客户端，服务器，原生应用
+超爽的开发体验，如：时间旅行调试器可以编辑后实时预览
+除了 React，还可以支持其他界面库
+体积小，只有 2KB，且没有任何依赖
+
+
+安装：npm i --save redux
+
+用法：View(DOM，React等) -&amp;gt; Action(描述发生了什么的对象) -&amp;gt; Reducer(纯函数，描">
+<meta name="twitter:image" content="http://zhbhun.github.io/blog/../../images/redux/Redux.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Redux 入门 | ZHBHUN </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/blog/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">ZHBHUN</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Redux 入门
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-18T00:00:00+08:00" content="2016-10-18">
+              2016-10-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/blog/categories/Redux/" itemprop="url" rel="index">
+                    <span itemprop="name">Redux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/redux/Redux-Introduction/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="redux/Redux-Introduction/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a><a href="http://cn.redux.js.org/" target="_blank" rel="external">简介</a></h1><ul>
+<li>是什么：可预测化的状态管理容器</li>
+<li><p>特性</p>
+<ul>
+<li>运行于不同的环境：客户端，服务器，原生应用</li>
+<li>超爽的开发体验，如：时间旅行调试器可以编辑后实时预览</li>
+<li>除了 React，还可以支持其他界面库</li>
+<li>体积小，只有 2KB，且没有任何依赖</li>
+</ul>
+</li>
+<li><p>安装：<code>npm i --save redux</code></p>
+</li>
+<li>用法：View(DOM，React等) -&gt; Action(描述发生了什么的对象) -&gt; Reducer(纯函数，描述了 action 如何把 state 转变为下一个 state) -&gt; Store(单一数据源) -&gt; 更新 View</li>
+</ul>
+<h1 id="动机"><a href="#动机" class="headerlink" title="动机"></a><a href="http://cn.redux.js.org/docs/introduction/Motivation.html" target="_blank" rel="external">动机</a></h1><p>由于前端单页应用开发越来越复杂，JavaScript 需要管理许多不同来源（服务器，用户交互等）的状态变得非常困难 —— 搞不清楚状态在什么地方，在什么时候，由于什么原因变化。</p>
+<p>Redux 是如何解决前端复杂的状态管理？ —— 基于三大原则</p>
+<h1 id="三大原则"><a href="#三大原则" class="headerlink" title="三大原则"></a><a href="http://cn.redux.js.org/docs/introduction/ThreePrinciples.html" target="_blank" rel="external">三大原则</a></h1><ul>
+<li><p>单一数据源</p>
+<ul>
+<li>规范状态存储，解决传统开发模式中状态存储混乱的问题 ——  基于 jQuery 开发时，很多开发人员都简单的把数据扔到全局命名空间里</li>
+<li>让同构应用开发变得非常容易？ —— 待学习</li>
+<li>单一的状态树，调试更加容易 —— 可以把状态保存到本地，方便查看状态（以前开发时想看状态必须打印日志来查看，导致打印日志代码泛滥）</li>
+</ul>
+</li>
+<li><p>状态是只读的：确保只能通过触发 Action 来修改状态，所有的修改都被集中化处理，且严格按照一个接一个的顺序执行</p>
+<p>  Action 只是普通对象，可以被日志打印，可以在维护时很方便的找到状态改变的来源。</p>
+<p>  相比起来，以往开发在无论生成还是开发环境代码的各个地方都存在着 <code>console.log</code>（曾今看到一个函数里写了 10 多个日志打印）。而 redux 可以利用中间件，可插拔式的开启或关闭日志打印，可以减少大量的日志打印代码。</p>
+</li>
+<li><p>使用纯函数来执行修改：Reducer 只能是一些纯函数 —— 便于编写可复用的 reducer</p>
+</li>
+</ul>
+<h1 id="先前技术"><a href="#先前技术" class="headerlink" title="先前技术"></a><a href="http://cn.redux.js.org/docs/introduction/PriorArt.html" target="_blank" rel="external">先前技术</a></h1><p>Flux 是一个混合产物，了解 Redux 与其他技术的相似与不同之处</p>
+<ul>
+<li><p>Flux</p>
+<ul>
+<li>相同点：Redux 的灵感来源于 Flux 的几个重要特性，他们都是将模型的更新逻辑全部集中于一个特定的层；</li>
+<li>不同点：Redux 没有 Dispatcher，且不支持多个 Store，只有一个单一的 Store 和一个根级的 reduce 函数；</li>
+</ul>
+</li>
+<li><p>Elm：</p>
+<ul>
+<li>相同点：Elm 的 “updater” 与 Redux 里的 reducer 服务于相同的目的；</li>
+<li>不同点：Elm 是一种函数式编程语言，在执行纯度，静态类型，不可变动性，action 和模式匹配等方面更具优势；</li>
+</ul>
+</li>
+<li><p>Immutable：Immutable 是一个可实现持久数据结构的 JavaScript 库，可以与 Redux 对接良好。</p>
+</li>
+<li>Baobab：Baobab 实现了数据不可变特性的 API —— 用以更新纯 JavaScript 对象，可以在 Redux 中使用，但没有什么优势。</li>
+<li>Rx：Reactive Extensions 是管理复杂异步应用非常优秀的方案，和 Redux 一起使用，可以配合得很好。</li>
+</ul>
+<h1 id="生态系统"><a href="#生态系统" class="headerlink" title="生态系统"></a><a href="http://cn.redux.js.org/docs/introduction/Ecosystem.html" target="_blank" rel="external">生态系统</a></h1><p><img src="../../images/redux/Redux.png" alt="Redux"></p>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a><a href="http://cn.redux.js.org/docs/introduction/Examples.html" target="_blank" rel="external">示例</a></h1><ol>
+<li><p>最基本的用法：View，Create Action，Action，Reducer，Store</p>
+<ul>
+<li><a href="https://github.com/reactjs/redux/tree/master/examples/counter-vanilla" target="_blank" rel="external">https://github.com/reactjs/redux/tree/master/examples/counter-vanilla</a></li>
+</ul>
+</li>
+<li><p>如何与界面框架搭配使用，如 redux-react</p>
+<ul>
+<li><a href="https://github.com/reactjs/redux/tree/master/examples/counter" target="_blank" rel="external">https://github.com/reactjs/redux/tree/master/examples/counter</a></li>
+<li><a href="https://github.com/reactjs/redux/tree/master/examples/todos-with-undo" target="_blank" rel="external">https://github.com/reactjs/redux/tree/master/examples/todos-with-undo</a></li>
+<li><a href="https://github.com/reactjs/redux/tree/master/examples/todomvc" target="_blank" rel="external">https://github.com/reactjs/redux/tree/master/examples/todomvc</a></li>
+</ul>
+</li>
+<li><p>常用的 Redux 模式</p>
+<ul>
+<li><p>实现异步 Action</p>
+<p>  <a href="https://github.com/reactjs/redux/tree/master/examples/async" target="_blank" rel="external">https://github.com/reactjs/redux/tree/master/examples/async</a></p>
+</li>
+<li><p>使用 ID 来标准化存储数据实体</p>
+<p>  <a href="https://github.com/reactjs/redux/tree/master/examples/shopping-cart" target="_blank" rel="external">https://github.com/reactjs/redux/tree/master/examples/shopping-cart</a></p>
+</li>
+<li><p>在不同层级将多个 reducer 组合使用</p>
+<p>  <a href="https://github.com/reactjs/redux/tree/master/examples/shopping-cart" target="_blank" rel="external">https://github.com/reactjs/redux/tree/master/examples/shopping-cart</a></p>
+</li>
+<li><p>深层嵌套树状视图的渲染</p>
+<p>  <a href="https://github.com/reactjs/redux/tree/master/examples/tree-view" target="_blank" rel="external">https://github.com/reactjs/redux/tree/master/examples/tree-view</a></p>
+</li>
+<li><p>使用 Redux Logger 生成日志</p>
+<p>  <a href="https://github.com/reactjs/redux/tree/master/examples/shopping-cart" target="_blank" rel="external">https://github.com/reactjs/redux/tree/master/examples/shopping-cart</a></p>
+</li>
+</ul>
+</li>
+<li><p>服务端渲染：<a href="https://github.com/reactjs/redux/tree/master/examples/universal" target="_blank" rel="external">https://github.com/reactjs/redux/tree/master/examples/universal</a></p>
+</li>
+<li>完整的应用示例：<a href="https://github.com/reactjs/redux/tree/master/examples/real-world" target="_blank" rel="external">https://github.com/reactjs/redux/tree/master/examples/real-world</a></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Redux/" rel="tag">#Redux</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/webpack/React-Hot-Loader/" rel="next" title="React Hot Loader">
+                <i class="fa fa-chevron-left"></i> React Hot Loader
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/mysql/MySQL/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="redux/Redux-Introduction/"
+           data-title="Redux 入门" data-url="http://zhbhun.github.io/blog/blog/redux/Redux-Introduction/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/1996891"
+               alt="zhbhun" />
+          <p class="site-author-name" itemprop="name">zhbhun</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/blog/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/blog/categories">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags">
+                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/blog/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhbhun" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/zhbhun" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/zhbhun" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/zhbhun" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动机"><span class="nav-number">2.</span> <span class="nav-text">动机</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三大原则"><span class="nav-number">3.</span> <span class="nav-text">三大原则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#先前技术"><span class="nav-number">4.</span> <span class="nav-text">先前技术</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生态系统"><span class="nav-number">5.</span> <span class="nav-text">生态系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#示例"><span class="nav-number">6.</span> <span class="nav-text">示例</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhbhun</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/blog/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhbhun-notes"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

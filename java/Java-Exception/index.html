@@ -1,0 +1,792 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Java," />
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="ZHBHUN" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="什么是异常
+异常情形是指阻止当前方法或者作用域继续执行的问题。——《Think in Java》
+
+怎么处理异常
+通过函数的返回值来告诉函数调用者出现异常
+通过某种异常处理机制来告诉函数调用者出现异常，例如 Java 的异常处理机制
+
+为什么使用异常处理机制？异常作为返回值带来的问题
+
+很容易与正常的返回值混淆；
+需要约定返回值的数据结构，降低代码可阅读性；
+如果函数嵌套调用且最里层函数出现异常，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 异常">
+<meta property="og:url" content="http://zhbhun.github.io/blog/java/Java-Exception/index.html">
+<meta property="og:site_name" content="ZHBHUN">
+<meta property="og:description" content="什么是异常
+异常情形是指阻止当前方法或者作用域继续执行的问题。——《Think in Java》
+
+怎么处理异常
+通过函数的返回值来告诉函数调用者出现异常
+通过某种异常处理机制来告诉函数调用者出现异常，例如 Java 的异常处理机制
+
+为什么使用异常处理机制？异常作为返回值带来的问题
+
+很容易与正常的返回值混淆；
+需要约定返回值的数据结构，降低代码可阅读性；
+如果函数嵌套调用且最里层函数出现异常，">
+<meta property="og:image" content="http://images.cnitblog.com/blog/381060/201311/22185952-834d92bc2bfe498f9a33414cc7a2c8a4.png">
+<meta property="og:updated_time" content="2016-11-15T13:12:02.658Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java 异常">
+<meta name="twitter:description" content="什么是异常
+异常情形是指阻止当前方法或者作用域继续执行的问题。——《Think in Java》
+
+怎么处理异常
+通过函数的返回值来告诉函数调用者出现异常
+通过某种异常处理机制来告诉函数调用者出现异常，例如 Java 的异常处理机制
+
+为什么使用异常处理机制？异常作为返回值带来的问题
+
+很容易与正常的返回值混淆；
+需要约定返回值的数据结构，降低代码可阅读性；
+如果函数嵌套调用且最里层函数出现异常，">
+<meta name="twitter:image" content="http://images.cnitblog.com/blog/381060/201311/22185952-834d92bc2bfe498f9a33414cc7a2c8a4.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Java 异常 | ZHBHUN </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/blog/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">ZHBHUN</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Java 异常
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-13T00:00:00+08:00" content="2016-07-13">
+              2016-07-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/blog/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/java/Java-Exception/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="java/Java-Exception/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="什么是异常"><a href="#什么是异常" class="headerlink" title="什么是异常"></a>什么是异常</h1><blockquote>
+<p>异常情形是指阻止当前方法或者作用域继续执行的问题。——《Think in Java》</p>
+</blockquote>
+<h1 id="怎么处理异常"><a href="#怎么处理异常" class="headerlink" title="怎么处理异常"></a>怎么处理异常</h1><ul>
+<li>通过函数的返回值来告诉函数调用者出现异常</li>
+<li>通过某种异常处理机制来告诉函数调用者出现异常，例如 Java 的异常处理机制</li>
+</ul>
+<h1 id="为什么使用异常处理机制？"><a href="#为什么使用异常处理机制？" class="headerlink" title="为什么使用异常处理机制？"></a>为什么使用异常处理机制？</h1><p>异常作为返回值带来的问题</p>
+<ul>
+<li>很容易与正常的返回值混淆；</li>
+<li>需要约定返回值的数据结构，降低代码可阅读性；</li>
+<li>如果函数嵌套调用且最里层函数出现异常，则需要每个调用函数都处理异常；</li>
+<li>由调用函数来分析异常，这要求程序员对库函数有很深的了解；</li>
+</ul>
+<p>Java 的异常处理机制在程序发生异常时，强制终止程序继续执行，记录异常信息并跳转至最近的异常处理程序去处理异常，如果当前函数作用域内没有找到可用的异常处理程序，则转向外层调用函数寻找可用的异常处理程序。</p>
+<h1 id="Java-的异常体系"><a href="#Java-的异常体系" class="headerlink" title="Java 的异常体系"></a>Java 的异常体系</h1><ul>
+<li><p><img src="http://images.cnitblog.com/blog/381060/201311/22185952-834d92bc2bfe498f9a33414cc7a2c8a4.png" alt="Java 异常"></p>
+</li>
+<li><p>Throwable：java语言中所有错误和异常的超类；</p>
+</li>
+<li>Error VS Exception：前者为错误，是程序无法处理的，出现这种情况你唯一能做的就是听之任之，交由 JVM 来处理，不过 JVM 在大多数情况下会选择终止线程。Exception 是程序可以处理的异常，分为两种 CheckedException（受捡异常），一种是 UncheckedException（不受检异常）；</li>
+<li>CheckedException VS UncheckedException：CheckException 发生在编译阶段，必须要使用try…catch（或者throws）否则编译不通过。UncheckedException 发生在运行期，具有不确定性；</li>
+</ul>
+<p>常见的运行时异常</p>
+<ul>
+<li>NullPointerException</li>
+<li>ClassNotFoundException</li>
+<li>ClassCastException</li>
+<li>ArithmeticException</li>
+<li>ArrayIndexOutOfBoundsException</li>
+</ul>
+<h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><ul>
+<li>try…catch</li>
+<li>try…catch…finally</li>
+<li>throw</li>
+<li>throws</li>
+</ul>
+<h1 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h1><p>TODO</p>
+<h1 id="异常链"><a href="#异常链" class="headerlink" title="异常链"></a>异常链</h1><p>TODO</p>
+<p>TODO 异常链的打印信息</p>
+<h1 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h1><p>下面是错误使用 Java 异常处理机制的示例：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Connection conn = <span class="keyword">null</span>;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    Statement stat = conn.createStatement();</span><br><span class="line">    ResultSet rs = stat.executeQuery(<span class="string">"..."</span>);</span><br><span class="line">    <span class="keyword">while</span> (rs.next())&#123;</span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">    &#125;</span><br><span class="line">    conn.close();</span><br><span class="line">    out.close();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (Exception ex)&#123;</span><br><span class="line">    ex.printStackTrace();</span><br><span class="line">    <span class="keyword">throw</span> ex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>尽可能减小 try 块，虽然将一大块代码包含在 try 里面，比较容易实现，但不利于分析和维护代码（后期不知道哪一行代码可能抛出异常，以及产生什么类型的异常）；</li>
+<li>保证所有资源都被正确释放，充分利用 finally 关键字；</li>
+<li>catch 语句尽量指定具体的异常类型，然后针对特定类型的异常做特定的处理，避免使用 Exception 处理所有可能出现的异常；</li>
+<li>异常捕获后的处理方案<ul>
+<li>自己处理不了，就不要捕获异常；</li>
+<li>抛出封装异常；</li>
+</ul>
+</li>
+<li>在异常处理模块中提供适量的错误原因信息，组织错误信息使其易于理解和阅读 —— 类，方法，异常；</li>
+<li>不要在 finally 返回值；</li>
+<li>不要在构造函数中抛出异常；</li>
+</ol>
+<h1 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h1><p>一个用例通常由一个主事件流和 n 个异常流组成，异常流可能发生在主事件流的过程，而 try 语句里面实现的是主事件流，而 catch 里面实现的是异常流，在这里异常不代表程序出现了异常或者错误，它只是面向对象化的业务逻辑控制方法。</p>
+<p>在实际开发中，可以设计好异常类层次，这些异常类并不都表示程序出现了异常或错误，只是代表非主事件流的发生，用来进行那些分之流程的控制。例如，下面是登陆方法的实现方案对比，可以看出一个设计好的异常类层次的优势。</p>
+<ul>
+<li>boolean login(String username, String password)：只能返回 true 或 false 表示是否登陆成功；</li>
+<li>int login(String username, String password)：1 表示成功登陆，0 表示找不到用户，-1 表示密码不对。。。调用该方法时必须记住 login 返回代码的含义，并使用 if…else 来判断不同的执行结果；</li>
+<li>User login(String username, String password) throws UserNotFoundException, PasswordNotMatchException：登陆方法返回成功登陆后的用户信息，在登陆失败的时候抛出相应的异常，调用方法直接使用受检异常来处理不同的执行结果，借助 IDE 开发起来非常方便；</li>
+</ul>
+<p>争议：关于 Java 的受检异常，存在着很多反对意见。支持的人认为受检异常可以增加程度的鲁棒性（健壮）。反对的人认为受检异常很少被开发人员正确使用过，并且降低了程序开发的生产率和代码的执行效率。更多详情可参考<a href="http://www.cnblogs.com/mailingfeng/archive/2012/11/14/2769974.html" target="_blank" rel="external">Java异常使用的讨论</a>。</p>
+<p>优秀开源项目实现案例</p>
+<ul>
+<li>Spring DataAccessException</li>
+<li>…</li>
+</ul>
+<p>总结：</p>
+<ul>
+<li><p>什么时候使用异常？使用自定义方法的返回值，还是使用异常来表示各种事件流？</p>
+<p>  我们可以适当使用异常来表示各种事件流，Spring，Hibernate3 都已经采用异常来表示事件流，特别是 Spring 的 DataAccessException 异常层次设计。</p>
+</li>
+<li><p>使用受检异常还是非受检异常？</p>
+<blockquote>
+<p>Use checked exceptions for recoverable conditions and run-time exceptions for programming errors</p>
+<p>一些异常本质上是次要的返回代码（它通常指示违反业务规则），而一些异常则是“发生某种可怕错误”（例如数据库连接失败）的变种。Johnson 提倡对于第一种类别的异常（可选的返回代码）使用检查型异常，而对于后者使用运行时异常。在“发生某种可怕错误”的类别中，其动机是简单地认识到没有调用 者能够有效地处理该异常，因此它也可能以各种方式沿着栈向上扩散而对于中间代码的影响保持最小（并且最小化异常淹没的可能性）。—— Rod Johnson</p>
+<p>我已经发现非检查型异常的最大风险之一就是它并没有按照检查型异常采用的方式那样自我文档化。除非 API 的创建者明确地文档化将要抛出的异常，否则调用者没有办法知道在他们的代码中将要捕获的异常是什么。</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
+<li><a href="http://www.cnblogs.com/chenssy/p/3438130.html" target="_blank" rel="external">java提高篇之异常（上）</a></li>
+<li><a href="http://www.cnblogs.com/chenssy/p/3453039.html" target="_blank" rel="external">java提高篇(十七)—–异常(二)</a></li>
+<li><a href="http://blog.csdn.net/zhangerqing/article/details/8248186" target="_blank" rel="external">Java之美[从菜鸟到高手演变]之Exception</a></li>
+<li><a href="http://www.artima.com/intv/solid.html" target="_blank" rel="external">Failure and Exceptions</a></li>
+<li><a href="The C# Design Process">The C# Design Process</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Java/" rel="tag">#Java</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/editor/Atom/" rel="next" title="Atom">
+                <i class="fa fa-chevron-left"></i> Atom
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/security/Cross-Site-Scripting/" rel="prev" title="跨站脚本攻击">
+                跨站脚本攻击 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="java/Java-Exception/"
+           data-title="Java 异常" data-url="http://zhbhun.github.io/blog/blog/java/Java-Exception/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/1996891"
+               alt="zhbhun" />
+          <p class="site-author-name" itemprop="name">zhbhun</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/blog/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/blog/categories">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags">
+                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/blog/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhbhun" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/zhbhun" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/zhbhun" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/zhbhun" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是异常"><span class="nav-number">1.</span> <span class="nav-text">什么是异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#怎么处理异常"><span class="nav-number">2.</span> <span class="nav-text">怎么处理异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么使用异常处理机制？"><span class="nav-number">3.</span> <span class="nav-text">为什么使用异常处理机制？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-的异常体系"><span class="nav-number">4.</span> <span class="nav-text">Java 的异常体系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常处理"><span class="nav-number">5.</span> <span class="nav-text">异常处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义异常"><span class="nav-number">6.</span> <span class="nav-text">自定义异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常链"><span class="nav-number">7.</span> <span class="nav-text">异常链</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最佳实践"><span class="nav-number">8.</span> <span class="nav-text">最佳实践</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#高级用法"><span class="nav-number">9.</span> <span class="nav-text">高级用法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">10.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhbhun</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/blog/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhbhun-notes"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

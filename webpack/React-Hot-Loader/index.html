@@ -1,0 +1,1048 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Webpack," />
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="ZHBHUN" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="自 Dan Abramov 推出 React Hot Loader 以来，其实现方式随着 React 社区的发展一直在变化。期间，React Hot Loader 被终止过，改用 React Transform。而，如今 React Hot Loader 3 又再次回归。
+这么精彩的变更历史，导致配置方式一大堆，再加上网络上的博文宣传，让初学者看了一脸懵逼。本文根据 GitHub 上的提交记录和变">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Hot Loader">
+<meta property="og:url" content="http://zhbhun.github.io/blog/webpack/React-Hot-Loader/index.html">
+<meta property="og:site_name" content="ZHBHUN">
+<meta property="og:description" content="自 Dan Abramov 推出 React Hot Loader 以来，其实现方式随着 React 社区的发展一直在变化。期间，React Hot Loader 被终止过，改用 React Transform。而，如今 React Hot Loader 3 又再次回归。
+这么精彩的变更历史，导致配置方式一大堆，再加上网络上的博文宣传，让初学者看了一脸懵逼。本文根据 GitHub 上的提交记录和变">
+<meta property="og:updated_time" content="2016-11-15T13:12:02.658Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React Hot Loader">
+<meta name="twitter:description" content="自 Dan Abramov 推出 React Hot Loader 以来，其实现方式随着 React 社区的发展一直在变化。期间，React Hot Loader 被终止过，改用 React Transform。而，如今 React Hot Loader 3 又再次回归。
+这么精彩的变更历史，导致配置方式一大堆，再加上网络上的博文宣传，让初学者看了一脸懵逼。本文根据 GitHub 上的提交记录和变">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> React Hot Loader | ZHBHUN </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/blog/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">ZHBHUN</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                React Hot Loader
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-06T00:00:00+08:00" content="2016-09-06">
+              2016-09-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/blog/categories/Webpack/" itemprop="url" rel="index">
+                    <span itemprop="name">Webpack</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/webpack/React-Hot-Loader/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="webpack/React-Hot-Loader/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>自 Dan Abramov 推出 React Hot Loader 以来，其实现方式随着 React 社区的发展一直在变化。期间，React Hot Loader 被终止过，改用 React Transform。而，如今 React Hot Loader 3 又再次回归。</p>
+<p>这么精彩的变更历史，导致配置方式一大堆，再加上网络上的博文宣传，让初学者看了一脸懵逼。本文根据 GitHub 上的提交记录和变更说明来梳理 React Hot Loader 变更历史，方便大家更好地认识 React Hot Loader，识别网络上的博文是否已经 out 了。</p>
+<p><a href="https://medium.com/@dan_abramov/hot-reloading-in-react-1140438583bf#.f1hgbckb1" target="_blank" rel="external">Hot Reloading in React</a></p>
+<h1 id="变更历史"><a href="#变更历史" class="headerlink" title="变更历史"></a>变更历史</h1><ol>
+<li><p>20140713</p>
+<p> React Hot Loader 0.1.0 诞生，可以查看 Dan Abramov 当时在 YouTube 上发布的视频 <a href="http://www.youtube.com/watch?v=pw4fKkyPPg8" target="_blank" rel="external">React live code editing</a>。开发 React Hot Loader 的灵感来自 <a href="https://github.com/webpack/react-proxy-loader" target="_blank" rel="external">react-proxy-loader</a>。实现思想是，在代码更新推送到客户端后，不会销毁已挂在组件实例（不会丢失状态），并更新他们的原型。然而，React Hot Loader 存在不少问题，还处于实验当中。</p>
+</li>
+<li><p>20140815</p>
+<p> React Hot Loader 0.3.0 作为第一个稳定版本发布，支持 react 0.1.1。下面是摘自 React Hot Loader 更新至 0.5.0 的变更日志：</p>
+<ul>
+<li><p>0.5.0</p>
+<ul>
+<li>Adds source map support, contributed by <a href="https://github.com/jRiest" target="_blank" rel="external">Jake Riesterer</a></li>
+</ul>
+</li>
+<li><p>0.4.5</p>
+<ul>
+<li>Collapse all hot loader code in one line so it doesn’t obscure beginning of file.</li>
+</ul>
+</li>
+<li><p>0.4.4</p>
+<ul>
+<li>Errors occuring in module definition (such as <code>ReferenceError</code>) should not disable further reloading (fixes <strong><a href="https://github.com/gaearon/react-hot-loader/issues/29" target="_blank" rel="external">#29</a></strong>)</li>
+</ul>
+</li>
+<li><p>0.4.3</p>
+<ul>
+<li>Support lowercase <code>react</code> reference name and usage with ES6 classes (<code>createClass(MyComponent.prototype)</code>) via <strong><a href="https://github.com/gaearon/react-hot-loader/issues/27" target="_blank" rel="external">#27</a></strong></li>
+</ul>
+</li>
+<li><p>0.4.2</p>
+<ul>
+<li>Catch errors in modules and log them instead of reloading (fixes <strong><a href="https://github.com/gaearon/react-hot-loader/issues/21" target="_blank" rel="external">#21</a></strong>)</li>
+</ul>
+</li>
+<li><p>0.4.1</p>
+<ul>
+<li>Use more precise <a href="https://github.com/gaearon/react-hot-loader/commit/f71c6785131adcc85b91789da0d0a0b9f1a9713f" target="_blank" rel="external"><code>React.createClass</code> regex</a> to avoid matching own code when hot loader is applied to all JS files.</li>
+</ul>
+</li>
+<li><p>0.4.0</p>
+<ul>
+<li>Ignore files that contain no <code>createClass</code> calls (fixes <strong><a href="https://github.com/gaearon/react-hot-loader/issues/17" target="_blank" rel="external">#17</a></strong>)</li>
+<li>Remove the need for pitch loader (fixes <strong><a href="https://github.com/gaearon/react-hot-loader/issues/19" target="_blank" rel="external">#19</a></strong>)</li>
+<li>Improve performance by only using one loader instead of two</li>
+<li>Now that performance is acceptable, remove desktop notifications and <code>notify</code> option</li>
+<li>It is now recommended that you use <code>devtool: &#39;eval&#39;</code> because it’s much faster and has no downsides anymore</li>
+</ul>
+</li>
+<li><p>0.3.1</p>
+<ul>
+<li>Avoid warnings on old browsers with missing <code>Notification</code> API</li>
+<li>Errors don’t cause page reload anymore</li>
+</ul>
+</li>
+<li><p>0.3.0</p>
+<ul>
+<li>Use React 0.11。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>20141219</p>
+<p> React Hot Loader 升级至 1.0，存在破坏前后兼容性的变化。在过去，React Hot Loader 通过正则表达式查找 createClass 调用，并替换它们的实现，这种方式存在一些问题：</p>
+<ul>
+<li>Doesn’t work when components are created through wrappers;</li>
+<li>Doesn’t work when author calls React differently;</li>
+<li>Causes false positives in React source code comments and elsewhere;</li>
+<li><p>Most importantly, won’t work with ES6 classes that will be future of React.</p>
+<p>React Hot Loader 1.0 不再解析源代码，默认只将在原型有声明 render 方法的模块输出（<code>module.exports</code>）变为可热加载。如果原本就是将每个组件写在单独的文件里的话，就没有任何问题。此外，你可以通过 API <code>module.makeHot</code> 将任何东西都变得可热加载。要想将一个文件中编写的多个组件，函数内创建的组件，对象中的多个组件等变得可热加载，就可以通过调用 <code>module.makeHot</code> 来实现。</p>
+</li>
+</ul>
+</li>
+<li><p>20150422</p>
+<p> Dan Abramov 发布博客 <a href="https://medium.com/@dan_abramov/the-death-of-react-hot-loader-765fa791d7c4#.u6zad0n0q" target="_blank" rel="external">The Death of React Hot Loader</a> 声明 React Hot Loader 已死。Dan Abramov 对 React Hot Loader 1.0 不是很满意，认为 React Hot Loader 2 应该变得不一样，但还没找到最好的方法实现热加载。下面是他当时提出的一些观点：</p>
+<ul>
+<li>代替奇怪的热加载 API <code>moduel.makeHot</code>，使用 ES7 装饰器模式 —— 为了让热加载写起来更简单；</li>
+<li>热加载代码在生成环境编译时去掉，而不用写条件语句来判断当前是否是开发环境；</li>
+<li>React Hot Loader 1.0 只会热加载模块输出已经过时了，遇到高阶组件就不能正常运行；</li>
+<li>React Hot Loader 1.0 操作源代码字符串不够稳定，实现方式难以琢磨，也许可以使用 babel 插件代替；</li>
+<li><p>…</p>
+<p>后面，react-hot-loader 1.x.x 一直维护到 1.3.0 版本，最后提交时间是 20150829。</p>
+</li>
+<li><p>1.3.0</p>
+<ul>
+<li>Recover from module errors on module level (<strong><a href="https://github.com/gaearon/react-hot-loader/pull/187" target="_blank" rel="external">#187</a></strong>)</li>
+</ul>
+</li>
+<li><p>1.2.9</p>
+<ul>
+<li>Silently ignore exports that raise an error when accessed (#114)</li>
+<li>Update <code>source-map</code> dependency</li>
+</ul>
+</li>
+<li><p>1.2.8</p>
+<ul>
+<li>Remove React from peerDependencies</li>
+<li>Update React Hot API to support React 0.14 beta 1</li>
+</ul>
+</li>
+<li><p>1.2.7</p>
+<ul>
+<li>Preserve CommonJS <code>exports</code> context in the wrapping closure (<strong><a href="https://github.com/gaearon/react-hot-loader/issues/124" target="_blank" rel="external">#124</a></strong>)</li>
+</ul>
+</li>
+<li><p>1.2.6</p>
+<ul>
+<li>Fix autobinding on newly added methods for <code>createClass</code>-style classes</li>
+</ul>
+</li>
+<li><p>1.2.5</p>
+<ul>
+<li>Fix “React is not defined” error</li>
+</ul>
+</li>
+<li><p>1.2.4</p>
+<ul>
+<li>Avoid updating each class twice in React 0.12</li>
+</ul>
+</li>
+<li><p>1.2.3</p>
+<ul>
+<li>Explicitly exclude <code>react/lib</code> files from processing. You <strong>should</strong> use <code>exclude: /node_modules/</code> in configuration, but at least this doesn’t blow up for those who don’t.</li>
+</ul>
+</li>
+<li><p>1.2.2</p>
+<ul>
+<li>Fix crash on React 0.13. Now compatible!</li>
+</ul>
+</li>
+<li><p>1.2.1</p>
+<ul>
+<li>Don’t try to flatten inheritance chains, as it causes problems with <code>super</code></li>
+<li>Instead, automatically opt custom base classes into hot reloading as long as they descend from <code>React.Component</code> (in React 0.13). If your custom base class doesn’t do that but you’d still want to have hot reloading, you need to manually opt it in via <code>module.makeHot</code> API.</li>
+</ul>
+</li>
+<li><p>1.2.0</p>
+<ul>
+<li>Support hot-reloading components without a base class (<strong><a href="https://github.com/gaearon/react-hot-api/issues/5" target="_blank" rel="external">react-hot-api#5</a></strong>)</li>
+<li>Support hot-reloading inheritance chains (<strong><a href="https://github.com/gaearon/react-hot-api/issues/10" target="_blank" rel="external">react-hot-api#10</a></strong>)</li>
+<li>Support using React 0.13 as an external</li>
+</ul>
+</li>
+<li><p>1.1.7</p>
+<ul>
+<li>Add React 0.13 RC2 to peerDeps</li>
+</ul>
+</li>
+<li><p>1.1.6</p>
+<ul>
+<li>Allow React 0.13 RC1</li>
+<li>Better support for ES6 inheritance</li>
+<li>Fix reloading for modules with null prototype chain (<strong>#82</strong>)</li>
+</ul>
+</li>
+<li><p>1.1.5</p>
+<ul>
+<li>Wrap user code in IEFF to prevent losing <code>&quot;use strict&quot;</code>. Fixes #75</li>
+</ul>
+</li>
+<li><p>1.1.4</p>
+<ul>
+<li>Fix crash when hot-reloading element factory. (Note: React discourages exporting factories.)</li>
+</ul>
+</li>
+<li><p>1.1.3</p>
+<ul>
+<li>Avoid warnings on React 0.13</li>
+</ul>
+</li>
+<li><p>1.1.2</p>
+<ul>
+<li>Compatibility with React 0.13.0-beta.1</li>
+</ul>
+</li>
+<li><p>1.1.1</p>
+<ul>
+<li>Fix edge cases by requiring <code>react/lib/ReactMount</code> in transformed source files</li>
+<li>Add a warning if <code>ReactMount</code> doesn’t return anything useful (e.g. when using external React)</li>
+</ul>
+</li>
+<li><p>1.1.0</p>
+<ul>
+<li>Skipping <code>node_modules</code> entirely <a href="https://github.com/gaearon/react-hot-loader/issues/58" target="_blank" rel="external">wasn’t</a> <a href="https://github.com/gaearon/react-hot-loader/issues/55" target="_blank" rel="external">the best idea</a>. Instead, we now specifically skip <code>node_modules/react/</code>, <code>node_modules/webpack/</code> and <code>node_modules/react-hot-loader/</code>. However you are still <strong>encouraged</strong> to <a href="https://github.com/gaearon/react-hot-boilerplate/blob/master/webpack.config.js#L24" target="_blank" rel="external">add <code>exclude: /node_modules/</code> to your loader config</a> for best performance.</li>
+<li>Now modules that don’t export any valid React classes in <code>module.exports</code> or any its properties will not be auto-accepted. This prevents hot loader from trying to handle non-React updates and allows changes in plain JS files to propagate to components that can handle them. For example, this allows <a href="https://github.com/jsstyles/react-jss" target="_blank" rel="external">react-jss</a> mixin to apply hot updates to JSS styles.</li>
+</ul>
+</li>
+<li><p>1.0.7</p>
+<ul>
+<li>Skip <code>node_modules</code> entirely. Fixes <a href="https://github.com/gaearon/react-hot-loader/issues/54" target="_blank" rel="external">#54</a> on Windows.</li>
+</ul>
+</li>
+<li><p>1.0.6</p>
+<ul>
+<li>Add <code>require(&#39;react-hot-loader/Injection&#39;)</code> to override Hot Loader behavior. Now you can supply your own way of getting root component instances, so Hot Loader can also work in environment where <code>require(&#39;react/lib/ReactMount&#39;)</code> is not available (for example, <a href="https://github.com/gaearon/react-hot-loader/issues/53" target="_blank" rel="external">when React is used as standalone bundle and not NPM package</a>).</li>
+</ul>
+</li>
+<li><p>1.0.5</p>
+<ul>
+<li>Fix stack overflow when hotifying same class twice (<a href="https://github.com/gaearon/react-hot-loader/issues/52" target="_blank" rel="external">#52</a>)</li>
+</ul>
+</li>
+<li><p>1.0.4</p>
+<ul>
+<li>Allow both <code>module.exports</code> and its properties be components (Fixes <a href="https://github.com/gaearon/react-hot-loader/issues/50" target="_blank" rel="external">#50</a>)</li>
+</ul>
+</li>
+<li><p>1.0.3</p>
+<ul>
+<li>In addition to hotifying <code>module.exports</code> by default, also hotify all its own properties</li>
+</ul>
+</li>
+<li><p>1.0.2</p>
+<ul>
+<li>Don’t try to hot-replace <code>module.export</code>ed <code>ReactElement</code>s</li>
+</ul>
+</li>
+<li><p>1.0.1</p>
+<ul>
+<li>Delay <code>require</code>ing <code>ReactMount</code> to avoid circular dependencies</li>
+<li>Don’t process React or Webpack internals to avoid potential issues</li>
+</ul>
+</li>
+<li><p>1.0.0</p>
+<ul>
+<li>Don’t rely on <code>createClass</code> regex or any other regex</li>
+<li>Only <code>module.exports</code> is hot by default</li>
+<li>Supports ES6 classes when they land in React 0.13</li>
+<li>Supports dynamically created classes</li>
+<li>Manual mode</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>20150903</p>
+<p> Dan Abramov 开始新的热加载方案实验，并发布了一系列开源项目：</p>
+<ul>
+<li><a href="https://github.com/gaearon/babel-plugin-react-transform" target="_blank" rel="external">babel-plugin-react-transform</a></li>
+<li><a href="https://github.com/gaearon/react-transform-hmr" target="_blank" rel="external">react-transform-hmr</a></li>
+<li><a href="https://github.com/gaearon/react-transform-catch-errors" target="_blank" rel="external">react-transform-catch-errors</a></li>
+<li><a href="https://github.com/danmartinez101/babel-preset-react-hmre" target="_blank" rel="external">babel-preset-react-hmre</a></li>
+<li><p><a href="https://github.com/gaearon/react-transform-boilerplate" target="_blank" rel="external">react-transform-boilerplate</a></p>
+<p>新的热加载方案采用 babel 插件的方式实现。</p>
+</li>
+</ul>
+</li>
+<li><p>20160418</p>
+<p> Dan Abramov 宣布废弃 React Transform，推荐使用 React Hot Loader 3 —— 在 20160417 发布 React Hot Loader 3.0.0-alpha.0。</p>
+<ul>
+<li><a href="https://github.com/gaearon/react-hot-boilerplate/pull/61" target="_blank" rel="external">React Hot Loader 3.0 beta demo</a></li>
+<li><a href="https://github.com/reactjs/redux/pull/1455" target="_blank" rel="external">RFC: remove React Transform from examples</a></li>
+<li><a href="https://github.com/gaearon/react-hot-loader/issues/385" target="_blank" rel="external">react-hot-loader Project status</a></li>
+<li><a href="https://github.com/danmartinez101/babel-preset-react-hmre/issues/46#issue-180449718" target="_blank" rel="external">babel-preset-react-hmre Project status</a></li>
+<li><a href="https://github.com/gaearon/react-hot-boilerplate/issues/97" target="_blank" rel="external">react-hot-boilerplate Status/Roadmap of the project</a></li>
+<li><a href="https://github.com/gaearon/react-hot-loader" target="_blank" rel="external">long-standing issues</a></li>
+</ul>
+</li>
+</ol>
+<h1 id="配置模板"><a href="#配置模板" class="headerlink" title="配置模板"></a>配置模板</h1><ul>
+<li><p><del><a href="https://github.com/zhbhun/WebpackStudyDemo/tree/master/hot-module-replacement/react-hot-boilerplate-jsx-loader" target="_blank" rel="external">react-hot-boilerplate-jsx-loader</a></del>：已经被废弃，该方案基于 jsx-loader@~0.13.2 和 react-hot-loader@^1.3.0 搭建，两者都已经过时。</p>
+<ul>
+<li>react@~0.13.3</li>
+<li>jsx-loader@~0.13.2</li>
+<li>react-hot-loader@^1.3.0</li>
+<li>webpack@^1.13.2</li>
+<li>webpack-dev-server@^1.16.2</li>
+</ul>
+</li>
+<li><p><del><a href="https://github.com/zhbhun/WebpackStudyDemo/tree/master/hot-module-replacement/react-hot-boilerplate-patch-1" target="_blank" rel="external">react-hot-boilerplate-patch-1</a></del>：已经被废弃，该方案基于 babel6 和 react-hot-loader@^1.3.0 搭建。虽然有 babel6，可以支持最新的 React，但 react-hot-loader@^1.3.0 已经不再维护，热加载始终存在缺陷。</p>
+<ul>
+<li>react@^15.3.2</li>
+<li>react-dom@^15.3.2</li>
+<li>babel-core@^6.18.0</li>
+<li>babel-loader@^6.2.5</li>
+<li>babel-preset-es2015@^6.18.0</li>
+<li>babel-preset-react@^6.16.0</li>
+<li>babel-preset-stage-0@^6.16.0</li>
+<li>react-hot-loader@^1.3.0</li>
+<li>webpack@^1.13.2</li>
+<li>webpack-dev-server@^1.16.2</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><del><a href="https://github.com/zhbhun/WebpackStudyDemo/tree/master/hot-module-replacement/react-transform-boilerplate-babel5" target="_blank" rel="external">react-transform-boilerplate-babel5</a></del>：已经被废弃，该方案基于 babel5 和 React Transform 搭建。babel5 已经过时，无法支持最新版本的 react。React Transform 也是属于实验品，已经被 React Hot Loader 3 取缔。</p>
+<ul>
+<li>react@~0.14.8</li>
+<li>react-dom@~0.14.8</li>
+<li>babel-core@^5.8.38</li>
+<li>babel-loader@^5.4.2</li>
+<li>babel-plugin-react-transform@^1.1.1</li>
+<li>express@^4.13.3</li>
+<li>react-transform-catch-errors@~0.2.0</li>
+<li>react-transform-hmr@~0.1.6</li>
+<li>react-transform-render-visualizer@~0.4.0</li>
+<li>redbox-react@~1.1.1</li>
+<li>react-transform-debug-inspector@~0.1.3</li>
+<li>webpack@^1.13.2,</li>
+<li>webpack-dev-middleware@^1.8.4,</li>
+<li>webpack-hot-middleware@^2.13.0</li>
+</ul>
+</li>
+<li><p><del><a href="https://github.com/zhbhun/WebpackStudyDemo/tree/master/hot-module-replacement/react-transform-boilerplate-babel6" target="_blank" rel="external">react-transform-boilerplate-babel6</a></del>：已经被废弃，该方案基于 babel6 和 React Transform 搭建。虽然 babel6 可以支持最新版本的 react，但 React Transform 属于实验品，存在缺陷，已经被 React Hot Loader 3 取缔。</p>
+<ul>
+<li>react@^15.3.2</li>
+<li>react-dom@^15.3.2</li>
+<li>babel-core@^6.18.0</li>
+<li>babel-loader@^6.2.5</li>
+<li>babel-preset-es2015@^6.18.0</li>
+<li>babel-preset-react@6.16.0</li>
+<li>babel-preset-react-hmre@^1.1.1</li>
+<li>cross-env@^3.1.3</li>
+<li>eventsource-polyfill@~0.9.6</li>
+<li>express@^4.13.3</li>
+<li>rimraf@^2.4.3</li>
+<li>webpack@^1.13.2,</li>
+<li>webpack-dev-middleware@^1.8.4,</li>
+<li>webpack-hot-middleware@^2.13.0</li>
+</ul>
+</li>
+<li><p><a href="https://github.com/zhbhun/WebpackStudyDemo/tree/master/hot-module-replacement/react-transform-boilerplate-babel6" target="_blank" rel="external">react-hot-boilerplate-next</a>：最新的配置方案，基于 babel6 和 React Hot Loader 3 搭建，支持 Redux Store 热加载。目前，React Hot Loader 还处于 beta 版本，但已经可以正常使用了。</p>
+<ul>
+<li>react@^15.3.2</li>
+<li>react-dom@^15.3.2</li>
+<li>babel-core@^6.18.0</li>
+<li>babel-loader@^6.2.5</li>
+<li>babel-preset-es2015@^6.18.0</li>
+<li>babel-preset-react@^6.16.0</li>
+<li>babel-preset-stage-0@^6.16.0</li>
+<li>react-hot-loader@^3.0.0-beta.6</li>
+<li>webpack@^1.13.2</li>
+<li>webpack-dev-server@^1.16.2</li>
+</ul>
+</li>
+</ul>
+<p>更多参考模板（注意，大多已过时，请认准 React Hot Loader 3）</p>
+<ul>
+<li><a href="https://github.com/gaearon/react-hot-loader/tree/master/docs" target="_blank" rel="external">https://github.com/gaearon/react-hot-loader/tree/master/docs</a></li>
+<li><a href="https://github.com/gaearon/react-transform-boilerplate" target="_blank" rel="external">https://github.com/gaearon/react-transform-boilerplate</a></li>
+<li><a href="https://medium.com/@rajaraodv/webpack-hot-module-replacement-hmr-e756a726a07#.gxei62ixi" target="_blank" rel="external">Webpack &amp; The Hot Module Replacement</a></li>
+<li><a href="https://medium.com/@rajaraodv/webpacks-hmr-react-hot-loader-the-missing-manual-232336dc0d96#.hil92efwy" target="_blank" rel="external">Webpack’s HMR &amp; React-Hot-Loader — The Missing Manual</a></li>
+</ul>
+<h1 id="React-Hot-Loader-3"><a href="#React-Hot-Loader-3" class="headerlink" title="React Hot Loader 3"></a>React Hot Loader 3</h1><p>React Transform 和 React Hot Loader 1 基本能够满足组件状态不变的前提下，实时热加载组件的渲染方法，生命周期函数，事件回调函数和非组件代码。但是，随着 React 社区的发展，出现高阶组件的写法，以及 Flux 框架和 Redux 等的发展，现有的热加载方案已经不足以应付了。</p>
+<p>在开发中，我们希望热加载能够做到以下几点：</p>
+<ul>
+<li>处理错误：在修改代码时，很可能导致程序编译失败或运行时错误。我们希望热加载出现的语法错误和运行时异常，能够显示在浏览器控制台里或页面上。并且能够显示异常堆栈信息，方便跟踪到具体出错的代码行。此外，也不会因为热加载出现的程序自身 bug 导致热加载不能继续正常工作。</li>
+<li>支持 React 组件状态不变的前提下，热加载：生命周期函数，事件处理函数，渲染方法，无状态组件，高阶组件等；</li>
+<li>支持 Redux 热加载：初始状态，reducer，action；</li>
+</ul>
+<p><strong>React Hot Loader 3 热加载到底如何？</strong></p>
+<p>虽然，React Hot Loader 3 目前还处于 beta 版，但已经能够投入到开发中使用，而且解决了以前长期存在的问题。下面，参考示例 <a href="https://github.com/zhbhun/WebpackStudyDemo/tree/master/hot-module-replacement/react-hot-vs-react-transform" target="_blank" rel="external">React Hot Loader 3 VS React Transform</a>（配置了两种不同的热加载开发环境，一个是基于 React Transform，另外一个基于 React Hot Loader 3）来感受 React Hot Loader 3 带来的热加载开发体验。</p>
+<ul>
+<li><p>处理错误</p>
+<ul>
+<li>React Transform：会打印错误日志，但 webpack.devtool 要设置为 cheap-eval-source-map 才能跟踪到具体哪一行代码出错。此外，源代码必须手动刷新页面才会更新，导致每次调试必须切回到编辑器中才能查看真正的错误代码；</li>
+<li>React Hot Loader：同上，但 webpack.devtool 要设置为 source-map 才能方便调试跟踪 bug；</li>
+<li>总结：两者都能跟踪到出错的地方，但浏览器里的源代码不能实时更新，有时需要刷新网页才行；</li>
+</ul>
+</li>
+<li><p>支持 React 热加载：组件状态，生命周期函数，事件处理函数，渲染方法，无状态组件，高阶组件；</p>
+<ul>
+<li>React Transform：可以保持组件状态，支持热加载生命周期函数，事件处理函数，渲染方法，无状态组件，但不支持高阶组件的容器方法（如 mapStateToProps）；</li>
+<li>React Hot Loader：可以保持组件状态，支持热加载生命周期函数，事件处理函数，渲染方法，无状态组件，高阶组件；</li>
+<li>总结：React Transform 开发一些基本的组件没有问题，但在开发高阶组件时存在问题，而 React Hot Loader 不存在该问题；</li>
+</ul>
+</li>
+<li><p>支持 Redux 热加载：初始状态，reducer，action；</p>
+<ul>
+<li>React Transform：不支持热加载初始化状，reducer，action；</li>
+<li>React Hot Loader：支持热加载初始化状，reducer，action；</li>
+<li>总结： React Transform 不支持 redux 热加载，而 React Hot Loader 支持；</li>
+</ul>
+</li>
+</ul>
+<p>备注：参考 Issue <a href="https://github.com/gaearon/react-hot-loader/issues/180" target="_blank" rel="external">Source maps don’t update</a>，客户端源代码不能实时更新似乎是 chrome bug 导致的，但 bug 是一年前提的，具体问题还有待调查。就目前来说，一般修改代码导致的错误，根据控制台的错误报告，一般很快地能够判断处错误原因。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Webpack/" rel="tag">#Webpack</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/redux/Redux-In-Action/" rel="next" title="Redux 项目实践">
+                <i class="fa fa-chevron-left"></i> Redux 项目实践
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/redux/Redux-Introduction/" rel="prev" title="Redux 入门">
+                Redux 入门 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="webpack/React-Hot-Loader/"
+           data-title="React Hot Loader" data-url="http://zhbhun.github.io/blog/blog/webpack/React-Hot-Loader/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/1996891"
+               alt="zhbhun" />
+          <p class="site-author-name" itemprop="name">zhbhun</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/blog/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/blog/categories">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags">
+                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/blog/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhbhun" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/zhbhun" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/zhbhun" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/zhbhun" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#变更历史"><span class="nav-number">1.</span> <span class="nav-text">变更历史</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置模板"><span class="nav-number">2.</span> <span class="nav-text">配置模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React-Hot-Loader-3"><span class="nav-number">3.</span> <span class="nav-text">React Hot Loader 3</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhbhun</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/blog/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhbhun-notes"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

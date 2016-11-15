@@ -1,0 +1,1068 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Editor," />
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="ZHBHUN" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Sublime  是一个跨平台的编辑器，同时支持 Windows、Linux、Mac OS X 等操作系统，由程序员 Jon Skinner 于 2008 年 1 月份所开发出来，它最初被设计为一个具有丰富扩展功能的 Vim。
+Package Control
+打开 Sublime Text 控制台：View &amp;gt; Show Console；
+复制下面的代码到控制台，然后回车；
+
+Sublime">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sublime">
+<meta property="og:url" content="http://zhbhun.github.io/blog/editor/Sublime/index.html">
+<meta property="og:site_name" content="ZHBHUN">
+<meta property="og:description" content="Sublime  是一个跨平台的编辑器，同时支持 Windows、Linux、Mac OS X 等操作系统，由程序员 Jon Skinner 于 2008 年 1 月份所开发出来，它最初被设计为一个具有丰富扩展功能的 Vim。
+Package Control
+打开 Sublime Text 控制台：View &amp;gt; Show Console；
+复制下面的代码到控制台，然后回车；
+
+Sublime">
+<meta property="og:updated_time" content="2016-11-15T13:12:02.658Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sublime">
+<meta name="twitter:description" content="Sublime  是一个跨平台的编辑器，同时支持 Windows、Linux、Mac OS X 等操作系统，由程序员 Jon Skinner 于 2008 年 1 月份所开发出来，它最初被设计为一个具有丰富扩展功能的 Vim。
+Package Control
+打开 Sublime Text 控制台：View &amp;gt; Show Console；
+复制下面的代码到控制台，然后回车；
+
+Sublime">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Sublime | ZHBHUN </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/blog/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">ZHBHUN</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Sublime
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-11-14T00:00:00+08:00" content="2015-11-14">
+              2015-11-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/blog/categories/Editor/" itemprop="url" rel="index">
+                    <span itemprop="name">Editor</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/editor/Sublime/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="editor/Sublime/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Sublime  是一个跨平台的编辑器，同时支持 Windows、Linux、Mac OS X 等操作系统，由程序员 Jon Skinner 于 2008 年 1 月份所开发出来，它最初被设计为一个具有丰富扩展功能的 Vim。</p>
+<h1 id="Package-Control"><a href="#Package-Control" class="headerlink" title="Package Control"></a>Package Control</h1><ol>
+<li>打开 Sublime Text 控制台：<code>View &gt; Show Console</code>；</li>
+<li><p>复制下面的代码到控制台，然后回车；</p>
+<ul>
+<li><p>Sublime Text 3</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request,os,hashlib; h = &apos;2915d1851351e5ee549c20394736b442&apos; + &apos;8bc59f460fa1548d1514676163dafc88&apos;; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &apos;http://packagecontrol.io/&apos; + pf.replace(&apos; &apos;, &apos;%20&apos;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&apos;Error validating download (got %s instead of %s), please try manual install&apos; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &apos;wb&apos; ).write(by)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Sublime Text 2</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import urllib2,os,hashlib; h = &apos;2915d1851351e5ee549c20394736b442&apos; + &apos;8bc59f460fa1548d1514676163dafc88&apos;; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( &apos;http://packagecontrol.io/&apos; + pf.replace(&apos; &apos;, &apos;%20&apos;)).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), &apos;wb&apos; ).write(by) if dh == h else None; print(&apos;Error validating download (got %s instead of %s), please try manual install&apos; % (dh, h) if dh != h else &apos;Please restart Sublime Text to finish installation&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>重启 Sublime Text，然后打开 Package Control：<code>ctrl + shift + p</code> &gt; <code>package control</code>；</p>
+</li>
+</ol>
+<h1 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h1><ol>
+<li>打开用户设置：<code>Preferences &gt; Setting - User</code></li>
+<li>添加配置项：<code>&quot;font_face&quot;: &quot;YaHei Consolas Hybrid&quot;</code></li>
+</ol>
+<h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><ul>
+<li>仓库地址: <a href="https://packagecontrol.io/" target="_blank" rel="external">https://packagecontrol.io/</a></li>
+<li>统计地址: <a href="https://packagecontrol.io/stats" target="_blank" rel="external">https://packagecontrol.io/stats</a></li>
+<li>概览地址: <a href="https://packagecontrol.io/browse" target="_blank" rel="external">https://packagecontrol.io/browse</a></li>
+<li>文档地址: <a href="https://packagecontrol.io/docs" target="_blank" rel="external">https://packagecontrol.io/docs</a></li>
+</ul>
+<h2 id="必备"><a href="#必备" class="headerlink" title="必备"></a>必备</h2><ul>
+<li><a href="https://packagecontrol.io/packages/ConvertToUTF8" target="_blank" rel="external">ConvertToUTF8</a>: 编辑和保存文件编码为 GBK, BIG5, EUC-KR, EUC-JP, Shift_JIS 等格式。</li>
+<li><a href="https://packagecontrol.io/packages/EncodingHelper" target="_blank" rel="external">EncodingHelper</a>: 在状态栏显示文件编码。</li>
+</ul>
+<h2 id="代码导航"><a href="#代码导航" class="headerlink" title="代码导航"></a>代码导航</h2><ul>
+<li><a href="https://packagecontrol.io/packages/CTags" target="_blank" rel="external">CTags</a></li>
+</ul>
+<h2 id="语法高亮"><a href="#语法高亮" class="headerlink" title="语法高亮"></a>语法高亮</h2><ul>
+<li><a href="http://https//github.com/babel/babel-sublime" target="_blank" rel="external">Babel</a></li>
+<li><a href="https://packagecontrol.io/packages/CSS3" target="_blank" rel="external">CSS3</a></li>
+<li><a href="https://packagecontrol.io/packages/Sass" target="_blank" rel="external">Sass</a></li>
+<li><a href="https://packagecontrol.io/packages/LESS" target="_blank" rel="external">LESS</a></li>
+<li><a href="https://packagecontrol.io/packages/SCSS" target="_blank" rel="external">SCSS</a></li>
+</ul>
+<h2 id="语法检查"><a href="#语法检查" class="headerlink" title="语法检查"></a>语法检查</h2><h2 id="语法分析"><a href="#语法分析" class="headerlink" title="语法分析"></a>语法分析</h2><ul>
+<li><a href="https://packagecontrol.io/packages/SublimeLinter" target="_blank" rel="external">SublimeLinter</a></li>
+<li><a href="https://packagecontrol.io/packages/SublimeLinter-html-tidy" target="_blank" rel="external">SublimeLinter-html-tidy</a></li>
+<li><a href="https://packagecontrol.io/packages/SublimeLinter-contrib-mdl" target="_blank" rel="external">SublimeLinter-contrib-mdl</a></li>
+<li><a href="https://packagecontrol.io/packages/SublimeLinter-json" target="_blank" rel="external">SublimeLinter-json</a></li>
+<li><a href="https://packagecontrol.io/packages/SublimeLinter-jshint" target="_blank" rel="external">SublimeLinter-jshint</a></li>
+<li><a href="https://packagecontrol.io/packages/SublimeLinter-jscs" target="_blank" rel="external">SublimeLinter-jscs</a></li>
+<li><a href="https://packagecontrol.io/packages/SublimeLinter-contrib-eslint" target="_blank" rel="external">SublimeLinter-contrib-eslint</a></li>
+<li><a href="https://packagecontrol.io/packages/SublimeLinter-jsxhint" target="_blank" rel="external">SublimeLinter-jsxhint</a></li>
+<li><a href="https://packagecontrol.io/packages/SublimeLinter-csslint" target="_blank" rel="external">SublimeLinter-csslint</a></li>
+<li><a href="https://packagecontrol.io/packages/SublimeLinter-contrib-scss-lint" target="_blank" rel="external">SublimeLinter-contrib-scss-lint</a></li>
+<li><a href="https://packagecontrol.io/packages/SublimeLinter-contrib-sqlint" target="_blank" rel="external">SublimeLinter-contrib-sqlint</a></li>
+<li><a href="https://packagecontrol.io/packages/SublimeLinter-javac" target="_blank" rel="external">SublimeLinter-javac</a></li>
+<li><a href="https://packagecontrol.io/packages/SublimeLinter-xmllint" target="_blank" rel="external">SublimeLinter-xmllint</a></li>
+</ul>
+<h2 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h2><ul>
+<li>Emmet</li>
+<li><a href="https://packagecontrol.io/packages/AngularJS" target="_blank" rel="external">AngularJS</a></li>
+<li><a href="https://packagecontrol.io/packages/Babel%20Snippets" target="_blank" rel="external">Babel Snippets</a>：React Snippet</li>
+<li><a href="https://packagecontrol.io/packages/Better%20CoffeeScript" target="_blank" rel="external">Better CoffeeScript</a></li>
+<li><a href="https://packagecontrol.io/packages/Bootstrap%203%20Snippets" target="_blank" rel="external">Bootstrap 3 Snippets</a></li>
+<li><a href="https://packagecontrol.io/packages/Comment-Snippets" target="_blank" rel="external">Comment-Snippets</a></li>
+<li><a href="https://packagecontrol.io/packages/Console%20API%20Snippets%20%28JavaScript%29" target="_blank" rel="external">Console API Snippets (Java​Script)</a></li>
+<li><a href="https://github.com/spadgos/sublime-jsdocs" target="_blank" rel="external">DocBlockr</a></li>
+<li><a href="https://packagecontrol.io/packages/JavaScript%20Console" target="_blank" rel="external">Java​Script Console</a></li>
+<li><a href="https://packagecontrol.io/packages/JavaScript%20Snippets" target="_blank" rel="external">JavaScript Snippet</a></li>
+<li><a href="https://packagecontrol.io/packages/CSS%20Media%20Query%20Snippets" target="_blank" rel="external">CSS Media Query Snippets</a></li>
+<li><a href="https://packagecontrol.io/packages/CSS%20Snippets" target="_blank" rel="external">CSS Snippets</a></li>
+<li><a href="https://packagecontrol.io/browse/labels/snippets" target="_blank" rel="external">HTML Snippets</a></li>
+<li><a href="https://packagecontrol.io/packages/jQuery%20Snippets%20pack" target="_blank" rel="external">jQuery Snippets pack</a><br><a href="http://www.hongkiat.com/blog/sublime-code-snippets/" target="_blank" rel="external">http://www.hongkiat.com/blog/sublime-code-snippets/</a></li>
+<li><a href="https://packagecontrol.io/packages/Nodejs" target="_blank" rel="external">Nodejs</a></li>
+<li><a href="https://packagecontrol.io/packages/react-native-snippets" target="_blank" rel="external">React-native-snippets</a></li>
+<li><a href="https://packagecontrol.io/packages/ReactJS" target="_blank" rel="external">ReactJS</a></li>
+<li><a href="https://packagecontrol.io/packages/TypeScript" target="_blank" rel="external">TypeScript</a></li>
+</ul>
+<h2 id="代码格式"><a href="#代码格式" class="headerlink" title="代码格式"></a>代码格式</h2><ul>
+<li>EditorConfig</li>
+<li><a href="https://packagecontrol.io/packages/HTML-CSS-JS%20Prettify" target="_blank" rel="external">HTML/CSS/JS Prettify</a></li>
+<li><a href="https://github.com/rareyman/HTMLBeautify" target="_blank" rel="external">HTMLBeautify</a></li>
+<li><a href="https://github.com/jdc0589/jsFormat" target="_blank" rel="external">JsFormat</a></li>
+<li><a href="http://mutian.github.io/Sublime-CSS-Format/" target="_blank" rel="external">Sublime-CSS-Format</a></li>
+<li><a href="https://packagecontrol.io/packages/CSS%20Format" target="_blank" rel="external">CSS Format</a></li>
+<li><a href="https://packagecontrol.io/packages/Pretty%20JSON" target="_blank" rel="external">Pretty JSON</a></li>
+<li><a href="https://packagecontrol.io/packages/SublimeAStyleFormatter" target="_blank" rel="external">SublimeAStyleFormatter</a></li>
+<li><a href="https://packagecontrol.io/packages/CodeFormatter" target="_blank" rel="external">CodeFormatter</a></li>
+<li><a href="https://sublime.wbond.net/packages/Alignment" target="_blank" rel="external">Alignment</a></li>
+<li><a href="https://packagecontrol.io/packages/SqlBeautifier" target="_blank" rel="external">SqlBeautifier</a></li>
+<li><a href="https://packagecontrol.io/packages/Indent%20XML" target="_blank" rel="external">Indent XML</a></li>
+</ul>
+<h2 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h2><ul>
+<li>MarkdownEditing</li>
+<li>Markdown Preview</li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><a href="https://packagecontrol.io/packages/SideBarEnhancements" target="_blank" rel="external">SideBarEnhancements</a>: 增强侧边栏</li>
+<li><a href="https://packagecontrol.io/packages/SideBarGit" target="_blank" rel="external">SideBarGit</a>: 侧边栏增加 git 命令</li>
+<li><a href="https://packagecontrol.io/packages/Focus%20File%20on%20Sidebar" target="_blank" rel="external">Focus File on Sidebar</a></li>
+<li><a href="https://packagecontrol.io/packages/Modific" target="_blank" rel="external">Modific</a>: 高亮自从上一次提交后的修改行</li>
+<li><a href="https://packagecontrol.io/packages/ExpandRegion" target="_blank" rel="external">ExpandRegion</a>: 扩展选区</li>
+<li><a href="https://packagecontrol.io/packages/MultiEditUtils" target="_blank" rel="external">MultiEditUtils</a></li>
+<li><a href="https://packagecontrol.io/packages/Color%20Highlighter" target="_blank" rel="external">Color Highlighter</a>: 颜色高亮</li>
+<li><a href="https://packagecontrol.io/packages/ApplySyntax" target="_blank" rel="external">ApplySyntax</a>: 语言分析增强</li>
+<li><a href="https://packagecontrol.io/packages/IMESupport" target="_blank" rel="external">IMESupport</a>:  Windows 下输入法支持, 解决输入法的输入栏不在光标位置的问题</li>
+<li><a href="https://packagecontrol.io/packages/Package%20Syncing" target="_blank" rel="external">Package Syncing</a>: 插件同步工具</li>
+<li><a href="https://packagecontrol.io/packages/HexViewer" target="_blank" rel="external">HexViewer</a>: 十六进制文件查看</li>
+<li><a href="https://packagecontrol.io/packages/Clipboard%20History" target="_blank" rel="external">Clipboard History</a>: 剪贴板历史</li>
+<li><a href="https://packagecontrol.io/packages/SyncedSideBar" target="_blank" rel="external">SyncedSideBar</a></li>
+<li><a href="https://packagecontrol.io/packages/Terminal" target="_blank" rel="external">Terminal</a>: 从当前文件或项目根路径启动控制台</li>
+<li>[BracketHighlighter](<a href="https://sublime.wbond.net/packages/BracketHighlighter" target="_blank" rel="external">https://sublime.wbond.net/packages/BracketHighlighter</a>: 括号高亮</li>
+<li><a href="https://packagecontrol.io/packages/Autoprefixer" target="_blank" rel="external">Autoprefixer</a>: CSS 自动加前缀</li>
+<li><a href="https://packagecontrol.io/packages/Vintageous" target="_blank" rel="external">Vintageous</a>：vi / vim 模拟器</li>
+<li><a href="https://packagecontrol.io/packages/Alignment" target="_blank" rel="external">Alignment</a></li>
+<li><a href="https://packagecontrol.io/packages/Can%20I%20Use" target="_blank" rel="external">Can I Use</a></li>
+<li><a href="https://packagecontrol.io/packages/Tag" target="_blank" rel="external">Tag</a></li>
+<li><a href="https://github.com/BoundInCode/AutoFileName" target="_blank" rel="external">AutoFileName</a></li>
+<li><a href="https://github.com/alienhard/SublimeAllAutocomplete" target="_blank" rel="external">AllAutocomplete</a></li>
+<li><a href="https://github.com/wuub/SublimeREPL" target="_blank" rel="external">SublimeREPL</a>：在编辑器中运行多种编程语言</li>
+<li><a href="http://weslly.github.io/ColorPicker/" target="_blank" rel="external">ColorPicker</a></li>
+<li><a href="https://github.com/vaanwd/Zeal" target="_blank" rel="external">zeal</a></li>
+<li><p><a href="https://packagecontrol.io/packages/View%20In%20Browser" target="_blank" rel="external">View In Browser</a>：在浏览器中打开文件，并支持本地服务器</p>
+<ul>
+<li><a href="https://github.com/wuub/SublimeREPL/issues/364" target="_blank" rel="external">node.js simply not working, at all</a>：解决无法运行 Node 的问题</li>
+</ul>
+</li>
+<li><p><a href="https://packagecontrol.io/packages/Vintageous" target="_blank" rel="external">Vintageous</a>：vi/vim 模拟器</p>
+</li>
+</ul>
+<h1 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h1><p>我自己使用的主题是 <code>Theme - Spacegray</code>，可以访问网址 <a href="https://packagecontrol.io/browse/labels/theme" target="_blank" rel="external">https://packagecontrol.io/browse/labels/theme</a> 寻找自己想要的主题。</p>
+<ol>
+<li>打开命令面板：<code>ctrl + shift + p</code></li>
+<li>查找命令：<code>Package Control: install Package</code></li>
+<li>查找主题：<code>Theme - Spacegray</code></li>
+<li>打开用户设置：<code>Preferences &gt; Setting - User</code>，并添加下列配置项：<ul>
+<li><code>&quot;theme&quot;: &quot;Spacegray.sublime-theme&quot;</code></li>
+<li><code>&quot;color_scheme&quot;: &quot;Packages/Theme - Spacegray/base16-eighties.dark.tmTheme&quot;</code></li>
+</ul>
+</li>
+</ol>
+<p>更多主题</p>
+<ul>
+<li><a href="https://sublime.wbond.net/browse/labels/theme" target="_blank" rel="external">https://sublime.wbond.net/browse/labels/theme</a></li>
+<li><a href="http://buymeasoda.github.io/soda-theme/" target="_blank" rel="external">soda-theme</a><ul>
+<li><a href="https://sublime.wbond.net/packages/Theme%20-%20Soda" target="_blank" rel="external">Soda Light</a></li>
+<li><a href="https://sublime.wbond.net/packages/Theme%20-%20Soda" target="_blank" rel="external">Soda Dark</a></li>
+</ul>
+</li>
+<li><a href="https://sublime.wbond.net/packages/Theme%20-%20Nexus" target="_blank" rel="external">Nexus</a></li>
+<li><a href="https://sublime.wbond.net/packages/Theme%20-%20Flatland" target="_blank" rel="external">Flatland</a></li>
+<li><a href="https://packagecontrol.io/packages/Material%20Theme" target="_blank" rel="external">Material Theme</a></li>
+<li><a href="https://sublime.wbond.net/packages/Theme%20-%20Spacegray" target="_blank" rel="external">Spacegray Light</a></li>
+<li><a href="https://sublime.wbond.net/packages/Theme%20-%20Spacegray" target="_blank" rel="external">Spacegray Dark</a></li>
+<li><a href="https://packagecontrol.io/packages/Tomorrow%20Color%20Schemes" target="_blank" rel="external">Tomorrow Color Schemes</a></li>
+<li><a href="http://webres.wang/best-sublime-text-3-themes-of-2015-and-2016/" target="_blank" rel="external">2015 – 2016 最新 Sublime Text 主题</a></li>
+</ul>
+<p>配色</p>
+<ul>
+<li><a href="http://colorsublime.com/" target="_blank" rel="external">http://colorsublime.com/</a></li>
+<li><a href="http://colorsublime.com/how-to-install-a-theme" target="_blank" rel="external">http://colorsublime.com/how-to-install-a-theme</a></li>
+<li><a href="https://sublime.wbond.net/packages/Theme%20-%20Flatland" target="_blank" rel="external">Flatland Dark</a></li>
+</ul>
+<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><h2 id="代码导航-1"><a href="#代码导航-1" class="headerlink" title="代码导航"></a>代码导航</h2><ul>
+<li>ctrl + p: 文件定位<ul>
+<li>查找文件, 斜杠代表路径, 支持模糊匹配</li>
+<li><code>@</code>: 符号跳转</li>
+<li><code>#</code>: 关键字跳转</li>
+<li><code>:</code>: 行号跳转</li>
+</ul>
+</li>
+<li>ctrl + ;: 词语定位</li>
+<li>ctrl + r: 函数定位</li>
+<li>ctrl + g: 行数定位</li>
+<li>F12：查看定义</li>
+<li>alt+minus：返回</li>
+</ul>
+<h2 id="代码查找"><a href="#代码查找" class="headerlink" title="代码查找"></a>代码查找</h2><ul>
+<li>选中关键字<ul>
+<li>f3: 下一个</li>
+<li>shift f3: : 上一个</li>
+</ul>
+</li>
+<li>ctrl + f: 普通查找<ul>
+<li>enter: 下一个</li>
+<li>shift + enter: 上一个</li>
+<li>alt + enter: 选中其出现的所有位置</li>
+<li>alt + r: 切换正则表达式模式</li>
+<li>alt + c: 切换大小写敏感模式</li>
+<li>alt + w: 切换整字匹配模式</li>
+</ul>
+</li>
+<li>ctrl + h: 查找替换<ul>
+<li>ctrl + shift + h: 替换当前关键字</li>
+<li>ctrl + alt + enter: 替换所有匹配关键字</li>
+</ul>
+</li>
+<li>ctrl + shift + f: 在文件夹中查找</li>
+<li>ctrl + i: 代码字符串定位</li>
+</ul>
+<h2 id="代码选择"><a href="#代码选择" class="headerlink" title="代码选择"></a>代码选择</h2><ul>
+<li>ctrl + m: 光标在开闭括号之间跳转</li>
+<li>ctrl + shift + m: 将匹配括号中的内容选中</li>
+<li>ctrl + left/right: 向左或向右移动一个单词的光标</li>
+<li>ctrl + d: 选中相同的词(可用于修改本地变量名)</li>
+<li>ctrl + k:</li>
+<li>ctrl + alt + up/down: 将选中的区域分割成多行选中状态</li>
+<li>shift + 鼠标右键拖动: 多重光标选中</li>
+<li>ctrl + l: 选中一行</li>
+<li>ctrl + shif + j: 已缩进层级为依据，一层层向外选中</li>
+<li>alt + f3: 选择所有相同的词</li>
+<li>ctrl + shift + ‘: 选中 HTML 一对标签(Emmet)</li>
+<li>ctrl + shift + space: 扩展选取(ExpandRegion)</li>
+</ul>
+<h2 id="代码编辑"><a href="#代码编辑" class="headerlink" title="代码编辑"></a>代码编辑</h2><ul>
+<li>ctrl + shift + enter: 向光标前插入一行</li>
+<li>ctrl + enter: 向光标后插入一行</li>
+<li>shift + ctrl + up/down: 上下移动行</li>
+<li>ctrl + shift + d: 复制粘贴当前行</li>
+<li>ctrl + shift + v: 以当前缩进粘贴代码</li>
+<li>ctrl + J: 拼接行(css格式化时挺有用)</li>
+<li>ctrl + k, k: 从光标开始的地方删除到行尾</li>
+<li>ctrl + shift + backspace: 左侧全部删除</li>
+<li>ctrl + shift + delete: 右侧全部删除</li>
+<li>ctrl + shift + k: 删除当前行</li>
+<li>ctrl + x: 删除当前行</li>
+<li>ctrl + t: 相邻字母互换位置</li>
+<li>ctrl + [: 向左缩进</li>
+<li>ctrl + ]: 向右缩进</li>
+<li>ctrl + /: 注释</li>
+<li>ctrl + shift + /: 当前位置插入块注释</li>
+<li>ctrl + z: 恢复至前编辑状态</li>
+<li>ctrl + y: …</li>
+<li>ctrl + k, u: 转换选中文本为大写</li>
+<li>ctrl + k, l: 转换选中文本为小写</li>
+<li>ctrl + e: emmet</li>
+<li>ctrl + shift + y: 将光标处的表达式计算，对于数学不好的很有用</li>
+</ul>
+<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><ul>
+<li>ctrl + shit [: 折叠代码</li>
+<li>ctrl + shift ]: 展开代码</li>
+</ul>
+<h2 id="工程"><a href="#工程" class="headerlink" title="工程"></a>工程</h2><ul>
+<li>shift + alt + p: 切换项目</li>
+</ul>
+<h2 id="窗口-标签"><a href="#窗口-标签" class="headerlink" title="窗口/标签"></a>窗口/标签</h2><ul>
+<li>ctrl + shift + n: 创建一个新窗口</li>
+<li>ctrl + n: 新增标签</li>
+<li>ctrl + shift + t: 打开最后一次关闭的文件</li>
+<li>ctrl + tab: 循环遍历标签</li>
+<li>ctrl + shift + tab: 反向循环遍历标签</li>
+<li>ctrl + pgup: 前一标签</li>
+<li>ctrl + pgdn: 后一标签</li>
+<li>ctrl + w: 关闭标签</li>
+<li>ctrl + shift + w: 关闭所有标签</li>
+</ul>
+<h2 id="分屏"><a href="#分屏" class="headerlink" title="分屏"></a>分屏</h2><ul>
+<li>Alt + Shift + 2: 左右分屏</li>
+<li>Alt + Shift + 8: 上下分屏</li>
+<li>Alt + Shift + 5: 上下左右分屏</li>
+<li>ctrl + 数字: 跳转到指定屏</li>
+<li>ctrl + shift + 数字键: 将当前屏移动到指定屏</li>
+</ul>
+<h2 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h2><ul>
+<li>ctrl + f2: 设置书签</li>
+<li>f2: 切换书签</li>
+<li>f11: 全屏</li>
+<li>shift + f11: 无干扰全屏</li>
+<li>ctrl + shift + p: 打开命令行, 并利用缩写快速查找命令<ul>
+<li>package control/pc: 包管理器, 常用命令: pci(安装插件), pcr(卸载插件), pcd(禁用插件), pce(启用插件)</li>
+<li>project: 项目</li>
+<li>snippet: 代码片段</li>
+<li>set syntax/ss: 语法设置命令</li>
+</ul>
+</li>
+<li>ctrl + k, ctrl + b: 隐藏/打开侧边栏</li>
+</ul>
+<h1 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h1><ul>
+<li><a href="https://www.sublimetext.com/docs/3/projects.html" target="_blank" rel="external">https://www.sublimetext.com/docs/3/projects.html</a></li>
+<li><a href="http://www.cnblogs.com/ifantastic/p/3485943.html" target="_blank" rel="external">[SublimeText] 如何创建工程</a></li>
+</ul>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><ul>
+<li>trim_trailing_white_space_on_save，自动移除行尾多余空格，处女座更安心了</li>
+<li>ensure_newline_at_eof_on_save，文件末尾自动保留一个空行，懂的人自然知道它的用处</li>
+<li>font_face 设置字体。Microsoft YaHei Mono 是一款混合字体，专为代码优化，看起来很舒服。当然你也可以使用你自己喜欢的字体，或者删掉本行，使用默认字体</li>
+<li>disable_tab_abbreviations 设置为 true ，禁用 Emmet 的 tab 键功能（请使用 ctrl+e），系统自带的 tab 功能还是可圈可点的。当然你也可以不设置它，以完全使用 Emmet 的 tab 补全功能</li>
+<li>translate_tabs_to_spaces 很明白就是把代码 tab 对齐转换为空格对齐，tab_size 配合设置空格数。这个需求因人而异了，不喜欢可以去掉</li>
+<li>draw_minimap_border，用于右侧代码预览时给所在区域加上边框，方便识别</li>
+<li>save_on_focus_lost，窗口失焦立即保存文件，嘛嘛再也不用担心你忘记保存了</li>
+<li>highlight_line，当前行高亮</li>
+<li>word_wrap，设置自动换行</li>
+<li>fade_fold_buttons，默认显示行号右侧的代码段闭合展开三角号</li>
+<li>bold_folder_labels，侧边栏文件夹显示加粗，区别于文件</li>
+<li>highlight_modified_tabs，高亮未保存文件</li>
+<li>default_line_ending: “unix”, 使用 unix 风格的换行符</li>
+<li>auto_find_in_selection: true ，开启选中范围内搜索（而不是整个文档</li>
+<li>ignored_packages: 禁用的插件</li>
+<li>auto_find_in_selection: 在选中范围内搜索和替换</li>
+<li>caret_style: phase, 使光标闪动更加柔和</li>
+<li>rulers: [80, 100], 行宽标尺</li>
+<li>draw_white_space: all, 显示空白字符</li>
+<li>folder_exclude_patterns: 文件夹排除模式  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"folder_exclude_patterns"</span>: [</span><br><span class="line">  <span class="string">".svn"</span>,</span><br><span class="line">  <span class="string">".git"</span>,</span><br><span class="line">  <span class="string">".hg"</span>,</span><br><span class="line">  <span class="string">"CVS"</span>,</span><br><span class="line">  <span class="string">"node_modules"</span>,</span><br><span class="line">  <span class="string">"bower_components"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="自动换行"><a href="#自动换行" class="headerlink" title="自动换行"></a>自动换行</h2><ul>
+<li>word_wrap<ul>
+<li>true：开启自动换行（不会出现水平滚动条）</li>
+<li>false: 关闭自动换行（出现水平滚动条）</li>
+<li>auto：如果代码的话，开启自动换行，否则不自动换行</li>
+</ul>
+</li>
+<li>wrap_width<ul>
+<li>0：超出窗口宽度时自动换行</li>
+<li>大于零：代码长度超出该值时自动换行</li>
+</ul>
+</li>
+<li>rules：标尺</li>
+</ul>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul>
+<li><a href="http://stackoverflow.com/questions/13661462/getting-full-js-autocompletion-under-sublime-text" target="_blank" rel="external">Getting full JS autocompletion under Sublime Text</a></li>
+<li><a href="http://emmet.io/blog/sublime-tern/" target="_blank" rel="external">http://emmet.io/blog/sublime-tern/</a></li>
+<li><a href="http://sublimecodeintel.github.io/SublimeCodeIntel/" target="_blank" rel="external">http://sublimecodeintel.github.io/SublimeCodeIntel/</a></li>
+<li><p><a href="http://stackoverflow.com/questions/16235706/sublime-3-set-key-map-for-function-goto-definition" target="_blank" rel="external">Sublime 3 - Set Key map for function Goto Definition</a></p>
+</li>
+<li><p>不支持 <code>.eslintignore</code>：<a href="https://github.com/roadhump/SublimeLinter-eslint/pull/145" target="_blank" rel="external">default to .eslintignore, allow overrides</a></p>
+</li>
+</ul>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><ul>
+<li>官方文档：<a href="http://www.sublimetext.com/docs/3/" target="_blank" rel="external">http://www.sublimetext.com/docs/3/</a></li>
+<li>非官方文档: <a href="http://sublime-text-unofficial-documentation.readthedocs.org/" target="_blank" rel="external">http://sublime-text-unofficial-documentation.readthedocs.org/</a></li>
+</ul>
+<h2 id="社区论坛"><a href="#社区论坛" class="headerlink" title="社区论坛"></a>社区论坛</h2><ul>
+<li>官方论坛：<a href="http://www.sublimetext.com/forum/" target="_blank" rel="external">http://www.sublimetext.com/forum/</a></li>
+<li><a href="http://stackoverflow.com/questions/tagged/sublimetext" target="_blank" rel="external">Stack Overflow Sublime Text</a></li>
+<li><a href="http://stackoverflow.com/questions/tagged/sublimetext2" target="_blank" rel="external">Stack Overflow Sublime Text 2</a></li>
+<li><a href="http://stackoverflow.com/questions/tagged/sublimetext3" target="_blank" rel="external">Stack Overflow Sublime Text 3</a> — 比官方文档还要全面</li>
+<li>Package Control: <a href="https://sublime.wbond.net/" target="_blank" rel="external">https://sublime.wbond.net/</a> — 大量的Sublime Text插件和主题</li>
+</ul>
+<h2 id="推荐书籍"><a href="#推荐书籍" class="headerlink" title="推荐书籍"></a>推荐书籍</h2><ul>
+<li><a href="http://www.amazon.com/Mastering-Sublime-Community-Experience-Distilled/dp/1849698422/" target="_blank" rel="external">Mastering Sublime Text</a> — 书中介绍的插件很实用，但对编辑技巧介绍不全</li>
+<li><a href="http://www.amazon.com/Instant-Sublime-Text-Starter-Haughee/dp/1849693927/" target="_blank" rel="external">Instant Sublime Text Starter</a></li>
+</ul>
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><ul>
+<li>Getting Started with SublimeText：<a href="https://www.youtube.com/watch?v=04gKiTiRlq8" target="_blank" rel="external">https://www.youtube.com/watch?v=04gKiTiRlq8</a></li>
+<li>Sublime Text Pefect Workflow：<a href="https://www.youtube.com/watch?v=bpEp0ePIOEM&amp;list=PLuwqxbvf3olpLsnFvo06gbrkcEB5o7K0g" target="_blank" rel="external">https://www.youtube.com/watch?v=bpEp0ePIOEM&amp;list=PLuwqxbvf3olpLsnFvo06gbrkcEB5o7K0g</a></li>
+<li>前端开发工具技巧介绍—Sublime篇: <a href="http://www.imooc.com/learn/40" target="_blank" rel="external">http://www.imooc.com/learn/40</a></li>
+</ul>
+<h2 id="精选博文"><a href="#精选博文" class="headerlink" title="精选博文"></a>精选博文</h2><ul>
+<li><a href="http://zh.lucida.me/blog/sublime-text-complete-guide/" target="_blank" rel="external">Sublime Text 全程指南</a></li>
+<li><a href="https://github.com/jikeytang/sublime-text" target="_blank" rel="external">jikeytang/sublime-text</a></li>
+</ul>
+<h2 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><a href="http://blog.jobbole.com/23949/" target="_blank" rel="external">Sublime Text：初学者不知道的那些事</a></li>
+<li><a href="http://blog.jenux.me/?p=49" target="_blank" rel="external">译:Sublime Text 2 项目设置</a></li>
+<li><a href="http://www.zhihu.com/topic/19668076" target="_blank" rel="external">Sublime Text 知乎话题</a></li>
+<li><a href="http://www.zhihu.com/question/19976788" target="_blank" rel="external">Sublime Text 有哪些实用技巧</a><ul>
+<li><a href="https://github.com/gyfnice/javascript/tree/sublime-snippets/snippets/sublime/javascript" target="_blank" rel="external">常用代码片段</a></li>
+<li><a href="http://net.tutsplus.com/tutorials/tools-and-tips/sublime-text-2-tips-and-tricks/" target="_blank" rel="external">Sublime Text 2 Tips and Tricks</a></li>
+<li><a href="http://lucifr.com/139225/sublime-text-2-tricks-and-tips/" target="_blank" rel="external">Sublime Text 2 入门及技巧</a></li>
+<li><a href="一些必不可少的Sublime Text 2插件">一些必不可少的Sublime Text 2插件</a></li>
+<li><a href="http://www.sheyilin.cn/2015/05/sublime_text_3_tiao_jiao_ni_de_si_ren_li_qi_1/" target="_blank" rel="external">Sublime Text 3 调教你的私人利器（上</a></li>
+<li><a href="http://www.sheyilin.cn/2015/05/sublime_text_3_tiao_jiao_ni_de_si_ren_li_qi_2/" target="_blank" rel="external">Sublime Text 3 调教你的私人利器（下）</a></li>
+<li><a href="http://docs.sublimetext.info/en/latest/reference/commands.html" target="_blank" rel="external">Commands — Sublime Text Unofficial Documentation</a></li>
+<li><a href="http://code.tutsplus.com/categories/sublime-text" target="_blank" rel="external">http://code.tutsplus.com/categories/sublime-text</a></li>
+<li><a href="https://github.com/jikeytang/sublime-text" target="_blank" rel="external">https://github.com/jikeytang/sublime-text</a></li>
+<li><a href="http://www.imooc.com/learn/40" target="_blank" rel="external">前端开发工具技巧介绍—Sublime篇</a></li>
+<li><a href="http://www.imooc.com/learn/333" target="_blank" rel="external">快乐的sublime编辑器</a></li>
+<li><a href="http://docs.sublimetext.tw/" target="_blank" rel="external">Sublime Text 手冊</a></li>
+<li><a href="https://tutsplus.com/course/improve-workflow-in-sublime-text-2/" target="_blank" rel="external">Tuts+ Premium Course: Perfect Workflow in Sublime Text 2</a></li>
+<li><a href="http://www.yunxiu.org/blog/article/5487.htm" target="_blank" rel="external">sublime text 使用攻略</a></li>
+<li><a href="http://www.yunxiu.org/blog/article/5490.htm" target="_blank" rel="external">Emmet 插件使用教程</a></li>
+<li><a href="http://www.imooc.com/learn/40" target="_blank" rel="external">前端开发工具技巧介绍</a></li>
+<li><a href="http://1.lgmrain.sinaapp.com/?p=163" target="_blank" rel="external">Raining » sublime Text 快捷键常用总结</a></li>
+</ul>
+</li>
+<li><a href="http://yanhaijing.com/tool/2014/10/24/my-sublime/" target="_blank" rel="external">我的 Sublime Text 2 笔记</a></li>
+<li><a href="http://www.welefen.com/keymapmanager-add-check-plugins-keymap-conflict-feature.html" target="_blank" rel="external">KeymapManager增加检测快捷键冲突的功能</a></li>
+<li><a href="http://www.iteye.com/news/27580" target="_blank" rel="external">Emmet：HTML/CSS代码快速编写神器</a></li>
+<li><a href="http://blog.sina.com.cn/s/blog_7d34486c0100vu20.html" target="_blank" rel="external">Sublime Text 2快捷键大全 </a></li>
+<li><a href="https://www.shortcutfoo.com/app/dojos/sublime-text-3-win" target="_blank" rel="external">sublime-text-3-win 快捷键练习</a></li>
+<li><a href="http://www.tcreator.info/social/experience/markdown-to-pdf.html" target="_blank" rel="external">/markdown-to-pdf</a></li>
+<li>[KeymapManager增加检测快捷键冲突的功能<a href="http://www.welefen.com/keymapmanager-add-check-plugins-keymap-conflict-feature.html" target="_blank" rel="external">http://www.welefen.com/keymapmanager-add-check-plugins-keymap-conflict-feature.html</a>]</li>
+<li><a href="http://www.jeffjade.com/2015/12/15/2015-04-17-toss-sublime-text/" target="_blank" rel="external">如何优雅地使用Sublime Text</a></li>
+<li><a href="http://stackoverflow.com/questions/9536280/sublime-text-2-files-not-opening-a-new-tab" target="_blank" rel="external">Sublime Text 2 - Files not opening a new tab?</a></li>
+</ul>
+<h1 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  /* tab */</span><br><span class="line">  &#123; &quot;keys&quot;: [&quot;super+pageup&quot;], &quot;command&quot;: &quot;prev_view&quot; &#125;,</span><br><span class="line">  &#123; &quot;keys&quot;: [&quot;super+pagedown&quot;], &quot;command&quot;: &quot;next_view&quot; &#125;,</span><br><span class="line">  /* find */</span><br><span class="line">  &#123; &quot;keys&quot;: [&quot;f3&quot;], &quot;command&quot;: &quot;find_next&quot; &#125;,</span><br><span class="line">  &#123; &quot;keys&quot;: [&quot;shift+f3&quot;], &quot;command&quot;: &quot;find_prev&quot; &#125;,</span><br><span class="line">  /* cursor*/</span><br><span class="line">  &#123; &quot;keys&quot;: [&quot;super+left&quot;], &quot;command&quot;: &quot;move&quot;, &quot;args&quot;: &#123;&quot;by&quot;: &quot;subwords&quot;, &quot;forward&quot;: false&#125; &#125;,</span><br><span class="line">  &#123; &quot;keys&quot;: [&quot;super+right&quot;], &quot;command&quot;: &quot;move&quot;, &quot;args&quot;: &#123;&quot;by&quot;: &quot;subword_ends&quot;, &quot;forward&quot;: true&#125; &#125;,</span><br><span class="line">  &#123; &quot;keys&quot;: [&quot;home&quot;], &quot;command&quot;: &quot;move_to&quot;, &quot;args&quot;: &#123;&quot;to&quot;: &quot;bol&quot;, &quot;extend&quot;: false&#125; &#125;,</span><br><span class="line">  &#123; &quot;keys&quot;: [&quot;end&quot;], &quot;command&quot;: &quot;move_to&quot;, &quot;args&quot;: &#123;&quot;to&quot;: &quot;eol&quot;, &quot;extend&quot;: false&#125; &#125;,</span><br><span class="line">  /* line */</span><br><span class="line">  &#123; &quot;keys&quot;: [&quot;super+up&quot;], &quot;command&quot;: &quot;swap_line_up&quot; &#125;,</span><br><span class="line">  &#123; &quot;keys&quot;: [&quot;super+down&quot;], &quot;command&quot;: &quot;swap_line_down&quot; &#125;,</span><br><span class="line">  /* comment */</span><br><span class="line">  &#123; &quot;keys&quot;: [&quot;super+shift+forward_slash&quot;], &quot;command&quot;: &quot;toggle_comment&quot;, &quot;args&quot;: &#123; &quot;block&quot;: true &#125; &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><ol>
+<li>解决 Sublime Text 无法使用中文输入法：<a href="http://www.jianshu.com/p/bf05fb3a4709" target="_blank" rel="external">http://www.jianshu.com/p/bf05fb3a4709</a></li>
+<li>…</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Editor/" rel="tag">#Editor</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/vcs/Git-Command/" rel="prev" title="Git 常用命令">
+                Git 常用命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="editor/Sublime/"
+           data-title="Sublime" data-url="http://zhbhun.github.io/blog/blog/editor/Sublime/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/1996891"
+               alt="zhbhun" />
+          <p class="site-author-name" itemprop="name">zhbhun</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/blog/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/blog/categories">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags">
+                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/blog/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhbhun" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/zhbhun" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/zhbhun" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/zhbhun" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Package-Control"><span class="nav-number">1.</span> <span class="nav-text">Package Control</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字体"><span class="nav-number">2.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插件"><span class="nav-number">3.</span> <span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#必备"><span class="nav-number">3.1.</span> <span class="nav-text">必备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码导航"><span class="nav-number">3.2.</span> <span class="nav-text">代码导航</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法高亮"><span class="nav-number">3.3.</span> <span class="nav-text">语法高亮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法检查"><span class="nav-number">3.4.</span> <span class="nav-text">语法检查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法分析"><span class="nav-number">3.5.</span> <span class="nav-text">语法分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码片段"><span class="nav-number">3.6.</span> <span class="nav-text">代码片段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码格式"><span class="nav-number">3.7.</span> <span class="nav-text">代码格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown"><span class="nav-number">3.8.</span> <span class="nav-text">Markdown</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">3.9.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题"><span class="nav-number">4.</span> <span class="nav-text">主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快捷键"><span class="nav-number">5.</span> <span class="nav-text">快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码导航-1"><span class="nav-number">5.1.</span> <span class="nav-text">代码导航</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码查找"><span class="nav-number">5.2.</span> <span class="nav-text">代码查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码选择"><span class="nav-number">5.3.</span> <span class="nav-text">代码选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码编辑"><span class="nav-number">5.4.</span> <span class="nav-text">代码编辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视图"><span class="nav-number">5.5.</span> <span class="nav-text">视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工程"><span class="nav-number">5.6.</span> <span class="nav-text">工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#窗口-标签"><span class="nav-number">5.7.</span> <span class="nav-text">窗口/标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分屏"><span class="nav-number">5.8.</span> <span class="nav-text">分屏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通用"><span class="nav-number">5.9.</span> <span class="nav-text">通用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目"><span class="nav-number">6.</span> <span class="nav-text">项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置"><span class="nav-number">7.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自动换行"><span class="nav-number">7.1.</span> <span class="nav-text">自动换行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">8.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">9.</span> <span class="nav-text">参考文献</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文档"><span class="nav-number">9.1.</span> <span class="nav-text">文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#社区论坛"><span class="nav-number">9.2.</span> <span class="nav-text">社区论坛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐书籍"><span class="nav-number">9.3.</span> <span class="nav-text">推荐书籍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视频"><span class="nav-number">9.4.</span> <span class="nav-text">视频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#精选博文"><span class="nav-number">9.5.</span> <span class="nav-text">精选博文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他-1"><span class="nav-number">9.6.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mac"><span class="nav-number">10.</span> <span class="nav-text">Mac</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux"><span class="nav-number">11.</span> <span class="nav-text">Linux</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhbhun</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/blog/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhbhun-notes"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

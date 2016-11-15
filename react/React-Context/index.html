@@ -1,0 +1,703 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="React," />
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="ZHBHUN" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="React 开发中，一般将状态放在外层组件，然后将状态通过属性一层层的传到相应的里层组件中，再渲染显示出来。例如下面这段代码，外层组件 App 有个状态 color，其以属性的形式经过 MessageList，Message 传给 Button。
+1234567891011121314151617181920212223242526272829303132333435363738394041424">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React 基于“全局变量”的组件通信">
+<meta property="og:url" content="http://zhbhun.github.io/blog/react/React-Context/index.html">
+<meta property="og:site_name" content="ZHBHUN">
+<meta property="og:description" content="React 开发中，一般将状态放在外层组件，然后将状态通过属性一层层的传到相应的里层组件中，再渲染显示出来。例如下面这段代码，外层组件 App 有个状态 color，其以属性的形式经过 MessageList，Message 传给 Button。
+1234567891011121314151617181920212223242526272829303132333435363738394041424">
+<meta property="og:updated_time" content="2016-11-15T13:12:02.658Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React 基于“全局变量”的组件通信">
+<meta name="twitter:description" content="React 开发中，一般将状态放在外层组件，然后将状态通过属性一层层的传到相应的里层组件中，再渲染显示出来。例如下面这段代码，外层组件 App 有个状态 color，其以属性的形式经过 MessageList，Message 传给 Button。
+1234567891011121314151617181920212223242526272829303132333435363738394041424">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> React 基于“全局变量”的组件通信 | ZHBHUN </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/blog/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">ZHBHUN</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                React 基于“全局变量”的组件通信
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-25T00:00:00+08:00" content="2016-05-25">
+              2016-05-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/blog/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/react/React-Context/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="react/React-Context/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>React 开发中，一般将状态放在外层组件，然后将状态通过属性一层层的传到相应的里层组件中，再渲染显示出来。例如下面这段代码，外层组件 App 有个状态 color，其以属性的形式经过 MessageList，Message 传给 Button。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">var Button = React.createClass(&#123;</span><br><span class="line">  render: function() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;button style=&#123;&#123;background: this.props.color&#125;&#125;&gt;</span><br><span class="line">        &#123;this.props.children&#125;</span><br><span class="line">      &lt;/button&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var Message = React.createClass(&#123;</span><br><span class="line">  render: function() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &#123;this.props.text&#125; &lt;Button color=&#123;this.props.color&#125;&gt;Delete&lt;/Button&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var MessageList = React.createClass(&#123;</span><br><span class="line">  render: function() &#123;</span><br><span class="line">    var color = &quot;purple&quot;;</span><br><span class="line">    var children = this.props.messages.map(function(message) &#123;</span><br><span class="line">      return &lt;Message text=&#123;message.text&#125; color=&#123;this.props.color&#125; /&gt;;</span><br><span class="line">    &#125;);</span><br><span class="line">    return &lt;div&gt;&#123;children&#125;&lt;/div&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var App = React.createClass(&#123;</span><br><span class="line">    getInitialState: function() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      messages: [],</span><br><span class="line">      color: &apos;purple&apos;,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  render: function() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;MessageList</span><br><span class="line">        messages=&#123;this.state.messages&#125;</span><br><span class="line">        color=&#123;this.state.color&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>但是，有时候我们不想一层层的传递属性，Context 就是帮助我们实现这个的 React 特性。</p>
+<h1 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h1><p>要将外层组件的状态直接传递给里层组件，要求：</p>
+<ul>
+<li>外层组件定义属性 childContextTypes，作为需要传递的属性类型声明</li>
+<li>外层组件实例定义 getChildContext 方法，用于获取需要传递的属性值</li>
+<li>里层组件定义属性 contextTypes，可以只声明需要用到属性的类型声明（没有声明的不会传递）</li>
+<li>里层组件通过 this.context 获取 getChildContext 返回的值，如果没有 contextTypes，则为 undefined</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">var Button = React.createClass(&#123;</span><br><span class="line"> contextTypes: &#123;</span><br><span class="line">   color: React.PropTypes.string</span><br><span class="line"> &#125;,</span><br><span class="line"> render: function() &#123;</span><br><span class="line">   return (</span><br><span class="line">     &lt;button style=&#123;&#123;background: this.context.color&#125;&#125;&gt;</span><br><span class="line">       &#123;this.props.children&#125;</span><br><span class="line">     &lt;/button&gt;</span><br><span class="line">   );</span><br><span class="line"> &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var Message = React.createClass(&#123;</span><br><span class="line"> render: function() &#123;</span><br><span class="line">   return (</span><br><span class="line">     &lt;div&gt;</span><br><span class="line">       &#123;this.props.text&#125; &lt;Button&gt;Delete&lt;/Button&gt;</span><br><span class="line">     &lt;/div&gt;</span><br><span class="line">   );</span><br><span class="line"> &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var MessageList = React.createClass(&#123;</span><br><span class="line">  render: function() &#123;</span><br><span class="line">   var children = this.props.messages.map(function(message) &#123;</span><br><span class="line">     return &lt;Message text=&#123;message.text&#125; /&gt;;</span><br><span class="line">   &#125;);</span><br><span class="line">   return &lt;div&gt;&#123;children&#125;&lt;/div&gt;;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var App = React.createClass(&#123;</span><br><span class="line">  childContextTypes: &#123;</span><br><span class="line">    color: React.PropTypes.string</span><br><span class="line">  &#125;,</span><br><span class="line">  getInitialState: function() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      messages: [],</span><br><span class="line">      color: &apos;purple&apos;,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  getChildContext: function() &#123;</span><br><span class="line">    return &#123;color: &quot;purple&quot;&#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  render: function() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;MessageList messages=&#123;this.state.messages&#125; /&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="在无状态组件中使用-Context"><a href="#在无状态组件中使用-Context" class="headerlink" title="在无状态组件中使用 Context"></a>在无状态组件中使用 Context</h1><p>如果无状态组件有定义属性 contextTypes，那么该组件也可以引用 context。下面代码重构前面的 Button 组件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Button(props, context) &#123;</span><br><span class="line">  return (</span><br><span class="line">    &lt;button style=&#123;&#123;background: context.color&#125;&#125;&gt;</span><br><span class="line">      &#123;props.children&#125;</span><br><span class="line">    &lt;/button&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line">Button.contextTypes = &#123;color: React.PropTypes.string&#125;;</span><br></pre></td></tr></table></figure></p>
+<h1 id="Context-更新与生命周期"><a href="#Context-更新与生命周期" class="headerlink" title="Context 更新与生命周期"></a>Context 更新与生命周期</h1><ul>
+<li>外层组件实例会在 render 后调用 getChildContext，获取到的值会传递给声明了 contextTypes 的里层组件</li>
+<li>声明了 contextTypes 的里层组件会在生命周期函数获取额外的的参数 context</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br></pre></td><td class="code"><pre><span class="line">var Button = React.createClass(&#123;</span><br><span class="line">  contextTypes: &#123;</span><br><span class="line">    color: React.PropTypes.string</span><br><span class="line">  &#125;,</span><br><span class="line">  componentWillMount: function() &#123;</span><br><span class="line">    console.log(&apos;Button&apos;, &apos;componentWillMount&apos;);</span><br><span class="line">  &#125;,</span><br><span class="line">  componentDidMount: function() &#123;</span><br><span class="line">    console.log(&apos;Button&apos;, &apos;componentDidMount&apos;);</span><br><span class="line">  &#125;,</span><br><span class="line">  componentWillReceiveProps: function(nextProps, nextContext) &#123;</span><br><span class="line">    console.log(&apos;Button&apos;, &apos;componentWillReceiveProps&apos;, nextContext);</span><br><span class="line">  &#125;,</span><br><span class="line">  shouldComponentUpdate: function(nextProps, nextState, nextContext) &#123;</span><br><span class="line">    console.log(&apos;Button&apos;, &apos;shouldComponentUpdate&apos;, nextContext);</span><br><span class="line">    return true;</span><br><span class="line">  &#125;,</span><br><span class="line">  componentWillUpdate: function(nextProps, nextState, nextContext) &#123;</span><br><span class="line">    console.log(&apos;Button&apos;, &apos;componentWillUpdate&apos;, nextContext);</span><br><span class="line">  &#125;,</span><br><span class="line">  componentDidUpdate: function(prevProps, prevState, prevContext) &#123;</span><br><span class="line">    console.log(&apos;Button&apos;, &apos;componentDidUpdate&apos;, prevContext);</span><br><span class="line">  &#125;,</span><br><span class="line">  render: function() &#123;</span><br><span class="line">    console.log(&apos;Button&apos;, &apos;render&apos;);</span><br><span class="line">    return (</span><br><span class="line">      &lt;button style=&#123;&#123;background: this.context.color&#125;&#125;&gt;</span><br><span class="line">        &#123;this.props.children&#125;</span><br><span class="line">      &lt;/button&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var Message = React.createClass(&#123;</span><br><span class="line">  render: function() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &#123;this.props.text&#125; &lt;Button&gt;Delete&lt;/Button&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var MessageList = React.createClass(&#123;</span><br><span class="line">  componentWillMount: function() &#123;</span><br><span class="line">    console.log(&apos;MessageList&apos;, &apos;componentWillMount&apos;);</span><br><span class="line">  &#125;,</span><br><span class="line">  componentDidMount: function() &#123;</span><br><span class="line">    console.log(&apos;MessageList&apos;, &apos;componentDidMount&apos;);</span><br><span class="line">  &#125;,</span><br><span class="line">  componentWillReceiveProps: function(nextProps) &#123;</span><br><span class="line">    console.log(&apos;MessageList&apos;, &apos;componentWillReceiveProps&apos;);</span><br><span class="line">  &#125;,</span><br><span class="line">  shouldComponentUpdate: function(nextProps, nextState) &#123;</span><br><span class="line">    console.log(&apos;MessageList&apos;, &apos;shouldComponentUpdate&apos;);</span><br><span class="line">    return true;</span><br><span class="line">  &#125;,</span><br><span class="line">  componentWillUpdate: function(nextProps, nextState) &#123;</span><br><span class="line">    console.log(&apos;MessageList&apos;, &apos;componentWillUpdate&apos;);</span><br><span class="line">  &#125;,</span><br><span class="line">  componentDidUpdate: function(prevProps, prevState) &#123;</span><br><span class="line">    console.log(&apos;MessageList&apos;, &apos;componentDidUpdate&apos;);</span><br><span class="line">  &#125;,</span><br><span class="line">  render: function() &#123;</span><br><span class="line">    console.log(&apos;MessageList&apos;, &apos;render&apos;);</span><br><span class="line">    var children = this.props.messages.map(function(message, index) &#123;</span><br><span class="line">      return &lt;Message key=&#123;index&#125; text=&#123;message.text&#125; /&gt;;</span><br><span class="line">    &#125;);</span><br><span class="line">    return &lt;div&gt;&#123;children&#125;&lt;/div&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var App = React.createClass(&#123;</span><br><span class="line">  childContextTypes: &#123;</span><br><span class="line">    color: React.PropTypes.string</span><br><span class="line">  &#125;,</span><br><span class="line">  getInitialState: function() &#123;</span><br><span class="line">    console.log(&apos;App&apos;, &apos;getInitiateState&apos;);</span><br><span class="line">    return &#123;</span><br><span class="line">      messages: [</span><br><span class="line">        &#123; text: &apos;a&apos; &#125;,</span><br><span class="line">      ],</span><br><span class="line">      color: &apos;purple&apos;,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  getChildContext: function() &#123;</span><br><span class="line">    console.log(&apos;App&apos;, &apos;getChildContext&apos;);</span><br><span class="line">    return &#123;color: this.state.color&#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  componentWillMount: function() &#123;</span><br><span class="line">    console.log(&apos;App&apos;, &apos;componentWillMount&apos;);</span><br><span class="line">  &#125;,</span><br><span class="line">  componentDidMount: function() &#123;</span><br><span class="line">    console.log(&apos;App&apos;, &apos;componentDidMount&apos;);</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">      this.setState(&#123;</span><br><span class="line">        color: &apos;blue&apos;,</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;, 3000);</span><br><span class="line">  &#125;,</span><br><span class="line">  componentWillReceiveProps: function(nextProps) &#123;</span><br><span class="line">    console.log(&apos;App&apos;, &apos;componentWillReceiveProps&apos;);</span><br><span class="line">  &#125;,</span><br><span class="line">  shouldComponentUpdate: function(nextProps, nextState) &#123;</span><br><span class="line">    console.log(&apos;App&apos;, &apos;shouldComponentUpdate&apos;);</span><br><span class="line">    return true;</span><br><span class="line">  &#125;,</span><br><span class="line">  componentWillUpdate: function(nextProps, nextState) &#123;</span><br><span class="line">    console.log(&apos;App&apos;, &apos;componentWillUpdate&apos;);</span><br><span class="line">  &#125;,</span><br><span class="line">  componentDidUpdate: function(prevProps, prevState) &#123;</span><br><span class="line">    console.log(&apos;App&apos;, &apos;componentDidUpdate&apos;);</span><br><span class="line">  &#125;,</span><br><span class="line">  render: function() &#123;</span><br><span class="line">    console.log(&apos;App&apos;, &apos;render&apos;);</span><br><span class="line">    return (</span><br><span class="line">      &lt;MessageList messages=&#123;this.state.messages&#125; /&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">/* 打印日志</span><br><span class="line">App getInitiateState</span><br><span class="line">App componentWillMount</span><br><span class="line">App render</span><br><span class="line">App getChildContext</span><br><span class="line">MessageList componentWillMount</span><br><span class="line">MessageList render</span><br><span class="line">utton componentWillMount</span><br><span class="line">Button render</span><br><span class="line">Button componentDidMount</span><br><span class="line">MessageList componentDidMount</span><br><span class="line">App componentDidMount</span><br><span class="line">App shouldComponentUpdate</span><br><span class="line">App componentWillUpdate</span><br><span class="line">App render</span><br><span class="line">App getChildContext</span><br><span class="line">MessageList componentWillReceiveProps</span><br><span class="line">MessageList shouldComponentUpdate</span><br><span class="line">MessageList componentWillUpdate</span><br><span class="line">MessageList render</span><br><span class="line">Button componentWillReceiveProps Object &#123;color: &quot;blue&quot;&#125;</span><br><span class="line">Button shouldComponentUpdate Object &#123;color: &quot;blue&quot;&#125;</span><br><span class="line">Button componentWillUpdate Object &#123;color: &quot;blue&quot;&#125;</span><br><span class="line">Button render</span><br><span class="line">Button componentDidUpdate Object &#123;color: &quot;purple&quot;&#125;</span><br><span class="line">MessageList componentDidUpdate</span><br><span class="line">App componentDidUpdate</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<p>一般 Context 值取自外层组件状态，以便 getChildContext 获取最新的状态传递给自组件。</p>
+<p>Context 并不是万能的，如果中间组件的 shouldComponentUpdate 返回 false，那么里层组件将无法更新。</p>
+<h1 id="实际运用"><a href="#实际运用" class="headerlink" title="实际运用"></a>实际运用</h1><ul>
+<li>主题切换</li>
+<li>响应式设计</li>
+<li>登陆会话</li>
+<li>语言设置</li>
+</ul>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
+<li><a href="http://facebook.github.io/react/docs/context.html" target="_blank" rel="external">http://facebook.github.io/react/docs/context.html</a></li>
+<li><a href="https://segmentfault.com/a/1190000004636213" target="_blank" rel="external">https://segmentfault.com/a/1190000004636213</a></li>
+<li><a href="https://github.com/facebook/react/issues/2517" target="_blank" rel="external">https://github.com/facebook/react/issues/2517</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/React/" rel="tag">#React</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/nodejs/Node.js/" rel="next" title="Node.js">
+                <i class="fa fa-chevron-left"></i> Node.js
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/editor/Atom/" rel="prev" title="Atom">
+                Atom <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="react/React-Context/"
+           data-title="React 基于“全局变量”的组件通信" data-url="http://zhbhun.github.io/blog/blog/react/React-Context/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/1996891"
+               alt="zhbhun" />
+          <p class="site-author-name" itemprop="name">zhbhun</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/blog/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/blog/categories">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags">
+                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/blog/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhbhun" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/zhbhun" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/zhbhun" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/zhbhun" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本使用"><span class="nav-number">1.</span> <span class="nav-text">基本使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在无状态组件中使用-Context"><span class="nav-number">2.</span> <span class="nav-text">在无状态组件中使用 Context</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Context-更新与生命周期"><span class="nav-number">3.</span> <span class="nav-text">Context 更新与生命周期</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实际运用"><span class="nav-number">4.</span> <span class="nav-text">实际运用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">5.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhbhun</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/blog/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhbhun-notes"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,807 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="VCS," />
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="ZHBHUN" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="创建版本库
+git init
+git add readme.txt
+git commit -m &amp;quot;wrote a readme file&amp;quot;
+
+管理版本库概念
+工作区: 项目目录
+版本库: .git
+暂存区: git add
+管理修改: git commit 只提交暂存区的内容
+
+命令
+查看状态: git status
+查看差异: git diff readme.txt
+添加暂存">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 常用命令">
+<meta property="og:url" content="http://zhbhun.github.io/blog/vcs/Git-Command/index.html">
+<meta property="og:site_name" content="ZHBHUN">
+<meta property="og:description" content="创建版本库
+git init
+git add readme.txt
+git commit -m &amp;quot;wrote a readme file&amp;quot;
+
+管理版本库概念
+工作区: 项目目录
+版本库: .git
+暂存区: git add
+管理修改: git commit 只提交暂存区的内容
+
+命令
+查看状态: git status
+查看差异: git diff readme.txt
+添加暂存">
+<meta property="og:updated_time" content="2016-11-15T13:12:02.658Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git 常用命令">
+<meta name="twitter:description" content="创建版本库
+git init
+git add readme.txt
+git commit -m &amp;quot;wrote a readme file&amp;quot;
+
+管理版本库概念
+工作区: 项目目录
+版本库: .git
+暂存区: git add
+管理修改: git commit 只提交暂存区的内容
+
+命令
+查看状态: git status
+查看差异: git diff readme.txt
+添加暂存">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Git 常用命令 | ZHBHUN </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/blog/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">ZHBHUN</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Git 常用命令
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-23T00:00:00+08:00" content="2016-04-23">
+              2016-04-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/blog/categories/VCS/" itemprop="url" rel="index">
+                    <span itemprop="name">VCS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/vcs/Git-Command/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="vcs/Git-Command/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h1><ul>
+<li><code>git init</code></li>
+<li><code>git add readme.txt</code></li>
+<li><code>git commit -m &quot;wrote a readme file&quot;</code></li>
+</ul>
+<h1 id="管理版本库"><a href="#管理版本库" class="headerlink" title="管理版本库"></a>管理版本库</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<li>工作区: 项目目录</li>
+<li>版本库: <code>.git</code></li>
+<li>暂存区: <code>git add</code></li>
+<li>管理修改: <code>git commit</code> 只提交暂存区的内容</li>
+</ul>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><ul>
+<li>查看状态: <code>git status</code></li>
+<li>查看差异: <code>git diff readme.txt</code></li>
+<li>添加暂存区: <code>git add readme.txt</code></li>
+<li>条件分支: <code>git commit readme.txt</code></li>
+<li>版本历史: <code>git log [--pretty=oneline]</code>, <code>git reflog</code></li>
+<li>版本回退: <code>git reset --hard HEAD^</code>, <code>git reset --hard 提交ID</code><ul>
+<li>HEAD 当前版本</li>
+<li>HEAD^ 上一个版本</li>
+<li>HEAD^^ 上上一个版本</li>
+</ul>
+</li>
+<li>取消修改: <code>git checkout -- readme.txt</code>, <code>git reset HEAD readme.txt</code><ul>
+<li>还没添加到暂存区: 回到和版本库一致</li>
+<li>已添加到暂存区: 回到添加到暂存区的状态</li>
+</ul>
+</li>
+<li>删除文件: <code>git rm readme.txt</code> + <code>git commit -m &quot;delete readme.txt&quot;</code></li>
+<li>恢复删除: <code>git checkout -- readme.txt</code></li>
+</ul>
+<h1 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h1><ul>
+<li>SSH 配置<ul>
+<li>创建 SSH Key: <code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code> — 生成 id_rsa 和 id_rsa.pub</li>
+<li>配置 Github: 添加 SSH Key</li>
+<li>检查是否成功: …</li>
+</ul>
+</li>
+<li>添加远程库<ul>
+<li><code>git remote add origin git@github.com:account/repository.git</code></li>
+<li><code>git push -u origin master</code>, <code>git push origin master</code></li>
+</ul>
+</li>
+<li>克隆远程库: <code>git clone git@github.com:account/repository.git</code></li>
+<li>查看远程仓库: <code>git remote</code>, <code>git remote -v</code></li>
+</ul>
+<h1 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h1><ul>
+<li>创建分支: <code>git checkout -b dev</code><ul>
+<li><code>git branch dev</code></li>
+<li><code>git checkout dev</code></li>
+</ul>
+</li>
+<li>查看分支: <code>git branch</code></li>
+<li>切换分支: <code>git checkout master</code></li>
+<li>合并分支:<ul>
+<li><code>git merge dev</code></li>
+<li><code>git merge --no-ff -m &quot;merge with no-ff&quot; dev</code></li>
+</ul>
+</li>
+<li>删除分支<ul>
+<li><code>git branch -d dev</code></li>
+<li><code>git branch -D dev</code></li>
+</ul>
+</li>
+<li>解决冲突: …</li>
+<li>分支管理策略: master, dev, issue-xxx, feture-xxx…</li>
+<li>Bug 分支<ul>
+<li><code>git stash</code></li>
+<li><code>git checkout master</code></li>
+<li><code>git add readme.txt</code></li>
+<li><code>git commit -m &quot;fix bug 101&quot;</code></li>
+<li><code>git checkout master</code></li>
+<li><code>git merge --no-ff -m &quot;merged bug fix 101&quot; issue-101</code></li>
+<li><code>git branch -d issue-101</code></li>
+<li><code>git checkout dev</code></li>
+<li><code>git status</code></li>
+<li><code>git stash list</code></li>
+<li><code>git stash apply</code>, <code>git stash drop</code> — <code>git stash pop</code></li>
+</ul>
+</li>
+<li>Feture 分支</li>
+<li>多人协作<ul>
+<li>抓取分支:<ul>
+<li><code>git clone git@github.com:michaelliao/learngit.git</code></li>
+<li><code>git branch</code> — 只有 master 分支</li>
+<li><code>git checkout -b dev origin/dev</code> — 抓取 dev 分支</li>
+<li><code>git branch --set-upstream dev origin/dev</code></li>
+<li><code>git pull</code> — 如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并</li>
+</ul>
+</li>
+<li>推送分支: <code>git push origin master</code>, <code>git push origin dev</code> — 选择必要的分支进行推送</li>
+</ul>
+</li>
+</ul>
+<h1 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h1><p>TODO</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/VCS/" rel="tag">#VCS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/editor/Sublime/" rel="next" title="Sublime">
+                <i class="fa fa-chevron-left"></i> Sublime
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/react/React-Compatibility/" rel="prev" title="React 兼容性">
+                React 兼容性 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="vcs/Git-Command/"
+           data-title="Git 常用命令" data-url="http://zhbhun.github.io/blog/blog/vcs/Git-Command/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/1996891"
+               alt="zhbhun" />
+          <p class="site-author-name" itemprop="name">zhbhun</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/blog/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/blog/categories">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags">
+                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/blog/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhbhun" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/zhbhun" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/zhbhun" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/zhbhun" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建版本库"><span class="nav-number">1.</span> <span class="nav-text">创建版本库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#管理版本库"><span class="nav-number">2.</span> <span class="nav-text">管理版本库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令"><span class="nav-number">2.2.</span> <span class="nav-text">命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程仓库"><span class="nav-number">3.</span> <span class="nav-text">远程仓库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分支管理"><span class="nav-number">4.</span> <span class="nav-text">分支管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标签管理"><span class="nav-number">5.</span> <span class="nav-text">标签管理</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhbhun</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/blog/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhbhun-notes"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

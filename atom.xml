@@ -615,70 +615,6 @@
   </entry>
   
   <entry>
-    <title>Redux Reducer</title>
-    <link href="http://zhbhun.github.io/blog/redux/Redux-Reducer/"/>
-    <id>http://zhbhun.github.io/blog/redux/Redux-Reducer/</id>
-    <published>2016-09-02T16:00:00.000Z</published>
-    <updated>2016-11-15T13:12:02.658Z</updated>
-    
-    <content type="html">&lt;h1 id=&quot;状态结构&quot;&gt;&lt;a href=&quot;#状态结构&quot; class=&quot;headerlink&quot; title=&quot;状态结构&quot;&gt;&lt;/a&gt;状态结构&lt;/h1&gt;&lt;p&gt;设计原则&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;把应用的 state 想像成数据库；&lt;/li&gt;
-&lt;li&gt;尽量将业务数据和 UI 相关的状态分开；&lt;/li&gt;
-&lt;li&gt;尽可能地把 state 范式化，不存在嵌套，即把所有数据放到一个对象里，每个数据以 ID 为主键，不同实体或列表间通过 ID 相互引用数据；&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;参考示例&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/reactjs/redux/tree/master/examples/real-world&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;real-world&lt;/a&gt;：将业务数据放在 entities 对象中，以业务名称作为 key 存放业务对象，每个业务对象都以业务数据 id 为 key，存放对应的业务数据。页面相关的数据和状态存放在 pagination 对象中，以页面名称作为 key 存放页面对象，每个页面对象中都使用 id 来引用业务数据。&lt;/li&gt;
-&lt;li&gt;…&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;处理-Action&quot;&gt;&lt;a href=&quot;#处理-Action&quot; class=&quot;headerlink&quot; title=&quot;处理 Action&quot;&gt;&lt;/a&gt;处理 Action&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;只要传入参数相同，返回计算得到的下一个 state 就一定相同。没有特殊情况、没有副作用，没有 API 请求、没有变量修改，单纯执行计算。&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;禁止修改传入参数；&lt;/li&gt;
-&lt;li&gt;禁止执行有副作用的操作，如 API 请求和路由跳转；&lt;/li&gt;
-&lt;li&gt;禁止调用非纯函数，如 Date.now() 或 Math.random()；&lt;/li&gt;
-&lt;li&gt;遇到未知的 action 时，一定要返回旧的 state；&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;不要修改 state：利用 Object.assgin 或 ES7 对象展开运算符创建 state 副本，也可以使用帮助类&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react/docs/update.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Immutability Helpers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/substantial/updeep&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;updeep&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://facebook.github.io/immutable-js/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Immutable&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;备注：处理 Action 的函数之所以称作 reducer 是因为它将被传递给 Array.prototype.reduce(reducer, ?initialValue) 方法。&lt;/p&gt;
-&lt;h1 id=&quot;拆分-Reducer&quot;&gt;&lt;a href=&quot;#拆分-Reducer&quot; class=&quot;headerlink&quot; title=&quot;拆分 Reducer&quot;&gt;&lt;/a&gt;拆分 Reducer&lt;/h1&gt;&lt;p&gt;如果将所有状态更新都放在一个模块里，代码会变得非常冗长。而 state 中有的的字段是相互独立的，有的又是相互依赖的，我们可以将相互独立的字段分到单独的模块里更新，例如示例 Todo 的 todos 和 visibilityFilter 是相互独立的。&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import &amp;#123; combineReducers &amp;#125; from &amp;apos;redux&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import * as reducers from &amp;apos;./reducers&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;const todoApp = combineReducers(reducers)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h1 id=&quot;范式化-Store&quot;&gt;&lt;a href=&quot;#范式化-Store&quot; class=&quot;headerlink&quot; title=&quot;范式化 Store&quot;&gt;&lt;/a&gt;范式化 Store&lt;/h1&gt;&lt;p&gt;前面在设计状态结构时，提到尽可能地把 state 范式化，我们可以借助一些工具帮我们简化范式化的实现。&lt;/p&gt;
-&lt;h2 id=&quot;统一-key-名称格式&quot;&gt;&lt;a href=&quot;#统一-key-名称格式&quot; class=&quot;headerlink&quot; title=&quot;统一 key 名称格式&quot;&gt;&lt;/a&gt;统一 key 名称格式&lt;/h2&gt;&lt;p&gt;问题：服务端返回数据的 key 命名规则可能各不一样，有些以下划线来分割命名，有些又是采用驼峰式的命名规则。为了统一命名规则，需要转换返回的数据。&lt;/p&gt;
-&lt;p&gt;解决方案：&lt;a href=&quot;https://github.com/domchristie/humps&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;humps&lt;/a&gt; 是一个连接符命名和驼峰命名之间的转换工具。&lt;/p&gt;
-&lt;h2 id=&quot;扁平化数据&quot;&gt;&lt;a href=&quot;#扁平化数据&quot; class=&quot;headerlink&quot; title=&quot;扁平化数据&quot;&gt;&lt;/a&gt;扁平化数据&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/paularmstrong/normalizr&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;normalizr&lt;/a&gt;：统一转为类似下面的数据结构&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;quot;result&amp;quot;: String/Object,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;quot;entities&amp;quot;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        [业务数据名称]: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            [业务数据唯一标识符]: &amp;#123;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h1 id=&quot;其他&quot;&gt;&lt;a href=&quot;#其他&quot; class=&quot;headerlink&quot; title=&quot;其他&quot;&gt;&lt;/a&gt;其他&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/reactjs/reselect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/reactjs/reselect&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://cn.redux.js.org/docs/recipes/ReducingBoilerplate.html#reducers&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://cn.redux.js.org/docs/recipes/ReducingBoilerplate.html#reducers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;状态结构&quot;&gt;&lt;a href=&quot;#状态结构&quot; class=&quot;headerlink&quot; title=&quot;状态结构&quot;&gt;&lt;/a&gt;状态结构&lt;/h1&gt;&lt;p&gt;设计原则&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;把应用的 state 想像成数据库；&lt;/li&gt;
-&lt;li&gt;尽量将业务数据和 UI 相关的状
-    
-    </summary>
-    
-      <category term="Redux" scheme="http://zhbhun.github.io/blog/categories/Redux/"/>
-    
-    
-      <category term="Redux" scheme="http://zhbhun.github.io/blog/tags/Redux/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Redux Action</title>
     <link href="http://zhbhun.github.io/blog/redux/Redux-Action/"/>
     <id>http://zhbhun.github.io/blog/redux/Redux-Action/</id>
@@ -754,6 +690,70 @@
       &lt;p&gt;Action 是把数据从应用传到 store 的有效载荷 —— store 数据的唯一来源。&lt;/p&gt;
 &lt;p&gt;Action 本质上是 JavaScript 普通对象，Redux 约定 action 内必须使用一个字符串类型的 type 字段来表示将要执行的动作。&lt;/p&gt;
 &lt;u
+    
+    </summary>
+    
+      <category term="Redux" scheme="http://zhbhun.github.io/blog/categories/Redux/"/>
+    
+    
+      <category term="Redux" scheme="http://zhbhun.github.io/blog/tags/Redux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redux Reducer</title>
+    <link href="http://zhbhun.github.io/blog/redux/Redux-Reducer/"/>
+    <id>http://zhbhun.github.io/blog/redux/Redux-Reducer/</id>
+    <published>2016-09-02T16:00:00.000Z</published>
+    <updated>2016-11-15T13:12:02.658Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;状态结构&quot;&gt;&lt;a href=&quot;#状态结构&quot; class=&quot;headerlink&quot; title=&quot;状态结构&quot;&gt;&lt;/a&gt;状态结构&lt;/h1&gt;&lt;p&gt;设计原则&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;把应用的 state 想像成数据库；&lt;/li&gt;
+&lt;li&gt;尽量将业务数据和 UI 相关的状态分开；&lt;/li&gt;
+&lt;li&gt;尽可能地把 state 范式化，不存在嵌套，即把所有数据放到一个对象里，每个数据以 ID 为主键，不同实体或列表间通过 ID 相互引用数据；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;参考示例&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/reactjs/redux/tree/master/examples/real-world&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;real-world&lt;/a&gt;：将业务数据放在 entities 对象中，以业务名称作为 key 存放业务对象，每个业务对象都以业务数据 id 为 key，存放对应的业务数据。页面相关的数据和状态存放在 pagination 对象中，以页面名称作为 key 存放页面对象，每个页面对象中都使用 id 来引用业务数据。&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;处理-Action&quot;&gt;&lt;a href=&quot;#处理-Action&quot; class=&quot;headerlink&quot; title=&quot;处理 Action&quot;&gt;&lt;/a&gt;处理 Action&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;只要传入参数相同，返回计算得到的下一个 state 就一定相同。没有特殊情况、没有副作用，没有 API 请求、没有变量修改，单纯执行计算。&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;禁止修改传入参数；&lt;/li&gt;
+&lt;li&gt;禁止执行有副作用的操作，如 API 请求和路由跳转；&lt;/li&gt;
+&lt;li&gt;禁止调用非纯函数，如 Date.now() 或 Math.random()；&lt;/li&gt;
+&lt;li&gt;遇到未知的 action 时，一定要返回旧的 state；&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;不要修改 state：利用 Object.assgin 或 ES7 对象展开运算符创建 state 副本，也可以使用帮助类&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react/docs/update.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Immutability Helpers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/substantial/updeep&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;updeep&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://facebook.github.io/immutable-js/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Immutable&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;备注：处理 Action 的函数之所以称作 reducer 是因为它将被传递给 Array.prototype.reduce(reducer, ?initialValue) 方法。&lt;/p&gt;
+&lt;h1 id=&quot;拆分-Reducer&quot;&gt;&lt;a href=&quot;#拆分-Reducer&quot; class=&quot;headerlink&quot; title=&quot;拆分 Reducer&quot;&gt;&lt;/a&gt;拆分 Reducer&lt;/h1&gt;&lt;p&gt;如果将所有状态更新都放在一个模块里，代码会变得非常冗长。而 state 中有的的字段是相互独立的，有的又是相互依赖的，我们可以将相互独立的字段分到单独的模块里更新，例如示例 Todo 的 todos 和 visibilityFilter 是相互独立的。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import &amp;#123; combineReducers &amp;#125; from &amp;apos;redux&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import * as reducers from &amp;apos;./reducers&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;const todoApp = combineReducers(reducers)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;范式化-Store&quot;&gt;&lt;a href=&quot;#范式化-Store&quot; class=&quot;headerlink&quot; title=&quot;范式化 Store&quot;&gt;&lt;/a&gt;范式化 Store&lt;/h1&gt;&lt;p&gt;前面在设计状态结构时，提到尽可能地把 state 范式化，我们可以借助一些工具帮我们简化范式化的实现。&lt;/p&gt;
+&lt;h2 id=&quot;统一-key-名称格式&quot;&gt;&lt;a href=&quot;#统一-key-名称格式&quot; class=&quot;headerlink&quot; title=&quot;统一 key 名称格式&quot;&gt;&lt;/a&gt;统一 key 名称格式&lt;/h2&gt;&lt;p&gt;问题：服务端返回数据的 key 命名规则可能各不一样，有些以下划线来分割命名，有些又是采用驼峰式的命名规则。为了统一命名规则，需要转换返回的数据。&lt;/p&gt;
+&lt;p&gt;解决方案：&lt;a href=&quot;https://github.com/domchristie/humps&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;humps&lt;/a&gt; 是一个连接符命名和驼峰命名之间的转换工具。&lt;/p&gt;
+&lt;h2 id=&quot;扁平化数据&quot;&gt;&lt;a href=&quot;#扁平化数据&quot; class=&quot;headerlink&quot; title=&quot;扁平化数据&quot;&gt;&lt;/a&gt;扁平化数据&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/paularmstrong/normalizr&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;normalizr&lt;/a&gt;：统一转为类似下面的数据结构&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;quot;result&amp;quot;: String/Object,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;quot;entities&amp;quot;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        [业务数据名称]: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            [业务数据唯一标识符]: &amp;#123;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;其他&quot;&gt;&lt;a href=&quot;#其他&quot; class=&quot;headerlink&quot; title=&quot;其他&quot;&gt;&lt;/a&gt;其他&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/reactjs/reselect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/reactjs/reselect&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://cn.redux.js.org/docs/recipes/ReducingBoilerplate.html#reducers&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://cn.redux.js.org/docs/recipes/ReducingBoilerplate.html#reducers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;状态结构&quot;&gt;&lt;a href=&quot;#状态结构&quot; class=&quot;headerlink&quot; title=&quot;状态结构&quot;&gt;&lt;/a&gt;状态结构&lt;/h1&gt;&lt;p&gt;设计原则&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;把应用的 state 想像成数据库；&lt;/li&gt;
+&lt;li&gt;尽量将业务数据和 UI 相关的状
     
     </summary>
     

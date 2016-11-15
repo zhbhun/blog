@@ -1,0 +1,753 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Redux," />
+
+
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="ZHBHUN" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Action 是把数据从应用传到 store 的有效载荷 —— store 数据的唯一来源。
+Action 本质上是 JavaScript 普通对象，Redux 约定 action 内必须使用一个字符串类型的 type 字段来表示将要执行的动作。
+
+Action
+Reducing Boilerplate
+flux-standard-action
+
+UsageAction 一般是通过 store.d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redux Action">
+<meta property="og:url" content="http://zhbhun.github.io/blog/redux/Redux-Action/index.html">
+<meta property="og:site_name" content="ZHBHUN">
+<meta property="og:description" content="Action 是把数据从应用传到 store 的有效载荷 —— store 数据的唯一来源。
+Action 本质上是 JavaScript 普通对象，Redux 约定 action 内必须使用一个字符串类型的 type 字段来表示将要执行的动作。
+
+Action
+Reducing Boilerplate
+flux-standard-action
+
+UsageAction 一般是通过 store.d">
+<meta property="og:updated_time" content="2016-11-15T13:12:02.658Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Redux Action">
+<meta name="twitter:description" content="Action 是把数据从应用传到 store 的有效载荷 —— store 数据的唯一来源。
+Action 本质上是 JavaScript 普通对象，Redux 约定 action 内必须使用一个字符串类型的 type 字段来表示将要执行的动作。
+
+Action
+Reducing Boilerplate
+flux-standard-action
+
+UsageAction 一般是通过 store.d">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Redux Action | ZHBHUN </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/blog/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">ZHBHUN</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Redux Action
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-03T00:00:00+08:00" content="2016-09-03">
+              2016-09-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/blog/categories/Redux/" itemprop="url" rel="index">
+                    <span itemprop="name">Redux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/redux/Redux-Action/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="redux/Redux-Action/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Action 是把数据从应用传到 store 的有效载荷 —— store 数据的唯一来源。</p>
+<p>Action 本质上是 JavaScript 普通对象，Redux 约定 action 内必须使用一个字符串类型的 type 字段来表示将要执行的动作。</p>
+<ul>
+<li><a href="http://cn.redux.js.org/docs/basics/Actions.html" target="_blank" rel="external">Action</a></li>
+<li><a href="http://cn.redux.js.org/docs/recipes/ReducingBoilerplate.html" target="_blank" rel="external">Reducing Boilerplate</a></li>
+<li><a href="https://github.com/acdlite/flux-standard-action" target="_blank" rel="external">flux-standard-action</a></li>
+</ul>
+<h1 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h1><p>Action 一般是通过 store.dispatch() 来传给 store。下面以 Todo 示例的 ADD_TODO 为例，演示如何写好 Action。</p>
+<p><code>store.dispatch({ type: &#39;ADD_TODO&#39;, text: &#39;xxx&#39; })</code></p>
+<p>但像上面这样内联创建 action，是无法重用 action type 的，而且需要重复编写同一类型 action 的生成代码。</p>
+<h2 id="Action-creators"><a href="#Action-creators" class="headerlink" title="Action creators"></a>Action creators</h2><p>考虑代码的重用性，我们使用 action 创建函数来创建 action，并输出 action Type。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// app/actions/index.js</span><br><span class="line">export const ADD_TODO = &apos;ADD_TODO&apos;;</span><br><span class="line">export const addTodo = (text) =&gt; (&#123;</span><br><span class="line">    type: ADD_TODO,</span><br><span class="line">    text,   </span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// app/containers/xxx.js</span><br><span class="line">import &#123; addTodo &#125; from &apos;../action&apos;;</span><br><span class="line">store.dispatch(addTodo(&apos;xxx&apos;))</span><br></pre></td></tr></table></figure>
+<h2 id="Action-type-in-separate-module"><a href="#Action-type-in-separate-module" class="headerlink" title="Action type in separate module"></a>Action type in separate module</h2><p>当应用规模越来越大时，建议使用单独的模块或文件来存放 action。</p>
+<ul>
+<li>便于维护命名一致性；</li>
+<li>便于维护代码：查询所有现存的 actions，查看 action 的添加，删除和修改记录；</li>
+<li>便于发现拼写错误；</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app/constants/ActionTypes.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> ADD_TODO = <span class="string">'ADD_TODO'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// app/actions/index.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; ADD_TODO &#125; <span class="keyword">from</span> <span class="string">'../constants/ActionTypes'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> action = (text) =&gt; (&#123;</span><br><span class="line">    type: ADD_TODO,</span><br><span class="line">    text,   </span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// app/containers/xxx.js</span></span><br><span class="line"><span class="comment">// ...</span></span><br></pre></td></tr></table></figure>
+<h2 id="Generating-Action-Creators"><a href="#Generating-Action-Creators" class="headerlink" title="Generating Action Creators"></a>Generating Action Creators</h2><p>写简单的 action creator 很容易让人厌烦，且往往最终生成多余的样板代码。</p>
+<p>我们可以写一个用于生成 action creator 的函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeActionCreator</span>(<span class="params">type, ...argNames</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> action = &#123; type &#125;;</span><br><span class="line">    argNames.forEach((arg, index) =&gt; &#123;</span><br><span class="line">      action[argNames[index]] = args[index]</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> action;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ADD_TODO = <span class="string">'ADD_TODO'</span>;</span><br><span class="line"><span class="keyword">const</span> EDIT_TODO = <span class="string">'EDIT_TODO'</span>;</span><br><span class="line"><span class="keyword">const</span> REMOVE_TODO = <span class="string">'REMOVE_TODO'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> addTodo = makeActionCreator(ADD_TODO, <span class="string">'text'</span>);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> editTodo = makeActionCreator(EDIT_TODO, <span class="string">'id'</span>, <span class="string">'text'</span>);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> removeTodo = makeActionCreator(REMOVE_TODO, <span class="string">'id'</span>);</span><br></pre></td></tr></table></figure>
+<p>一些工具库也可以帮助生成 action creator</p>
+<ul>
+<li><a href="https://github.com/pauldijou/redux-act" target="_blank" rel="external">redux-act</a></li>
+<li><a href="https://github.com/acdlite/redux-actions" target="_blank" rel="external">redux-actions</a></li>
+</ul>
+<h2 id="Async-Action-Creators"><a href="#Async-Action-Creators" class="headerlink" title="Async Action Creators"></a>Async Action Creators</h2><p>实现原理</p>
+<ul>
+<li><a href="http://cn.redux.js.org/docs/advanced/AsyncActions.html" target="_blank" rel="external">Async Actions</a></li>
+<li><a href="http://cn.redux.js.org/docs/advanced/AsyncFlow.html" target="_blank" rel="external">异步数据流</a></li>
+<li><a href="http://cn.redux.js.org/docs/advanced/Middleware.html" target="_blank" rel="external">Middleware</a></li>
+</ul>
+<p><a href="http://cn.redux.js.org/docs/recipes/ReducingBoilerplate.html#异步-action-creators" target="_blank" rel="external">循序渐进对比异步动作的写法</a></p>
+<ol>
+<li>没有中间件：必须通过组件提供 dispatch 和 state 来实现判断是否有数据，开始加载（设置 loading 状态），加载成功和加载失败这些逻辑；</li>
+<li>使用中间件 redux-thunk：直接在 action creator 返回函数的参数里获取 dispatch 和 state，便于代码重用，写出表达更清晰的、潜在的异步 action creators；</li>
+<li>定制中间件：统一约定服务器端接口返回数据格式，将异步 action creator 模式泛化，大大减少重复代码；</li>
+</ol>
+<p>Action Creator 命名技巧</p>
+<ul>
+<li><code>loadData/loadDataIfNeeded: function</code></li>
+<li><code>loadDataRequest: { type: &#39;LOAD_DATA_REQUEST&#39; }</code></li>
+<li><code>loadDataSuccess: { type: &#39;LOAD_DATA_SUCCESS&#39;, response }</code></li>
+<li><code>loadDataFailure: { type: &#39;LOAD_DATA_FAILURE&#39;, error }</code></li>
+</ul>
+<p>相关实现</p>
+<ul>
+<li><a href="https://github.com/gaearon/redux-thunk" target="_blank" rel="external">redux-thunk</a></li>
+<li><a href="https://github.com/acdlite/redux-promise" target="_blank" rel="external">redux-promise</a></li>
+<li><a href="https://github.com/pburtchaell/redux-promise-middleware" target="_blank" rel="external">redux-promise-middleware</a></li>
+</ul>
+<p>问题</p>
+<ul>
+<li>模板代码</li>
+<li>乐观更新</li>
+<li>错误处理</li>
+</ul>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
+<li><a href="http://react-china.org/t/redux/8761" target="_blank" rel="external">Redux异步方案选型</a></li>
+<li><a href="https://github.com/acdlite/flux-standard-action/issues/7" target="_blank" rel="external">Optimistic updates</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Redux/" rel="tag">#Redux</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/redux/Redux-Reducer/" rel="next" title="Redux Reducer">
+                <i class="fa fa-chevron-left"></i> Redux Reducer
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/redux/Redux-In-Action/" rel="prev" title="Redux 项目实践">
+                Redux 项目实践 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="redux/Redux-Action/"
+           data-title="Redux Action" data-url="http://zhbhun.github.io/blog/blog/redux/Redux-Action/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/1996891"
+               alt="zhbhun" />
+          <p class="site-author-name" itemprop="name">zhbhun</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/blog/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/blog/categories">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags">
+                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/blog/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhbhun" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/zhbhun" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/zhbhun" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/zhbhun" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Usage"><span class="nav-number">1.</span> <span class="nav-text">Usage</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Action-creators"><span class="nav-number">1.1.</span> <span class="nav-text">Action creators</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Action-type-in-separate-module"><span class="nav-number">1.2.</span> <span class="nav-text">Action type in separate module</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generating-Action-Creators"><span class="nav-number">1.3.</span> <span class="nav-text">Generating Action Creators</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Async-Action-Creators"><span class="nav-number">1.4.</span> <span class="nav-text">Async Action Creators</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">2.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhbhun</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/blog/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhbhun-notes"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
