@@ -2,7 +2,7 @@
 title: React 基于“全局变量”的组件通信
 date: 2016-05-25
 category: React
-tags: JavaScript React
+tags: React
 ---
 
 React 开发中，一般将状态放在外层组件，然后将状态通过属性一层层的传到相应的里层组件中，再渲染显示出来。例如下面这段代码，外层组件 App 有个状态 color，其以属性的形式经过 MessageList，Message 传给 Button。

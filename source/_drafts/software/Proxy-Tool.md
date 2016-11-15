@@ -1,8 +1,8 @@
 ---
 title: 代理工具
 date: 2016-08-03
-category: Proxy
-tags: Proxy
+category: Software
+tags: Software
 ---
 
 | 名称 | 兼容性 | 协议 | 替换 | 审查 |

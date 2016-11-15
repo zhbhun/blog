@@ -1,9 +1,11 @@
 ---
-title: Sublime 安装配置
+title: Sublime
 date: 2015-11-14
 categories: Editor
 tags: Editor
 ---
+
+Sublime  是一个跨平台的编辑器，同时支持 Windows、Linux、Mac OS X 等操作系统，由程序员 Jon Skinner 于 2008 年 1 月份所开发出来，它最初被设计为一个具有丰富扩展功能的 Vim。
 
 # Package Control
 1. 打开 Sublime Text 控制台：`View > Show Console`；
@@ -130,6 +132,7 @@ http://www.hongkiat.com/blog/sublime-code-snippets/
 - [Vintageous](https://packagecontrol.io/packages/Vintageous)：vi/vim 模拟器
 
 # 主题
+
 我自己使用的主题是 `Theme - Spacegray`，可以访问网址 https://packagecontrol.io/browse/labels/theme 寻找自己想要的主题。
 
 1. 打开命令面板：`ctrl + shift + p`

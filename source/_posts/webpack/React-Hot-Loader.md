@@ -1,5 +1,5 @@
 ---
-title: React Hot Loader 前世今生
+title: React Hot Loader
 date: 2016-09-06
 category: Webpack
 tags: Webpack

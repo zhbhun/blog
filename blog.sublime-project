@@ -2,15 +2,13 @@
 	"folders":
 	[
 		{
-			"path": "./source/"
+			"path": "./"
 		}
 	],
 	"settings":
 	{
 		"font_face": "YaHei Consolas Hybrid",
-		"rulers":
-		[
-		],
+		"rulers": [],
 		"word_wrap": "auto",
 		"wrap_width": 0
 	}

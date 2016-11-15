@@ -1,5 +1,5 @@
 ---
-title: 认识 Redux
+title: Redux 入门
 date: 2016-10-18
 category: Redux
 tags: Redux
@@ -55,7 +55,7 @@ Flux 是一个混合产物，了解 Redux 与其他技术的相似与不同之�
 - Rx：Reactive Extensions 是管理复杂异步应用非常优秀的方案，和 Redux 一起使用，可以配合得很好。
 
 # [生态系统](http://cn.redux.js.org/docs/introduction/Ecosystem.html)
-![Redux](../../images/Redux/Redux.png)
+![Redux](../../images/redux/Redux.png)
 
 # [示例](http://cn.redux.js.org/docs/introduction/Examples.html)
 1. 最基本的用法：View，Create Action，Action，Reducer，Store
@@ -70,11 +70,25 @@ Flux 是一个混合产物，了解 Redux 与其他技术的相似与不同之�
 
 3. 常用的 Redux 模式
 
-    - 实现异步 Action：https://github.com/reactjs/redux/tree/master/examples/async
-    - 使用 ID 来标准化存储数据实体：https://github.com/reactjs/redux/tree/master/examples/shopping-cart
-    - 在不同层级将多个 reducer 组合使用：https://github.com/reactjs/redux/tree/master/examples/shopping-cart
-    - 深层嵌套树状视图的渲染：https://github.com/reactjs/redux/tree/master/examples/tree-view
-    - 使用 Redux Logger 生成日志：https://github.com/reactjs/redux/tree/master/examples/shopping-cart
+    - 实现异步 Action
+    
+        https://github.com/reactjs/redux/tree/master/examples/async
+
+    - 使用 ID 来标准化存储数据实体
+
+        https://github.com/reactjs/redux/tree/master/examples/shopping-cart
+
+    - 在不同层级将多个 reducer 组合使用
+
+        https://github.com/reactjs/redux/tree/master/examples/shopping-cart
+
+    - 深层嵌套树状视图的渲染
+
+        https://github.com/reactjs/redux/tree/master/examples/tree-view
+
+    - 使用 Redux Logger 生成日志
+    
+        https://github.com/reactjs/redux/tree/master/examples/shopping-cart
 
 4. 服务端渲染：https://github.com/reactjs/redux/tree/master/examples/universal
 5. 完整的应用示例：https://github.com/reactjs/redux/tree/master/examples/real-world

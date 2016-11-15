@@ -5,8 +5,7 @@ category: Node.js
 tags: Node.js
 ---
 
-# 更新历史
-- [Node.js 6.0支持93%的ES2015语法](http://www.tuicool.com/articles/hit/aAVbYnI)
+Node.js 是一个 Javascript 运行环境。实际上它是对 Google V8 引擎进行了封装。V8 引 擎执行 Javascript 的速度非常快，性能非常好。Node.js 对一些特殊用例进行了优化，提供了替代的 API，使得 V8 在非浏览器环境下运行得更好。
 
 # 安装配置
 安装 nvm
@@ -47,6 +46,9 @@ tags: Node.js
 
 - https://github.com/creationix/nvm
 - [使用 nvm 管理不同版本的 node 与 npm](http://www.cnblogs.com/kaiye/p/4937191.html)
+
+# 更新历史
+- [Node.js 6.0支持93%的ES2015语法](http://www.tuicool.com/articles/hit/aAVbYnI)
 
 # 学习资源
 - [如何用 Node.js 编写一个 API 客户端](http://morning.work/page/2016-05/how-to-write-a-nodejs-api-client-package.html)

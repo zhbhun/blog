@@ -5,7 +5,9 @@ category: Editor
 tags: Editor
 ---
 
-# 简介
+
+Atom 是由GitHub开发的自由及开放源代码的文字与代码编辑器，支持 OS X、Windows 和 Linux 操作系统，支持 Node.js 所写的插件，并内置 Git 版本控制系统。
+
 - 官方网站：https://atom.io/
 - 官方文档：https://atom.io/docs
 - 官方博客：http://blog.atom.io/
@@ -14,7 +16,6 @@ tags: Editor
 - 官方论坛：http://discuss.atom.io/
 - 中文社区：https://atom-china.org/
 
-Atom是由GitHub开发的自由及开放源代码的文字与代码编辑器，支持OS X、Windows和Linux操作系统，支持Node.js所写的插件，并内置Git版本控制系统。
 
 # 插件
 - [Most Download Pacakge](https://atom.io/packages/list)

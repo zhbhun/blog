@@ -5,7 +5,9 @@ category: Editor
 tags: Editor
 ---
 
-- https://code.visualstudio.com/docs
+Visual Studio Code 是一个运行于 Mac OS X、Windows和 Linux 之上的，针对于编写现代 Web 和云应用的跨平台源代码编辑器。
+
+- 官方文档：https://code.visualstudio.com/docs
 - [Visual Studio Code 配置指南](https://github.com/kaiye/kaiye.github.com/issues/14)
 - [Visual Studio Code，完美的编辑器](http://www.jianshu.com/p/75614a581391)
 

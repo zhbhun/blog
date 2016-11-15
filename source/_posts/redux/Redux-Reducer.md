@@ -5,9 +5,6 @@ category: Redux
 tags: Redux
 ---
 
-
-- http://cn.redux.js.org/docs/recipes/ReducingBoilerplate.html#reducers
-
 # 状态结构
 设计原则
 
@@ -21,6 +18,7 @@ tags: Redux
 - ...
 
 # 处理 Action
+
 **只要传入参数相同，返回计算得到的下一个 state 就一定相同。没有特殊情况、没有副作用，没有 API 请求、没有变量修改，单纯执行计算。**
 
 - 禁止修改传入参数；
@@ -71,3 +69,6 @@ const todoApp = combineReducers(reducers)
 
 # 其他
 - https://github.com/reactjs/reselect
+
+# 参考
+- http://cn.redux.js.org/docs/recipes/ReducingBoilerplate.html#reducers
