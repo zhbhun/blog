@@ -24,3 +24,12 @@ tags: Browser
 - https://github.com/harshjv/github-repo-size
 - https://github.com/muan/dashboard
 - https://github.com/showcases/github-browser-extensions
+
+# Todo
+- Vimium
+- 印象笔记·剪藏
+- Save to Pocket
+- FVD Downloader
+- TweetDeck by Twitter
+- LastPass
+- CSSViewer

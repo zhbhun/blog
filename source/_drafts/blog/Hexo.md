@@ -29,6 +29,9 @@ https://hexo.io/zh-cn/docs/setup.html
 - scaffolds：模版文件夹
 - source：资源文件夹
 
+    - _drafts：草稿
+    - _posts：文章
+
 # 配置
 https://hexo.io/zh-cn/docs/configuration.html
 
@@ -38,5 +41,7 @@ https://hexo.io/zh-cn/docs/commands.html
 # 写作
 
 # 部署
+
+# 主题
 
 # 高级

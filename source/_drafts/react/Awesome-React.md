@@ -37,6 +37,19 @@ tags: React
 - [React中一个没人能解释清楚的问题——为什么要使用Virtual DOM](http://www.zcfy.cc/article/the-one-thing-that-no-one-properly-explains-about-react-why-virtual-dom-hashnode-1211.html)
 - [Vue或React多页应用脚手架](https://segmentfault.com/a/1190000006789546)
 
+# 项目经验
+- [一个完整的React项目下来后的总结](http://react-china.org/t/react/2091)
+
+    环境：编程语言，开发工具，技术框架，测试环境
+
+    总结：Flex，React，Flux，ImmutableJS
+
+    问题：Flux...
+
+
+- ...
+
+
 # 开源项目
 - [cnode-react](https://github.com/stop2stare/cnode-react)
 - [react-koa-demo](https://github.com/sxlfzhy/react-koa-demo)
