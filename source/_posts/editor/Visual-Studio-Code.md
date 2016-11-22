@@ -67,6 +67,12 @@ https://marketplace.visualstudio.com/VSCode
 - [Material-theme](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme)
 
 # 问题
+## 中文乱码
+[Microsoft Visual Studio Code如何支持中文？](https://www.zhihu.com/question/30033418/answer/51510228)
+
+## 项目/工作空间设置
+[User and Workspace Settings](https://code.visualstudio.com/Docs/customization/userandworkspace#_common-questions)
+
 ## 总是询问 Git 仓库的登陆用户和密码
 - [Visual Studio Code always asking for git credentials](http://stackoverflow.com/questions/34400272/visual-studio-code-always-asking-for-git-credentials)
 - [Caching your GitHub password in Git](https://help.github.com/articles/caching-your-github-password-in-git/)
