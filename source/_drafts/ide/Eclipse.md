@@ -281,12 +281,15 @@ C:\eclipse\eclipse.exe -vm "C:\Program Files\Java\jdk1.5.0_08\ bin\javaw.exe" -v
 
 2. 项目没有正确的构建
 
-    在 Eclipse 里直接部署 M2Eclipse 创建的 Web 项目时，会将项目根目录下的 target/classes 和 target/m2e-wtp/web-resources 拷贝至部署目录下。如果检查 target 目录下没有对应的文件存在，请执行"项目 > Maven -> Update Project"和"项目 > Build Project"。
+    在 Eclipse 里直接部署 M2Eclipse 创建的 Web 项目时，会将项目根目录下的 target/classes 和 target/m2e-wtp/web-resources 拷贝至部署目录下。如果检查 target 目录下没有对应的文件存在，请执行"项目 > Maven -> Update Project" 和 "项目 > Build Project"。
 
 总结：关键是学会使用 Problems 试图提供的错误提示解决问题，以及熟悉 M2Eclipse 生成的 target 目录（和 Web Deployment Assembly 有关，要与 maven 命令生成的文件结构区分），可参考如下的解释。
 
 - target/classes：项目源码变异后的文件和一些资源文件（src/main/java/ 和 src/main/resource）
 - target/m2e-wtp/web-resources：META-INF 和 WEB-INF（包含一些系统路径指定的依赖 jar 包）
+
+## Errors running builder "Integrated External Tool Builder" on project
+http://blog.csdn.net/yhzhang1016/article/details/8698534
 
 # 教程
 - [eclipse使用国内镜像站点安装插件](http://www.cnblogs.com/smartdog/archive/2012/11/06/2757372.html)

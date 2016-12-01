@@ -7,6 +7,9 @@ tags: React
 
 - [react-bootstrap/react-prop-types](https://github.com/react-bootstrap/react-prop-types)
 
+# 书籍
+- [《深入 React 技术栈》](https://segmentfault.com/a/1190000007550254)
+
 # 版本历史
 - [CHANGELOG](https://github.com/facebook/react/blob/master/CHANGELOG.md)
 

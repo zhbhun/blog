@@ -34,6 +34,7 @@ tags: React
 - [react-iscroll](https://github.com/schovi/react-iscroll)
 
 # 编辑器
+- [react-draft-wysiwyg](https://github.com/jpuri/react-draft-wysiwyg) - A Wysiwyg editor build on top of ReactJS and DraftJS. - by [jpuri](https://github.com/jpuri)
 - [react-umeditor](https://github.com/liuhong1happy/react-umeditor)
 
 # 触控

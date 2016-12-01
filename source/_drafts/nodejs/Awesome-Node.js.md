@@ -1,11 +1,16 @@
 ---
-title: Node.js 资源合集
-date: 2016-04-28
+title: Awesome Node.js
+date: 2016-11-28
 category: Node.js
 tags: Node.js
 ---
 
-# 推荐书籍
+# 工具
+- [http-server](https://github.com/indexzero/http-server) - a simple zero-configuration command-line http server - by [indexzero](https://github.com/indexzero)
+- [serve](https://github.com/tj/serve) - Simple command-line file / directory server built with connect - supports stylus, jade, etc - by [tj](https://github.com/tj)
+- [npm-run](https://github.com/timoxley/npm-run)
+
+# 书籍
 - [The Node Beginner Book](https://book.douban.com/subject/11540736/)
     - 作者: Manuel Kiessling
     - 出版年: 2012-4-6

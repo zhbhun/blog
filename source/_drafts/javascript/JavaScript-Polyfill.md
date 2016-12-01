@@ -11,3 +11,5 @@ tags: JavaScript
     - https://github.com/github/fetch
     - https://github.com/undoZen/fetch
     - https://github.com/camsong/fetch-ie8
+
+- [What is a Polyfill?](https://remysharp.com/2010/10/08/what-is-a-polyfill)

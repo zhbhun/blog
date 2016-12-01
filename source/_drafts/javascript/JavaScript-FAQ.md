@@ -197,8 +197,21 @@ ECMAscript 5 添加了第二种运行模式："严格模式"（strict mode）。
 
 **区别**
 
-- ...
-- TODO
+- 变量必须声明后再使用
+- 函数的参数不能有同名属性，否则报错
+- 不能使用with语句
+- 不能对只读属性赋值，否则报错
+- 不能使用前缀0表示八进制数，否则报错
+- 不能删除不可删除的属性，否则报错
+- 不能删除变量delete prop，会报错，只能删除属性delete global[prop]
+- eval不会在它的外层作用域引入变量
+- eval和arguments不能被重新赋值
+- arguments不会自动反映函数参数的变化
+- 不能使用arguments.callee
+- 不能使用arguments.caller
+- 禁止this指向全局对象
+- 不能使用fn.caller和fn.arguments获取函数调用的堆栈
+- 增加了保留字（比如protected、static和interface）
 
 **兼容性**
 
@@ -226,6 +239,11 @@ IE6，7，8，9 均不支持严格模式
 - getElementsByTagName()：通过标签名称
 - getElementsByName()： 通过元素的Name属性的值(IE容错能力较强，会得到一个数组，其中包括 id 等于 name  值的)；
 - getElementById()：通过元素 Id，唯一性
+
+常见问题
+
+- 两个节点之间可能存在哪些关系以及如何在节点之间任意移动
+- 如何添加、移除、移动、复制、创建和查找节点等
 
 ## 事件
 **事件流**
@@ -358,7 +376,11 @@ IE6，7，8，9 均不支持严格模式
 - 触摸和手势事件
 - 设备事件
 
-### 触摸事件
+**常见问题**
+
+- 如何使用事件，以及IE和标准DOM事件模型之间存在的差别
+
+触摸事件
 
 - 触发逻辑
     - 轻按：touchstart -> touchend -> mouseover -> mouseenter -> mousemove -> mousedown -> mouseup -> click
@@ -414,40 +436,6 @@ IE6，7，8，9 均不支持严格模式
 - [document.body.scrollTop in IE](https://forums.digitalpoint.com/threads/document-body-scrolltop-in-ie.11965/)
 - [ScrollTop not working in IE](http://stackoverflow.com/questions/6736849/scrolltop-not-working-in-ie)
 - [火狐、谷歌、IE关于document.body.scrollTop和document.documentElement.scrollTop 以及值为0的问题](http://www.cnblogs.com/aaronjs/p/4153519.html)
-
-# 存储
-有哪些存储方式
-
-1. cookie
-2. usedata
-3. sessionStorage
-4. globalStorage
-5. localStorage
-
-Cookie VS Web Storage
-
-1. cookie 的作用是与服务器进行交互，作为 HTTP 规范的一部分而存在，而 Web Storage 仅仅是为了在本地“存储”数据而生；
-2. Web Storage 为了更大容量存储设计的，而 Cookie 大小是受限制的；
-3. Cookie 需要指定作用域，且不能跨域共享；
-4. Cookie 随着 HTTP 请求一起发送给服务端，而 Web Storage 不会；
-5. 兼容性问题：除了 IE7 及以下版本外，都支持 Web Storage，IE7、IE6 的本地存储解决方案是 userData，可以自行封装统一的 Web Storage；
-
-## Cookie
-Cookie 的弊端
-
-1. 每个特定的域名下最多生成 20 个 cookie；
-    - IE6 或更低版本最多 20 个 cookie；
-    - IE7 和之后的版本最后可以有 50 个 cookie；
-    - Firefox 最多 50 个 cookie；
-    - chrome 和 Safari 没有做硬性限制；
-2. IE 和 Opera 会清理近期最少使用的 cookie， Firefox 会随机清理 cookie；
-3. cookie 的最大大约为 4096 字节，为了兼容性，一般不能超过 4095 字节；
-
-Cookie 使用经验
-
-1. 控制 cookie 的生命期，避免使用不会失效的 cookie；
-2. 只在 cookie 中存放不敏感数据；
-3. 通过加密和安全传输技术（SSL），减少 cookie 被破解的可能性；
 
 
 # 网络
@@ -583,6 +571,8 @@ Cookie 使用经验
 - [CommonJS规范](http://javascript.ruanyifeng.com/nodejs/module.html)
 - [详解JavaScript模块化开发](https://segmentfault.com/a/1190000000733959)
 - [http://www.ruanyifeng.com/blog/2012/11/require_js.html](https://www.douban.com/note/283566440/)
+- [umd](https://github.com/umdjs/umd)
+- [Clearing up the Babel 6 Ecosystem](https://medium.com/@jcse/clearing-up-the-babel-6-ecosystem-c7678a314bf3#.4n5hsyb3n)
 
 ## 通知
 - [iNotify](https://github.com/jaywcjlove/iNotify)
