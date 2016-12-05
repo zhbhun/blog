@@ -22,15 +22,6 @@ FOUC（Flash Of Unstyled Content，无样式内容闪烁）是浏览器在外部
 - [Prevent FOUC](https://gist.github.com/johnpolacek/3827270)
 - [The FOUC Problem](https://webkit.org/blog/66/the-fouc-problem/)
 
-# 选择器
-**有哪些选择器**
-...
-
-**优先级算法**
-- !important > 内联样式 > 外部样式 > 默认样式
-- 外部样式权重计算：ID 选择器-类选择器-元素选择器
-- 就近原则
-
 # 层叠
 - [KB005: CSS 层叠](http://w3help.org/zh-cn/kb/005/)
 
