@@ -45,6 +45,8 @@ that makes finding your files and launching applications blazing fast, for casua
 
     http://www.iplaysoft.com/lockhunter.html
 
+- [Q-Dir](http://www.iplaysoft.com/q-dir.html) - 经典实用免费的多窗口布局的增强型文件资源管理器工具
+
 # 浏览器
 - [Chrome](https://www.google.com/chrome/browser/desktop/index.html)
 
@@ -55,7 +57,12 @@ that makes finding your files and launching applications blazing fast, for casua
 
 # 邮件
 - [YoMail](http://www.yomail.com/)
+
+    http://www.iplaysoft.com/news/2768
+
 - [Fox Mail](http://www.foxmail.com/)
+
+    http://www.iplaysoft.com/foxmail.html
 
 # 翻译
 - [Lingoes](http://www.lingoes.cn/) - 小巧好用的免费词典翻译软件(支持英汉/日汉多国语言)
@@ -75,10 +82,15 @@ that makes finding your files and launching applications blazing fast, for casua
 
     http://www.iplaysoft.com/wiz.html
 
+- [OneNote](http://www.iplaysoft.com/onenote.html)
+- [Simplenote ](http://www.iplaysoft.com/simplenote.html)
+
 # OCR
 - [TryOCR](http://blog.sina.com.cn/u/2863794612) - 免费且支持中英文文字识别的 OCR 软件工具
 
     http://www.iplaysoft.com/tryocr.html
+
+- [TH-OCR](http://www.iplaysoft.com/th-ocr.html)
 
 # PDF
 - [Adobe Reader XI](http://www.adobe.com/)
@@ -105,8 +117,16 @@ that makes finding your files and launching applications blazing fast, for casua
 
     http://www.iplaysoft.com/pdf-image-extraction-wizard.html
 
-# Todo
+- [PDF Shaper](http://www.glorylogic.com/pdf-shaper/) - 多功能 PDF 工具集合 (格式转换Word/导出图片/加密解密)
+
+    http://www.iplaysoft.com/pdf-shaper.html
+
+- [doPDF](http://www.iplaysoft.com/dopdf.html) - 虚拟打印机 - 万能 PDF 转换软件，可将任何格式图片/文档/文件转换成 PDF 保存
+
+# GTD
 - [Pomotodo](https://pomotodo.com/intl/zh-CN/) - 番茄工作法
+- http://www.iplaysoft.com/todoist.html
+- http://www.iplaysoft.com/wunderlist.html
 
 # Markdown
 - [typora](https://www.typora.io/) - Markdown 编辑器
@@ -118,7 +138,7 @@ that makes finding your files and launching applications blazing fast, for casua
 
     http://www.iplaysoft.com/greatnews.html
 
-- ...
+- [Newsflow](http://www.iplaysoft.com/newsflow.html)
 
 # Wifi 热点
 - [WiFi共享精灵](http://www.wifigx.com/) - 不需路由器一键轻松把网线共享给手机、笔记本等同时无线上网
@@ -141,6 +161,7 @@ that makes finding your files and launching applications blazing fast, for casua
 
     http://www.iplaysoft.com/connectify.html
 
+- [猎豹免费 WiFi](http://www.iplaysoft.com/liebao-wifi.html)
 
 # 图片
 - [ACDSee Free](http://www.acdsee.com/)
@@ -218,6 +239,7 @@ Gif 制作
 
     http://www.iplaysoft.com/goodsync.html
 
+- [Backup4all Lite](http://www.iplaysoft.com/free/backup4all-lite) - 文件自动备份工具 (支持完全/增量/差异备份)
 - [Microsoft SyncToy](http://www.iplaysoft.com/3-free-local-file-sync-tools.html)
 - [FreeFileSync](http://www.iplaysoft.com/3-free-local-file-sync-tools.html)
 - [Compare Advance](http://www.iplaysoft.com/3-free-local-file-sync-tools.html)
@@ -241,6 +263,9 @@ Gif 制作
 
     http://www.iplaysoft.com/dnsjumper.html
 
+- [RouterPassView](http://www.iplaysoft.com/routerpassview.html)
+- [Wireless Network Watcher](http://www.iplaysoft.com/wireless-network-watcher.html)
+
 # 远程
 - [Splashtop](http://www.splashtop.com/zh-CN) - 跨平台远程桌面控制软件
 
@@ -249,6 +274,9 @@ Gif 制作
 - [TeamViewer](http://www.teamviewer.com/) - 最好用强大的免费跨平台远程桌面控制软件 (支持电脑和手机)
 
     http://www.iplaysoft.com/teamviewer.html
+
+- [AnyDesk](http://www.iplaysoft.com/anydesk.html)
+- [Mobizen ](http://www.iplaysoft.com/mobizen.html)
 
 # 存储
 - [SpaceSniffer](http://www.uderzo.it/) - 直观分析并清理硬盘垃圾文件的绝佳好工具
@@ -260,6 +288,8 @@ Gif 制作
 
     http://www.iplaysoft.com/paragon-partition-manager.html
     
+- [DiskTool](http://www.iplaysoft.com/disktool.html)
+- [DiskGenius](http://www.iplaysoft.com/diskgenius.html)
 
 ## 碎片整理
 - [Diskeeper](http://www.condusiv.com/products/diskeeper/) - 能明显提升硬盘速度性能的优秀磁盘碎片整理工具
@@ -285,6 +315,10 @@ Gif 制作
 - [CrystalDiskInfo](http://www.iplaysoft.com/disk-benchmark-tools.html)
 - [AS SSD Benchmark](http://www.iplaysoft.com/disk-benchmark-tools.html)
 
+# 虚拟机
+- [VMWare Player](http://www.iplaysoft.com/os/windows-platform/page/14)
+- [VirtualBox](http://www.iplaysoft.com/virtualbox.html)
+
 # 系统
 - [Windows 8 USB Installer Maker](http://apps.codigobit.info/2012/03/windows-8-usb-installer-maker.html) - 免费一键制作 Win8 启动U盘安装盘的工具
 
@@ -295,6 +329,29 @@ Gif 制作
 
     http://www.iplaysoft.com/yjhy.html
 - [NT6 HDD Installer](http://www.iplaysoft.com/nt6-hdd-installer.html) - 没有光驱U盘情况下通过硬盘重装安装系统
+- [ISO to USB](http://www.iplaysoft.com/iso-to-usb.html)
+- [GimageX](http://www.iplaysoft.com/gimagex.html)
+- [WinSetupFromUSB ](http://www.iplaysoft.com/winsetupfromusb.html) - 超简单制作多合一系统安装启动U盘的工具 (支持Win/PE/Linux启动盘)
+- http://www.iplaysoft.com/windows-test-vms.html
+- [Rufus](http://www.iplaysoft.com/rufus.html)
+- [WinToHDD](http://www.iplaysoft.com/wintohdd.html)
+
+# VPN 
+- http://www.iplaysoft.com/vpn.html
+
+# 模拟器
+## Android 模拟器
+- [Genymotion](http://www.iplaysoft.com/genymotion.html)
+- [BlueStacks](http://www.iplaysoft.com/bluestacks.html)
+- [Andy](http://www.iplaysoft.com/andy.html)
+- [Visual Studio Emulator for Android](http://www.iplaysoft.com/visual-studio-emulator-for-android.html)
+- [Droid4X](http://www.iplaysoft.com/droid4x.html)
+
+## PSP
+- [PPSSPP](http://www.iplaysoft.com/ppsspp.html) - 最强 PSP 模拟器 - 在 Android 手机 / iOS / 电脑上玩转经典PSP游戏大作
+
+## GBA
+- http://www.iplaysoft.com/gba-emulator.html
 
 # 截图
 - [FastStone Capture](http://www.faststone.org/FSCaptureDetail.htm)
@@ -324,6 +381,8 @@ Gif 制作
 
     http://www.iplaysoft.com/jing.html
 
+- [oCam ](http://www.iplaysoft.com/ocam.html) - 免费实用的屏幕录像与截图软件
+- [Video Grabber](http://www.iplaysoft.com/video-grabber.html)
 - http://www.iplaysoft.com/bandicam-fraps.html
 - http://www.iplaysoft.com/camtasia-studio-and-bb-flashback.html
 
@@ -387,6 +446,20 @@ Gif 制作
 
     http://www.iplaysoft.com/extremecopy.html
 
+- [RightMenuMgr](http://www.iplaysoft.com/rightmenumgr.html)
+
+- [Firewall App Blocker](http://www.iplaysoft.com/firewall-app-blocker.html)
+- [Quick Startup](http://www.iplaysoft.com/quick-startup.html)
+- [Security Process Explorer](http://www.iplaysoft.com/security-process-explorer.html) - 增强任务进程管理器中文版 - 一键永久屏蔽禁止指定进程运行
+- [Registry Workshop](http://www.iplaysoft.com/registry-workshop.html) - 高级注册表编辑器软件中文版
+- [Pasteasy](http://www.iplaysoft.com/pasteasy.html) - 电脑手机之间互相复制粘贴/传图的效率神器
+- [Virgo](http://www.iplaysoft.com/virgo.html)
+- [Seer](http://www.iplaysoft.com/seer.html)
+- [WGestures](http://www.iplaysoft.com/wgestures.html)
+- [快贴](http://www.iplaysoft.com/kuai-tie.html)
+- [XMind 7](http://www.iplaysoft.com/xmind.html)
+- [DeskDock ](http://www.iplaysoft.com/deskdock.html)
+
 # 字体
 - [字体管家](http://font.xiaa.net/) - 实用一键搞定字体的下载/安装与备份
 
@@ -405,15 +478,24 @@ Gif 制作
 
     http://www.iplaysoft.com/executor.html
 
+- [Wox](http://www.iplaysoft.com/wox.html)
+- [nTrun](http://www.iplaysoft.com/ntrun.html) -  将系统自带的 Win+R 功能打造成绿色高效的快速启动器工具
+
+
 # 压缩
 - [Bandizip](http://www.bandisoft.com/bandizip/) - 最优秀好用的免费文件压缩/解压缩工具软件 (可替代WinRAR与7-Zip)
 
     http://www.iplaysoft.com/bandizip.html
 
+- [WinRAR](http://www.iplaysoft.com/winrar.html)
+- [7-Zip](http://www.iplaysoft.com/7-zip.html)
+
 # 数据恢复
 - [Recuva](http://www.piriform.com/go/recuva.com) - 免费文件恢复工具
 
     http://www.iplaysoft.com/recuva.html
+
+- [EasyRecovery ](http://www.iplaysoft.com/easyrecovery.html)
 
 - [Undelete360](http://www.undelete360.com/) - 绿色免费小巧的数据恢复软件
 
@@ -448,6 +530,8 @@ Gif 制作
 
     http://www.iplaysoft.com/cloudfogger.html
 
+- [VeraCrypt](http://www.iplaysoft.com/veracrypt.html)
+
 # 密码存储
 - [1Password](https://agilebits.com/onepassword) - 跨电脑手机平台的账号密码管理工具软件(高安全性/一键自动登录网站)
 
@@ -459,6 +543,16 @@ Gif 制作
     http://www.iplaysoft.com/keepass.html
 
 - oneSafe
+- [Master Password](http://www.iplaysoft.com/master-password.html)
+
+# 破解
+- [Advanced Archive Password Recovery](http://www.iplaysoft.com/free/archpr)
+
+# 其他
+- [WorldWide Telescope](http://www.iplaysoft.com/worldwide-telescope.html)
+- [RaTool ](http://www.iplaysoft.com/removable-access-tool.html) - 快速屏蔽禁用电脑U盘/移动硬盘等USB设备小工具 (只读/禁止读写)
+- [AutoScreenShot](http://www.iplaysoft.com/autoscreenshot.html) - 免费电脑画面监控软件，后台定时自动屏幕截图工具
+- [PowerShadow](http://www.iplaysoft.com/powershadow.html) - 保持 Windows 快速稳定的免费虚拟化系统保护/恢复软件
 
 # 编程
 ## 字体
@@ -470,6 +564,9 @@ Gif 制作
 ## 编辑器
 - [Sublime](https://www.sublimetext.com/)
 - [Atom](https://atom.io/)
+
+    http://www.iplaysoft.com/atom-editor.html
+
 - [VSCode](https://code.visualstudio.com)
 - [Vim](http://www.vim.org/) - 文本/代码编辑器之中最为优秀经典的上古神器！强大、高效、免费开源且跨平台！
 
