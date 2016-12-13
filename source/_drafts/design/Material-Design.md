@@ -7,6 +7,7 @@ tags: Design
 
 - http://www.google.com/design/spec/material-design/introduction.html
 - http://wiki.jikexueyuan.com/project/material-design/
+- [material_design_zh](https://github.com/1sters/material_design_zh)
 
 # 实现
 - [google/material-design-lite](https://github.com/google/material-design-lite)：Material Design Lite Components in HTML/CSS/JS

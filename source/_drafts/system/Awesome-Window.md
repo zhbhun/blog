@@ -265,6 +265,7 @@ Gif 制作
 
 - [RouterPassView](http://www.iplaysoft.com/routerpassview.html)
 - [Wireless Network Watcher](http://www.iplaysoft.com/wireless-network-watcher.html)
+- [花生壳](http://www.iplaysoft.com/peanuthull.html)
 
 # 远程
 - [Splashtop](http://www.splashtop.com/zh-CN) - 跨平台远程桌面控制软件
