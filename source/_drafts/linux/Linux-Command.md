@@ -13,3 +13,5 @@ tags: Linux
 
 
 - [Linux 下 CPU 使用率与机器负载的关系与区别](http://blog.jobbole.com/105326/)
+- [linux lsof](http://www.cnblogs.com/ggjucheng/archive/2012/01/08/2316599.html)
+- [systemctl](https://linux.cn/article-5926-1.html)

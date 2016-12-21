@@ -10,8 +10,8 @@ tags: Redux
 - 特性
 
     - 运行于不同的环境：客户端，服务器，原生应用
-    - 超爽的开发体验，如：时间旅行调试器可以编辑后实时预览
     - 除了 React，还可以支持其他界面库
+    - 超爽的开发体验，如：时间旅行调试器可以编辑后实时预览
     - 体积小，只有 2KB，且没有任何依赖
 
 - 安装：`npm i --save redux`
@@ -92,3 +92,13 @@ Flux 是一个混合产物，了解 Redux 与其他技术的相似与不同之�
 
 4. 服务端渲染：https://github.com/reactjs/redux/tree/master/examples/universal
 5. 完整的应用示例：https://github.com/reactjs/redux/tree/master/examples/real-world
+
+# 总结
+1. Redux 使程序的每一部分细分：Store 只关注 state，视图中的组件只关注展示数据和触发事件，Actions 只关注 state 的变化和其内部的数据，Reducers 只关注融合旧的 state 和 actions 到新的 state —— 很多 jQuery 时代的程序代码完全没有组织结构，常常需要全文搜索来定位代码（虽然后面也诞生了相关的 
+MVC 框架）
+2. Redux 的单一数据源使得调试变得更加的简单，可以在调试的时候很方便的查看应用状态 —— 想想以前是怎么加断点打印数据的吧！
+3. Redux 的状态是只读的，无论是哪种数据来源（服务端或客户端）都只能通过触发 Action 来修改状态，这使得代码变得更加严谨，并且结合 Redux 的中间件可以很容易拦截动作实现一些特殊的功能，例如：redux-logger，redux-redo 等 —— redux-logger 可以自动在操作前后打印日志，这在以前往往是手工干的活（哭脸）；
+
+**TODO**
+
+Flow VS MVC VS MVVM

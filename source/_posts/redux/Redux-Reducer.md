@@ -5,7 +5,7 @@ category: Redux
 tags: Redux
 ---
 
-# 状态结构
+# 设计状态结构
 设计原则
 
 - 把应用的 state 想像成数据库；
@@ -72,3 +72,4 @@ const todoApp = combineReducers(reducers)
 
 # 参考
 - http://cn.redux.js.org/docs/recipes/ReducingBoilerplate.html#reducers
+- https://github.com/tomatau/type-to-reducer

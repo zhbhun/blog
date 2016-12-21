@@ -110,16 +110,54 @@ Action Creator 命名技巧
 
 相关实现
 
-- [redux-thunk](https://github.com/gaearon/redux-thunk)
-- [redux-promise](https://github.com/acdlite/redux-promise)
-- [redux-promise-middleware](https://github.com/pburtchaell/redux-promise-middleware)
+- [redux-thunk](https://github.com/gaearon/redux-thunk) - Thunk middleware for Redux. 3737 ★
+
+    - 优点：略
+    - 缺点：模板代码过多
+
+- [redux-promise](https://github.com/acdlite/redux-promise) - FSA-compliant promise middleware for Redux. 1216 ★
+
+    - 优点：减少了模板代码
+    - 缺点：不能实现乐观更新，用同一 type 下的不同 status 区分 action 额外增加了一套隐形的约定
+
+- [redux-promise-middleware](https://github.com/pburtchaell/redux-promise-middleware) - Redux middleware for resolving and rejecting promises with conditional optimistic updates. 659 ★
+
+    - 优点：解决了 redux-promise 不能实现乐观更新的问题
+    - 缺点：相比 redux-thunk 多出了一个 `_PENDING` 的字符串模板代码(三个 action 却需要四个 type)，另外，只在 action 层实现了简化，对 reducer 层则束手无策
+
+- [redux-actions](https://github.com/acdlite/redux-actions) - Flux Standard Action utilities for Redux. 2370 ★
+
+    [redux-actions源码解读](http://www.cnblogs.com/ZSG-DoBestMe/p/5375647.html)
+
+- [redux-action-tools](https://github.com/kpaxqin/redux-action-tools) - Light-weight action tools with async and optimistic update support. 20 ★
+
+    在 redux-promise-middleware 的基础上简化了 reducer 层，并且针对 Action 当前所属的异步阶段设置了不同的 meta，可用于处理通用处理逻辑（例如：错误处理，加载中，登录会话检测层）。
+
+    对比其他的通常逻辑处理实现：
+
+    1. 处理底层（即修改 fetch）：扩展性不足（无法实现少数场景需要绕过通用处理逻辑），不易组合（有些场景一个 Action 需要多个异步请求，通用处理逻辑会重复执行）；
+    2. 在 Action 层里重复编写：侵入业务代码，重复的处理代码使得业务代码变得冗余
+    3. 在 Reducer 层里处理，但需要指定要执行通用处理逻辑的 Action，维护成本过高
+
+- [redux-loop](https://github.com/redux-loop/redux-loop) - A library that ports Elm's effect system to Redux. 910 ★
+
+    redux-loop 更彻底的模仿了 Elm 的模式，引入 Effects 的概念并将其置入 reducer，但修改 reducer 的返回类型的做法过于暴力，很难得到社区的认同。
+
+    [redux-architecture](https://github.com/jarvisaoieong/redux-architecture)
+
+- [redux-saga](https://github.com/yelouafi/redux-saga) - An alternative side effect model for Redux apps. 5411 ★
+- [redux-observable](https://github.com/redux-observable/redux-observable) - RxJS middleware for action side effects in Redux using "Epics". 1721 ★
 
 问题
 
 - 模板代码
 - 乐观更新
 - 错误处理
+- 竞态
+
+    [Redux 如何优雅地处理异步冲突？](https://www.zhihu.com/question/51944726)
 
 # 参考文献
-- [Redux异步方案选型](http://react-china.org/t/redux/8761)
+- [Redux 异步方案选型](https://zhuanlan.zhihu.com/p/24337401)
 - [Optimistic updates](https://github.com/acdlite/flux-standard-action/issues/7)
+- https://github.com/acdlite/redux-rx

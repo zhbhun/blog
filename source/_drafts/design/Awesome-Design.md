@@ -8,6 +8,7 @@ tags: Design
 
 - [优设](http://www.uisdc.com/)
 - [UI 中国](http://www.ui.cn/)
+- [Mobile UI Design Patterns: 10+ Sites for Inspiration](http://sixrevisions.com/user-interface/mobile-ui-design-patterns-inspiration/)
 
 ---
 
@@ -116,3 +117,6 @@ tags: Design
 
 # 动画
 - [功能性动画设计:优秀的转场效果](http://theme.bcoder.cn/207.html)
+
+# TODO
+- http://fontello.com/
