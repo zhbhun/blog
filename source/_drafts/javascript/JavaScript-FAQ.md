@@ -129,7 +129,8 @@ tags: JavaScript
 - null 和 undefined 带来的困扰？
 
     - typeof null 结果是 "object"
-    - ES 6 对象解构时，只能给 undefined 的值设置默认值；
+    - ES 6 对象解构时，只能给 undefined 的值设置默认值，很多时候需要给 null 值也设置默认值；
+    - 由于 null 数值转换为 0，导致不好判断数值类型
 
 - 真的需要 undefined？
 

@@ -81,4 +81,6 @@ tags: VCS
     - 推送分支: `git push origin master`, `git push origin dev` --- 选择必要的分支进行推送
 
 # 标签管理
-TODO
+
+# TODO
+- [Git查看、删除、重命名远程分支和tag](http://zengrong.net/post/1746.htm)

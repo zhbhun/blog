@@ -43,6 +43,10 @@ tags: VCS
 - 更新子模块
     1. `git pull`：只会更新当前主仓库指向的子模块提交记录，而不会去更新子模块的代码；
     2. `git submodule update`：更新子模块代码 —— 如果不执行的化，会发现 `git status` 显示子模块是处于修改状态（指向了不一致的提交记录）；
+- 推送子模块
+    
+    - `git push --recurse-submodules=on-demand`
+
 
 **误区**
 

@@ -7,9 +7,12 @@ tags: Design
 
 # iOS Human Interface Guidelines
 - [iOS Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/)
+- [UI Design Do’s and Don’ts](https://developer.apple.com/design/tips/)
 - [iOS-Human-Interface-Guidelines 译文](https://github.com/Cloudox/iOS-Human-Interface-Guidelines)
-- [iOS 9人机交互指南](http://wiki.jikexueyuan.com/project/ios-9-human-computer-interface-guidelines/)
+- [iOS 9人机界面指南](https://isux.tencent.com/ios9-guideline-ch1.html)
+- [iOS 9 人机交互指南](http://wiki.jikexueyuan.com/project/ios-9-human-computer-interface-guidelines/)
 - [iOS 8 人机交互指南](http://wiki.jikexueyuan.com/project/ios-human-interface-guidelines/)
+- [iOS 7 人机界面指南](https://isux.tencent.com/ios-human-interface-guidelines-ui-design-basics-ios7.html)
 
 # 设备信息
 | 设备 | 尺寸 | 像素密度 | 物理像素 | 渲染像素 | 逻辑像素 | 切图 |
