@@ -6,6 +6,7 @@ tags: Editor
 ---
 
 - [简明 Vim 练级攻略](http://coolshell.cn/articles/5426.html)
+- [Vim Commands Cheat Sheet](http://bullium.com/support/vim.html)
 
 # 安装
 - [Vim 8.0 Released! How to install it in Ubuntu 16.04](http://tipsonubuntu.com/2016/09/13/vim-8-0-released-install-ubuntu-16-04/)

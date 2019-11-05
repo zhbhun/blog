@@ -58,3 +58,14 @@ tags: Programmer
 # TODO
 - https://twitrss.me/ - twitter rss
 - http://gold.xitu.io/collections/recommended - 稀土掘金收藏集
+- [编写好代码：如何减少代码的认知负荷](http://blog.jobbole.com/110623/)
+    
+    - 好代码：Bug 少，性能好，易维护
+    - 书籍：《代码大全》
+    - 技巧
+
+        - 避免特立独行
+        - 分而治之
+        - 分离代码并使其可分别处理
+        - 让程序可读
+        - 让代码易于理解

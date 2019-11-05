@@ -2,19 +2,22 @@
 	"folders":
 	[
 		{
-			"path": "./",
-            "folder_exclude_patterns": [
-                "public",
-                "themes",
-                "todo",
-                ".deploy_git"
-            ]
+			"folder_exclude_patterns":
+			[
+				"public",
+				"themes",
+				"todo",
+				".deploy_git"
+			],
+			"path": "."
 		}
 	],
 	"settings":
 	{
 		"font_face": "YaHei Consolas Hybrid",
-		"rulers": [],
+		"rulers":
+		[
+		],
 		"word_wrap": "auto",
 		"wrap_width": 0
 	}

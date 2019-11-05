@@ -109,3 +109,7 @@ tags: Others
 - [常用正则表达式大全](http://blog.csdn.net/onebigday/article/details/5429868)
 - [最全的常用正则表达式大全](http://blog.jobbole.com/96052/)
 - [JS正则表达式验证大全收集](http://www.cnblogs.com/pannysp/archive/2012/02/09/2343906.html)
+
+---
+
+- [正则表达式里字符串”不包含”匹配技巧](http://www.vaikan.com/regular-expression-to-match-string-not-containing-a-word/)
