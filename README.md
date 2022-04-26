@@ -81,7 +81,8 @@
 ### 2020
 
 - [屏幕适配](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/thinking/screen/README.md) <font color="gray">（2020.12.17）</font>
-- [CI&CD](https://github.com/zhbhun/frontend-learning/tree/b94e3a41db1cbd1b34214282566d89d92906f59f/tutorials/ci) <font color="gray">（2020.09.02）</font>
+- [Reacct Native 技术介绍](https://github.com/zhbhun/frontend-learning/tree/b94e3a41db/framework/native/react-native/tutorial/share/README.md) <font color="gray">（2020.09.02）</font>
+- [CI&CD](https://github.com/zhbhun/frontend-learning/tree/b94e3a41db/tutorials/ci) <font color="gray">（2020.09.02）</font>
 
 ### 2019
 
