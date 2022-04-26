@@ -96,6 +96,7 @@
 - [定位](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/language/javascript/tutorial/browser/geolocation/README.md) <font color="gray">（2019.05.05）</font>
 - [Performance API](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/language/javascript/tutorial/browser/performance/README.md) <font color="gray">（2019.05.05）</font>
 - [前端常见问题-长按弹出菜单](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/issues/longpress-menu/README.md) <font color="gray">（2019.05.05）</font>
+- [Ajax](https://github.com/zhbhun/frontend-learning/blob/9a1781af941362524a7d1735bd523ef51275aac5/language/javascript/tutorial/browser/network/ajax/README.md) <font color="gray">（2019.05.05）</font>
 
 ### 2018
 
