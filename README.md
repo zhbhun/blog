@@ -1,6 +1,6 @@
 ## 项目
 
-个人项目
+### 个人项目
 
 - [Webpack Study Demo](https://github.com/zhbhun/WebpackStudyDemo)：Webpack 早期(1/2.x)学习笔记和示例。
 
@@ -28,9 +28,7 @@
 
     在学校自学 Android 开发的一个小游戏，后来没有从事客户端开发，当时作为开源项目和教程，收到了一些社区的鼓励反馈和其他网站的收录。
 
----
-
-团队项目
+### 组织项目
 
 - [standard](https://github.com/openeagle/standard)：前端编码规范
 
@@ -67,43 +65,65 @@
 
 - [uniapp-using-component-webpack-plugin](https://github.com/openeagle/uniapp-using-component-webpack-plugin)：uni-app 集成小程序原生组件的 webpack 插件
 
+### 开源贡献
+
+- [fix(useTouch): fix wrong ternary expressio](https://github.com/youzan/vant/pull/10426) （2022.03.23）
+
+    优化 vant 滚动穿透处理时的用户拖拽方向判断逻辑
+
+- [resolveNextVersion should provide bumpStrategy instead of releaseStrategy](https://github.com/dhoulb/multi-semantic-release/pull/69) (2021.07.08)
+
+    解决 multi-semantic-release 版本升级策略错误的 bug
+
+- [fix(packages/next-polyfill-nomodule): url-polyfill is replaced by cor…](https://github.com/vercel/next.js/pull/12764) (2022.05.12)
+
+    虽然发现并解决 url-polyfill 的问题，但因为我采用 core-js 导致打包体积增加，最终 review 的人最后还是采纳了 url-polyfill 的修复版本。
+
+- [fix javascript "CaptureConsole" wrong title level](https://github.com/getsentry/sentry-docs/pull/1301) (2019.10.29)
+
+    修复 Sentry 官方文档上的一些问题。
+
+- [[WIP]: webpack 4 support ](https://github.com/asfktz/autodll-webpack-plugin/pull/106#issuecomment-386800231) (2018.06.02)
+
+    项目使用了 autodll-webpack-plugin 插件，但是 webpack 4 支持有问题，而对应维护的人员一直没有进展，在这个问题上主要参与讨论解决方案，后续 fork 了一个版本先临时解决了问题。
+
 ## 笔记&文章
 
 ### 2022
 
-- [TailwindCSS](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/language/css/framework/tailwindcss/README.md) <font color="gray">（2022.04.12）</font>
-- [JavaScript Polyfill](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/language/javascript/tutorial/polyfill/README.md) <font color="gray">（2022.04.22）</font>
+- [TailwindCSS](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/language/css/framework/tailwindcss/README.md) （2022.04.12）
+- [JavaScript Polyfill](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/language/javascript/tutorial/polyfill/README.md) （2022.04.22）
 
 ### 2021
 
-- [Eaxios - 更容易处理响应的网络请求库](https://segmentfault.com/a/1190000039280426) <font color="gray">（2021.02.25）</font>
+- [Eaxios - 更容易处理响应的网络请求库](https://segmentfault.com/a/1190000039280426) （2021.02.25）
 
 ### 2020
 
-- [屏幕适配](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/thinking/screen/README.md) <font color="gray">（2020.12.17）</font>
-- [Reacct Native 技术介绍](https://github.com/zhbhun/frontend-learning/tree/b94e3a41db/framework/native/react-native/tutorial/share/README.md) <font color="gray">（2020.09.02）</font>
-- [CI&CD](https://github.com/zhbhun/frontend-learning/tree/b94e3a41db/tutorials/ci) <font color="gray">（2020.09.02）</font>
+- [屏幕适配](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/thinking/screen/README.md) （2020.12.17）
+- [Reacct Native 技术介绍](https://github.com/zhbhun/frontend-learning/tree/b94e3a41db/framework/native/react-native/tutorial/share/README.md) （2020.09.02）
+- [CI&CD](https://github.com/zhbhun/frontend-learning/tree/b94e3a41db/tutorials/ci) （2020.09.02）
 
 ### 2019
 
-- [异常处理机制](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/language/javascript/tutorial/practice/error/README.md) <font color="gray">（2019.09.18）</font>
-- [错误监控](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/tutorials/monitor/error/README.md) <font color="gray">（2019.08.27）</font>
-- [Docker](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/tutorials/container/docker/README.md) <font color="gray">（2019.08.27）</font>
-- [JavaScript 代码压缩优化](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/tutorials/performance/optimize/javascript-compression/README.md) <font color="gray">（2019.06.26）</font>
-- [前端性能指标](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/tutorials/performance/metrics/README.md) <font color="gray">（2019.05.05）</font>
-- [浏览器工作原理](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/tutorials/performance/principle/README.md) <font color="gray">（2019.05.05）</font>
-- [Script](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/language/html/tutorials/elements/embedded/script/README.md) <font color="gray">（2019.05.05）</font>
-- [定位](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/language/javascript/tutorial/browser/geolocation/README.md) <font color="gray">（2019.05.05）</font>
-- [Performance API](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/language/javascript/tutorial/browser/performance/README.md) <font color="gray">（2019.05.05）</font>
-- [前端常见问题-长按弹出菜单](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/issues/longpress-menu/README.md) <font color="gray">（2019.05.05）</font>
-- [Ajax](https://github.com/zhbhun/frontend-learning/blob/9a1781af941362524a7d1735bd523ef51275aac5/language/javascript/tutorial/browser/network/ajax/README.md) <font color="gray">（2019.05.05）</font>
+- [异常处理机制](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/language/javascript/tutorial/practice/error/README.md) （2019.09.18）
+- [错误监控](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/tutorials/monitor/error/README.md) （2019.08.27）
+- [Docker](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/tutorials/container/docker/README.md) （2019.08.27）
+- [JavaScript 代码压缩优化](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/tutorials/performance/optimize/javascript-compression/README.md) （2019.06.26）
+- [前端性能指标](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/tutorials/performance/metrics/README.md) （2019.05.05）
+- [浏览器工作原理](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/tutorials/performance/principle/README.md) （2019.05.05）
+- [Script](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/language/html/tutorials/elements/embedded/script/README.md) （2019.05.05）
+- [定位](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/language/javascript/tutorial/browser/geolocation/README.md) （2019.05.05）
+- [Performance API](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/language/javascript/tutorial/browser/performance/README.md) （2019.05.05）
+- [前端常见问题-长按弹出菜单](https://github.com/zhbhun/frontend-learning/blob/b94e3a41db/issues/longpress-menu/README.md) （2019.05.05）
+- [Ajax](https://github.com/zhbhun/frontend-learning/blob/9a1781af941362524a7d1735bd523ef51275aac5/language/javascript/tutorial/browser/network/ajax/README.md) （2019.05.05）
 
 ### 2018
 
-- [前端常见问题——安卓文本无法垂直居中](https://segmentfault.com/a/1190000017088168) <font color="gray">（2018.11.21）</font>
-- [前端常见问题——Canvas 图片跨域](https://segmentfault.com/a/1190000016423028) <font color="gray">（2018.09.17）</font>
-- [前端常见问题——一像素显示](https://segmentfault.com/a/1190000016116868) <font color="gray">（2018.08.23）</font>
+- [前端常见问题——安卓文本无法垂直居中](https://segmentfault.com/a/1190000017088168) （2018.11.21）
+- [前端常见问题——Canvas 图片跨域](https://segmentfault.com/a/1190000016423028) （2018.09.17）
+- [前端常见问题——一像素显示](https://segmentfault.com/a/1190000016116868) （2018.08.23）
 
 ### 2016
 
-- [React 兼容性](https://zhbhun.github.io/blog/react/React-Compatibility/#more) <font color="gray">（2016.05.13）</font>
+- [React 兼容性](https://zhbhun.github.io/blog/react/React-Compatibility/#more) （2016.05.13）
