@@ -8,7 +8,7 @@
     
     在调研和使用 webpack 的过程中，要理解不少新的概念和配置，当时还是 1.x 版本，缺乏相关的中文教程文档，而且官方文档很多说明还不够友好。因此，就将学习过程中的测试 demo 和笔记整理成一个开源项目放在 github 上了，当时还因此收到了一些邮件感谢信，这对我后续的前端编程学习之路带来了强大的动力，也因为自己有前端打包和工程化建设的基础，后来去美柚才有机会去帮助团队做好前端工程化的建设。
 
-- [easepack](https://github.com/zhbhun/easepack)：前端通用打包工具
+- [easepack](https://github.com/zhbhun/easepack/tree/feature/5)：前端通用打包工具
 
     easepack 是 webpack 封装的打包工具，其配置思想借鉴了 babel preset 模式，即 preset 是一些列插件和加载器的集合，这样可以方便开发者快速复用现有的配置。
 
