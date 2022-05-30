@@ -16,6 +16,10 @@
 
     参照了 H5 Intersection Observer API 实现了 RN 版本的组件， 主要用于项目中实现懒加载和曝光埋点上报。
 
+- [js-serialzation](https://github.com/zhbhun/js-serialization)：JS 对象序列化工具库
+
+    对比原生的 JSON，`js-serialzation` 支持 undefined、NaN、BigInt 和 Date 等数据类型的序列化，而且可以自定义扩展要支持的数据类型。
+
 - [eaxios](https://github.com/zhbhun/eaxios)：前端 HTTP 请求库
 
     exaios 基于 axios 封装，实现更易使用的响应结果和错误处理，以及 TS 类型推导。
